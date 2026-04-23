@@ -1,0 +1,174 @@
+.footer {
+  background: var(--bg-dark);
+  overflow: hidden;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 80px 40px 60px;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #F0F0EE;
+  margin-bottom: 6px;
+  font-style: italic;
+}
+
+.tagline {
+  font-size: 13px;
+  color: rgba(240, 240, 238, 0.35);
+  line-height: 1.7;
+  font-weight: 300;
+  max-width: 280px;
+}
+
+.colLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(240, 240, 238, 0.25);
+  margin-bottom: 8px;
+}
+
+.footerLink {
+  font-size: 13px;
+  color: rgba(240, 240, 238, 0.45);
+  text-decoration: none;
+  transition: color 0.2s;
+  line-height: 1.6;
+}
+
+.footerLink:hover {
+  color: rgba(240, 240, 238, 0.8);
+}
+
+.footerNote {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: rgba(240, 240, 238, 0.2);
+  letter-spacing: 0.06em;
+}
+
+/* ── Live indicator ── */
+.liveIndicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.liveDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #22C55E;
+  flex-shrink: 0;
+  animation: livePulse 2s ease-in-out infinite;
+}
+
+@keyframes livePulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(1.4); }
+}
+
+.liveText {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: rgba(240, 240, 238, 0.4);
+}
+
+/* ── Giant outline brand ── */
+.brandWrap {
+  text-align: center;
+  padding: 0;
+  background: linear-gradient(to bottom, var(--bg-dark), #060D14);
+  overflow: hidden;
+  line-height: 0.85;
+}
+
+.brandText {
+  font-family: var(--font-heading);
+  font-size: 15vw;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.12);
+  user-select: none;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.18),
+    rgba(255, 255, 255, 0.08)
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  padding-bottom: clamp(48px, 6vw, 96px);
+  display: block;
+  animation: wordmarkShift 8s ease-in-out infinite;
+}
+
+@keyframes wordmarkShift {
+  0%, 100% { background-position: 0% 50%; }
+  50%       { background-position: 100% 50%; }
+}
+
+/* ── Copyright ── */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-top: 1px solid rgba(240, 240, 238, 0.06);
+  max-width: 100%;
+}
+
+.bottom span {
+  font-size: 12px;
+  color: rgba(240, 240, 238, 0.2);
+}
+
+.bottomLink {
+  color: rgba(240, 240, 238, 0.35);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.bottomLink:hover {
+  color: rgba(240, 240, 238, 0.6);
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .columns {
+    grid-template-columns: 1fr;
+    padding: 48px 24px 40px;
+    gap: 32px;
+  }
+
+  .bottom {
+    padding: 16px 24px;
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .brandText {
+    font-size: clamp(40px, 20vw, 100px);
+  }
+}

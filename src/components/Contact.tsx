@@ -1,0 +1,124 @@
+'use client';
+
+import { useState } from 'react';
+import { useMagneticButton } from '@/hooks/useMagneticButton';
+import BookingCalendar from './BookingCalendar';
+import styles from './Contact.module.css';
+
+export default function Contact() {
+  const [form, setForm]     = useState({ name: '', company: '', phone: '', message: '' });
+  const [sent, setSent]     = useState(false);
+  const [loading, setLoading] = useState(false);
+  const submitRef = useMagneticButton(0.2);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    /* Stub — replace with real email endpoint */
+    await new Promise(r => setTimeout(r, 800));
+    setSent(true);
+    setLoading(false);
+  };
+
+  return (
+    <section className={styles.section} id="kontakt">
+      <div className={styles.inner}>
+        {/* Left: form + info */}
+        <div className={styles.left}>
+          <div className={styles.label}>KONTAKT</div>
+          <h2 className={styles.heading}>
+            Redo att
+            <br />
+            <em>komma igång?</em>
+          </h2>
+          <p className={styles.sub}>
+            Ring Rasmus direkt, eller fyll i formuläret nedan så hör vi av oss samma dag.
+          </p>
+
+          <div className={styles.contactInfo}>
+            <a href="tel:+46700000000" className={styles.contactItem}>
+              <span className={styles.contactLabel}>TELEFON</span>
+              <span className={styles.contactValue}>070-000 00 00</span>
+            </a>
+            <a href="mailto:hej@nordicicon.se" className={styles.contactItem}>
+              <span className={styles.contactLabel}>MAIL</span>
+              <span className={styles.contactValue}>hej@nordicicon.se</span>
+            </a>
+          </div>
+
+          {sent ? (
+            <div className={styles.thanks}>
+              <span className={styles.thanksIcon}>✓</span>
+              Tack. Vi återkommer inom några timmar.
+            </div>
+          ) : (
+            <form className={styles.form} onSubmit={handleSubmit}>
+              <div className={styles.formRow}>
+                <div className={styles.formGroup}>
+                  <label className={styles.formLabel}>Namn *</label>
+                  <input
+                    className={styles.input}
+                    value={form.name}
+                    onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
+                    required
+                    placeholder="Ditt namn"
+                  />
+                </div>
+                <div className={styles.formGroup}>
+                  <label className={styles.formLabel}>Företag</label>
+                  <input
+                    className={styles.input}
+                    value={form.company}
+                    onChange={e => setForm(f => ({ ...f, company: e.target.value }))}
+                    placeholder="Företagsnamn"
+                  />
+                </div>
+              </div>
+
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel}>Telefon</label>
+                <input
+                  className={styles.input}
+                  type="tel"
+                  value={form.phone}
+                  onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
+                  placeholder="07X-XXX XX XX"
+                />
+              </div>
+
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel}>Meddelande</label>
+                <textarea
+                  className={`${styles.input} ${styles.textarea}`}
+                  value={form.message}
+                  onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
+                  placeholder="Berätta om ditt projekt..."
+                  rows={4}
+                />
+              </div>
+
+              <button
+                ref={submitRef as React.RefObject<HTMLButtonElement>}
+                type="submit"
+                className={styles.submitBtn}
+                disabled={loading}
+              >
+                {loading ? 'Skickar...' : 'Skicka meddelande'}
+                {!loading && (
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
+                    <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                )}
+              </button>
+            </form>
+          )}
+        </div>
+
+        {/* Right: booking calendar */}
+        <div className={styles.right}>
+          <BookingCalendar />
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,143 @@
+.hero {
+  padding: clamp(120px, 14vw, 200px) clamp(32px, 6vw, 100px) clamp(60px, 6vw, 100px);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.heroInner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: var(--space-4);
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.0;
+  color: var(--text);
+  margin-bottom: var(--space-5);
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--accent);
+  filter: drop-shadow(0 0 16px var(--accent-glow));
+}
+
+.sub {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+  line-height: 1.7;
+}
+
+/* Contact layout */
+.contactSection {
+  padding: clamp(60px, 6vw, 100px) clamp(32px, 6vw, 100px) clamp(100px, 12vw, 180px);
+  background: var(--bg);
+}
+
+.contactInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 100px);
+  align-items: start;
+}
+
+/* Form side */
+.formSide {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.infoLabel {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+.infoValue {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a.infoValue:hover {
+  color: var(--accent);
+}
+
+/* Calendar side */
+.calendarSide {
+  position: sticky;
+  top: 100px;
+}
+
+.calendarHeading {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.calendarSub {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .contactInner {
+    grid-template-columns: 1fr;
+    gap: 64px;
+  }
+
+  .calendarSide {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 120px 24px 64px;
+  }
+
+  .contactSection {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}

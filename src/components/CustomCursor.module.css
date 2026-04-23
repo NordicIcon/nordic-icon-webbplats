@@ -1,0 +1,54 @@
+@media (pointer: coarse) {
+  .dot, .ring { display: none; }
+}
+
+.dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+}
+
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  mix-blend-mode: difference;
+  will-change: transform;
+  transition:
+    width 0.3s ease,
+    height 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Hover on links/buttons — ring expands */
+.ringHoverLink {
+  width: 60px;
+  height: 60px;
+  background: rgba(27, 58, 107, 0.1);
+  /* re-center offset for larger size */
+  margin-left: -12px;
+  margin-top: -12px;
+}
+
+/* Hover on text — ring collapses to vertical bar */
+.ringHoverText {
+  width: 2px;
+  height: 24px;
+  border-radius: 1px;
+  margin-left: 16px;
+  margin-top: 6px;
+}

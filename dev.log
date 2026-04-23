@@ -1,0 +1,45 @@
+
+> nordic-icon-webbplats@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 2.4s
+ ○ Compiling / ...
+ ✓ Compiled / in 1867ms (1426 modules)
+ GET / 200 in 2393ms
+ ✓ Compiled /favicon.ico in 282ms (758 modules)
+ GET /favicon.ico 200 in 382ms
+ ✓ Compiled /api/available-times in 438ms (730 modules)
+ GET /api/available-times?date=2026-04-23 200 in 554ms
+ ✓ Compiled /projekt in 493ms (1433 modules)
+ ✓ Compiled /planer in 418ms (1440 modules)
+ ○ Compiling /om-oss ...
+ ✓ Compiled /om-oss in 575ms (1447 modules)
+ ○ Compiling /kontakt ...
+ ✓ Compiled /kontakt in 736ms (1461 modules)
+ ✓ Compiled in 1398ms (1455 modules)
+ ✓ Compiled in 250ms (743 modules)
+ ✓ Compiled in 230ms (743 modules)
+ ✓ Compiled in 524ms (1455 modules)
+ ✓ Compiled in 279ms (1455 modules)
+ ✓ Compiled in 284ms (1455 modules)
+ ✓ Compiled in 355ms (1455 modules)
+ ✓ Compiled in 227ms (743 modules)
+ ✓ Compiled in 1380ms (1469 modules)
+ ✓ Compiled in 552ms (743 modules)
+ ✓ Compiled in 230ms (743 modules)
+ ✓ Compiled in 157ms (743 modules)
+ ✓ Compiled in 182ms (743 modules)
+ ✓ Compiled in 249ms (743 modules)
+ ✓ Compiled in 215ms (743 modules)
+ ✓ Compiled in 506ms (1465 modules)
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET /kontakt 200 in 192ms
+ ✓ Compiled /favicon.ico in 239ms (775 modules)
+ GET /favicon.ico 200 in 327ms
+ ✓ Compiled in 891ms (1487 modules)
+ ✓ Compiled in 415ms (1497 modules)
+ ✓ Compiled in 367ms (1497 modules)

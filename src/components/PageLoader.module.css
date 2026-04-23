@@ -1,0 +1,38 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: var(--bg-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.lines {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 200px;
+}
+
+.line {
+  height: 1px;
+  background: rgba(240, 240, 238, 0.35);
+  transform-origin: left;
+}
+
+.brand {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(240, 240, 238, 0.55);
+}

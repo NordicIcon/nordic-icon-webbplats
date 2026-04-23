@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@300;400;500&display=swap');
+
+/* ─── ROOT VARIABLES ─────────────────────────────────────────── */
+:root {
+  /* Colors */
+  --bg:               #FAFAFA;
+  --bg-secondary:     #F3F2EE;
+  --bg-dark:          #0D1B2A;
+  --text:             #1A1A18;
+  --text-secondary:   #5A5A56;
+  --text-muted:       #9A9A96;
+  --accent:           #1B3A6B;
+  --accent-hover:     #152E56;
+  --accent-subtle:    rgba(27, 58, 107, 0.08);
+  --accent-shadow:    rgba(27, 58, 107, 0.2);
+  --accent-glow:      rgba(27, 58, 107, 0.35);
+  --accent-neon:      rgba(41, 98, 185, 0.8);
+  --border:           rgba(26, 26, 24, 0.07);
+  --border-hover:     rgba(26, 26, 24, 0.15);
+
+  /* Typography */
+  --font-heading: 'Instrument Serif', serif;
+  --font-body:    'Plus Jakarta Sans', sans-serif;
+  --font-mono:    'IBM Plex Mono', monospace;
+
+  /* Type scale */
+  --text-h0:       clamp(3.5rem, 6vw, 6rem);
+  --text-h1:       clamp(2.5rem, 4vw, 4.5rem);
+  --text-h1-elite: clamp(4rem, 8vw, 6.25rem);
+  --text-h2:       clamp(2rem, 3.5vw, 3rem);
+  --text-h3:       1.75rem;
+  --text-h4:       1.25rem;
+  --text-body:     1.0625rem;
+  --text-body-sm:  0.9375rem;
+  --text-small:    0.875rem;
+  --text-label:    0.75rem;
+  --text-mono:     0.875rem;
+
+  /* Letter spacing */
+  --tracking-tight: -0.02em;
+  --tracking-label:  0.1em;
+  --tracking-wide:   0.06em;
+
+  /* Spacing */
+  --space-xs:   0.25rem;
+  --space-sm:   0.5rem;
+  --space-md:   1rem;
+  --space-lg:   1.25rem;
+  --space-xl:   1.5rem;
+  --space-2xl:  2rem;
+  --space-3xl:  2.5rem;
+  --space-4xl:  3rem;
+  --space-5xl:  4rem;
+  --space-6xl:  5rem;
+  --space-7xl:  7.5rem;
+  --space-8xl:  10rem;
+  --section-padding:    120px;
+  --section-padding-lg: 160px;
+
+  /* Layout */
+  --container-max:   1200px;
+  --container-wide:  1400px;
+  --grid-gap:        1.25rem;
+  --card-padding:    2rem;
+  --card-padding-lg: 2.5rem;
+
+  /* Border radius */
+  --radius-none: 0;
+  --radius-sm:   0.5rem;
+  --radius-md:   1rem;
+  --radius-lg:   1.25rem;
+  --radius-xl:   1.5rem;
+  --radius-2xl:  2rem;
+  --radius-full: 50px;
+}
+
+/* ─── RESET ──────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+h1 { font-size: clamp(52px, 7vw, 96px); font-weight: 300; }
+h2 { font-size: clamp(40px, 5vw, 72px); font-weight: 300; }
+h3 { font-size: clamp(24px, 3vw, 36px); font-weight: 300; }
+h4 { font-size: clamp(18px, 2vw, 24px); font-weight: 400; }
+p, li { font-size: clamp(16px, 1.2vw, 18px); }
+
+@media (pointer: coarse) {
+  body { cursor: auto; }
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ─── SHARED TYPOGRAPHY ──────────────────────────────────────── */
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.section-heading {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.05;
+  color: var(--text);
+}
+
+.section-heading em {
+  font-style: italic;
+  color: var(--text);
+}
+
+/* ─── BUTTONS ────────────────────────────────────────────────── */
+.btn {
+  border-radius: var(--radius-full);
+  padding: 0.875rem 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  font-family: var(--font-body);
+  letter-spacing: var(--tracking-wide);
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 4px 12px var(--accent-shadow);
+}
+
+.btn--primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px var(--accent-shadow);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn--secondary:hover {
+  background: var(--bg-secondary);
+  border-color: var(--text-muted);
+}
+
+.btn--light {
+  background: white;
+  color: var(--bg-dark);
+}
+
+.btn--light:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn--outline-light {
+  background: transparent;
+  color: rgba(240, 240, 238, 0.8);
+  border: 1px solid rgba(240, 240, 238, 0.25);
+}
+
+.btn--outline-light:hover {
+  background: rgba(240, 240, 238, 0.08);
+}
+
+/* ─── CONTAINER ──────────────────────────────────────────────── */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 80px);
+}
+
+.container--wide {
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ─── TEXT GLOW ──────────────────────────────────────────────── */
+.text-glow {
+  color: var(--accent);
+  filter: drop-shadow(0 0 16px var(--accent-glow));
+}
+
+/* ─── GRADIENT TEXT ──────────────────────────────────────────── */
+.heading-gradient-fade {
+  background: linear-gradient(
+    to right,
+    var(--text) 0%,
+    var(--text) 55%,
+    rgba(26, 26, 24, 0.2) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── CSS PROPERTY REGISTRATIONS (global at-rules) ──────────── */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* ─── REDUCED MOTION ─────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  [data-animate],
+  .gsap-animated {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ─── SCROLLBAR ──────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-hover);
+  border-radius: 3px;
+}
+
+/* ─── SELECTION ──────────────────────────────────────────────── */
+::selection {
+  background: var(--accent-subtle);
+  color: var(--accent);
+}

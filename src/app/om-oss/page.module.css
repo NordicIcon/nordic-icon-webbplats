@@ -1,0 +1,265 @@
+.hero {
+  padding: clamp(120px, 14vw, 200px) clamp(32px, 6vw, 100px) clamp(60px, 6vw, 100px);
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.heroInner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.label,
+.sectionLabel {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: var(--space-4);
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.0;
+  color: var(--text);
+  margin-bottom: var(--space-5);
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--accent);
+  filter: drop-shadow(0 0 16px var(--accent-glow));
+}
+
+.sub {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* Stats */
+.statsSection {
+  padding: 80px var(--space-6);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.statsInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.statValue {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  color: var(--accent);
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.statUnit {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.statLabel {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  max-width: 200px;
+}
+
+/* Story */
+.storySection {
+  padding: clamp(80px, 10vw, 140px) clamp(32px, 6vw, 100px);
+  background: var(--bg);
+}
+
+.storyInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.storyText {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.storyHeading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.storyHeading em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.storyText p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.storyVisual {}
+
+.storyCard {
+  background: var(--bg-dark);
+  border-radius: 20px;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.storyCardLabel {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: rgba(240, 240, 238, 0.4);
+}
+
+.storyQuote {
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(240, 240, 238, 0.9);
+  line-height: 1.5;
+  margin: 0;
+  border: none;
+  padding: 0;
+}
+
+.storyCardAuthor {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: rgba(240, 240, 238, 0.35);
+}
+
+/* Values */
+.valuesSection {
+  padding: clamp(80px, 10vw, 140px) clamp(32px, 6vw, 100px);
+  background: var(--bg-secondary);
+}
+
+.valuesInner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.valuesHeading {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 64px;
+}
+
+.valuesHeading em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.valueCard {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.valueCard:hover {
+  border-color: rgba(27, 58, 107, 0.2);
+  box-shadow: 0 8px 32px rgba(27, 58, 107, 0.06);
+}
+
+.valueNumber {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.valueTitle {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.valueText {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 120px 24px 64px;
+  }
+
+  .statsSection,
+  .storySection,
+  .valuesSection {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .statsInner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .storyInner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+}

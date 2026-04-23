@@ -1,0 +1,196 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 120px 40px 80px;
+}
+
+/* ── Aurora canvas ── */
+.aurora {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Floating rings ── */
+.floatingLayer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(27, 58, 107, 0.06);
+  transform: translate(-50%, -50%);
+  animation: floatRing linear infinite;
+}
+
+@keyframes floatRing {
+  0%   { transform: translate(-50%, -50%) scale(1)    rotate(0deg); }
+  33%  { transform: translate(-50%, -52%) scale(1.04) rotate(6deg); }
+  66%  { transform: translate(-52%, -49%) scale(0.97) rotate(-4deg); }
+  100% { transform: translate(-50%, -50%) scale(1)    rotate(0deg); }
+}
+
+/* ── Content ── */
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 36px;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: clamp(52px, 7vw, 96px);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  margin-bottom: 28px;
+}
+
+/* Blå → guld gradient på "för svenska bolag." */
+.glowText {
+  display: block;
+  font-style: italic;
+  background: linear-gradient(
+    135deg,
+    #2962B9 0%,
+    #4A90D9 35%,
+    #F5C842 70%,
+    #E8B830 100%
+  );
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 4s ease-in-out infinite alternate;
+}
+
+@keyframes gradientShift {
+  0%   {
+    background-position: 0% 50%;
+    filter: drop-shadow(0 0 20px rgba(41, 98, 185, 0.5));
+  }
+  100% {
+    background-position: 100% 50%;
+    filter: drop-shadow(0 0 28px rgba(245, 200, 66, 0.4));
+  }
+}
+
+.subtext {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  margin-bottom: 48px;
+}
+
+/* ── CTAs ── */
+.ctas {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  border-radius: var(--radius-full);
+  padding: 0.9rem 1.875rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  font-family: var(--font-body);
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: none;
+  border: none;
+  transition: background 0.2s, box-shadow 0.2s;
+  will-change: transform;
+}
+
+.btnPrimary {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 4px 20px var(--accent-shadow);
+}
+
+.btnPrimary:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 8px 32px var(--accent-shadow);
+}
+
+.btnSecondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btnSecondary:hover {
+  background: var(--bg-secondary);
+  border-color: var(--text-muted);
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 20px 60px;
+  }
+
+  .heading {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+
+  .ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+    cursor: auto;
+  }
+
+  .ring:nth-child(n+4) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aurora { display: none; }
+  .ring   { animation: none; }
+  .glowText {
+    animation: none;
+    filter: none;
+    -webkit-text-fill-color: #2962B9;
+  }
+}

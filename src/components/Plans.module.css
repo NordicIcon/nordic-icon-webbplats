@@ -1,0 +1,297 @@
+.section {
+  position: relative;
+  padding: var(--section-padding) 40px;
+  overflow: hidden;
+}
+
+/* ── Background: image + frosted overlay ── */
+.plansBackground {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+/* Skärgårds-bild */
+.plansBackground::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/images/skargarden.jpg');
+  background-size: cover;
+  background-position: center 40%;
+  filter: brightness(1.05) saturate(0.9);
+  /* Fallback gradient om bilden saknas */
+  background-color: #c8dff0;
+}
+
+/* Frosted overlay ovanpå bilden */
+.plansBackground::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(240, 247, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0.65) 100%
+  );
+  z-index: 1;
+}
+
+/* All content above overlay */
+.plansContent {
+  position: relative;
+  z-index: 2;
+  max-width: var(--container-max);
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--text-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-h2);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: var(--tracking-tight);
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.heading em { font-style: italic; }
+
+.sub {
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+/* ── Cards grid ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+/* ── Individual card — liquid glass ── */
+.card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(32px) saturate(180%);
+  -webkit-backdrop-filter: blur(32px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow:
+    0 8px 32px rgba(27, 58, 107, 0.08),
+    0 2px 8px rgba(27, 58, 107, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  transition:
+    transform 0.3s cubic-bezier(0.76, 0, 0.24, 1),
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 48px rgba(27, 58, 107, 0.14),
+    0 4px 16px rgba(27, 58, 107, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+/* PRO card */
+.cardPopular {
+  background: rgba(255, 255, 255, 0.60);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border: 1px solid rgba(27, 58, 107, 0.3);
+  box-shadow:
+    0 20px 60px rgba(27, 58, 107, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transform: scale(1.04);
+  overflow: visible;
+}
+
+.cardPopular:hover {
+  transform: scale(1.04) translateY(-4px);
+}
+
+/* Most popular badge */
+.badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: white;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  box-shadow: 0 4px 14px var(--accent-shadow);
+}
+
+.cardTop { margin-bottom: 28px; }
+
+.planName {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.priceNum {
+  font-family: var(--font-mono);
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.priceCurrency {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.monthly {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.tagline {
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 24px;
+}
+
+/* ── Features list ── */
+.features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.featureAll {
+  font-weight: 500;
+  color: var(--text);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+.check { flex-shrink: 0; margin-top: 2px; }
+
+/* ── CTAs ── */
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.875rem;
+  border-radius: var(--radius-full);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s;
+  will-change: transform;
+  cursor: none;
+}
+
+.ctaPrimary {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 4px 20px var(--accent-shadow);
+}
+
+.ctaPrimary:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 8px 32px var(--accent-shadow);
+}
+
+.ctaSecondary {
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.ctaSecondary:hover { background: rgba(255, 255, 255, 0.8); }
+
+/* ── Footer link ── */
+.footer {
+  text-align: center;
+  margin-top: 48px;
+}
+
+.allPlans {
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.allPlans:hover { color: var(--accent); }
+
+/* ── Mobile ── */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .cardPopular { transform: none; }
+  .section { padding: 80px 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cardPopular::before { animation: none; }
+}
