@@ -51,7 +51,7 @@ const projects = [
    Cards sit on a circle of radius R.
    Angle 0 = top (12 o'clock). Cards spread ±2 steps of 60° around the top.
    baseRotation is driven by scroll. */
-const RADIUS   = 460;
+const RADIUS   = 340;
 const ANGLE_STEP = Math.PI / 3; /* 60° between cards */
 
 function getCardStyle(index: number, activeIndex: number) {
@@ -175,35 +175,48 @@ export default function Portfolio() {
 
       {/* Carousel — separate from header */}
       <div className={styles.carouselWrapper}>
-      <div className={styles.stage}>
-        <div className={styles.orbit} ref={orbitRef}>
-          {projects.map((project, i) => (
-            <div
-              key={project.id}
-              className={`${styles.card} ${i === active ? styles.cardActive : styles.cardInactive}`}
-              style={getCardStyle(i, active)}
-              onClick={() => setActive(i)}
-              role="button"
-              tabIndex={0}
-              aria-label={`Visa ${project.name}`}
-            >
+        <div className={styles.stage}>
+          <div className={styles.orbit} ref={orbitRef}>
+            {projects.map((project, i) => (
               <div
-                className={styles.cardInner}
-                style={{ background: project.bg }}
+                key={project.id}
+                className={`${styles.card} ${i === active ? styles.cardActive : styles.cardInactive}`}
+                style={getCardStyle(i, active)}
+                onClick={() => setActive(i)}
+                role="button"
+                tabIndex={0}
+                aria-label={`Visa ${project.name}`}
               >
-                <div className={styles.cardContent}>
-                  <span className={styles.cardPlan}>{project.plan}</span>
-                  <span className={styles.cardName}>{project.name}</span>
-                  <span className={styles.cardMeta}>
-                    {project.industry} · {project.city}
-                  </span>
+                <div
+                  className={styles.cardInner}
+                  style={{ background: project.bg }}
+                >
+                  <div className={styles.cardContent}>
+                    <span className={styles.cardPlan}>{project.plan}</span>
+                    <span className={styles.cardName}>{project.name}</span>
+                    <span className={styles.cardMeta}>
+                      {project.industry} · {project.city}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          {/* Arrow buttons — inside stage for correct positioning */}
+          <button className={`${styles.arrow} ${styles.arrowLeft}`} onClick={() => advance(-1)} aria-label="Föregående projekt">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
+          <button className={`${styles.arrow} ${styles.arrowRight}`} onClick={() => advance(1)} aria-label="Nästa projekt">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
         </div>
 
-        {/* Active card info */}
+        {/* Active card info — below stage */}
         <div className={styles.activeInfo}>
           <div className={styles.activeProject}>
             <span className={styles.activePlan}>{activeProject.plan}</span>
@@ -220,7 +233,7 @@ export default function Portfolio() {
           </a>
         </div>
 
-        {/* Navigation dots */}
+        {/* Navigation dots — below activeInfo */}
         <div className={styles.dots}>
           {projects.map((_, i) => (
             <button
@@ -232,25 +245,12 @@ export default function Portfolio() {
           ))}
         </div>
 
-        {/* Arrow buttons */}
-        <button className={`${styles.arrow} ${styles.arrowLeft}`} onClick={() => advance(-1)} aria-label="Föregående projekt">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M10 3L5 8l5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </button>
-        <button className={`${styles.arrow} ${styles.arrowRight}`} onClick={() => advance(1)} aria-label="Nästa projekt">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-            <path d="M6 3l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </button>
+        <div className={styles.footer}>
+          <Link href="/projekt" className={styles.allProjects}>
+            Se alla projekt →
+          </Link>
+        </div>
       </div>
-
-      <div className={styles.footer}>
-        <Link href="/projekt" className={styles.allProjects}>
-          Se alla projekt →
-        </Link>
-      </div>
-      </div>{/* end carouselWrapper */}
     </section>
   );
 }

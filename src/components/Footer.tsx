@@ -68,12 +68,6 @@ export default function Footer() {
       {/* Copyright */}
       <div className={styles.bottom}>
         <span>© {year} Nordic Icon AB</span>
-        <span>
-          Byggd av{' '}
-          <a href="https://nordicicon.se" className={styles.bottomLink}>
-            Nordic Icon
-          </a>
-        </span>
       </div>
     </footer>
   );

@@ -32,17 +32,13 @@ export default function Contact() {
             <em>komma igång?</em>
           </h2>
           <p className={styles.sub}>
-            Ring Rasmus direkt, eller fyll i formuläret nedan så hör vi av oss samma dag.
+            Fyll i formuläret eller maila direkt så hör vi av oss samma dag.
           </p>
 
           <div className={styles.contactInfo}>
-            <a href="tel:+46700000000" className={styles.contactItem}>
-              <span className={styles.contactLabel}>TELEFON</span>
-              <span className={styles.contactValue}>070-000 00 00</span>
-            </a>
-            <a href="mailto:hej@nordicicon.se" className={styles.contactItem}>
+            <a href="mailto:info@nordicicon.se" className={styles.contactItem}>
               <span className={styles.contactLabel}>MAIL</span>
-              <span className={styles.contactValue}>hej@nordicicon.se</span>
+              <span className={styles.contactValue}>info@nordicicon.se</span>
             </a>
           </div>
 

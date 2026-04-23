@@ -50,18 +50,16 @@
 /* ── Stage ── */
 .stage {
   position: relative;
-  height: 520px;
+  height: 560px;
   max-width: 900px;
   margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 }
 
-/* The orbit anchor — positioned at center-top of the stage */
+/* The orbit anchor — anchored at the bottom-center of the stage */
 .orbit {
   position: absolute;
-  top: 50%;
+  bottom: 0;
   left: 50%;
   width: 0;
   height: 0;
@@ -127,18 +125,15 @@
   letter-spacing: 0.04em;
 }
 
-/* ── Active info (below active card) ── */
+/* ── Active info (below stage) ── */
 .activeInfo {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
   text-align: center;
   pointer-events: none;
+  margin-top: 28px;
 }
 
 .activeProject {
@@ -188,12 +183,10 @@
 
 /* ── Navigation dots ── */
 .dots {
-  position: absolute;
-  bottom: -40px;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   gap: 8px;
+  justify-content: center;
+  margin-top: 16px;
 }
 
 .dot {
@@ -214,7 +207,7 @@
 /* ── Arrow buttons ── */
 .arrow {
   position: absolute;
-  top: 50%;
+  top: 39%;
   transform: translateY(-50%);
   width: 44px;
   height: 44px;
@@ -242,7 +235,7 @@
 /* ── Footer link ── */
 .footer {
   text-align: center;
-  margin-top: 80px;
+  margin-top: 32px;
 }
 
 .allProjects {

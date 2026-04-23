@@ -234,7 +234,7 @@
 
 /* Addons */
 .addonsSection {
-  padding: 100px var(--space-6) 100px;
+  padding: clamp(80px, 10vw, 140px) clamp(40px, 6vw, 100px);
   background: var(--bg-secondary);
 }
 
