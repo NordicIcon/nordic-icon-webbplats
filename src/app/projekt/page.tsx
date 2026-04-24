@@ -77,11 +77,8 @@ export default function ProjektPage() {
       <section className={styles.grid}>
         <div className={styles.gridInner}>
           {projects.map(p => (
-            <div
-              key={p.id}
-              className={styles.card}
-            >
-              <div className={styles.cardBg}>
+            <div key={p.id} className={styles.cardWrap}>
+              <div className={styles.card}>
                 <Image
                   src={p.image}
                   alt={p.name}
@@ -90,15 +87,11 @@ export default function ProjektPage() {
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
                 <div className={styles.cardOverlay} />
-                <div className={styles.cardContent}>
-                  <span className={styles.cardPlan}>{p.plan}</span>
-                  <span className={styles.cardName}>{p.name}</span>
-                  <span className={styles.cardMeta}>{p.industry} · {p.city}</span>
-                </div>
-                <div className={styles.cardHover}>
-                  <span>{p.desc}</span>
-                  <span className={styles.cardHoverLink}>Se projektet →</span>
-                </div>
+              </div>
+              <div className={styles.cardText}>
+                <span className={styles.cardPlan}>{p.plan}</span>
+                <span className={styles.cardName}>{p.name}</span>
+                <span className={styles.cardMeta}>{p.industry} · {p.city}</span>
               </div>
             </div>
           ))}
