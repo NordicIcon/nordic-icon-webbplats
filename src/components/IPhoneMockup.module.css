@@ -156,6 +156,7 @@
   border-radius: 34px;
   overflow: hidden;
   background: var(--bg);
+  position: relative;
 }
 
 .screenContent {

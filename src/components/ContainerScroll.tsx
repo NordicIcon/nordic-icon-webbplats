@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import styles from './ContainerScroll.module.css';
 
@@ -43,27 +44,14 @@ export default function ContainerScroll() {
           </div>
 
           <div className={styles.screen}>
-            {/* Placeholder for Koppar PRO screenshot */}
-            <div className={styles.placeholder}>
-              <div className={styles.placeholderInner}>
-                <span className={styles.placeholderLabel}>KOPPAR PRO</span>
-                <span className={styles.placeholderSub}>Specialty Coffee · Halmstad</span>
-              </div>
-              {/* Simulated page content */}
-              <div className={styles.mockContent}>
-                <div className={styles.mockHero} />
-                <div className={styles.mockSection}>
-                  <div className={styles.mockHeading} />
-                  <div className={styles.mockText} />
-                  <div className={styles.mockText} style={{ width: '70%' }} />
-                </div>
-                <div className={styles.mockGrid}>
-                  <div className={styles.mockCard} />
-                  <div className={styles.mockCard} />
-                  <div className={styles.mockCard} />
-                </div>
-              </div>
-            </div>
+            <Image
+              src="/images/koppar-desktop.png"
+              alt="Koppar PRO — Specialty Coffee Halmstad"
+              fill
+              style={{ objectFit: 'cover', objectPosition: 'top' }}
+              sizes="(max-width: 768px) 100vw, 800px"
+              priority
+            />
           </div>
         </motion.div>
       </div>

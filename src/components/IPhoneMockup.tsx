@@ -1,6 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
+import Image from 'next/image';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import styles from './IPhoneMockup.module.css';
 
@@ -55,30 +56,13 @@ export default function IPhoneMockup() {
 
               {/* Screen */}
               <div className={styles.screen}>
-                <div className={styles.screenContent}>
-                  {/* Scrolling inner content */}
-                  <div className={styles.innerScroll}>
-                    {/* Simulated Havets PRO */}
-                    <div className={styles.siteHero}>
-                      <div className={styles.siteHeroText}>
-                        <span className={styles.siteName}>Havets</span>
-                        <span className={styles.siteTagline}>Fine Dining · Göteborg</span>
-                      </div>
-                    </div>
-                    <div className={styles.siteSection}>
-                      <div className={styles.siteSectionBar} />
-                      <div className={styles.siteSectionBar} style={{ width: '75%' }} />
-                      <div className={styles.siteSectionBar} style={{ width: '55%' }} />
-                    </div>
-                    <div className={styles.siteCard} />
-                    <div className={styles.siteSection}>
-                      <div className={styles.siteSectionBar} />
-                      <div className={styles.siteSectionBar} style={{ width: '80%' }} />
-                    </div>
-                    <div className={styles.siteCard} />
-                    <div className={styles.siteCard} />
-                  </div>
-                </div>
+                <Image
+                  src="/images/koppar-mobile.jpg"
+                  alt="Koppar — mobilvy"
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: 'top' }}
+                  sizes="280px"
+                />
               </div>
 
               {/* Home indicator */}
