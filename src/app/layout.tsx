@@ -1,10 +1,15 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { SmoothScroll } from '@/providers';
 import Navbar from '@/components/Navbar';
 import PageLoader from '@/components/PageLoader';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
 import CookieBanner from '@/components/CookieBanner';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   title: 'Nordic Icon — Premium hemsidor för svenska bolag',
