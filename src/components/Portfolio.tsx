@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, useCallback } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -15,8 +16,7 @@ const projects = [
     industry: 'Specialty Coffee',
     city: 'Halmstad',
     plan: 'PRO',
-    color: '#C17B35',
-    bg: 'linear-gradient(135deg, #2C1810 0%, #C17B35 100%)',
+    image: '/images/koppar-card.png',
   },
   {
     id: 1,
@@ -24,8 +24,7 @@ const projects = [
     industry: 'Fine Dining',
     city: 'Göteborg',
     plan: 'PRO',
-    color: '#1B3A6B',
-    bg: 'linear-gradient(135deg, #0D1B2A 0%, #1B3A6B 100%)',
+    image: '/images/havets-card.png',
   },
   {
     id: 2,
@@ -33,17 +32,15 @@ const projects = [
     industry: 'Salong',
     city: 'Stockholm',
     plan: 'BAS',
-    color: '#5A5A56',
-    bg: 'linear-gradient(135deg, #2A2A28 0%, #6A6A60 100%)',
+    image: '/images/strand-studio-card.png',
   },
   {
     id: 3,
-    name: 'Lindqvist VVS',
-    industry: 'VVS',
-    city: 'Karlstad',
-    plan: 'BAS',
-    color: '#2D6A5F',
-    bg: 'linear-gradient(135deg, #1A3B35 0%, #2D6A5F 100%)',
+    name: 'Solberg',
+    industry: 'Restaurang',
+    city: 'Stockholm',
+    plan: 'PRO',
+    image: '/images/solberg-card.png',
   },
 ];
 
@@ -187,10 +184,15 @@ export default function Portfolio() {
                 tabIndex={0}
                 aria-label={`Visa ${project.name}`}
               >
-                <div
-                  className={styles.cardInner}
-                  style={{ background: project.bg }}
-                >
+                <div className={styles.cardInner}>
+                  <Image
+                    src={project.image}
+                    alt={project.name}
+                    fill
+                    style={{ objectFit: 'cover', objectPosition: 'top' }}
+                    sizes="260px"
+                  />
+                  <div className={styles.cardOverlay} />
                   <div className={styles.cardContent}>
                     <span className={styles.cardPlan}>{project.plan}</span>
                     <span className={styles.cardName}>{project.name}</span>

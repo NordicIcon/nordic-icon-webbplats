@@ -87,19 +87,30 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 16px 60px rgba(0, 0, 0, 0.2);
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 28px;
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.1) 55%, transparent 100%);
+  border-radius: 20px;
+  z-index: 1;
 }
 
 /* Offset each card from center */
 .card { margin-left: -130px; margin-top: -170px; }
 
 .cardContent {
+  position: relative;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   gap: 4px;
+  padding: 28px;
 }
 
 .cardPlan {
