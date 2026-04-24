@@ -1,5 +1,5 @@
 .section {
-  padding: var(--section-padding) 40px;
+  padding: var(--section-padding) 20px;
   overflow: hidden;
 }
 
@@ -41,8 +41,8 @@
 
 /* ── 3D Perspective container ── */
 .perspective {
-  perspective: 1200px;
-  max-width: 900px;
+  perspective: 1400px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 

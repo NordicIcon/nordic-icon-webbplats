@@ -8,7 +8,7 @@
   max-width: var(--container-max);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
+  grid-template-columns: 1fr 1.6fr;
   align-items: center;
   gap: 60px;
 }
@@ -89,8 +89,8 @@
 
 .glowBg {
   position: absolute;
-  width: 520px;
-  height: 820px;
+  width: 800px;
+  height: 1200px;
   background: radial-gradient(ellipse, rgba(27, 58, 107, 0.18) 0%, transparent 70%);
   border-radius: 50%;
   top: 50%;
@@ -101,9 +101,10 @@
 
 .phoneWrapper {
   position: relative;
-  width: 400px;
+  width: 100%;
+  max-width: 700px;
   will-change: transform;
-  filter: drop-shadow(0 24px 60px rgba(27, 58, 107, 0.25));
+  filter: drop-shadow(0 32px 80px rgba(27, 58, 107, 0.3));
 }
 
 /* ── Mobile ── */
@@ -127,6 +128,7 @@
   }
 
   .phoneWrapper {
-    width: 240px;
+    width: 75%;
+    max-width: 320px;
   }
 }
