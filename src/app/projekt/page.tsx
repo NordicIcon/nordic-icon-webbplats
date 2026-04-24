@@ -58,6 +58,8 @@ const projects = [
 ];
 
 export default function ProjektPage() {
+  const [featured, ...rest] = projects;
+
   return (
     <>
       <section className={styles.hero}>
@@ -76,26 +78,52 @@ export default function ProjektPage() {
 
       <section className={styles.grid}>
         <div className={styles.gridInner}>
-          {projects.map((p, i) => (
-            <div key={p.id} className={`${styles.card} ${i < 2 ? styles.cardLarge : ''}`}>
-              <div className={styles.cardBg}>
+          {/* Disclaimer */}
+          <p className={styles.disclaimer}>* Fiktiva referensprojekt — inga riktiga kunder</p>
+
+          {/* Featured card — full width */}
+          <div className={`${styles.cardWrap} ${styles.cardFeatured}`}>
+            <div className={styles.cardImage}>
+              <div className={styles.cardImageZoom}>
                 <Image
-                  src={p.image}
-                  alt={p.name}
+                  src={featured.image}
+                  alt={featured.name}
                   fill
                   style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
-                  sizes="(max-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 1200px"
+                  priority
                 />
+              </div>
+              <div className={styles.cardOverlay} />
+            </div>
+            <div className={styles.cardText}>
+              <span className={styles.cardPlan}>{featured.plan}</span>
+              <span className={styles.cardName}>{featured.name}</span>
+              <span className={styles.cardMeta}>{featured.industry} · {featured.city}</span>
+              <p className={styles.cardDesc}>{featured.desc}</p>
+            </div>
+          </div>
+
+          {/* Remaining cards — 2-column grid */}
+          {rest.map((p) => (
+            <div key={p.id} className={styles.cardWrap}>
+              <div className={styles.cardImage}>
+                <div className={styles.cardImageZoom}>
+                  <Image
+                    src={p.image}
+                    alt={p.name}
+                    fill
+                    style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                </div>
                 <div className={styles.cardOverlay} />
-                <div className={styles.cardContent}>
-                  <span className={styles.cardPlan}>{p.plan}</span>
-                  <span className={styles.cardName}>{p.name}</span>
-                  <span className={styles.cardMeta}>{p.industry} · {p.city}</span>
-                </div>
-                <div className={styles.cardHover}>
-                  <span>{p.desc}</span>
-                  <span className={styles.cardHoverLink}>Se projektet →</span>
-                </div>
+              </div>
+              <div className={styles.cardText}>
+                <span className={styles.cardPlan}>{p.plan}</span>
+                <span className={styles.cardName}>{p.name}</span>
+                <span className={styles.cardMeta}>{p.industry} · {p.city}</span>
+                <p className={styles.cardDesc}>{p.desc}</p>
               </div>
             </div>
           ))}

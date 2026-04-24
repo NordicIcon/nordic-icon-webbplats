@@ -52,7 +52,7 @@ const projects = [
   },
 ];
 
-const RADIUS     = 290;
+const RADIUS     = 420;
 const ANGLE_STEP = (Math.PI * 2) / projects.length; /* 72° between 5 cards */
 
 function getCardStyle(index: number, activeIndex: number) {
@@ -67,7 +67,7 @@ function getCardStyle(index: number, activeIndex: number) {
 
   return {
     transform: `translate(${x}px, ${y}px) scale(${isActive ? 1 : 0.72})`,
-    opacity: isActive ? 1 : far ? 0.3 : 0.5,
+    opacity: isActive ? 1 : far ? 0.55 : 0.75,
     filter: isActive ? 'none' : 'blur(2px)',
     zIndex: isActive ? 4 : Math.abs(signed) === 1 ? 2 : 1,
     transition: 'transform 0.55s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.55s ease, filter 0.55s ease',
@@ -194,16 +194,9 @@ export default function Portfolio() {
                     alt={project.name}
                     fill
                     style={{ objectFit: 'cover', objectPosition: 'top' }}
-                    sizes="260px"
+                    sizes="420px"
                   />
                   <div className={styles.cardOverlay} />
-                  <div className={styles.cardContent}>
-                    <span className={styles.cardPlan}>{project.plan}</span>
-                    <span className={styles.cardName}>{project.name}</span>
-                    <span className={styles.cardMeta}>
-                      {project.industry} · {project.city}
-                    </span>
-                  </div>
                 </div>
               </div>
             ))}

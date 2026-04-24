@@ -50,8 +50,8 @@
 /* ── Stage ── */
 .stage {
   position: relative;
-  height: 560px;
-  max-width: 900px;
+  height: 720px;
+  max-width: 960px;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -68,8 +68,8 @@
 /* Each card is positioned absolutely via JS translate */
 .card {
   position: absolute;
-  width: 400px;
-  height: 225px;
+  width: 560px;
+  height: 315px;
   border-radius: 16px;
   cursor: pointer;
   will-change: transform, opacity, filter;
@@ -100,8 +100,8 @@
   z-index: 1;
 }
 
-/* Offset each card from center (half of 400×225) */
-.card { margin-left: -200px; margin-top: -112px; }
+/* Offset each card from center (half of 560×315) */
+.card { margin-left: -280px; margin-top: -158px; }
 
 .cardContent {
   position: relative;
@@ -291,8 +291,8 @@
     opacity: 1 !important;
     filter: none !important;
     flex-shrink: 0;
-    width: 200px;
-    height: 260px;
+    width: 280px;
+    height: 157px;
     margin: 0;
   }
 
