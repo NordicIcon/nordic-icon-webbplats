@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import styles from './page.module.css';
 import Footer from '@/components/Footer';
 import PreFooterCTA from '@/components/PreFooterCTA';
@@ -16,8 +17,7 @@ const projects = [
     city: 'Halmstad',
     plan: 'PRO',
     desc: 'Animerad webbplats för Halmstads ledande specialty coffee-bar.',
-    bg: 'linear-gradient(135deg, #2C1810 0%, #C17B35 100%)',
-    featured: true,
+    image: '/images/koppar-card.png',
   },
   {
     id: 'havets',
@@ -26,8 +26,16 @@ const projects = [
     city: 'Göteborg',
     plan: 'PRO',
     desc: 'Mörk premium-sajt för fine dining-restaurang i centrala Göteborg.',
-    bg: 'linear-gradient(135deg, #0D1B2A 0%, #1B3A6B 100%)',
-    featured: true,
+    image: '/images/havets-card.png',
+  },
+  {
+    id: 'solberg',
+    name: 'Solberg',
+    industry: 'Restaurang',
+    city: 'Stockholm',
+    plan: 'PRO',
+    desc: 'Modern restaurangsajt med premium-design och bokningssystem.',
+    image: '/images/solberg-card.png',
   },
   {
     id: 'strand-studio',
@@ -36,8 +44,7 @@ const projects = [
     city: 'Stockholm',
     plan: 'BAS',
     desc: 'Ren och professionell salong-sajt i light editorial-stil.',
-    bg: 'linear-gradient(135deg, #2A2A28 0%, #6A6A60 100%)',
-    featured: false,
+    image: '/images/strand-studio-card.png',
   },
   {
     id: 'lindqvist-vvs',
@@ -46,8 +53,7 @@ const projects = [
     city: 'Karlstad',
     plan: 'BAS',
     desc: 'Trovärdig BAS-sajt för lokal VVS-firma i Karlstad.',
-    bg: 'linear-gradient(135deg, #1A3B35 0%, #2D6A5F 100%)',
-    featured: false,
+    image: '/images/lindqvist-card.png',
   },
 ];
 
@@ -73,9 +79,16 @@ export default function ProjektPage() {
           {projects.map(p => (
             <div
               key={p.id}
-              className={`${styles.card} ${p.featured ? styles.cardFeatured : ''}`}
+              className={styles.card}
             >
-              <div className={styles.cardBg} style={{ background: p.bg }}>
+              <div className={styles.cardBg}>
+                <Image
+                  src={p.image}
+                  alt={p.name}
+                  fill
+                  style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
                 <div className={styles.cardOverlay} />
                 <div className={styles.cardContent}>
                   <span className={styles.cardPlan}>{p.plan}</span>
