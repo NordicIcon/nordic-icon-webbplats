@@ -1,4 +1,4 @@
-.section {
+﻿.section {
   height: 500vh;
   position: relative;
 }
@@ -83,7 +83,7 @@
 }
 
 /* Mobile — horizontal scroll-snap slideshow */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .section {
     height: auto;
   }

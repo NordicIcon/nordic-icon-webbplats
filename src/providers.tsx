@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect } from 'react';
 import Lenis from 'lenis';
@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     /* Lenis causes scroll-snap and touch conflicts on mobile — desktop only */
-    if (window.matchMedia('(max-width: 768px)').matches) return;
+    if (window.matchMedia('(max-width: 1024px)').matches) return;
 
     const lenis = new Lenis({
       duration: 1.4,

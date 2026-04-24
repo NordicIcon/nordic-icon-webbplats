@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
@@ -112,7 +112,7 @@ function ProjektContent() {
                       alt={featured.name}
                       fill
                       style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
-                      sizes="(max-width: 768px) 100vw, 1200px"
+                      sizes="(max-width: 1024px) 100vw, 1200px"
                       priority
                     />
                   </div>
@@ -136,7 +136,7 @@ function ProjektContent() {
                         alt={p.name}
                         fill
                         style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
-                        sizes="(max-width: 768px) 100vw, 50vw"
+                        sizes="(max-width: 1024px) 100vw, 50vw"
                       />
                     </div>
                     <div className={styles.cardOverlay} />

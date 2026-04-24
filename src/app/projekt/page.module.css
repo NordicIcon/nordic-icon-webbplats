@@ -1,4 +1,4 @@
-.hero {
+﻿.hero {
   padding: clamp(120px, 14vw, 200px) clamp(32px, 6vw, 100px) clamp(60px, 6vw, 100px);
   background: var(--bg);
   border-bottom: 1px solid var(--border);
@@ -188,7 +188,7 @@
   line-height: 1.55;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero {
     padding: 120px 24px 64px;
   }

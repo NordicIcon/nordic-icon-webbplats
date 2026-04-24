@@ -1,4 +1,4 @@
-.nav {
+﻿.nav {
   position: fixed;
   top: 0;
   left: 0;
@@ -230,7 +230,7 @@
   background: var(--accent-hover);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .links {
     display: none;
   }

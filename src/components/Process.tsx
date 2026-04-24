@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
@@ -47,7 +47,7 @@ export default function Process() {
   const stepsRef   = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (window.matchMedia('(max-width: 768px)').matches) return;
+    if (window.matchMedia('(max-width: 1024px)').matches) return;
 
     const section = sectionRef.current;
     const stepsEl = stepsRef.current;

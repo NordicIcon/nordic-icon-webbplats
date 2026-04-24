@@ -33,6 +33,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="sv">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+      </head>
       <body>
         <SmoothScroll>
           <PageLoader />

@@ -1,4 +1,4 @@
-.section {
+﻿.section {
   padding: var(--section-padding) 20px;
   overflow: hidden;
 }
@@ -189,7 +189,7 @@
   border-radius: 8px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .section {
     padding: 80px 20px;
   }

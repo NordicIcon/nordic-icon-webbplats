@@ -1,4 +1,4 @@
-.section {
+﻿.section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 300vh;
@@ -149,7 +149,7 @@
 }
 
 /* ── Mobile ── */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .section {
     grid-template-columns: 1fr;
     min-height: auto;

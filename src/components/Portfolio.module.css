@@ -1,4 +1,4 @@
-.section {
+﻿.section {
   padding: clamp(100px, 12vw, 180px) 40px clamp(80px, 10vw, 140px);
   overflow: visible;
   position: relative;
@@ -262,7 +262,7 @@
 }
 
 /* ── Mobile ── */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .section {
     padding: 60px 24px;
   }

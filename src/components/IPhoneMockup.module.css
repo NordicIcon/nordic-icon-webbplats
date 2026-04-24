@@ -1,4 +1,4 @@
-.section {
+﻿.section {
   padding: var(--section-padding) 40px;
   background: var(--bg);
   overflow: hidden;
@@ -108,7 +108,7 @@
 }
 
 /* ── Mobile ── */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .inner {
     grid-template-columns: 1fr;
     gap: 48px;

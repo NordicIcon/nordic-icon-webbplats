@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useRef } from 'react';
 import Image from 'next/image';
@@ -49,7 +49,7 @@ export default function ContainerScroll() {
               alt="Koppar PRO — Specialty Coffee Halmstad"
               fill
               style={{ objectFit: 'cover', objectPosition: 'top' }}
-              sizes="(max-width: 768px) 100vw, 800px"
+              sizes="(max-width: 1024px) 100vw, 800px"
               priority
             />
           </div>

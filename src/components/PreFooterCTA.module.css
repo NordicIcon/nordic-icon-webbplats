@@ -1,4 +1,4 @@
-.section {
+﻿.section {
   position: relative;
   z-index: 1;
   background: var(--bg-dark);
@@ -121,7 +121,7 @@
   color: rgba(240, 240, 238, 0.85);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .section {
     padding: 80px 24px;
   }

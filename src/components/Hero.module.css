@@ -1,4 +1,4 @@
-.hero {
+﻿.hero {
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -160,7 +160,7 @@
 }
 
 /* ── Mobile ── */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hero {
     padding: 100px 20px 60px;
   }
