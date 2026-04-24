@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './PageLoader.module.css';
 
@@ -48,7 +49,13 @@ export default function PageLoader() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 1.0 }}
             >
-              NORDIC ICON
+              <Image
+                src="/images/nordic-icon-vit.png"
+                alt="Nordic Icon"
+                width={160}
+                height={32}
+                style={{ width: 160, height: 'auto', opacity: 0.7 }}
+              />
             </motion.div>
           </div>
         </motion.div>

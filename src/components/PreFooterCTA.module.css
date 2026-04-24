@@ -85,7 +85,7 @@
 }
 
 .btn {
-  cursor: none;
+  cursor: pointer;
   border-radius: var(--radius-full);
   padding: 0.9rem 2rem;
   font-size: 0.9375rem;

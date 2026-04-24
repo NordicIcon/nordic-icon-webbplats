@@ -131,7 +131,7 @@
   align-items: center;
   gap: 8px;
   text-decoration: none;
-  cursor: none;
+  cursor: pointer;
   border: none;
   transition: background 0.2s, box-shadow 0.2s;
   will-change: transform;

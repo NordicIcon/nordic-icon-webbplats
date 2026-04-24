@@ -43,13 +43,18 @@
 /* Plans */
 .plansSection {
   padding: clamp(60px, 8vw, 120px) clamp(40px, 6vw, 100px) clamp(80px, 10vw, 140px);
-  background: linear-gradient(180deg, #e8eef5 0%, #f0f4f8 40%, #fafcff 100%);
-  animation: skyShift 12s ease-in-out infinite alternate;
+  position: relative;
+  background-image: url('/images/planer-bg.png');
+  background-size: cover;
+  background-position: center 40%;
 }
 
-@keyframes skyShift {
-  0% { background: linear-gradient(180deg, #e8eef5 0%, #f0f4f8 40%, #fafcff 100%); }
-  100% { background: linear-gradient(180deg, #dce8f2 0%, #e8f0f8 40%, #f5faff 100%); }
+.plansSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(240, 246, 255, 0.55);
+  backdrop-filter: blur(2px);
 }
 
 .plansGrid {
@@ -59,6 +64,8 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   align-items: start;
+  position: relative;
+  z-index: 1;
 }
 
 .planCard {
@@ -230,6 +237,22 @@
 
 .planCtaFeatured:hover {
   background: var(--accent-hover);
+}
+
+.planExample {
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: var(--accent);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: opacity 0.2s;
+}
+
+.planExample:hover {
+  opacity: 0.7;
 }
 
 /* Addons */

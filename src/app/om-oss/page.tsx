@@ -21,13 +21,13 @@ const values = [
   },
   {
     number: '03',
-    title: 'Snabb utan att stressa.',
-    text: '10 dagar är inte en ursäkt för lägre kvalitet. Det är resultatet av en skarp process byggd på erfarenhet.',
+    title: 'Rätt tempo, varje gång.',
+    text: 'BAS på 10 dagar. PRO på 14. ELITE på 21. Varje deadline är ett löfte — inte en förhoppning.',
   },
   {
     number: '04',
-    title: 'Du pratar alltid med oss.',
-    text: 'Inget callcenter. Inget projekthanteringssystem med 40 formulär. Direktkontakt från brief till leverans.',
+    title: 'Transparens utan undantag.',
+    text: 'Du vet exakt vad du betalar för, vad vi jobbar på och när det är klart. Inga dolda avgifter. Inga obehagliga överraskningar.',
   },
 ];
 

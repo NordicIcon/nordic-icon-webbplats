@@ -1,0 +1,22 @@
+# Nordic Icon — llms.txt
+# https://nordicicon.se
+
+## About
+Nordic Icon AB builds premium websites for Swedish businesses.
+We specialize in animated, mobile-optimized websites delivered in 10–21 days.
+
+## Services
+- BAS: Professional website, 4 pages, SEO, Google Analytics — from 7 900 SEK
+- PRO: Animated website, Framer Motion + GSAP, up to 8 pages — from 15 900 SEK
+- ELITE: Fully custom, 3D effects, up to 15 pages — from 34 900 SEK
+
+## Contact
+Email: info@nordicicon.se
+Website: https://nordicicon.se
+
+## Pages
+- Home: https://nordicicon.se/
+- Projects: https://nordicicon.se/projekt
+- Plans & Pricing: https://nordicicon.se/planer
+- About: https://nordicicon.se/om-oss
+- Contact: https://nordicicon.se/kontakt

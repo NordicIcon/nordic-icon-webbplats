@@ -28,7 +28,7 @@ const steps = [
     number: '03',
     label: 'REVIDERING',
     title: 'Vi jobbar tills du är nöjd.',
-    body: 'Du har 3 (BAS) eller 5 (PRO/ELITE) revideringsrundor. Kan vi ändå inte enas — återbetalar vi 50%.',
+    body: 'Vi itererar tills resultatet är rätt. Varje plan inkluderar ett antal revideringsrundor — och om vi ändå inte kan enas, återbetalar vi 50 % av beloppet.',
     bg: '#0D1B2A',
     textColor: '#FAFAFA',
   },

@@ -123,7 +123,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p className={styles.subtext} variants={item}>
-          Animerade. Mobilanpassade. Klara på 10 dagar.
+          Animerade. Mobilanpassade. Premium utan kompromisser.
         </motion.p>
 
         <motion.div className={styles.ctas} variants={item}>

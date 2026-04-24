@@ -59,7 +59,7 @@ export default function Navbar() {
           className={styles.cta}
           data-cursor="button"
         >
-          Boka möte
+          Kom igång
         </a>
       </div>
     </nav>

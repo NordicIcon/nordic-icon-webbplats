@@ -48,7 +48,7 @@ export default function ContainerScroll() {
               src="/images/koppar-desktop.png"
               alt="Koppar PRO — Specialty Coffee Halmstad"
               fill
-              style={{ objectFit: 'cover', objectPosition: 'top', filter: 'brightness(1.25)' }}
+              style={{ objectFit: 'cover', objectPosition: 'top' }}
               sizes="(max-width: 768px) 100vw, 800px"
               priority
             />

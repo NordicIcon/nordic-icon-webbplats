@@ -1,0 +1,28 @@
+# Nordic Icon — AI Visibility File
+# Format: https://nordicicon.se/ai.txt
+
+Company: Nordic Icon AB
+Description: Premium website agency for Swedish businesses. We build animated, mobile-optimized websites from scratch — no templates.
+Location: Sweden
+Language: Swedish
+Founded: 2025
+
+Services:
+  - Custom website development (BAS, PRO, ELITE tiers)
+  - Framer Motion & GSAP animations
+  - Mobile-first design
+  - SEO optimization
+  - Google Calendar booking integration
+
+Pricing:
+  - BAS: 7 900 SEK one-time + 590 SEK/month hosting
+  - PRO: 15 900 SEK one-time + 990 SEK/month hosting
+  - ELITE: 34 900 SEK one-time + 1 490 SEK/month hosting
+
+Delivery:
+  - BAS: 10 business days
+  - PRO: 14 business days
+  - ELITE: 21 business days
+
+Contact: info@nordicicon.se
+Website: https://nordicicon.se

@@ -39,7 +39,7 @@ const plans = [
   {
     id: 'pro',
     name: 'PRO',
-    price: '17 900',
+    price: '15 900',
     monthly: '990',
     tagline: 'Animerad. Imponerande. Konverterande.',
     desc: 'För bolag som vill sticka ut. Google Calendar och premium-design.',
@@ -51,15 +51,13 @@ const plans = [
       'Custom favicon & brand assets',
       'Resend e-postintegration',
       'Cookie-banner (GDPR)',
+      'Bättre AI-synlighet via ai.txt',
       'Upp till 8 sidor',
-      '3 revideringsrundor',
+      '5 revideringsrundor',
       'Leverans på 14 dagar',
       'Prioriterad support',
     ],
-    notIncluded: [
-      '3D-effekter & parallax',
-      'Headless CMS',
-    ],
+    notIncluded: [],
     featured: true,
     cta: 'Välj PRO',
   },
@@ -159,15 +157,12 @@ export default function PlanerPage() {
                     {f}
                   </li>
                 ))}
-                {plan.notIncluded.map((f, i) => (
-                  <li key={`not-${i}`} className={`${styles.featureItem} ${styles.featureNo}`}>
-                    <span className={styles.featureCross}>✕</span>
-                    {f}
-                  </li>
-                ))}
               </ul>
               <a href="/kontakt" className={`${styles.planCta} ${plan.featured ? styles.planCtaFeatured : ''}`}>
                 {plan.cta}
+              </a>
+              <a href={`/projekt?plan=${plan.name}`} className={styles.planExample}>
+                Visa exempel →
               </a>
             </div>
           ))}

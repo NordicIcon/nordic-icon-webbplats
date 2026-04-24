@@ -52,7 +52,7 @@ const projects = [
   },
 ];
 
-const CARD_GAP = 600; /* horizontal distance between card centers */
+const CARD_GAP = 680; /* horizontal distance between card centers */
 
 function getCardStyle(index: number, activeIndex: number) {
   const diff   = (index - activeIndex + projects.length) % projects.length;

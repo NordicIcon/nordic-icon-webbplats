@@ -28,7 +28,7 @@ const plans = [
   {
     id: 'pro',
     name: 'PRO',
-    price: '17 900',
+    price: '15 900',
     monthly: '990',
     tagline: 'Animerad. Imponerande. Konverterande.',
     features: [
@@ -39,6 +39,7 @@ const plans = [
       'Custom favicon & brand assets',
       'Resend e-postintegration',
       'Upp till 8 sidor',
+      'Bättre AI-synlighet via ai.txt',
       'Prioriterad support',
     ],
     cta: 'Välj PRO',
