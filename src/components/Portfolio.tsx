@@ -52,7 +52,7 @@ const projects = [
   },
 ];
 
-const RADIUS     = 260;
+const RADIUS     = 290;
 const ANGLE_STEP = (Math.PI * 2) / projects.length; /* 72° between 5 cards */
 
 function getCardStyle(index: number, activeIndex: number) {

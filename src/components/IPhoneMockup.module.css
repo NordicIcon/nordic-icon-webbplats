@@ -8,9 +8,9 @@
   max-width: var(--container-max);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 1fr;
   align-items: center;
-  gap: 80px;
+  gap: 60px;
 }
 
 /* ── Text ── */
@@ -275,6 +275,23 @@
 }
 
 /* ── Mobile ── */
+@media (max-width: 900px) {
+  .phone {
+    width: 240px;
+  }
+
+  .phoneShell {
+    width: 240px;
+    height: 490px;
+    border-radius: 46px;
+    padding: 14px;
+  }
+
+  .screen {
+    border-radius: 34px;
+  }
+}
+
 @media (max-width: 768px) {
   .inner {
     grid-template-columns: 1fr;
@@ -292,5 +309,16 @@
 
   .phoneSide {
     order: -1;
+  }
+
+  .phone {
+    width: 220px;
+  }
+
+  .phoneShell {
+    width: 220px;
+    height: 450px;
+    border-radius: 42px;
+    padding: 12px;
   }
 }

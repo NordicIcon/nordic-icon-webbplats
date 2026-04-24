@@ -68,8 +68,8 @@
 /* Each card is positioned absolutely via JS translate */
 .card {
   position: absolute;
-  width: 320px;
-  height: 180px;
+  width: 400px;
+  height: 225px;
   border-radius: 16px;
   cursor: pointer;
   will-change: transform, opacity, filter;
@@ -95,13 +95,13 @@
 .cardOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.05) 50%, transparent 100%);
+  background: rgba(0, 0, 0, 0.20);
   border-radius: 16px;
   z-index: 1;
 }
 
-/* Offset each card from center (half of 320×180) */
-.card { margin-left: -160px; margin-top: -90px; }
+/* Offset each card from center (half of 400×225) */
+.card { margin-left: -200px; margin-top: -112px; }
 
 .cardContent {
   position: relative;
@@ -217,7 +217,7 @@
 /* ── Arrow buttons ── */
 .arrow {
   position: absolute;
-  top: 54%;
+  top: 48%;
   transform: translateY(-50%);
   width: 44px;
   height: 44px;
