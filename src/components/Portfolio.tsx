@@ -42,14 +42,18 @@ const projects = [
     plan: 'PRO',
     image: '/images/solberg-card.png',
   },
+  {
+    id: 4,
+    name: 'Lindqvist VVS',
+    industry: 'VVS',
+    city: 'Karlstad',
+    plan: 'BAS',
+    image: '/images/lindqvist-card.png',
+  },
 ];
 
-/* Semi-circle math:
-   Cards sit on a circle of radius R.
-   Angle 0 = top (12 o'clock). Cards spread ±2 steps of 60° around the top.
-   baseRotation is driven by scroll. */
-const RADIUS   = 340;
-const ANGLE_STEP = Math.PI / 3; /* 60° between cards */
+const RADIUS     = 320;
+const ANGLE_STEP = (Math.PI * 2) / projects.length; /* 72° between 5 cards */
 
 function getCardStyle(index: number, activeIndex: number) {
   const diff  = (index - activeIndex + projects.length) % projects.length;
@@ -161,13 +165,13 @@ export default function Portfolio() {
   return (
     <section className={styles.section} ref={sectionRef}>
       <div data-portfolio-header className={styles.header}>
-        <div className={styles.label}>PORTFOLIO</div>
+        <div className={styles.label}>VÅRA PROJEKT</div>
         <h2 className={styles.heading}>
-          Hemsidor som
+          Fem projekt.
           <br />
-          <em>faktiskt imponerar.</em>
+          <em>Fem branscher.</em>
         </h2>
-        <p className={styles.sub}>Varje projekt byggs från grunden. Ingen mall. Ingen genväg.</p>
+        <p className={styles.sub}>Klicka på ett kort för att se detaljer.</p>
       </div>
 
       {/* Carousel — separate from header */}
