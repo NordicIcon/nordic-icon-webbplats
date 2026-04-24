@@ -169,6 +169,6 @@
   }
 
   .brandText {
-    font-size: clamp(40px, 20vw, 100px);
+    font-size: clamp(24px, 9vw, 60px);
   }
 }

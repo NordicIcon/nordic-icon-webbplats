@@ -42,10 +42,6 @@ export default function OmOssPage() {
             <br />
             <em>Sveriges hemsidor.</em>
           </h1>
-          <p className={styles.sub}>
-            Nordic Icon grundades med en enkel övertygelse: svenska bolag förtjänar
-            hemsidor i världsklass — utan att behöva betala byråpriser eller vänta i månader.
-          </p>
         </div>
       </section>
 

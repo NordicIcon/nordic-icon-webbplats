@@ -28,7 +28,7 @@ const steps = [
     number: '03',
     label: 'REVIDERING',
     title: 'Vi jobbar tills du är nöjd.',
-    body: 'Vi itererar tills resultatet är rätt. Varje plan inkluderar ett antal revideringsrundor — och om vi ändå inte kan enas, återbetalar vi 50 % av beloppet.',
+    body: 'Vi itererar tills resultatet är rätt. Varje plan inkluderar ett antal revideringsrundor.',
     bg: '#0D1B2A',
     textColor: '#FAFAFA',
   },
@@ -47,6 +47,8 @@ export default function Process() {
   const stepsRef   = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (window.matchMedia('(max-width: 768px)').matches) return;
+
     const section = sectionRef.current;
     const stepsEl = stepsRef.current;
     if (!section || !stepsEl) return;

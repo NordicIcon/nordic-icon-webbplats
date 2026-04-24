@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './Portfolio.module.css';
@@ -52,7 +53,7 @@ const projects = [
   },
 ];
 
-const CARD_GAP = 680; /* horizontal distance between card centers */
+const CARD_GAP = 580; /* horizontal distance between card centers */
 
 function getCardStyle(index: number, activeIndex: number) {
   const diff   = (index - activeIndex + projects.length) % projects.length;
@@ -62,11 +63,11 @@ function getCardStyle(index: number, activeIndex: number) {
   const isNear   = Math.abs(signed) === 1;
 
   return {
-    transform: `translateX(${x}px) scale(${isActive ? 1 : isNear ? 0.88 : 0.75})`,
-    opacity: isActive ? 1 : isNear ? 0.7 : 0,
-    filter: isActive ? 'none' : 'blur(3px)',
+    transform: `translateX(${x}px) scale(${isActive ? 1 : isNear ? 0.85 : 0.72})`,
+    opacity: isActive ? 1 : isNear ? 0.75 : 0,
+    filter: 'none',
     zIndex: isActive ? 4 : isNear ? 2 : 1,
-    transition: 'transform 0.55s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.55s ease, filter 0.55s ease',
+    transition: 'transform 0.55s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.55s ease',
   };
 }
 
@@ -76,6 +77,7 @@ export default function Portfolio() {
   const hasAnimated   = useRef(false);
   const [active, setActive] = useState(0);
   const scrollProgress = useRef(0);
+  const router = useRouter();
 
   const advance = useCallback((direction: 1 | -1) => {
     setActive(prev => (prev + direction + projects.length) % projects.length);
@@ -179,7 +181,7 @@ export default function Portfolio() {
                 key={project.id}
                 className={`${styles.card} ${i === active ? styles.cardActive : styles.cardInactive}`}
                 style={getCardStyle(i, active)}
-                onClick={() => setActive(i)}
+                onClick={() => i === active ? router.push('/projekt') : setActive(i)}
                 role="button"
                 tabIndex={0}
                 aria-label={`Visa ${project.name}`}
@@ -190,9 +192,8 @@ export default function Portfolio() {
                     alt={project.name}
                     fill
                     style={{ objectFit: 'cover', objectPosition: 'top' }}
-                    sizes="420px"
+                    sizes="780px"
                   />
-                  <div className={styles.cardOverlay} />
                 </div>
               </div>
             ))}

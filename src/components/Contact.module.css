@@ -194,4 +194,8 @@
   .formRow {
     grid-template-columns: 1fr;
   }
+
+  .phoneGroup {
+    display: none;
+  }
 }

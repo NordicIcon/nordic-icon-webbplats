@@ -39,7 +39,7 @@ const plans = [
       'Custom favicon & brand assets',
       'Resend e-postintegration',
       'Upp till 8 sidor',
-      'Bättre AI-synlighet via ai.txt',
+      'AI-synlighet',
       'Prioriterad support',
     ],
     cta: 'Välj PRO',

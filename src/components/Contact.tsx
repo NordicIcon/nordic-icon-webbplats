@@ -71,7 +71,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className={styles.formGroup}>
+              <div className={`${styles.formGroup} ${styles.phoneGroup}`}>
                 <label className={styles.formLabel}>Telefon</label>
                 <input
                   className={styles.input}

@@ -53,7 +53,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(240, 246, 255, 0.55);
+  background: rgba(240, 246, 255, 0.2);
   backdrop-filter: blur(2px);
 }
 
@@ -258,12 +258,47 @@
 /* Addons */
 .addonsSection {
   padding: clamp(80px, 10vw, 140px) clamp(40px, 6vw, 100px);
-  background: var(--bg-secondary);
+  background: var(--bg-dark);
 }
 
 .addonsInner {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+/* Dark-section overrides for addons */
+.addonsSection .sectionLabel {
+  color: rgba(240, 240, 238, 0.4);
+}
+
+.addonsSection .sectionHeading {
+  color: #F0F0EE;
+}
+
+.addonsSection .sectionHeading em {
+  color: rgba(240, 240, 238, 0.7);
+}
+
+.addonsSection .addonCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.addonsSection .addonCard:hover {
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.addonsSection .addonName {
+  color: #F0F0EE;
+}
+
+.addonsSection .addonDesc {
+  color: rgba(240, 240, 238, 0.5);
+}
+
+.addonsSection .addonPrice {
+  color: rgba(140, 185, 255, 0.85);
 }
 
 .sectionLabel {
@@ -435,6 +470,51 @@
   .faqSection {
     padding-left: 24px;
     padding-right: 24px;
+  }
+
+  /* On mobile: replace the sea background with solid brand blue */
+  .plansSection {
+    background-image: none;
+    background-color: var(--bg-dark);
+  }
+
+  .plansSection::before {
+    content: none;
+  }
+
+  /* Plan cards need slightly adjusted glass on dark bg */
+  .plansSection .planCard {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .plansSection .planName {
+    color: rgba(240, 240, 238, 0.5);
+  }
+
+  .plansSection .priceText,
+  .plansSection .planTagline {
+    color: #F0F0EE;
+  }
+
+  .plansSection .planDesc,
+  .plansSection .planMonthly,
+  .plansSection .featureItem {
+    color: rgba(240, 240, 238, 0.6);
+  }
+
+  .plansSection .featureCheck {
+    color: rgba(140, 185, 255, 0.9);
+  }
+
+  .plansSection .planCta {
+    border-color: rgba(255, 255, 255, 0.5);
+    color: #F0F0EE;
+  }
+
+  .plansSection .planCta:hover,
+  .plansSection .planCtaFeatured {
+    background: rgba(255, 255, 255, 0.15);
   }
 
   .addonsGrid {

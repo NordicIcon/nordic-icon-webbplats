@@ -51,7 +51,7 @@ const plans = [
       'Custom favicon & brand assets',
       'Resend e-postintegration',
       'Cookie-banner (GDPR)',
-      'Bättre AI-synlighet via ai.txt',
+      'AI-synlighet',
       'Upp till 8 sidor',
       '5 revideringsrundor',
       'Leverans på 14 dagar',
@@ -97,7 +97,7 @@ const faqs = [
   },
   {
     q: 'Vad händer om jag inte är nöjd?',
-    a: 'Du har 3 (BAS) eller 5 (PRO/ELITE) revideringsrundor. Om vi ändå inte kan komma överens om ett resultat du är nöjd med återbetalar vi 50% av beloppet.',
+    a: 'Du har 3 (BAS) eller 5 (PRO/ELITE) revideringsrundor. Vi jobbar tills du är nöjd.',
   },
   {
     q: 'Äger jag hemsidan?',
