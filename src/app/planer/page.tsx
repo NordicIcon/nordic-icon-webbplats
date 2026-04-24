@@ -74,7 +74,6 @@ const plans = [
       'Allt i PRO, plus:',
       'GSAP ScrollTrigger-animationer',
       '3D-effekter & parallax',
-      'Headless CMS (Sanity/Contentful)',
       'Custom animations & micro-interactions',
       'Upp till 15 sidor',
       '5 revideringsrundor',
@@ -95,8 +94,8 @@ const addons = [
 
 const faqs = [
   {
-    q: 'Vad ingår i "Leverans på 10 dagar"?',
-    a: 'Vi levererar en färdig, live-satt hemsida inom 10 arbetsdagar från signerat avtal. Tidsplanen förutsätter att du levererar material (texter, logotyp) inom 2 dagar från start.',
+    q: 'Hur lång tid tar det?',
+    a: 'BAS levereras på 10 arbetsdagar, PRO på 14 arbetsdagar och ELITE på 21 arbetsdagar — räknat från signerat avtal och levererat material (texter, logotyp) inom 2 dagar från start.',
   },
   {
     q: 'Vad händer om jag inte är nöjd?',
@@ -113,10 +112,6 @@ const faqs = [
   {
     q: 'Hur ser betalningen ut?',
     a: '50% vid projektstart, 50% vid leverans. Vi fakturerar via e-post med 14 dagars betalningsvillkor.',
-  },
-  {
-    q: 'Kan ni bygga e-handel?',
-    a: 'Ja — som tillägg till PRO eller som en del av ELITE. Vi integrerar Stripe och/eller Klarna med ditt varulager.',
   },
 ];
 

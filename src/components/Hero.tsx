@@ -140,11 +140,11 @@ export default function Hero() {
           </a>
           <a
             ref={secondaryRef as React.RefObject<HTMLAnchorElement>}
-            href="/projekt"
+            href="/planer"
             className={`${styles.btn} ${styles.btnSecondary}`}
             data-cursor="button"
           >
-            Se våra projekt
+            Se planer & priser
           </a>
         </motion.div>
       </motion.div>

@@ -57,10 +57,10 @@ export default function IPhoneMockup() {
               {/* Screen */}
               <div className={styles.screen}>
                 <Image
-                  src="/images/koppar-mobile.jpg"
-                  alt="Koppar — mobilvy"
+                  src="/images/nordic-icon-enhanced.png"
+                  alt="Mobilanpassad webbplats"
                   fill
-                  style={{ objectFit: 'cover', objectPosition: 'top' }}
+                  style={{ objectFit: 'cover', objectPosition: 'top center' }}
                   sizes="280px"
                 />
               </div>

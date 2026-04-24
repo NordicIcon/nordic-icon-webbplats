@@ -4,7 +4,6 @@ import { SmoothScroll } from '@/providers';
 import Navbar from '@/components/Navbar';
 import PageLoader from '@/components/PageLoader';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
-import CustomCursor from '@/components/CustomCursor';
 
 export const metadata: Metadata = {
   title: 'Nordic Icon — Premium hemsidor för svenska bolag',
@@ -30,7 +29,6 @@ export default function RootLayout({
     <html lang="sv">
       <body>
         <SmoothScroll>
-          <CustomCursor />
           <PageLoader />
           <ScrollProgressBar />
           <Navbar />

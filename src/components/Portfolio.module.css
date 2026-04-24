@@ -50,17 +50,39 @@
 /* ── Stage ── */
 .stage {
   position: relative;
-  height: 720px;
-  max-width: 960px;
+  height: 380px;
   margin: 0 auto;
   overflow: hidden;
 }
 
-/* The orbit anchor — anchored at the bottom-center of the stage */
+/* Fade edges so side cards dissolve into background */
+.stage::before,
+.stage::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 180px;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.stage::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg) 0%, transparent 100%);
+}
+
+.stage::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg) 0%, transparent 100%);
+}
+
+/* The orbit anchor — centered in the stage */
 .orbit {
   position: absolute;
-  bottom: 0;
+  top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
   width: 0;
   height: 0;
 }

@@ -52,24 +52,20 @@ const projects = [
   },
 ];
 
-const RADIUS     = 420;
-const ANGLE_STEP = (Math.PI * 2) / projects.length; /* 72° between 5 cards */
+const CARD_GAP = 600; /* horizontal distance between card centers */
 
 function getCardStyle(index: number, activeIndex: number) {
-  const diff  = (index - activeIndex + projects.length) % projects.length;
-  /* Map diff to signed: 0=active, 1=right, 2=far right / left, 3=far left */
+  const diff   = (index - activeIndex + projects.length) % projects.length;
   const signed = diff <= projects.length / 2 ? diff : diff - projects.length;
-  const angle  = signed * ANGLE_STEP;
-  const x      = Math.sin(angle) * RADIUS;
-  const y      = -Math.cos(angle) * RADIUS;
+  const x      = signed * CARD_GAP;
   const isActive = signed === 0;
-  const far = Math.abs(signed) >= 2;
+  const isNear   = Math.abs(signed) === 1;
 
   return {
-    transform: `translate(${x}px, ${y}px) scale(${isActive ? 1 : 0.72})`,
-    opacity: isActive ? 1 : far ? 0.55 : 0.75,
-    filter: isActive ? 'none' : 'blur(2px)',
-    zIndex: isActive ? 4 : Math.abs(signed) === 1 ? 2 : 1,
+    transform: `translateX(${x}px) scale(${isActive ? 1 : isNear ? 0.88 : 0.75})`,
+    opacity: isActive ? 1 : isNear ? 0.7 : 0,
+    filter: isActive ? 'none' : 'blur(3px)',
+    zIndex: isActive ? 4 : isNear ? 2 : 1,
     transition: 'transform 0.55s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.55s ease, filter 0.55s ease',
   };
 }
