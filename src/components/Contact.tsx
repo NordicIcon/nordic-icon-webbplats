@@ -49,13 +49,7 @@ export default function Contact() {
             </a>
           </div>
 
-          {sent ? (
-            <div className={styles.thanks}>
-              <span className={styles.thanksIcon}>✓</span>
-              Tack. Vi återkommer inom några timmar.
-            </div>
-          ) : (
-            <form className={styles.form} onSubmit={handleSubmit}>
+          <form className={styles.form} onSubmit={handleSubmit}>
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>
                   <label className={styles.formLabel}>Namn *</label>
@@ -114,18 +108,26 @@ export default function Contact() {
               <button
                 ref={submitRef as React.RefObject<HTMLButtonElement>}
                 type="submit"
-                className={styles.submitBtn}
-                disabled={loading}
+                className={`${styles.submitBtn} ${sent ? styles.submitBtnSent : ''}`}
+                disabled={loading || sent}
               >
-                {loading ? 'Skickar...' : 'Skicka meddelande'}
-                {!loading && (
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
-                    <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                {loading ? 'Skickar...' : sent ? (
+                  <>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
+                      <path d="M2 7l3.5 3.5L12 3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    Skickat!
+                  </>
+                ) : (
+                  <>
+                    Skicka meddelande
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
+                      <path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </>
                 )}
               </button>
             </form>
-          )}
         </div>
 
         {/* Right: booking calendar */}

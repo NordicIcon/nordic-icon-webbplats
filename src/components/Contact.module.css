@@ -163,6 +163,13 @@
   cursor: not-allowed;
 }
 
+.submitBtnSent {
+  background: #16a34a !important;
+  box-shadow: 0 4px 20px rgba(22,163,74,0.35) !important;
+  cursor: default !important;
+  opacity: 1 !important;
+}
+
 .thanks {
   display: flex;
   align-items: center;

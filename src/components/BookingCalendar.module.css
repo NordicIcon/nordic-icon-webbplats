@@ -1,6 +1,6 @@
 .widget {
-  background: var(--bg);
-  border: 1px solid var(--border);
+  background: var(--bg-dark);
+  border: 1px solid rgba(255,255,255,0.07);
   border-radius: var(--radius-2xl);
   padding: 40px;
   min-height: 400px;
@@ -15,13 +15,13 @@
   font-size: var(--text-label);
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: var(--accent);
+  color: rgba(160,190,255,0.85);
   margin-bottom: 8px;
 }
 
 .widgetSub {
   font-size: 13px;
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.45);
 }
 
 /* ── Calendar ── */
@@ -39,13 +39,13 @@
   font-size: 12px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text);
+  color: rgba(255,255,255,0.9);
 }
 
 .monthNav {
   background: none;
   border: none;
-  color: var(--text-secondary);
+  color: rgba(255,255,255,0.45);
   cursor: pointer;
   font-size: 16px;
   padding: 4px 8px;
@@ -55,8 +55,8 @@
 }
 
 .monthNav:hover {
-  background: var(--accent-subtle);
-  color: var(--accent);
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.9);
 }
 
 .monthLabel {
@@ -80,7 +80,7 @@
   font-size: 10px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.3);
   text-align: center;
   padding: 4px 0;
 }
@@ -102,14 +102,14 @@
   cursor: pointer;
   font-size: 13px;
   font-weight: 500;
-  color: var(--text);
+  color: rgba(255,255,255,0.85);
   transition: background 0.15s, border-color 0.15s, color 0.15s;
 }
 
 .dayBtn:not(:disabled):hover {
-  background: var(--accent-subtle);
-  border-color: var(--accent);
-  color: var(--accent);
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.2);
+  color: white;
 }
 
 .dayWeekend {
@@ -118,15 +118,15 @@
 }
 
 .dayDisabled {
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.2);
   cursor: not-allowed;
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 .daySelected {
-  background: var(--accent) !important;
-  color: white !important;
-  border-color: var(--accent) !important;
+  background: white !important;
+  color: var(--bg-dark) !important;
+  border-color: white !important;
 }
 
 /* ── Times ── */
@@ -141,27 +141,27 @@
   border: none;
   cursor: pointer;
   font-size: 12px;
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.4);
   letter-spacing: 0.04em;
   text-align: left;
   transition: color 0.15s;
 }
 
 .back:hover {
-  color: var(--text);
+  color: rgba(255,255,255,0.8);
 }
 
 .selectedDateLabel {
   font-family: var(--font-heading);
   font-size: 1.5rem;
   font-weight: 300;
-  color: var(--text);
+  color: white;
   font-style: italic;
 }
 
 .loading {
   font-size: 13px;
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.4);
 }
 
 .timeSlots {
@@ -172,20 +172,20 @@
 
 .timeSlot {
   padding: 12px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255,255,255,0.12);
   border-radius: var(--radius-lg);
-  background: none;
+  background: rgba(255,255,255,0.04);
   cursor: pointer;
   font-family: var(--font-mono);
   font-size: 13px;
-  color: var(--text);
+  color: rgba(255,255,255,0.85);
   transition: background 0.15s, border-color 0.15s, color 0.15s;
   text-align: center;
 }
 
 .timeSlot:hover {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.3);
   color: white;
 }
 
@@ -200,8 +200,8 @@
   font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.06em;
-  color: var(--accent);
-  background: var(--accent-subtle);
+  color: rgba(160,190,255,0.9);
+  background: rgba(255,255,255,0.07);
   padding: 8px 14px;
   border-radius: var(--radius-md);
   display: inline-block;
@@ -218,52 +218,52 @@
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.4);
 }
 
 .formInput {
   padding: 12px 16px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(255,255,255,0.12);
   border-radius: var(--radius-lg);
-  background: var(--bg);
+  background: rgba(255,255,255,0.06);
   font-family: var(--font-body);
   font-size: var(--text-body-sm);
-  color: var(--text);
+  color: white;
   transition: border-color 0.15s, box-shadow 0.15s;
   outline: none;
 }
 
 .formInput:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-subtle);
+  border-color: rgba(255,255,255,0.35);
+  box-shadow: 0 0 0 3px rgba(255,255,255,0.07);
 }
 
 .formInput::placeholder {
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.25);
 }
 
 .bookBtn {
   padding: 0.9rem;
   border-radius: var(--radius-full);
-  background: var(--accent);
-  color: white;
+  background: white;
+  color: var(--bg-dark);
   border: none;
   cursor: pointer;
   font-size: 0.9375rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.04em;
-  box-shadow: 0 4px 16px var(--accent-shadow);
-  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: background 0.2s, box-shadow 0.2s, opacity 0.2s;
   margin-top: 8px;
 }
 
 .bookBtn:hover:not(:disabled) {
-  background: var(--accent-hover);
-  box-shadow: 0 8px 28px var(--accent-shadow);
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
 }
 
 .bookBtn:disabled {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: not-allowed;
 }
 
