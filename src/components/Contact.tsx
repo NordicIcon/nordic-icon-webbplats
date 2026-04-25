@@ -6,22 +6,24 @@ import BookingCalendar from './BookingCalendar';
 import styles from './Contact.module.css';
 
 export default function Contact() {
-  const [form, setForm]     = useState({ name: '', email: '', company: '', phone: '', message: '' });
-  const [sent, setSent]     = useState(false);
+  const [form, setForm]       = useState({ name: '', email: '', company: '', phone: '', message: '' });
+  const [sent, setSent]       = useState(false);
   const [loading, setLoading] = useState(false);
   const submitRef = useMagneticButton(0.2);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (loading || sent) return;
     setLoading(true);
     try {
-      await fetch('/api/contact', {
+      const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
-    } catch {
-      // show success regardless — don't leave user hanging
+      if (!res.ok) console.error('contact API error:', await res.text());
+    } catch (err) {
+      console.error('contact fetch error:', err);
     }
     setSent(true);
     setLoading(false);
@@ -106,7 +108,6 @@ export default function Contact() {
               </div>
 
               <button
-                ref={submitRef as React.RefObject<HTMLButtonElement>}
                 type="submit"
                 className={`${styles.submitBtn} ${sent ? styles.submitBtnSent : ''}`}
                 disabled={loading || sent}
