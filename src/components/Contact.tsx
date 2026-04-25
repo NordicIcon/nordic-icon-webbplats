@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useMagneticButton } from '@/hooks/useMagneticButton';
 import BookingCalendar from './BookingCalendar';
 import styles from './Contact.module.css';
 
@@ -9,7 +8,6 @@ export default function Contact() {
   const [form, setForm]       = useState({ name: '', email: '', company: '', phone: '', message: '' });
   const [sent, setSent]       = useState(false);
   const [loading, setLoading] = useState(false);
-  const submitRef = useMagneticButton(0.2);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
