@@ -2,15 +2,24 @@ import { NextRequest } from 'next/server';
 import { Resend } from 'resend';
 import { createClient } from '@supabase/supabase-js';
 
+function saveToBackOffice(data: Record<string, unknown>) {
+  if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) return;
+  const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false } });
+  supabase.from('calendar_bookings').insert(data).then(() => {});
+}
+
 export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const body = await req.json();
     const { date, time, name, email, company, plan } = body;
 
-    // Save to back office
-    const supabase = createClient(process.env.SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY!, { auth: { persistSession: false } });
-    await supabase.from('calendar_bookings').insert({
+    if (!name || !email) {
+      return Response.json({ error: 'Missing required fields' }, { status: 400 });
+    }
+
+    // Save to back office (non-blocking — never breaks email delivery)
+    saveToBackOffice({
       name, email, company,
       meeting_date: date || null,
       meeting_time: time || null,
@@ -18,10 +27,6 @@ export async function POST(req: NextRequest) {
       source: date ? 'booking_calendar' : 'plans_modal',
       status: 'ny',
     });
-
-    if (!name || !email) {
-      return Response.json({ error: 'Missing required fields' }, { status: 400 });
-    }
 
     const dateLabel = date && time ? `${date} kl. ${time}` : 'Att bestämmas';
     const companyLabel = company ? ` (${company})` : '';
