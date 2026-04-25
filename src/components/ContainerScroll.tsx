@@ -49,7 +49,7 @@ export default function ContainerScroll() {
               alt="Koppar PRO — Specialty Coffee Halmstad"
               fill
               style={{ objectFit: 'cover', objectPosition: 'top' }}
-              sizes="(max-width: 1024px) 100vw, 800px"
+              sizes="(max-width: 1024px) calc(100vw - 40px), 1280px"
               priority
             />
           </div>

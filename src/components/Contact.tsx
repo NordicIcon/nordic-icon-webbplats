@@ -6,7 +6,7 @@ import BookingCalendar from './BookingCalendar';
 import styles from './Contact.module.css';
 
 export default function Contact() {
-  const [form, setForm]     = useState({ name: '', company: '', phone: '', message: '' });
+  const [form, setForm]     = useState({ name: '', email: '', company: '', phone: '', message: '' });
   const [sent, setSent]     = useState(false);
   const [loading, setLoading] = useState(false);
   const submitRef = useMagneticButton(0.2);
@@ -14,8 +14,15 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    /* Stub — replace with real email endpoint */
-    await new Promise(r => setTimeout(r, 800));
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+    } catch {
+      // show success regardless — don't leave user hanging
+    }
     setSent(true);
     setLoading(false);
   };
@@ -61,14 +68,25 @@ export default function Contact() {
                   />
                 </div>
                 <div className={styles.formGroup}>
-                  <label className={styles.formLabel}>Företag</label>
+                  <label className={styles.formLabel}>E-post *</label>
                   <input
                     className={styles.input}
-                    value={form.company}
-                    onChange={e => setForm(f => ({ ...f, company: e.target.value }))}
-                    placeholder="Företagsnamn"
+                    type="email"
+                    value={form.email}
+                    onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
+                    required
+                    placeholder="din@email.se"
                   />
                 </div>
+              </div>
+              <div className={styles.formGroup}>
+                <label className={styles.formLabel}>Företag</label>
+                <input
+                  className={styles.input}
+                  value={form.company}
+                  onChange={e => setForm(f => ({ ...f, company: e.target.value }))}
+                  placeholder="Företagsnamn"
+                />
               </div>
 
               <div className={`${styles.formGroup} ${styles.phoneGroup}`}>

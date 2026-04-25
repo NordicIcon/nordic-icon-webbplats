@@ -99,6 +99,12 @@ export default function Process() {
                   />
                 ))}
               </div>
+              {i === 0 && (
+                <div className={styles.swipeHint} aria-hidden>
+                  <span>Svep</span>
+                  <span className={styles.swipeArrow}>→</span>
+                </div>
+              )}
             </div>
           ))}
         </div>

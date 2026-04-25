@@ -4,14 +4,13 @@
   overflow: hidden;
 }
 
-/* ── Background: image + frosted overlay ── */
+/* ── Background: sea image + frosted overlay ── */
 .plansBackground {
   position: absolute;
   inset: 0;
   z-index: 0;
 }
 
-/* Skärgårds-bild */
 .plansBackground::before {
   content: '';
   position: absolute;
@@ -20,11 +19,9 @@
   background-size: cover;
   background-position: center 40%;
   filter: brightness(1.05) saturate(0.9);
-  /* Fallback gradient om bilden saknas */
   background-color: #c8dff0;
 }
 
-/* Frosted overlay ovanpå bilden */
 .plansBackground::after {
   content: '';
   position: absolute;
@@ -242,6 +239,7 @@
   font-weight: 500;
   letter-spacing: 0.04em;
   text-decoration: none;
+  border: none;
   transition: background 0.2s, box-shadow 0.2s;
   will-change: transform;
   cursor: pointer;
@@ -281,15 +279,265 @@
 
 .allPlans:hover { color: var(--accent); }
 
-/* ── Mobile ── */
-@media (max-width: 900px) {
+/* ── Mobile: dark blue background ── */
+@media (max-width: 1024px) {
+  .section { padding: 80px 20px; }
+
   .grid {
     grid-template-columns: 1fr;
     max-width: 420px;
     margin: 0 auto;
   }
+
   .cardPopular { transform: none; }
-  .section { padding: 80px 20px; }
+
+  /* Replace sea image with dark brand color */
+  .plansBackground::before {
+    background-image: none;
+    background-color: var(--bg-dark);
+    filter: none;
+  }
+
+  .plansBackground::after {
+    background: radial-gradient(ellipse at 50% 0%, rgba(27, 58, 107, 0.5) 0%, transparent 65%);
+  }
+
+  /* Header text → light */
+  .label  { color: rgba(240, 240, 238, 0.4); }
+  .heading { color: #F0F0EE; }
+  .sub    { color: rgba(240, 240, 238, 0.5); }
+
+  /* Cards → glass on dark */
+  .card {
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(24px) saturate(140%);
+    -webkit-backdrop-filter: blur(24px) saturate(140%);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .cardPopular {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(140, 185, 255, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  }
+
+  /* Card text → light */
+  .planName  { color: rgba(240, 240, 238, 0.4); }
+  .priceNum  { color: #F0F0EE; }
+  .priceCurrency { color: rgba(240, 240, 238, 0.5); }
+  .monthly   { color: rgba(240, 240, 238, 0.38); }
+  .tagline   { color: rgba(240, 240, 238, 0.6); }
+  .divider   { background: rgba(255, 255, 255, 0.1); }
+  .feature   { color: rgba(240, 240, 238, 0.58); }
+  .featureAll { color: #F0F0EE; }
+
+  /* Checkmark → light blue on dark bg */
+  .check path { stroke: rgba(140, 185, 255, 0.9); }
+
+  /* CTAs */
+  .ctaSecondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: #F0F0EE;
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .ctaSecondary:hover { background: rgba(255, 255, 255, 0.15); }
+
+  /* Footer link */
+  .allPlans { color: rgba(240, 240, 238, 0.45); }
+  .allPlans:hover { color: #F0F0EE; }
+}
+
+/* ── Booking modal ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 27, 42, 0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modal {
+  background: var(--bg);
+  border-radius: 20px;
+  padding: 40px 40px 36px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 32px 80px rgba(13, 27, 42, 0.4);
+}
+
+.modalClose {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+  transition: color 0.2s;
+}
+
+.modalClose:hover { color: var(--text); }
+
+.modalPlan {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.modalHeading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 300;
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.modalHeading em { font-style: italic; }
+
+/* ── Tabs ── */
+.tabs {
+  display: flex;
+  gap: 4px;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 24px;
+}
+
+.tab {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  background: none;
+  border-radius: 7px;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+
+.tabActive {
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.fieldLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.input,
+.textarea {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--accent);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.submit {
+  margin-top: 8px;
+  padding: 0.9rem 2rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px var(--accent-shadow);
+}
+
+.submit:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 8px 32px var(--accent-shadow);
+}
+
+.success {
+  text-align: center;
+  padding: 32px 0;
+}
+
+.successIcon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+
+.successTitle {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.successBody {
+  font-size: var(--text-body-sm);
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .modal { padding: 40px 24px 32px; }
+  .formRow { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

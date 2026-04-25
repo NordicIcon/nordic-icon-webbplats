@@ -25,7 +25,7 @@ function getDaysInMonth(year: number, month: number): Date[] {
   return days;
 }
 
-export default function BookingCalendar() {
+export default function BookingCalendar({ hideHeader }: { hideHeader?: boolean }) {
   const [step, setStep]             = useState<BookingStep['type']>('calendar');
   const [currentDate, setCurrentDate] = useState(() => {
     const d = new Date();
@@ -118,10 +118,12 @@ export default function BookingCalendar() {
 
   return (
     <div className={styles.widget}>
-      <div className={styles.widgetHeader}>
-        <div className={styles.widgetLabel}>BOKA ETT MÖTE</div>
-        <p className={styles.widgetSub}>30 minuter · Google Meet · Kostnadsfritt</p>
-      </div>
+      {!hideHeader && (
+        <div className={styles.widgetHeader}>
+          <div className={styles.widgetLabel}>BOKA ETT MÖTE</div>
+          <p className={styles.widgetSub}>30 minuter · Google Meet · Kostnadsfritt</p>
+        </div>
+      )}
 
       {/* ── Step 1: Calendar ── */}
       {step === 'calendar' && (

@@ -517,6 +517,15 @@
     background: rgba(255, 255, 255, 0.15);
   }
 
+  .plansSection .planExample {
+    color: rgba(240, 240, 238, 0.55);
+  }
+
+  .plansSection .planExample:hover {
+    opacity: 1;
+    color: rgba(240, 240, 238, 0.8);
+  }
+
   .addonsGrid {
     grid-template-columns: 1fr;
   }

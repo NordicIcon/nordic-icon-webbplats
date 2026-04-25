@@ -82,6 +82,15 @@
   border-radius: 3px;
 }
 
+/* Hidden on desktop */
+.swipeHint {
+  display: none;
+}
+
+.swipeArrow {
+  display: inline-block;
+}
+
 /* Mobile — horizontal scroll-snap slideshow */
 @media (max-width: 1024px) {
   .section {
@@ -113,5 +122,31 @@
     height: 100%;
     flex-shrink: 0;
     scroll-snap-align: start;
+  }
+
+  /* Swipe hint — shows on first panel, fades out after 3 nudges */
+  .swipeHint {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    position: absolute;
+    bottom: 88px;
+    right: 28px;
+    color: currentColor;
+    opacity: 0;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    pointer-events: none;
+    animation: swipeNudge 2.4s ease-in-out 1s 3 forwards;
+  }
+
+  @keyframes swipeNudge {
+    0%   { opacity: 0;    transform: translateX(0);   }
+    18%  { opacity: 0.5;  transform: translateX(0);   }
+    55%  { opacity: 0.5;  transform: translateX(10px);}
+    80%  { opacity: 0.5;  transform: translateX(0);   }
+    100% { opacity: 0;    transform: translateX(0);   }
   }
 }

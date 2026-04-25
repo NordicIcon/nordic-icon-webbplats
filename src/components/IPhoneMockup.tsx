@@ -49,9 +49,11 @@ export default function IPhoneMockup() {
             <Image
               src="/images/nordic-icon-enhanced.png"
               alt="Mobilanpassad webbplats"
-              width={320}
-              height={650}
+              width={1080}
+              height={1080}
               style={{ width: '100%', height: 'auto', display: 'block' }}
+              sizes="(max-width: 1024px) 90vw, 700px"
+              quality={90}
               priority
             />
           </motion.div>
