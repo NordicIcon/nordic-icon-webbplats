@@ -53,7 +53,7 @@ export default function IPhoneMockup() {
               height={1080}
               style={{ width: '100%', height: 'auto', display: 'block' }}
               sizes="(max-width: 1024px) 90vw, 700px"
-              quality={90}
+              quality={95}
               priority
             />
           </motion.div>
