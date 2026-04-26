@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strand Studio — Hårsalong på Östermalm, Stockholm</title>
+  <meta name="description" content="Strand Studio — hårsalong på Strandvägen, Östermalm. Klippning, balayage och behandlingar. Goldwell, Oribe, Kérastase. Boka: 08-123 456 78.">
+  <link rel="canonical" href="https://strandstudio.se/">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Schema: HairSalon -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "Strand Studio",
+    "description": "Hårsalong på Strandvägen, Östermalm. Klippning, färgning och behandlingar.",
+    "url": "https://strandstudio.se",
+    "telephone": "+4681234567 8",
+    "email": "hej@strandstudio.se",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Strandvägen 47",
+      "postalCode": "114 56",
+      "addressLocality": "Stockholm",
+      "addressCountry": "SE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 59.333,
+      "longitude": 18.085
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday",    "opens": "10:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Tuesday",   "opens": "09:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Wednesday", "opens": "09:00", "closes": "19:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Thursday",  "opens": "09:00", "closes": "20:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Friday",    "opens": "09:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday",  "opens": "09:00", "closes": "17:00" }
+    ],
+    "priceRange": "1500–4500 kr",
+    "currenciesAccepted": "SEK",
+    "paymentAccepted": "Kontant, Kort, Swish",
+    "sameAs": []
+  }
+  </script>
+
+  <!-- Google Analytics placeholder -->
+  <!-- Replace G-XXXXXXXXXX with actual GA4 Measurement ID -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+</head>
+<body>
+
+  <!-- ─── NAVBAR ──────────────────────────────────────────────── -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Huvudnavigation">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo" aria-label="Strand Studio — Startsida">Strand Studio</a>
+
+      <div class="navbar-links">
+        <a href="about.html">Om oss</a>
+        <a href="services.html">Tjänster</a>
+        <a href="contact.html">Kontakt</a>
+      </div>
+
+      <div class="navbar-cta">
+        <a href="contact.html" class="btn btn--primary">Boka tid</a>
+      </div>
+
+      <button class="navbar-hamburger" id="hamburger" aria-label="Öppna meny" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav overlay -->
+  <div class="nav-mobile-overlay" id="nav-mobile" role="dialog" aria-modal="true" aria-label="Mobilmeny">
+    <button class="nav-close" id="nav-close" aria-label="Stäng meny">✕</button>
+    <a href="index.html">Startsida</a>
+    <a href="about.html">Om oss</a>
+    <a href="services.html">Tjänster</a>
+    <a href="contact.html">Kontakt & Boka</a>
+  </div>
+
+  <main>
+
+    <!-- ─── HERO — HERO-A SPLIT ──────────────────────────────── -->
+    <section class="hero hero--split" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-split-grid">
+
+          <div class="hero-content">
+            <div class="label-badge" data-animate>
+              <span class="badge-dot"></span>
+              <span>Hårsalong · Östermalm · Sedan 2018</span>
+            </div>
+
+            <h1 class="hero-heading" id="hero-heading" data-animate>
+              Strand Studio.<br>
+              <em>Östermalm, Stockholm.</em>
+            </h1>
+
+            <p class="hero-sub" data-animate>
+              Fyra stylister. Bara bokade tider.<br>
+              Goldwell, Oribe och Kérastase.
+            </p>
+
+            <div class="hero-actions" data-animate>
+              <a href="contact.html" class="btn btn--primary">Boka tid</a>
+              <a href="services.html" class="btn btn--secondary">Se priser</a>
+            </div>
+
+            <div class="hero-trust" data-animate>
+              <span>✓ Goldwell Certified</span>
+              <span>✓ Kérastase Certified</span>
+              <span>✓ Öppet mån–lör</span>
+            </div>
+          </div>
+
+          <div class="hero-media" data-animate>
+            <img
+              src="assets/images/hf_20260424_091359_d3b273b3-6777-4635-8ade-3f7cd02a72dc.png"
+              alt="Stylist i Strand Studios salong på Östermalm — naturligt fönsterljus"
+              class="hero-img"
+              width="600"
+              height="750"
+              loading="eager"
+            >
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── MARQUEE ──────────────────────────────────────────── -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-content">
+          <span class="marquee-item">Goldwell Certified</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Kérastase Certified</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Oribe</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Vidal Sassoon Academy</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Årets Salong Östermalm 2022</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Enbart bokade tider</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Strandvägen 47</span>
+          <span class="marquee-dot">·</span>
+        </div>
+        <div class="marquee-content" aria-hidden="true">
+          <span class="marquee-item">Goldwell Certified</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Kérastase Certified</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Oribe</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Vidal Sassoon Academy</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Årets Salong Östermalm 2022</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Enbart bokade tider</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Strandvägen 47</span>
+          <span class="marquee-dot">·</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── SERVICES — SERVICES-A NUMBERED LIST ─────────────── -->
+    <section class="section services-list" id="tjanster" aria-labelledby="services-heading">
+      <div class="container">
+        <header class="section-header">
+          <p class="section-label">Våra tjänster</p>
+          <h2 class="section-heading" id="services-heading" data-animate>
+            Klippning, färgning<br><em>och behandlingar.</em>
+          </h2>
+        </header>
+
+        <div class="services-rows">
+
+          <div class="service-row" data-animate>
+            <span class="service-num">01</span>
+            <h3 class="service-name">Klippning &amp; Styling</h3>
+            <p class="service-desc">
+              Klippning dam och herr. Konsultation ingår alltid.<br>
+              45–75 minuter beroende på hårtyp och önskemål.
+            </p>
+          </div>
+
+          <div class="service-row" data-animate>
+            <span class="service-num">02</span>
+            <h3 class="service-name">Färgning &amp; Balayage</h3>
+            <p class="service-desc">
+              Helhårs- och rötfärgning, slingning och balayage.<br>
+              Goldwell Colorance. 2–4 timmar beroende på teknik.
+            </p>
+          </div>
+
+          <div class="service-row" data-animate>
+            <span class="service-num">03</span>
+            <h3 class="service-name">Behandlingar</h3>
+            <p class="service-desc">
+              Keratin- och proteinbehandlingar, hårkurer och skalpvård.<br>
+              Kérastase och Oribe. Individuell bedömning vid bokning.
+            </p>
+          </div>
+
+          <div class="service-row" data-animate>
+            <span class="service-num">04</span>
+            <h3 class="service-name">Bröllop &amp; Event</h3>
+            <p class="service-desc">
+              Uppsättningar och styling för bröllop, galor och fotografering.<br>
+              Kontakta oss för offert och tidbokning.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── ABOUT — ABOUT-A SPLIT ────────────────────────────── -->
+    <section class="section about-split" id="om-oss" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-grid">
+
+          <div class="about-text" data-animate>
+            <p class="section-label">Om oss</p>
+            <h2 class="section-heading" id="about-heading">
+              Fyra stylister. <em>Samma team sedan 2018.</em>
+            </h2>
+            <div class="about-body">
+              <p>Strand Studio öppnade 2018 på Strandvägen, Östermalm. Fyra stylister. Inga walk-ins. Alltid bokad tid.</p>
+              <p>Vi använder Goldwell för färg, Oribe för styling och Kérastase för behandlingar. Samma produkter sedan öppningen.</p>
+              <p>Våra kunder bokar om. Många har kommit sedan första veckan vi öppnade. Det är det vi mäter oss mot.</p>
+            </div>
+            <a href="about.html" class="link-arrow">Läs mer om oss →</a>
+          </div>
+
+          <div class="about-media" data-animate>
+            <div class="img-placeholder" style="aspect-ratio: 3/4;">
+              <span>Om oss bild</span>
+              <p>Minimalistisk nordisk salongsinteriör — vita väggar, varmt trä, naturligt eftermiddagsljus</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── STATS — STATS-A LIGHT ─────────────────────────────── -->
+    <section class="stats--light" aria-label="Nyckeltal">
+      <div class="container">
+        <div class="stats-grid">
+
+          <div class="stat-item" data-animate>
+            <div>
+              <span class="stat-number" data-count-to="6">0</span><span class="stat-suffix">+</span>
+            </div>
+            <p class="stat-label">År på Strandvägen</p>
+          </div>
+
+          <div class="stat-item" data-animate>
+            <div>
+              <span class="stat-number" data-count-to="85">0</span><span class="stat-suffix">%</span>
+            </div>
+            <p class="stat-label">Återkommande kunder</p>
+          </div>
+
+          <div class="stat-item" data-animate>
+            <div>
+              <span class="stat-number">4</span>
+            </div>
+            <p class="stat-label">Stylister — samma team sedan starten</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── TESTIMONIALS — TESTIMONIALS-D EDITORIAL ─────────── -->
+    <section class="testimonials-editorial" aria-labelledby="testimonial-heading">
+      <div class="container">
+        <div class="testimonial-editorial-inner" data-animate>
+          <svg class="quote-icon-large" viewBox="0 0 700 636" fill="none" aria-hidden="true">
+            <path d="M700 285H500V256L685 71L615 0L400 215V635H700V285Z" fill="currentColor"/>
+            <path d="M215 0L285 71L100 256V285H300V635H0V215L215 0Z" fill="currentColor"/>
+          </svg>
+          <blockquote class="testimonial-editorial-text" id="testimonial-heading">
+            "Sofia minns precis vad vi pratat om förra gången.<br>
+            Resultatet är alltid exakt rätt."
+          </blockquote>
+          <div class="testimonial-editorial-author">
+            <span class="author-name">Anna K.</span>
+            <span class="author-sep">—</span>
+            <span class="author-location">Östermalm</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FAQ — PROCESS-C ACCORDION ───────────────────────── -->
+    <section class="section faq" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="faq-layout">
+
+          <div class="faq-header" data-animate>
+            <p class="section-label">Vanliga frågor</p>
+            <h2 class="section-heading" id="faq-heading">
+              Svar på det<br><em>du undrar.</em>
+            </h2>
+          </div>
+
+          <div class="faq-list" role="list">
+
+            <div class="faq-item" role="listitem">
+              <button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-1">
+                <span>Hur bokar jag tid?</span>
+                <div class="faq-icon" aria-hidden="true">
+                  <span class="faq-h"></span>
+                  <span class="faq-v"></span>
+                </div>
+              </button>
+              <div class="faq-answer" id="faq-answer-1" role="region">
+                <p>Via formuläret på vår kontaktsida eller på telefon <a href="tel:+4681234567 8" style="color:var(--accent)">08-123 456 78</a>. Vi svarar inom ett dygn på vardagar.</p>
+              </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-2">
+                <span>Hur långt i förväg bör jag boka?</span>
+                <div class="faq-icon" aria-hidden="true">
+                  <span class="faq-h"></span>
+                  <span class="faq-v"></span>
+                </div>
+              </button>
+              <div class="faq-answer" id="faq-answer-2" role="region">
+                <p>2–3 veckor för klippning, 3–4 veckor för färgning och balayage. Inför högtider och sommaren — boka tidigare.</p>
+              </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-3">
+                <span>Erbjuder ni walk-in?</span>
+                <div class="faq-icon" aria-hidden="true">
+                  <span class="faq-h"></span>
+                  <span class="faq-v"></span>
+                </div>
+              </button>
+              <div class="faq-answer" id="faq-answer-3" role="region">
+                <p>Nej. Bara bokade tider. Det säkerställer att din stylist har rätt tid för just ditt besök.</p>
+              </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-4">
+                <span>Vilka produkter använder ni?</span>
+                <div class="faq-icon" aria-hidden="true">
+                  <span class="faq-h"></span>
+                  <span class="faq-v"></span>
+                </div>
+              </button>
+              <div class="faq-answer" id="faq-answer-4" role="region">
+                <p>Goldwell Colorance för all färgning. Oribe för styling. Kérastase för hårkurer och behandlingar.</p>
+              </div>
+            </div>
+
+            <div class="faq-item" role="listitem">
+              <button class="faq-trigger" aria-expanded="false" aria-controls="faq-answer-5">
+                <span>Vad kostar ett besök?</span>
+                <div class="faq-icon" aria-hidden="true">
+                  <span class="faq-h"></span>
+                  <span class="faq-v"></span>
+                </div>
+              </button>
+              <div class="faq-answer" id="faq-answer-5" role="region">
+                <p>Klippning dam från 950 kr. Balayage från 2 800 kr. Se fullständig prislista på vår <a href="services.html" style="color:var(--accent)">tjänstesida</a>.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PRE-FOOTER CTA — CTA-A DARK ──────────────────────── -->
+    <section class="cta-dark" aria-labelledby="cta-heading">
+      <div class="container">
+        <div class="cta-dark-inner" data-animate>
+          <p class="section-label">Boka tid</p>
+          <h2 class="cta-dark-heading" id="cta-heading">
+            Strand Studio. <em>Östermalm.</em>
+          </h2>
+          <p class="cta-dark-sub">Ring oss eller fyll i formuläret. Vi svarar inom ett dygn.</p>
+          <a href="contact.html" class="btn btn--light">Boka tid</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER — FOOTER-A FOUR COLUMNS DARK ─────────────────── -->
+  <footer class="footer" aria-label="Sidfot">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="footer-logo">Strand Studio</div>
+          <p>Hårsalong på Strandvägen, Östermalm. Sedan 2018.</p>
+          <a href="tel:+46812345678" class="footer-phone">08-123 456 78</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Tjänster</h4>
+          <ul>
+            <li><a href="services.html#klippning">Klippning &amp; Styling</a></li>
+            <li><a href="services.html#fargning">Färgning &amp; Balayage</a></li>
+            <li><a href="services.html#behandlingar">Behandlingar</a></li>
+            <li><a href="services.html#brollop">Bröllop &amp; Event</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Sidor</h4>
+          <ul>
+            <li><a href="index.html">Startsida</a></li>
+            <li><a href="about.html">Om oss</a></li>
+            <li><a href="services.html">Tjänster</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="tel:+46812345678">08-123 456 78</a></li>
+            <li><a href="mailto:hej@strandstudio.se">hej@strandstudio.se</a></li>
+            <li>Strandvägen 47, Stockholm</li>
+            <li>Mån–Lör 09–19 (Tors till 20)</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Strand Studio AB. Alla rättigheter förbehållna.</p>
+        <p>Byggd av <a href="https://nordicicon.se" target="_blank" rel="noopener">Nordic Icon</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+
+</body>
+</html>

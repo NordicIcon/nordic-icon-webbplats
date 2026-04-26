@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boka tid | Strand Studio | 08-123 456 78</title>
+  <meta name="description" content="Boka tid hos Strand Studio på Strandvägen 47, Östermalm. Ring 08-123 456 78 eller fyll i formuläret — vi svarar inom ett dygn på vardagar.">
+  <link rel="canonical" href="https://strandstudio.se/contact.html">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ─── NAVBAR ──────────────────────────────────────────────── -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Huvudnavigation">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo" aria-label="Strand Studio — Startsida">Strand Studio</a>
+      <div class="navbar-links">
+        <a href="about.html">Om oss</a>
+        <a href="services.html">Tjänster</a>
+        <a href="contact.html">Kontakt</a>
+      </div>
+      <div class="navbar-cta">
+        <a href="contact.html" class="btn btn--primary">Boka tid</a>
+      </div>
+      <button class="navbar-hamburger" id="hamburger" aria-label="Öppna meny" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav-mobile-overlay" id="nav-mobile" role="dialog" aria-modal="true" aria-label="Mobilmeny">
+    <button class="nav-close" id="nav-close" aria-label="Stäng meny">✕</button>
+    <a href="index.html">Startsida</a>
+    <a href="about.html">Om oss</a>
+    <a href="services.html">Tjänster</a>
+    <a href="contact.html">Kontakt &amp; Boka</a>
+  </div>
+
+  <main>
+
+    <!-- ─── PAGE HEADER ──────────────────────────────────────── -->
+    <header class="page-header">
+      <div class="container">
+        <p class="section-label" data-animate>Kontakt &amp; bokning</p>
+        <h1 data-animate>
+          Boka tid.<br><em>Vi svarar inom ett dygn.</em>
+        </h1>
+        <p data-animate>
+          Ring oss på <a href="tel:+46812345678" style="color:var(--accent); font-weight:500;">08-123 456 78</a>
+          eller fyll i formuläret nedan. Vi svarar på vardagar inom ett dygn.
+        </p>
+      </div>
+    </header>
+
+    <!-- ─── CONTACT FORM + INFO — CONTACT-A ─────────────────── -->
+    <section class="section" id="kontakt" aria-labelledby="contact-heading">
+      <div class="container">
+        <header class="section-header">
+          <p class="section-label">Skriv till oss</p>
+          <h2 class="section-heading" id="contact-heading" data-animate>
+            Berätta vad<br><em>du söker.</em>
+          </h2>
+          <p class="section-sub" data-animate>
+            Fyll i formuläret så återkommer vi med lediga tider.
+          </p>
+        </header>
+
+        <div class="contact-grid">
+
+          <!-- Form -->
+          <form
+            class="contact-form"
+            action="mailto:hej@strandstudio.se"
+            method="POST"
+            enctype="text/plain"
+            data-animate
+            aria-label="Bokningsformulär"
+          >
+            <div class="form-field">
+              <label for="name">Namn</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Ditt namn"
+                required
+                autocomplete="name"
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="phone">Telefon</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="070-000 00 00"
+                autocomplete="tel"
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="email">E-post</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="din@email.se"
+                required
+                autocomplete="email"
+              >
+            </div>
+
+            <div class="form-field">
+              <label for="service">Tjänst</label>
+              <select id="service" name="service">
+                <option value="">Välj tjänst</option>
+                <option value="klippning">Klippning &amp; Styling</option>
+                <option value="fargning">Färgning &amp; Balayage</option>
+                <option value="behandling">Behandling</option>
+                <option value="brollop">Bröllop &amp; Event</option>
+                <option value="annat">Annat</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="message">Meddelande</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Berätta gärna om ditt hår och vad du söker. Har du haft en salong tidigare och vad du inte hittade där hjälper oss att förbereda rätt."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full">Skicka förfrågan</button>
+            <p class="form-note">Vi svarar inom ett dygn på vardagar</p>
+          </form>
+
+          <!-- Contact info -->
+          <div class="contact-info" data-animate>
+            <h3>Hitta oss</h3>
+
+            <div class="contact-items">
+
+              <div class="contact-item">
+                <span class="ci-label">Telefon</span>
+                <a href="tel:+46812345678" class="ci-value">08-123 456 78</a>
+                <span class="ci-sub">Mån–fre 09–17 svarar vi direkt</span>
+              </div>
+
+              <div class="contact-item">
+                <span class="ci-label">E-post</span>
+                <a href="mailto:hej@strandstudio.se" class="ci-value">hej@strandstudio.se</a>
+              </div>
+
+              <div class="contact-item">
+                <span class="ci-label">Adress</span>
+                <span class="ci-value">Strandvägen 47, 114 56 Stockholm</span>
+                <span class="ci-sub">T-bana: Östermalmstorg</span>
+              </div>
+
+              <div class="contact-item">
+                <span class="ci-label">Öppettider</span>
+                <div style="display:flex;flex-direction:column;gap:0.25rem;margin-top:0.25rem;">
+                  <span class="ci-value" style="font-weight:400;font-size:0.9375rem;">Måndag 10:00–19:00</span>
+                  <span class="ci-value" style="font-weight:400;font-size:0.9375rem;">Tisdag–Onsdag 09:00–19:00</span>
+                  <span class="ci-value" style="font-weight:400;font-size:0.9375rem;">Torsdag 09:00–20:00</span>
+                  <span class="ci-value" style="font-weight:400;font-size:0.9375rem;">Fredag 09:00–18:00</span>
+                  <span class="ci-value" style="font-weight:400;font-size:0.9375rem;">Lördag 09:00–17:00</span>
+                  <span class="ci-value" style="font-weight:400;font-size:0.9375rem;color:var(--text-muted);">Söndag stängt</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Google Maps placeholder -->
+            <div class="img-placeholder" style="aspect-ratio: 4/3; border-radius: var(--radius-lg);">
+              <span>Karta</span>
+              <p>Google Maps — Strandvägen 47, 114 56 Stockholm</p>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── BOOKING NOTE ──────────────────────────────────────── -->
+    <section class="section" style="padding-top:0;" aria-label="Bokningsinformation">
+      <div class="container">
+        <div style="border-top:1px solid var(--border); padding-top:3rem; display:grid; grid-template-columns:repeat(3,1fr); gap:2.5rem;" data-animate>
+
+          <div>
+            <p class="section-label" style="margin-bottom:0.75rem;">Boka i tid</p>
+            <p style="font-size:0.9375rem;color:var(--text-secondary);line-height:1.7;">
+              2–3 veckor för klippning. 3–4 veckor för färgning och balayage. Boka tidigare inför högtider.
+            </p>
+          </div>
+
+          <div>
+            <p class="section-label" style="margin-bottom:0.75rem;">Inga walk-ins</p>
+            <p style="font-size:0.9375rem;color:var(--text-secondary);line-height:1.7;">
+              Bara bokade tider. Det säkerställer att din stylist har rätt tid för just ditt besök.
+            </p>
+          </div>
+
+          <div>
+            <p class="section-label" style="margin-bottom:0.75rem;">Avbokning</p>
+            <p style="font-size:0.9375rem;color:var(--text-secondary);line-height:1.7;">
+              Avboka senast 24 timmar i förväg. Ring eller skriv till oss direkt.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── PRE-FOOTER CTA ───────────────────────────────────── -->
+    <section class="cta-dark" aria-labelledby="cta-contact-heading">
+      <div class="container">
+        <div class="cta-dark-inner" data-animate>
+          <p class="section-label">Strand Studio</p>
+          <h2 class="cta-dark-heading" id="cta-contact-heading">
+            Strandvägen 47. <em>Östermalm.</em>
+          </h2>
+          <p class="cta-dark-sub">
+            <a href="tel:+46812345678" style="color:white;font-weight:500;">08-123 456 78</a>
+            &nbsp;·&nbsp; hej@strandstudio.se
+          </p>
+          <a href="tel:+46812345678" class="btn btn--light">Ring oss</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────── -->
+  <footer class="footer" aria-label="Sidfot">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">Strand Studio</div>
+          <p>Hårsalong på Strandvägen, Östermalm. Sedan 2018.</p>
+          <a href="tel:+46812345678" class="footer-phone">08-123 456 78</a>
+        </div>
+        <div class="footer-col">
+          <h4>Tjänster</h4>
+          <ul>
+            <li><a href="services.html#klippning">Klippning &amp; Styling</a></li>
+            <li><a href="services.html#fargning">Färgning &amp; Balayage</a></li>
+            <li><a href="services.html#behandlingar">Behandlingar</a></li>
+            <li><a href="services.html#brollop">Bröllop &amp; Event</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Sidor</h4>
+          <ul>
+            <li><a href="index.html">Startsida</a></li>
+            <li><a href="about.html">Om oss</a></li>
+            <li><a href="services.html">Tjänster</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="tel:+46812345678">08-123 456 78</a></li>
+            <li><a href="mailto:hej@strandstudio.se">hej@strandstudio.se</a></li>
+            <li>Strandvägen 47, Stockholm</li>
+            <li>Mån–Lör 09–19 (Tors till 20)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Strand Studio AB. Alla rättigheter förbehållna.</p>
+        <p>Byggd av <a href="https://nordicicon.se" target="_blank" rel="noopener">Nordic Icon</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

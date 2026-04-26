@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boka Bord | Havets | 031-123 456 78</title>
+  <meta name="description" content="Boka bord på Havets i Haga, Göteborg. Ring 031-123 456 78 eller boka online. Vi svarar inom ett dygn. Tis–Lör 17:30–23:00.">
+  <link rel="canonical" href="https://havets.se/contact.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Page-specific: contact page intro with large phone */
+    .contact-intro {
+      margin-bottom: 5rem;
+    }
+
+    .contact-intro h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      max-width: 520px;
+      margin-top: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-intro h1 em {
+      font-style: italic;
+    }
+
+    .contact-phone-hero {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 0.375rem;
+      text-decoration: none;
+      padding: 1.75rem 2.5rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      transition: border-color 0.3s ease, transform 0.3s ease;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-phone-hero:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .contact-phone-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-label);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-label);
+      color: var(--text-muted);
+    }
+
+    .contact-phone-number {
+      font-family: var(--font-heading);
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      color: var(--text);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .contact-phone-sub {
+      font-size: var(--text-small);
+      color: var(--text-secondary);
+    }
+
+    /* Opening hours card */
+    .opening-hours {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+
+    .opening-hours h3 {
+      font-family: var(--font-mono);
+      font-size: var(--text-label);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-label);
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: var(--text-body-sm);
+    }
+
+    .hours-row:last-child {
+      border-bottom: none;
+    }
+
+    .hours-day {
+      color: var(--text-secondary);
+    }
+
+    .hours-time {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .hours-time.closed {
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    /* Booking note */
+    .booking-note-box {
+      background: var(--accent-subtle);
+      border: 1px solid rgba(196, 149, 106, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 1.5rem;
+      margin-top: 1.5rem;
+      font-size: var(--text-body-sm);
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .booking-note-box strong {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* Map placeholder */
+    .map-placeholder {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      height: 240px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      font-size: var(--text-body-sm);
+    }
+
+    .map-placeholder span {
+      font-family: var(--font-mono);
+      font-size: var(--text-label);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      opacity: 0.6;
+    }
+
+    /* Form section heading */
+    .form-section-label {
+      font-family: var(--font-mono);
+      font-size: var(--text-label);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-label);
+      color: var(--text-muted);
+      margin-bottom: 1.75rem;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar is-scrolled" id="navbar" aria-label="Huvudnavigation">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo">Havets</a>
+      <div class="navbar-nav">
+        <a href="menu.html">Menyer</a>
+        <a href="about.html">Om oss</a>
+        <a href="menu.html#kockarnas-bord">Kockarnas bord</a>
+        <a href="contact.html" class="btn btn--light navbar-cta" style="padding: 0.625rem 1.375rem; font-size: 0.875rem; background: var(--accent); color: white;">Boka bord</a>
+      </div>
+      <button class="navbar-toggle" id="navToggle" aria-label="Öppna meny" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="navbar-mobile" id="navMobile" role="dialog" aria-label="Mobilmeny">
+    <button class="navbar-mobile-close" id="navClose" aria-label="Stäng meny">✕</button>
+    <a href="index.html">Start</a>
+    <a href="menu.html">Menyer</a>
+    <a href="about.html">Om oss</a>
+    <a href="menu.html#kockarnas-bord">Kockarnas bord</a>
+    <a href="contact.html">Boka bord</a>
+  </div>
+
+  <main class="contact-page">
+    <div class="container">
+
+      <!-- ── PAGE INTRO ── -->
+      <div class="contact-intro" data-animate>
+        <p class="section-label">Boka bord</p>
+        <h1>Ring oss.<br><em>Vi svarar.</em></h1>
+        <p style="font-size: var(--text-body); color: var(--text-secondary); max-width: 460px; margin-bottom: 2rem;">Bord bokas online eller på telefon. Avbokning senast 48 timmar i förväg. Sällskap om 8+ personer: ring direkt.</p>
+
+        <a href="tel:+46311234567" class="contact-phone-hero">
+          <span class="contact-phone-label">Telefon</span>
+          <span class="contact-phone-number">031-123 456 78</span>
+          <span class="contact-phone-sub">Tis–Lör, svarar vanligtvis inom ett dygn</span>
+        </a>
+      </div>
+
+      <!-- ── CONTACT GRID ── -->
+      <div class="contact-grid">
+
+        <!-- Left: Booking form -->
+        <div data-animate>
+          <span class="form-section-label">Boka via formulär</span>
+
+          <form id="bookingForm" action="mailto:bord@havets.se" method="post" enctype="text/plain" novalidate>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-field">
+                <label for="name">Namn</label>
+                <input type="text" id="name" name="name" placeholder="Erik Strand" required autocomplete="name">
+              </div>
+              <div class="form-field">
+                <label for="phone">Telefon</label>
+                <input type="tel" id="phone" name="phone" placeholder="070-123 45 67" autocomplete="tel">
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="email">E-post</label>
+              <input type="email" id="email" name="email" placeholder="erik@example.com" required autocomplete="email">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div class="form-field">
+                <label for="date">Önskat datum</label>
+                <input type="date" id="date" name="date" required>
+              </div>
+              <div class="form-field">
+                <label for="guests">Antal gäster</label>
+                <select id="guests" name="guests" required>
+                  <option value="" disabled selected>Välj antal</option>
+                  <option value="1">1 person</option>
+                  <option value="2">2 personer</option>
+                  <option value="3">3 personer</option>
+                  <option value="4">4 personer</option>
+                  <option value="5">5 personer</option>
+                  <option value="6">6 personer</option>
+                  <option value="7">7 personer</option>
+                  <option value="8+">8+ personer (ring oss)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <label for="menu">Meny</label>
+              <select id="menu" name="menu">
+                <option value="" disabled selected>Välj meny</option>
+                <option value="femratters">Femrätters — 895 kr</option>
+                <option value="attatters">Åtterätters — 1 295 kr</option>
+                <option value="kockarnas-bord">Kockarnas bord — 1 895 kr (6 pers)</option>
+                <option value="privat">Privat middag — hela lokalen</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="time">Önskad tid</label>
+              <select id="time" name="time">
+                <option value="" disabled selected>Välj tid</option>
+                <option value="18:00">18:00</option>
+                <option value="20:30">20:30</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="notes">Allergier eller preferenser</label>
+              <textarea id="notes" name="notes" rows="4" placeholder="Ange eventuella allergier, ingredienser ni undviker eller annat vi bör veta i förväg."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--full" style="font-size: var(--text-body); padding: 1rem 2rem;">
+              Skicka bokningsförfrågan
+            </button>
+            <p class="form-note">Vi svarar inom ett dygn · Avbokning &gt; 48 h i förväg</p>
+
+          </form>
+        </div>
+
+        <!-- Right: Contact info -->
+        <div data-animate>
+          <span class="form-section-label">Kontakt &amp; besök</span>
+
+          <div class="contact-items">
+
+            <div class="contact-item">
+              <span class="ci-label">Telefon</span>
+              <a href="tel:+46311234567" class="ci-value">031-123 456 78</a>
+              <span class="ci-sub">Svarar inom ett dygn</span>
+            </div>
+
+            <div class="contact-item">
+              <span class="ci-label">E-post</span>
+              <a href="mailto:bord@havets.se" class="ci-value">bord@havets.se</a>
+            </div>
+
+            <div class="contact-item">
+              <span class="ci-label">Adress</span>
+              <span class="ci-value">Haga Nygata 14</span>
+              <span class="ci-sub">413 01 Göteborg</span>
+            </div>
+
+          </div>
+
+          <!-- Opening hours -->
+          <div class="opening-hours">
+            <h3>Öppettider</h3>
+            <div class="hours-row">
+              <span class="hours-day">Tisdag – Lördag</span>
+              <span class="hours-time">17:30 – 23:00</span>
+            </div>
+            <div class="hours-row">
+              <span class="hours-day">Söndag</span>
+              <span class="hours-time closed">Stängt</span>
+            </div>
+            <div class="hours-row">
+              <span class="hours-day">Måndag</span>
+              <span class="hours-time closed">Stängt</span>
+            </div>
+          </div>
+
+          <!-- Booking note -->
+          <div class="booking-note-box">
+            <strong>Enbart förbokade bord.</strong> Vi tar emot sällskap om 1–22 gäster. För sällskap om 8+ personer ber vi er ringa direkt. Privata middagar för hela lokalen bokas separat.
+          </div>
+
+          <!-- Map placeholder -->
+          <div class="map-placeholder">
+            <span>Karta</span>
+            <p>Haga Nygata 14, 413 01 Göteborg</p>
+            <p style="font-size: 0.75rem; opacity: 0.5; margin-top: 0.25rem;">Google Maps-embed</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" style="margin-top: 120px;" aria-label="Sidfot">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span class="footer-logo">Havets</span>
+          <p>Fine dining på Haga Nygata, Göteborg. Sedan 2019.</p>
+          <a href="tel:+46311234567" class="footer-phone">031-123 456 78</a>
+        </div>
+        <div class="footer-col">
+          <h4>Menyer</h4>
+          <ul>
+            <li><a href="menu.html#femratters">Femrätters — 895 kr</a></li>
+            <li><a href="menu.html#attatters">Åtterätters — 1 295 kr</a></li>
+            <li><a href="menu.html#kockarnas-bord">Kockarnas bord</a></li>
+            <li><a href="menu.html#privat">Privata middagar</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Sidor</h4>
+          <ul>
+            <li><a href="index.html">Startsida</a></li>
+            <li><a href="menu.html">Menyer</a></li>
+            <li><a href="about.html">Om oss</a></li>
+            <li><a href="contact.html">Boka bord</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="tel:+46311234567">031-123 456 78</a></li>
+            <li><a href="mailto:bord@havets.se">bord@havets.se</a></li>
+            <li>Haga Nygata 14, Göteborg</li>
+            <li>Tis–Lör 17:30–23:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Havets Restaurang AB. Alla rättigheter förbehållna.</p>
+        <p>Byggd av <a href="https://nordicicon.se" target="_blank" rel="noopener">Nordic Icon</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
+  <script src="https://cdn.prod.website-files.com/gsap/3.14.2/gsap.min.js"></script>
+  <script src="https://cdn.prod.website-files.com/gsap/3.14.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.prod.website-files.com/gsap/3.14.2/SplitText.min.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>

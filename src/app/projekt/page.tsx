@@ -3,11 +3,17 @@
 import { useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './page.module.css';
 import Footer from '@/components/Footer';
 import PreFooterCTA from '@/components/PreFooterCTA';
 
-const projects = [
+type Project = {
+  id: string; name: string; industry: string; city: string;
+  plan: 'BAS' | 'PRO' | 'ELITE'; desc: string; image: string; noEmbed?: boolean;
+};
+
+const projects: Project[] = [
   {
     id: 'koppar',
     name: 'Koppar',
@@ -34,6 +40,7 @@ const projects = [
     plan: 'PRO' as const,
     desc: 'Modern restaurangsajt med premium-design och bokningssystem.',
     image: '/images/solberg-card.png',
+    noEmbed: true,
   },
   {
     id: 'strand-studio',
@@ -56,6 +63,38 @@ const projects = [
 ];
 
 type FilterLevel = 'ALLA' | 'BAS' | 'PRO' | 'ELITE';
+
+
+function ProjectCard({ p, featured }: { p: Project; featured?: boolean }) {
+  const inner = (
+    <>
+      <div className={styles.cardImage}>
+        <div className={styles.cardImageZoom}>
+          <Image
+            src={p.image}
+            alt={p.name}
+            fill
+            style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
+            sizes={featured ? '(max-width: 1024px) 100vw, 1200px' : '(max-width: 1024px) 100vw, 50vw'}
+            priority={featured}
+          />
+        </div>
+        <div className={styles.cardOverlay} />
+      </div>
+      <div className={styles.cardText}>
+        <span className={styles.cardPlan}>{p.plan}</span>
+        <span className={styles.cardName}>{p.name}</span>
+        <span className={styles.cardMeta}>{p.industry} · {p.city}</span>
+        <p className={styles.cardDesc}>{p.desc}</p>
+      </div>
+    </>
+  );
+
+  const cls = `${styles.cardWrap} ${featured ? styles.cardFeatured : ''}`;
+
+  if (p.noEmbed) return <div className={cls}>{inner}</div>;
+  return <Link href={`/projekt/${p.id}`} className={cls}>{inner}</Link>;
+}
 
 function ProjektContent() {
   const searchParams = useSearchParams();
@@ -104,51 +143,10 @@ function ProjektContent() {
           {featured && (
             <>
               {/* Featured card — full width */}
-              <div className={`${styles.cardWrap} ${styles.cardFeatured}`}>
-                <div className={styles.cardImage}>
-                  <div className={styles.cardImageZoom}>
-                    <Image
-                      src={featured.image}
-                      alt={featured.name}
-                      fill
-                      style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
-                      sizes="(max-width: 1024px) 100vw, 1200px"
-                      priority
-                    />
-                  </div>
-                  <div className={styles.cardOverlay} />
-                </div>
-                <div className={styles.cardText}>
-                  <span className={styles.cardPlan}>{featured.plan}</span>
-                  <span className={styles.cardName}>{featured.name}</span>
-                  <span className={styles.cardMeta}>{featured.industry} · {featured.city}</span>
-                  <p className={styles.cardDesc}>{featured.desc}</p>
-                </div>
-              </div>
+              <ProjectCard p={featured} featured />
 
               {/* Remaining cards */}
-              {rest.map((p) => (
-                <div key={p.id} className={styles.cardWrap}>
-                  <div className={styles.cardImage}>
-                    <div className={styles.cardImageZoom}>
-                      <Image
-                        src={p.image}
-                        alt={p.name}
-                        fill
-                        style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
-                        sizes="(max-width: 1024px) 100vw, 50vw"
-                      />
-                    </div>
-                    <div className={styles.cardOverlay} />
-                  </div>
-                  <div className={styles.cardText}>
-                    <span className={styles.cardPlan}>{p.plan}</span>
-                    <span className={styles.cardName}>{p.name}</span>
-                    <span className={styles.cardMeta}>{p.industry} · {p.city}</span>
-                    <p className={styles.cardDesc}>{p.desc}</p>
-                  </div>
-                </div>
-              ))}
+              {rest.map((p) => <ProjectCard key={p.id} p={p} />)}
 
               {filtered.length === 0 && (
                 <p className={styles.emptyMsg}>Inga projekt för den valda nivån ännu.</p>

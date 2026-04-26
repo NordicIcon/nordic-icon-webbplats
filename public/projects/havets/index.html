@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Havets — Fine dining i Haga, Göteborg</title>
+  <meta name="description" content="Havets — exklusiv fine dining i Haga, Göteborg. 22 platser. Säsongsbaserade avsmakningsmenyer. Michelin-nominerad 2022–23. Boka: 031-123 456 78.">
+  <link rel="canonical" href="https://havets.se/">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Restaurant Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Havets",
+    "description": "Exklusiv fine dining i Haga, Göteborg. Säsongsbaserade avsmakningsmenyer med råvaror från Västerhavet.",
+    "url": "https://havets.se",
+    "telephone": "+46311234567",
+    "email": "bord@havets.se",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Haga Nygata 14",
+      "addressLocality": "Göteborg",
+      "postalCode": "413 01",
+      "addressCountry": "SE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 57.6989,
+      "longitude": 11.9588
+    },
+    "servesCuisine": ["Nordic", "Seafood"],
+    "priceRange": "3000-7000 SEK",
+    "hasMenu": "https://havets.se/menu.html",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "17:30",
+        "closes": "23:00"
+      }
+    ],
+    "acceptsReservations": true,
+    "currenciesAccepted": "SEK"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+  <nav class="navbar" id="navbar" aria-label="Huvudnavigation">
+    <div class="navbar-inner">
+      <a href="index.html" class="navbar-logo" aria-label="Havets — startsida">Havets</a>
+      <div class="navbar-nav">
+        <a href="menu.html">Menyer</a>
+        <a href="about.html">Om oss</a>
+        <a href="menu.html#kockarnas-bord">Kockarnas bord</a>
+        <a href="contact.html" class="btn btn--light navbar-cta" style="padding: 0.625rem 1.375rem; font-size: 0.875rem;">Boka bord</a>
+      </div>
+      <button class="navbar-toggle" id="navToggle" aria-label="Öppna meny" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav -->
+  <div class="navbar-mobile" id="navMobile" role="dialog" aria-label="Mobilmeny">
+    <button class="navbar-mobile-close" id="navClose" aria-label="Stäng meny">✕</button>
+    <a href="index.html">Start</a>
+    <a href="menu.html">Menyer</a>
+    <a href="about.html">Om oss</a>
+    <a href="menu.html#kockarnas-bord">Kockarnas bord</a>
+    <a href="contact.html">Boka bord</a>
+  </div>
+
+  <main>
+
+    <!-- ============================================================
+         HERO — FULLSCREEN (HERO-B)
+         ============================================================ -->
+    <section class="hero--fullscreen" aria-label="Hero">
+
+      <div class="hero-media-wrap" id="heroMedia">
+        <img
+          src="assets/images/hf_20260424_090518_c1cf8cf8-70fe-4c08-a7da-ed5ac0351beb.png"
+          alt="Havets restaurang — fine dining interiör med levande ljus"
+          class="hero-img"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+      </div>
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-fullscreen-content">
+        <p class="hero-eyebrow" id="heroEyebrow">Haga Nygata 14 &nbsp;·&nbsp; Fine dining &nbsp;·&nbsp; 22 platser</p>
+        <h1 class="hero-fullscreen-heading" id="heroHeading">
+          Havets.<br><em>Göteborg.</em>
+        </h1>
+        <a href="contact.html" class="btn btn--light" id="heroCta">Boka bord</a>
+      </div>
+
+      <div class="hero-scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         MARQUEE STRIP (VISUAL-A)
+         ============================================================ -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track" id="marqueeTrack">
+        <div class="marquee-content">
+          <span class="marquee-item">Västerhavet</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Säsongsbaserat</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">22 platser</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Michelin-nominerad</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Haga, Göteborg</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Avsmakningsmenyer</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Enbart förbokade bord</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">White Guide Top 100</span>
+          <span class="marquee-dot">·</span>
+        </div>
+        <div class="marquee-content" aria-hidden="true">
+          <span class="marquee-item">Västerhavet</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Säsongsbaserat</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">22 platser</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Michelin-nominerad</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Haga, Göteborg</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Avsmakningsmenyer</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">Enbart förbokade bord</span>
+          <span class="marquee-dot">·</span>
+          <span class="marquee-item">White Guide Top 100</span>
+          <span class="marquee-dot">·</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         MENY INTRO — Custom
+         ============================================================ -->
+    <section class="meny-intro" id="menyer" aria-labelledby="menyH2">
+      <div class="container">
+
+        <div class="meny-header-row">
+          <div class="meny-header-text" data-gsap-reveal>
+            <p class="section-label">Säsongens meny</p>
+            <h2 class="section-heading" id="menyH2">
+              Fyra menyer per år.<br><em>Havet bestämmer.</em>
+            </h2>
+          </div>
+          <div class="meny-header-body" data-gsap-reveal>
+            <p>Menyn byts fyra gånger om året. Inte för att det är en regel — för att råvarorna säger till när det är dags. Fisk och skaldjur direkt från lokala fiskare på Västerhavet. Grönsaker från Nötekulla gård.</p>
+          </div>
+        </div>
+
+        <div class="meny-cards" data-gsap-reveal>
+
+          <div class="meny-card" data-gsap-child>
+            <p class="meny-card-type">Femrätters</p>
+            <div class="meny-card-price">895 <span>kr / person</span></div>
+            <div class="meny-card-divider"></div>
+            <p class="meny-card-detail">Vinpaket från 450 kr &nbsp;·&nbsp; Alkoholfritt från 350 kr</p>
+            <div class="meny-card-cta">
+              <a href="contact.html" class="btn btn--secondary">Boka femrätters</a>
+            </div>
+          </div>
+
+          <div class="meny-card" data-gsap-child>
+            <p class="meny-card-type">Åtterätters</p>
+            <div class="meny-card-price">1 295 <span>kr / person</span></div>
+            <div class="meny-card-divider"></div>
+            <p class="meny-card-detail">Vinpaket från 650 kr &nbsp;·&nbsp; Alkoholfritt från 350 kr</p>
+            <div class="meny-card-cta">
+              <a href="contact.html" class="btn btn--primary">Boka åtterätters</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         STICKY PROCESS — "En kväll på Havets" (PROCESS-B)
+         ============================================================ -->
+    <section class="process-sticky" id="process" aria-labelledby="processH2">
+      <div class="container">
+        <div class="sticky-layout">
+
+          <!-- Left: sticky heading + progress -->
+          <div class="sticky-left">
+            <p class="section-label">En kväll på Havets</p>
+            <h2 class="section-heading" id="processH2">
+              Tre timmar.<br><em>Rätt tempo.</em>
+            </h2>
+            <p class="section-sub">Varje kväll börjar och slutar i er takt. Vi berättar det vi vet — ni behöver bara komma.</p>
+            <div class="sticky-progress" aria-hidden="true">
+              <div class="sticky-dot active" data-dot="0"></div>
+              <div class="sticky-dot" data-dot="1"></div>
+              <div class="sticky-dot" data-dot="2"></div>
+            </div>
+          </div>
+
+          <!-- Right: scroll-driven steps -->
+          <div class="sticky-wrap">
+            <div class="sticky-item-wrap">
+
+              <div class="sticky-step active" data-step="0">
+                <span class="step-label">Steg 01</span>
+                <h3>Ankomst 18:00 eller 20:30</h3>
+                <p>Vi tar emot er vid dörren. Menyn för kvällen presenteras. Ni berättar om preferenser vi inte känner till — allergier, ogillar, nyfikenheter. Inget är för litet att nämna.</p>
+                <div class="img-placeholder" style="aspect-ratio:16/9;">
+                  <span>Steg 01</span>
+                  <p>Ingång och välkomst — varm belysning, bordsdukning</p>
+                </div>
+              </div>
+
+              <div class="sticky-step" data-step="1">
+                <span class="step-label">Steg 02</span>
+                <h3>Rätterna</h3>
+                <p>Varje rätt serveras med en kort berättelse om råvaran och varifrån den kommer. Inget är obligatoriskt att veta — allt är tillgängligt att fråga om. Vinet väljs av sommelier till varje gång.</p>
+                <div class="img-placeholder" style="aspect-ratio:16/9;">
+                  <span>Steg 02</span>
+                  <p>Tallrik serveras — mörk belysning, fokus på maten</p>
+                </div>
+              </div>
+
+              <div class="sticky-step" data-step="2">
+                <span class="step-label">Steg 03</span>
+                <h3>Kaffet</h3>
+                <p>Middagen avslutas när ni vill. Notan inkluderar allt som beställts. Inga dolda avgifter. Vi tar inte av korten mer än vi sagt.</p>
+                <div class="img-placeholder" style="aspect-ratio:16/9;">
+                  <span>Steg 03</span>
+                  <p>Kaffe och mignardises, avkopplad stämning</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         STATS — DARK DRAMATIC (STATS-B)
+         ============================================================ -->
+    <section class="stats--dark" aria-label="Nyckeltal">
+      <div class="container">
+        <div class="stats-dark-grid">
+
+          <div class="stat-dark-item" data-animate>
+            <div class="stat-dark-num">
+              <span data-count-to="22">0</span>
+            </div>
+            <p class="stat-dark-label">Platser per kväll</p>
+            <p class="stat-dark-sub">Alltid fokus. Aldrig en fabrik.</p>
+          </div>
+
+          <div class="stat-dark-item" data-animate>
+            <div class="stat-dark-num">
+              <span data-count-to="4">0</span><span class="accent">×</span>
+            </div>
+            <p class="stat-dark-label">Säsongsmenyer per år</p>
+            <p class="stat-dark-sub">Råvarorna säger till när det är dags.</p>
+          </div>
+
+          <div class="stat-dark-item" data-animate>
+            <div class="stat-dark-num">
+              <span>2022</span><span class="accent">–</span><span>23</span>
+            </div>
+            <p class="stat-dark-label">Michelin-nominerad</p>
+            <p class="stat-dark-sub">White Guide Top 100 Sverige 2023.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- The unexpected detail -->
+      <div class="stats-bg-number" aria-hidden="true">22</div>
+    </section>
+
+    <!-- ============================================================
+         IMAGE MARQUEE — Maträtter (VISUAL-D)
+         ============================================================ -->
+    <section class="image-marquee-section" aria-label="Bilder från Havets">
+      <div class="image-marquee-strip">
+        <div class="image-marquee-track" id="imgMarqueeTrack">
+          <div class="image-marquee-content">
+            <div class="img-marquee-item">
+              <div class="img-placeholder" style="aspect-ratio:4/3;width:320px;">
+                <p>Nordisk skaldjursrätt, mörk skiffer, stearinljus, makro</p>
+              </div>
+            </div>
+            <div class="img-marquee-item">
+              <div class="img-placeholder" style="aspect-ratio:4/3;width:320px;">
+                <p>Färsk havskräfta på is, mörk bakgrund, editorial</p>
+              </div>
+            </div>
+            <div class="img-marquee-item">
+              <div class="img-placeholder" style="aspect-ratio:4/3;width:320px;">
+                <p>Kockhänder förbereder grönsaker, rörelseoskärpa, varmt ljus</p>
+              </div>
+            </div>
+            <div class="img-marquee-item">
+              <div class="img-placeholder" style="aspect-ratio:4/3;width:320px;">
+                <p>Vin hälls upp i mörk restaurang, bokeh-bakgrund</p>
+              </div>
+            </div>
+            <div class="img-marquee-item">
+              <div class="img-placeholder" style="aspect-ratio:4/3;width:320px;">
+                <p>Nordisk dessert med örter, mörk tallrik, enpunktsbelysning</p>
+              </div>
+            </div>
+            <div class="img-marquee-item">
+              <div class="img-placeholder" style="aspect-ratio:4/3;width:320px;">
+                <p>Tomt restaurangbord dukat för middag, stearinljus, mörkt</p>
+              </div>
+            </div>
+          </div>
+          <!-- Duplicate for seamless loop -->
+          <div class="image-marquee-content" aria-hidden="true">
+            <div class="img-marquee-item">
+              <div class="img-placeholder" style="aspect-ratio:4/3;width:320px;">
+                <p>Nordisk skaldjursrätt, mörk skiffer, stearinljus, makro</p>
+              </div>
+            </div>
+            <div class="img-marquee-item">
+              <div class="img-placeholder" style="aspect-ratio:4/3;width:320px;">
+                <p>Färsk havskräfta på is, mörk bakgrund, editorial</p>
+              </div>
+            </div>
+            <div class="img-marquee-item">
+              <div class="img-placeholder" style="aspect-ratio:4/3;width:320px;">
+                <p>Kockhänder förbereder grönsaker, rörelseoskärpa, varmt ljus</p>
+              </div>
+            </div>
+            <div class="img-marquee-item">
+              <div class="img-placeholder" style="aspect-ratio:4/3;width:320px;">
+                <p>Vin hälls upp i mörk restaurang, bokeh-bakgrund</p>
+              </div>
+            </div>
+            <div class="img-marquee-item">
+              <div class="img-placeholder" style="aspect-ratio:4/3;width:320px;">
+                <p>Nordisk dessert med örter, mörk tallrik, enpunktsbelysning</p>
+              </div>
+            </div>
+            <div class="img-marquee-item">
+              <div class="img-placeholder" style="aspect-ratio:4/3;width:320px;">
+                <p>Tomt restaurangbord dukat för middag, stearinljus, mörkt</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         ABOUT — Om köksmästaren (ABOUT-A)
+         ============================================================ -->
+    <section class="about-split" id="om-oss" aria-labelledby="aboutH2">
+      <div class="container">
+        <div class="about-grid">
+
+          <div class="about-text" data-gsap-reveal>
+            <p class="section-label">Köksmästaren</p>
+            <h2 class="section-heading" id="aboutH2">
+              Erik Strand.<br><em>Västerhavets kock.</em>
+            </h2>
+            <div class="about-body">
+              <p>Erik Strand utbildade sig i Frankrike och jobbade som souschef på Bhoga i Göteborg i fem år.</p>
+              <p>2019 öppnade han Havets med ett enkelt mål: att laga mat av det havet ger, i den ordning det ges. Varje råvara har ett namn och ett ursprung.</p>
+              <p>Michelin-nominerad 2022 och 2023. White Guide Top 100 Sverige. Finalist Årets Kock.</p>
+            </div>
+            <a href="about.html" class="link-arrow">Läs mer om Erik och Havets →</a>
+          </div>
+
+          <div class="about-media">
+            <div class="about-media-wrap">
+              <div class="img-placeholder" style="aspect-ratio:3/4;" id="aboutImg">
+                <span>Köksmästaren</span>
+                <p>Erik Strand i köket, naturligt ljus uppifrån, fokuserad, dokumentärt foto, varma toner mot mörk bakgrund</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TESTIMONIALS — Editorial Quote (TESTIMONIALS-D)
+         ============================================================ -->
+    <section class="testimonials-editorial" aria-label="Gästrecensioner">
+      <div class="container">
+        <div class="testimonial-editorial-inner" data-animate>
+
+          <svg class="quote-icon-large" viewBox="0 0 700 636" fill="none" aria-hidden="true">
+            <path d="M700 285H500V256L685 71L615 0L400 215V635H700V285Z" fill="currentColor"/>
+            <path d="M215 0L285 71L100 256V285H300V635H0V215L215 0Z" fill="currentColor"/>
+          </svg>
+
+          <blockquote class="testimonial-editorial-text">
+            "Jag förstod inte att jag skulle gilla havskräfta förrän Erik lagade den."
+          </blockquote>
+
+          <div class="testimonial-editorial-author">
+            <span class="author-name">Anna M.</span>
+            <span class="author-sep">—</span>
+            <span class="author-location">Stockholm</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         PRE-FOOTER CTA (CTA-A)
+         ============================================================ -->
+    <section class="cta-dark" id="boka" aria-labelledby="ctaH2">
+      <div class="container">
+        <div class="cta-dark-inner" data-animate>
+          <p class="section-label">Boka bord</p>
+          <h2 class="cta-dark-heading" id="ctaH2">
+            Havets.<br><em>Haga, Göteborg.</em>
+          </h2>
+          <p class="cta-dark-sub">Ring oss på 031-123 456 78 eller boka online. Vi svarar inom ett dygn.</p>
+          <div class="cta-dark-actions">
+            <a href="contact.html" class="btn btn--light">Boka bord</a>
+            <a href="tel:+46311234567" class="cta-phone-link">031-123 456 78</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER (FOOTER-A)
+       ============================================================ -->
+  <footer class="footer" aria-label="Sidfot">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <span class="footer-logo">Havets</span>
+          <p>Fine dining på Haga Nygata, Göteborg. Sedan 2019. Säsongsbaserade avsmakningsmenyer med råvaror från Västerhavet.</p>
+          <a href="tel:+46311234567" class="footer-phone">031-123 456 78</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Menyer</h4>
+          <ul>
+            <li><a href="menu.html#femratters">Femrätters — 895 kr</a></li>
+            <li><a href="menu.html#attatters">Åtterätters — 1 295 kr</a></li>
+            <li><a href="menu.html#kockarnas-bord">Kockarnas bord</a></li>
+            <li><a href="menu.html#privat">Privata middagar</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Sidor</h4>
+          <ul>
+            <li><a href="index.html">Startsida</a></li>
+            <li><a href="menu.html">Menyer</a></li>
+            <li><a href="about.html">Om oss</a></li>
+            <li><a href="contact.html">Boka bord</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kontakt &amp; besök</h4>
+          <ul>
+            <li><a href="tel:+46311234567">031-123 456 78</a></li>
+            <li><a href="mailto:bord@havets.se">bord@havets.se</a></li>
+            <li>Haga Nygata 14, Göteborg</li>
+            <li>Tis–Lör 17:30–23:00</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Havets Restaurang AB. Alla rättigheter förbehållna.</p>
+        <p>Byggd av <a href="https://nordicicon.se" target="_blank" rel="noopener">Nordic Icon</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
+  <script src="https://cdn.prod.website-files.com/gsap/3.14.2/gsap.min.js"></script>
+  <script src="https://cdn.prod.website-files.com/gsap/3.14.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.prod.website-files.com/gsap/3.14.2/SplitText.min.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>

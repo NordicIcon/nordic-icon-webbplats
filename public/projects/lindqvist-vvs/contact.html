@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kontakt &amp; Besiktning | Lindqvist VVS | 054-123 45 67</title>
+  <meta name="description" content="Kontakta Lindqvist VVS i Karlstad. Ring 054-123 45 67 för akutjobb dygnet runt. Boka kostnadsfri besiktning för badrumsrenovering och värmepumpar.">
+  <link rel="canonical" href="https://lindqvistvvs.se/contact.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Contact page specifics */
+    .contact-page-hero {
+      padding-top: 88px;
+      border-bottom: 1px solid var(--border);
+    }
+    .contact-page-hero__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8xl);
+      align-items: end;
+      padding-top: var(--section-padding);
+      padding-bottom: var(--section-padding);
+    }
+    .contact-page-hero__text {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2xl);
+    }
+    .contact-page-hero__heading {
+      font-family: var(--font-heading);
+      font-size: var(--text-h1);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: var(--tracking-tight);
+    }
+    .contact-page-hero__heading em { font-style: italic; }
+    .contact-page-hero__sub {
+      font-size: var(--text-body);
+      color: var(--text-secondary);
+      line-height: 1.7;
+      max-width: 460px;
+    }
+    .contact-page-hero__quick {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-xl);
+    }
+    .contact-quick-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xl);
+      padding: var(--space-xl) var(--space-2xl);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+    .contact-quick-item:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 16px var(--accent-shadow);
+    }
+    .contact-quick-item .icon-box { flex-shrink: 0; }
+    .contact-quick-item__body { display: flex; flex-direction: column; gap: 2px; }
+    .contact-quick-item__label {
+      font-size: var(--text-label);
+      font-weight: 500;
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .contact-quick-item__value {
+      font-family: var(--font-heading);
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+    .contact-quick-item__note {
+      font-size: var(--text-small);
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 900px) {
+      .contact-page-hero__inner {
+        grid-template-columns: 1fr;
+        gap: var(--space-5xl);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAVBAR ─────────────────────────────────────────────── -->
+  <header id="navbar" class="navbar" role="banner">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="index.html" class="navbar__logo" aria-label="Lindqvist VVS — startsida">
+          Lindqvist <span>VVS</span>
+        </a>
+        <nav class="navbar__nav" aria-label="Huvudnavigation">
+          <a href="services.html">Tjänster</a>
+          <a href="about.html">Om oss</a>
+          <a href="contact.html" aria-current="page">Kontakt</a>
+        </nav>
+        <a href="tel:+46541234567" class="btn btn--primary navbar__cta">054-123 45 67</a>
+        <button id="hamburger" class="navbar__hamburger" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobilnavigation">
+    <a href="services.html">Tjänster</a>
+    <a href="about.html">Om oss</a>
+    <a href="contact.html" aria-current="page">Kontakt</a>
+    <a href="tel:+46541234567" class="btn btn--primary">054-123 45 67</a>
+  </nav>
+
+  <main>
+
+    <!-- ── PAGE HERO med snabblänkar ──────────────────────── -->
+    <section class="contact-page-hero">
+      <div class="container">
+        <div class="contact-page-hero__inner">
+
+          <div class="contact-page-hero__text">
+            <span class="label" data-animate>Kontakt</span>
+            <h1 class="contact-page-hero__heading" data-animate>
+              Ring oss. <em>Vi svarar.</em>
+            </h1>
+            <p class="contact-page-hero__sub" data-animate>
+              För akutjobb ringer du direkt — vi svarar dygnet runt.
+              För besiktning och offert fyller du i formuläret nedan så återkommer vi samma dag.
+            </p>
+          </div>
+
+          <div class="contact-page-hero__quick">
+            <a href="tel:+46541234567" class="contact-quick-item" data-animate>
+              <div class="icon-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.07 1.18 2 2 0 012.05 0h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 14.92z"/></svg>
+              </div>
+              <div class="contact-quick-item__body">
+                <span class="contact-quick-item__label">Telefon · Jour dygnet runt</span>
+                <span class="contact-quick-item__value">054-123 45 67</span>
+                <span class="contact-quick-item__note">Normalt svar inom 30 min på vardagar</span>
+              </div>
+            </a>
+
+            <a href="mailto:info@lindqvistvvs.se" class="contact-quick-item" data-animate>
+              <div class="icon-box" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-quick-item__body">
+                <span class="contact-quick-item__label">E-post</span>
+                <span class="contact-quick-item__value">info@lindqvistvvs.se</span>
+                <span class="contact-quick-item__note">Svar inom 1 arbetsdag</span>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── KONTAKTFORMULÄR + INFO ──────────────────────────── -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-section__inner">
+
+          <!-- Info -->
+          <div class="contact-info">
+            <div data-animate>
+              <span class="label" style="display:block; margin-bottom:1.25rem;">Kontaktinformation</span>
+              <h2 class="contact-info__heading">
+                Vi är uppbokade <em>3–4 veckor</em> framåt normalt.
+              </h2>
+            </div>
+            <p class="contact-info__sub" data-animate>
+              Boka tidigt för planerade jobb som badrumsrenovering och värmepumpar.
+              Akutjobb prioriteras alltid oavsett kö.
+            </p>
+
+            <div class="contact-info__details" data-animate>
+              <div class="contact-info__item">
+                <span class="label">Telefon</span>
+                <p class="contact-info__value">
+                  <a href="tel:+46541234567">054-123 45 67</a>
+                </p>
+              </div>
+              <div class="contact-info__item">
+                <span class="label">E-post</span>
+                <p class="contact-info__value">
+                  <a href="mailto:info@lindqvistvvs.se">info@lindqvistvvs.se</a>
+                </p>
+              </div>
+              <div class="contact-info__item">
+                <span class="label">Adress</span>
+                <p class="contact-info__value">Verkstadsgatan 8, 652 21 Karlstad</p>
+              </div>
+            </div>
+
+            <div data-animate>
+              <span class="label" style="display:block; margin-bottom:1rem;">Öppettider</span>
+              <div class="contact-info__hours">
+                <div class="contact-info__hour-row">
+                  <span>Måndag–Fredag</span>
+                  <span>07:00–17:00</span>
+                </div>
+                <div class="contact-info__hour-row">
+                  <span>Lördag–Söndag</span>
+                  <span>Stängt</span>
+                </div>
+                <div class="contact-info__hour-row">
+                  <span>Jour</span>
+                  <span>Dygnet runt, alla dagar</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-map" data-animate>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2065.8!2d13.5036!3d59.3793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTnCsDIyJzQ1LjUiTiAxM8KwMzAnMTMuMCJF!5e0!3m2!1ssv!2sse!4v1700000000000!5m2!1ssv!2sse"
+                title="Lindqvist VVS på karta — Verkstadsgatan 8, Karlstad"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                style="border:0;"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Formulär -->
+          <div data-animate>
+            <span class="label" style="display:block; margin-bottom:1.75rem;">Boka kostnadsfri besiktning</span>
+            <form
+              class="contact-form"
+              action="mailto:info@lindqvistvvs.se"
+              method="post"
+              enctype="text/plain"
+              aria-label="Kontaktformulär"
+            >
+              <div class="contact-form__row">
+                <div class="contact-form__group">
+                  <label for="fname">Förnamn</label>
+                  <input
+                    type="text"
+                    id="fname"
+                    name="fornamn"
+                    placeholder="Anna"
+                    required
+                    autocomplete="given-name"
+                  >
+                </div>
+                <div class="contact-form__group">
+                  <label for="lname">Efternamn</label>
+                  <input
+                    type="text"
+                    id="lname"
+                    name="efternamn"
+                    placeholder="Svensson"
+                    required
+                    autocomplete="family-name"
+                  >
+                </div>
+              </div>
+
+              <div class="contact-form__group">
+                <label for="phone">Telefon</label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="telefon"
+                  placeholder="070-123 45 67"
+                  required
+                  autocomplete="tel"
+                >
+              </div>
+
+              <div class="contact-form__group">
+                <label for="email">E-post</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="epost"
+                  placeholder="anna@exempel.se"
+                  autocomplete="email"
+                >
+              </div>
+
+              <div class="contact-form__group">
+                <label for="service">Tjänst</label>
+                <select id="service" name="tjanst">
+                  <option value="" disabled selected>Välj tjänst</option>
+                  <option value="badrumsrenovering">Badrumsrenovering</option>
+                  <option value="vvs-installation">VVS-installation</option>
+                  <option value="varmepump">Värmepump</option>
+                  <option value="jour-akut">Jour &amp; Akutservice</option>
+                  <option value="annat">Annat</option>
+                </select>
+              </div>
+
+              <div class="contact-form__group">
+                <label for="message">Beskriv uppdraget</label>
+                <textarea
+                  id="message"
+                  name="meddelande"
+                  placeholder="Kort beskrivning av vad ni behöver hjälp med, var ni bor och när det passar att vi besöker er."
+                  required
+                ></textarea>
+              </div>
+
+              <p class="contact-form__note">
+                Vi är uppbokade 3–4 veckor framåt för planerade jobb.
+                Akutjobb prioriteras alltid. Vi återkommer samma dag på vardagar.
+              </p>
+
+              <button type="submit" class="btn btn--primary" style="width:100%; justify-content:center;">
+                Skicka förfrågan
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l7-7M5 5h7v7"/></svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <p class="footer__col-title">Lindqvist VVS</p>
+          <p class="footer__tagline">Familjeägt VVS-företag i Karlstad sedan 1987.</p>
+          <div class="footer__certs">
+            <span class="footer__cert-badge">Säker Vatten</span>
+            <span class="footer__cert-badge">F-gas</span>
+            <span class="footer__cert-badge">ROT-avdrag</span>
+          </div>
+          <a href="tel:+46541234567" class="footer__phone">054-123 45 67</a>
+        </div>
+        <div>
+          <p class="footer__col-title">Tjänster</p>
+          <nav class="footer__links">
+            <a href="services.html#badrum">Badrumsrenovering</a>
+            <a href="services.html#vvs">VVS-installation</a>
+            <a href="services.html#varmepump">Värmepumpar</a>
+            <a href="services.html#jour">Jour &amp; Akutservice</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__col-title">Sidor</p>
+          <nav class="footer__links">
+            <a href="index.html">Startsida</a>
+            <a href="services.html">Tjänster</a>
+            <a href="about.html">Om oss</a>
+            <a href="contact.html">Kontakt</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__col-title">Kontakt</p>
+          <div class="footer__contact-info">
+            <div class="footer__contact-row">
+              <span class="footer__contact-label">Telefon</span>
+              <span class="footer__contact-value"><a href="tel:+46541234567">054-123 45 67</a></span>
+            </div>
+            <div class="footer__contact-row">
+              <span class="footer__contact-label">E-post</span>
+              <span class="footer__contact-value"><a href="mailto:info@lindqvistvvs.se">info@lindqvistvvs.se</a></span>
+            </div>
+            <div class="footer__contact-row">
+              <span class="footer__contact-label">Adress</span>
+              <span class="footer__contact-value">Verkstadsgatan 8, Karlstad</span>
+            </div>
+            <div class="footer__contact-row">
+              <span class="footer__contact-label">Öppettider</span>
+              <span class="footer__contact-value">Mån–Fre 07:00–17:00<br>Jour dygnet runt</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2024 Lindqvist VVS AB. Alla rättigheter förbehållna.</p>
+        <p class="footer__by">Byggd av <a href="https://nordicicon.se" target="_blank" rel="noopener">Nordic Icon</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+# AI Crawler Access — Koppar Kafé AB
+User-agent: *
+Allow: /
+
+# About this site
+# Koppar is a specialty coffee café in Halmstad, Sweden.
+# Self-roasting in basement. Q-graded owner. Est. 2022.
+# Primary keyword: Café Halmstad, specialty coffee Halmstad
+# Language: Swedish
+
+# Contact
+# hej@kopparkafe.se

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koppar — Specialty Coffee i Halmstad</title>
+  <meta name="description" content="Koppar är Halmstads specialty coffee-kafé. Egenrostat i källaren, bakverk bakade varje morgon. Köpmangatan 12, centrum. Öppet mån–fre 07–18, lör–sön 08–17.">
+  <link rel="canonical" href="https://kopparkafe.se/">
+
+  <!-- Preload key fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400,500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Schema — CafeOrCoffeeShop -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Koppar",
+    "legalName": "Koppar Kafé AB",
+    "description": "Specialty coffee-kafé i centrala Halmstad. Egenrostat kaffe, bakverk bakade på plats, kaffeprovningar.",
+    "url": "https://kopparkafe.se",
+    "telephone": "+46351234567",
+    "email": "hej@kopparkafe.se",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Köpmangatan 12",
+      "postalCode": "302 43",
+      "addressLocality": "Halmstad",
+      "addressCountry": "SE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 56.6741,
+      "longitude": 12.8577
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "07:00",
+        "closes": "18:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "08:00",
+        "closes": "17:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday",
+        "opens": "09:00",
+        "closes": "16:00"
+      }
+    ],
+    "servesCuisine": "Specialty Coffee",
+    "priceRange": "$$",
+    "hasMap": "https://maps.google.com/?q=Köpmangatan+12+Halmstad",
+    "founder": {
+      "@type": "Person",
+      "name": "Lena Björk"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════ -->
+  <nav class="navbar" id="navbar" aria-label="Huvudnavigering">
+    <div class="navbar__inner">
+
+      <a href="index.html" class="navbar__logo" aria-label="Koppar — startsida">
+        Koppar
+      </a>
+
+      <ul class="navbar__links" id="navLinks" role="list">
+        <li><a href="menu.html" class="navbar__link">Menyn</a></li>
+        <li><a href="about.html" class="navbar__link">Om oss</a></li>
+        <li><a href="about.html#rostningen" class="navbar__link">Rostningen</a></li>
+        <li><a href="contact.html" class="navbar__link">Hitta hit</a></li>
+      </ul>
+
+      <div class="navbar__cta">
+        <a href="contact.html#boka" class="btn btn--primary">Boka provning</a>
+      </div>
+
+      <button class="navbar__toggle" id="navToggle" aria-label="Öppna meny" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ══════════════════════════════════════
+         HERO — Fullscreen
+    ══════════════════════════════════════ -->
+    <section class="hero" aria-label="Hero">
+
+      <div class="hero__bg">
+        <img
+          src="assets/images/hero.png"
+          alt="Koppar kafé i Halmstad — skandinavisk kafémiljö med bar, bakverk och ljusa sittplatser"
+          class="hero__bg-img"
+          loading="eager"
+          fetchpriority="high"
+        >
+      </div>
+
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="hero__content">
+        <div class="hero__inner">
+
+          <div class="label-badge" data-animate>
+            <span class="badge-dot" aria-hidden="true"></span>
+            <span>Q-gradad kaffeprovare · Halmstad · Egenrostat</span>
+          </div>
+
+          <h1 class="hero__heading" data-split-heading>
+            Kaffe rostat i källaren.<br><em>Varje vecka.</em>
+          </h1>
+
+          <p class="hero__sub" data-animate>
+            Koppar serverar espresso, filter och pour-over på eget rostat kaffe.
+            Köpmangatan 12, centrum Halmstad.
+          </p>
+
+          <div class="hero__actions" data-animate>
+            <a href="menu.html" class="btn btn--primary">Se menyn</a>
+            <a href="contact.html#boka" class="btn btn--secondary">Boka provning</a>
+          </div>
+
+          <div class="hero__trust" data-animate>
+            <span class="hero__trust-item">Egenrostat sedan 2022</span>
+            <span class="hero__trust-item">Q-gradad ägare</span>
+            <span class="hero__trust-item">Bakverk varje morgon kl 05</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span class="hero__scroll-label">Scrolla</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════════
+         MARQUEE STRIP
+    ══════════════════════════════════════ -->
+    <div class="marquee-strip" aria-hidden="true">
+      <div class="marquee-track">
+        <!-- Duplicated for seamless loop -->
+        <div class="marquee-item"><span class="marquee-item__text">Egenrostat kaffe</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Q-gradad ägare</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Specialty coffee</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Espresso</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Filter</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Pour-over</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Bakverk på plats</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Halmstad centrum</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Kaffeprovning</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Egna bönor</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Havremjölk ingår</span><span class="marquee-item__dot"></span></div>
+        <!-- Duplicate set for seamless loop -->
+        <div class="marquee-item"><span class="marquee-item__text">Egenrostat kaffe</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Q-gradad ägare</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Specialty coffee</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Espresso</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Filter</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Pour-over</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Bakverk på plats</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Halmstad centrum</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Kaffeprovning</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Egna bönor</span><span class="marquee-item__dot"></span></div>
+        <div class="marquee-item"><span class="marquee-item__text">Havremjölk ingår</span><span class="marquee-item__dot"></span></div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         INTRO / SHORT ABOUT
+    ══════════════════════════════════════ -->
+    <section class="intro section" id="om-koppar" aria-labelledby="intro-heading">
+      <div class="container">
+        <div class="intro__grid" data-gsap-reveal>
+
+          <div class="intro__text-col">
+            <div class="section-header">
+              <span class="section-label">Om Koppar</span>
+              <h2 class="section-heading" id="intro-heading" data-gsap-child>
+                Grundat i Halmstad.<br><em>Rostat i källaren.</em>
+              </h2>
+            </div>
+            <p data-gsap-child>
+              Koppar öppnade 2022 på Köpmangatan, centrala Halmstad.
+              Lena Björk driver kaféet efter åtta år som barista i London och Amsterdam.
+              Hon är Q-gradad kaffeprovare — en av få i Sverige.
+            </p>
+            <a href="about.html" class="intro__link" data-gsap-child>Läs om rostningen</a>
+          </div>
+
+          <div class="intro__body-col" data-gsap-child>
+            <p>
+              Kaffet rostas i källaren varje vecka.
+              Espresso, filter och pour-over bryggs alltid på den senaste rosten.
+            </p>
+            <p>
+              Bakverk bakas på plats kl 05 varje morgon.
+              Kom inte för sent.
+            </p>
+            <div class="intro__image parallax-wrap" style="margin-top: 1.5rem;">
+              <div class="img-placeholder" style="aspect-ratio: 4/3; max-width: 100%;" role="img" aria-label="Lena Björk vid kafébaren, varmt ljus, kopp i hand">
+                <span>Om oss — bild</span>
+                <p>Lena at the bar<br>Warm editorial portrait · 4/3</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════
+         MENU SECTION
+    ══════════════════════════════════════ -->
+    <section class="menu-section" id="meny" aria-labelledby="menu-heading">
+      <div class="container">
+        <div class="section-header" data-gsap-reveal>
+          <span class="section-label" data-gsap-child>Menyn</span>
+          <h2 class="section-heading" id="menu-heading" data-gsap-child>
+            Espresso. Filter. <em>Pour-over.</em>
+          </h2>
+          <p class="section-sub" data-gsap-child>
+            Allt bryggs på egenrostat kaffe. Havremjölk ingår utan tillägg.
+          </p>
+        </div>
+
+        <!-- Bento grid -->
+        <div class="menu-grid" data-gsap-reveal>
+
+          <!-- Featured: Espresso -->
+          <article class="menu-card--featured card" data-gsap-child>
+            <div>
+              <span class="menu-card__tag">Signatur</span>
+              <h3 class="menu-card__name">Espresso</h3>
+              <p class="menu-card__desc">
+                Dubbel shot, kortextraherad.<br>
+                Bas för alla mjölkdrycker.
+              </p>
+            </div>
+            <span class="menu-card__price">35 kr</span>
+          </article>
+
+          <!-- Regular cards -->
+          <article class="menu-card" data-gsap-child>
+            <h3 class="menu-card__name">Cappuccino</h3>
+            <span class="menu-card__price">52 kr</span>
+          </article>
+
+          <article class="menu-card" data-gsap-child>
+            <h3 class="menu-card__name">Flat white</h3>
+            <span class="menu-card__price">52 kr</span>
+          </article>
+
+          <article class="menu-card" data-gsap-child>
+            <h3 class="menu-card__name">Latte</h3>
+            <span class="menu-card__price">55 kr</span>
+          </article>
+
+          <article class="menu-card" data-gsap-child>
+            <h3 class="menu-card__name">Americano</h3>
+            <span class="menu-card__price">40 kr</span>
+          </article>
+
+          <article class="menu-card" data-gsap-child>
+            <h3 class="menu-card__name">Filter</h3>
+            <p class="menu-card__desc">Per kopp</p>
+            <span class="menu-card__price">45 kr</span>
+          </article>
+
+          <article class="menu-card" data-gsap-child>
+            <h3 class="menu-card__name">Pour-over</h3>
+            <span class="menu-card__price">65 kr</span>
+          </article>
+
+        </div>
+
+        <!-- Food row -->
+        <div class="menu-food-row" data-gsap-reveal>
+          <div class="menu-food-card" data-gsap-child>
+            <div>
+              <div class="menu-food-card__name">Bakverk</div>
+              <div class="menu-food-card__sub">Varierar dagligen, bakat kl 05</div>
+            </div>
+            <div class="menu-food-card__price">35–55 kr</div>
+          </div>
+          <div class="menu-food-card" data-gsap-child>
+            <div>
+              <div class="menu-food-card__name">Smörgås</div>
+            </div>
+            <div class="menu-food-card__price">85–95 kr</div>
+          </div>
+          <div class="menu-food-card" data-gsap-child>
+            <div>
+              <div class="menu-food-card__name">Soppa med bröd</div>
+            </div>
+            <div class="menu-food-card__price">115 kr</div>
+          </div>
+        </div>
+
+        <div class="menu-cta" data-animate>
+          <a href="menu.html" class="btn btn--secondary">Se hela menyn</a>
+          <span class="menu-note">Inkl. kaffebönor att ta med hem</span>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════
+         ROASTING PROCESS — Sticky Scroll
+    ══════════════════════════════════════ -->
+    <section class="process" id="rostningen" aria-labelledby="process-heading">
+      <div class="process__container">
+
+        <!-- Sticky heading -->
+        <div class="process__sticky">
+          <div class="process__sticky-inner">
+            <span class="section-label">Rostprocessen</span>
+            <h2 class="section-heading" id="process-heading">
+              Varje vecka.<br><em>I källaren.</em>
+            </h2>
+            <p class="section-sub" style="margin-top: 1.5rem;">
+              Ingen annan i Halmstad rostar sitt eget kaffe.
+              Vi gör det varje vecka.
+            </p>
+            <div class="process__step-indicator" aria-hidden="true">
+              <span class="process__step-indicator-num" id="processCurrentStep">01</span>
+              <span class="process__step-indicator-sep">/</span>
+              <span class="process__step-indicator-total">04</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Steps -->
+        <div class="process__steps" id="processSteps">
+
+          <div class="process__step is-active" data-step="0">
+            <div class="process__step-num">Steg 01</div>
+            <h3 class="process__step-title">Råkaffet väljs</h3>
+            <p class="process__step-body">
+              Vi väljer råkaffet efter smakprofil.
+              Ursprung, altitud och skördemetod avgör hur vi rostar.
+            </p>
+          </div>
+
+          <div class="process__step" data-step="1">
+            <div class="process__step-num">Steg 02</div>
+            <h3 class="process__step-title">Rostning</h3>
+            <p class="process__step-body">
+              Bönorna rostas i källaren under kaféet.
+              Du kan lukta det när du går förbi på morgonen.
+            </p>
+          </div>
+
+          <div class="process__step" data-step="2">
+            <div class="process__step-num">Steg 03</div>
+            <h3 class="process__step-title">Vilotid</h3>
+            <p class="process__step-body">
+              Rostat kaffe behöver vila.
+              Minst 48 timmar innan vi brygger det.
+            </p>
+          </div>
+
+          <div class="process__step" data-step="3">
+            <div class="process__step-num">Steg 04</div>
+            <h3 class="process__step-title">Servering</h3>
+            <p class="process__step-body">
+              Espresso, filter eller pour-over.
+              Varje kopp bryggs på den senaste rosten.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         EDITORIAL BREAK
+    ══════════════════════════════════════ -->
+    <div class="editorial-break" aria-label="Atmosphärisk bild — kafémiljö med kopparljus och varmt ljus">
+      <div class="editorial-break__bg">
+        <div class="img-placeholder" role="img" aria-label="Kafémiljö vid skymning, kopparpendlar, mörka trätbord, gäster i mjukt fokus, varmt amber ljus">
+          <span>Editorial break</span>
+          <p>Café interior at dusk<br>Copper pendant lights · warm amber · 16/9 · 65vh</p>
+        </div>
+      </div>
+      <div class="editorial-break__overlay" aria-hidden="true"></div>
+      <blockquote class="editorial-break__quote" data-animate>
+        <p class="editorial-break__text">
+          "Jag visste inte att kaffe kunde smaka såhär."
+        </p>
+        <cite class="editorial-break__attr">— Erik S., Halmstad</cite>
+      </blockquote>
+    </div>
+
+    <!-- ══════════════════════════════════════
+         STATS
+    ══════════════════════════════════════ -->
+    <section class="stats section" aria-labelledby="stats-label">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label" id="stats-label">I siffror</span>
+        </div>
+
+        <!-- The unexpected detail: ambient K watermark -->
+        <div class="stats__watermark" aria-hidden="true">K</div>
+
+        <div class="stats__grid" data-gsap-reveal>
+
+          <div class="stats__item" data-gsap-child>
+            <div class="stats__number" data-count-to="2022">2022</div>
+            <div class="stats__label">Grundat</div>
+          </div>
+
+          <div class="stats__item" data-gsap-child>
+            <div class="stats__number">05<span class="accent">:00</span></div>
+            <div class="stats__label">Bakverken börjar</div>
+          </div>
+
+          <div class="stats__item" data-gsap-child>
+            <div class="stats__number"><span data-count-to="8">0</span> år</div>
+            <div class="stats__label">Lenas erfarenhet</div>
+          </div>
+
+          <div class="stats__item" data-gsap-child>
+            <div class="stats__number"><span class="accent">52</span> kr</div>
+            <div class="stats__label">En cappuccino</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════
+         TESTIMONIALS
+    ══════════════════════════════════════ -->
+    <section class="testimonials" aria-labelledby="testimonials-heading">
+      <div class="container">
+        <div class="section-header" data-gsap-reveal>
+          <span class="section-label" data-gsap-child>Vad folk säger</span>
+          <h2 class="section-heading" id="testimonials-heading" data-gsap-child>
+            Tre röster. <em>Från Halmstad.</em>
+          </h2>
+        </div>
+
+        <div class="testimonials__grid" data-gsap-reveal>
+
+          <article class="testimonial-card" data-gsap-child>
+            <div class="testimonial-card__mark" aria-hidden="true">"</div>
+            <blockquote class="testimonial-card__quote">
+              Jag visste inte att kaffe kunde smaka såhär.
+              Nu förstår jag varför folk bryr sig.
+            </blockquote>
+            <footer class="testimonial-card__author">
+              <span class="testimonial-card__name">Erik S.</span>
+              <span class="testimonial-card__location">Halmstad</span>
+            </footer>
+          </article>
+
+          <article class="testimonial-card" data-gsap-child>
+            <div class="testimonial-card__mark" aria-hidden="true">"</div>
+            <blockquote class="testimonial-card__quote">
+              Det enda stället i Halmstad där jag faktiskt stannar kvar.
+              Interiören, kaffet, allt stämmer.
+            </blockquote>
+            <footer class="testimonial-card__author">
+              <span class="testimonial-card__name">Maja L.</span>
+              <span class="testimonial-card__location">Göteborg</span>
+            </footer>
+          </article>
+
+          <article class="testimonial-card" data-gsap-child>
+            <div class="testimonial-card__mark" aria-hidden="true">"</div>
+            <blockquote class="testimonial-card__quote">
+              Lena förklarade varifrån bönorna kom och varför det spelar roll.
+              Jag köper aldrig supermarketskaffe igen.
+            </blockquote>
+            <footer class="testimonial-card__author">
+              <span class="testimonial-card__name">Thomas K.</span>
+              <span class="testimonial-card__location">Halmstad</span>
+            </footer>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         PRE-FOOTER CTA
+    ══════════════════════════════════════ -->
+    <section class="cta-section" aria-labelledby="cta-heading">
+      <div class="cta-section__glow" aria-hidden="true"></div>
+      <div class="cta-section__inner" data-gsap-reveal>
+        <span class="section-label" data-gsap-child>Välkommen</span>
+        <h2 class="cta-section__heading" id="cta-heading" data-gsap-child>
+          Kommit förbi på morgonen?<br><em>Dörren är öppen.</em>
+        </h2>
+        <p class="cta-section__sub" data-gsap-child>
+          Mån–Fre 07:00–18:00 · Lör 08:00–17:00 · Sön 09:00–16:00<br>
+          Köpmangatan 12, centrum Halmstad.
+        </p>
+        <div class="cta-section__actions" data-gsap-child>
+          <a href="contact.html" class="btn btn--primary">Hitta hit</a>
+          <a href="contact.html#boka" class="btn btn--secondary">Boka provning</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer" aria-label="Sidfot">
+    <div class="container">
+
+      <div class="footer__grid">
+
+        <div>
+          <div class="footer__brand-logo">Koppar</div>
+          <p class="footer__brand-desc">
+            Specialty coffee från källaren.<br>
+            Halmstad, sedan 2022.
+          </p>
+        </div>
+
+        <nav aria-label="Foternavigering">
+          <div class="footer__col-title">Navigering</div>
+          <ul class="footer__nav" role="list">
+            <li><a href="menu.html" class="footer__nav-link">Menyn</a></li>
+            <li><a href="about.html" class="footer__nav-link">Om oss</a></li>
+            <li><a href="about.html#rostningen" class="footer__nav-link">Rostningen</a></li>
+            <li><a href="contact.html" class="footer__nav-link">Hitta hit</a></li>
+            <li><a href="contact.html#boka" class="footer__nav-link">Boka provning</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <div class="footer__col-title">Kontakt</div>
+          <address style="font-style: normal;">
+            <span class="footer__contact-item">Köpmangatan 12</span>
+            <span class="footer__contact-item">302 43 Halmstad</span>
+            <a href="tel:+46351234567" class="footer__contact-item">035-123 456</a>
+            <a href="mailto:hej@kopparkafe.se" class="footer__contact-item">hej@kopparkafe.se</a>
+          </address>
+        </div>
+
+        <div>
+          <div class="footer__col-title">Öppettider</div>
+          <div class="footer__hours-item">
+            <span>Mån–Fre</span>
+            <span>07–18</span>
+          </div>
+          <div class="footer__hours-item">
+            <span>Lördag</span>
+            <span>08–17</span>
+          </div>
+          <div class="footer__hours-item">
+            <span>Söndag</span>
+            <span>09–16</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <span class="footer__copy">© 2025 Koppar Kafé AB</span>
+        <span class="footer__credit">Byggd av <a href="https://nordicicon.se" target="_blank" rel="noopener">Nordic Icon</a></span>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ══════════════════════════════════════
+       SCRIPTS — PRO Stack
+  ══════════════════════════════════════ -->
+  <!-- Lenis smooth scroll -->
+  <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
+  <!-- GSAP -->
+  <script src="https://cdn.prod.website-files.com/gsap/3.14.2/gsap.min.js"></script>
+  <script src="https://cdn.prod.website-files.com/gsap/3.14.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.prod.website-files.com/gsap/3.14.2/SplitText.min.js"></script>
+
+  <script src="main.js" defer></script>
+
+</body>
+</html>

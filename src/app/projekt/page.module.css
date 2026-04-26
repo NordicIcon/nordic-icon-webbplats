@@ -111,6 +111,8 @@
   flex-direction: column;
   gap: 18px;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 /* Featured card spans both columns */

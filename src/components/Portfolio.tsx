@@ -13,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     id: 0,
+    slug: 'koppar',
     name: 'Koppar',
     industry: 'Specialty Coffee',
     city: 'Halmstad',
@@ -21,6 +22,7 @@ const projects = [
   },
   {
     id: 1,
+    slug: 'havets',
     name: 'Havets',
     industry: 'Fine Dining',
     city: 'Göteborg',
@@ -29,6 +31,7 @@ const projects = [
   },
   {
     id: 2,
+    slug: 'strand-studio',
     name: 'Strand Studio',
     industry: 'Salong',
     city: 'Stockholm',
@@ -37,6 +40,7 @@ const projects = [
   },
   {
     id: 3,
+    slug: 'solberg',
     name: 'Solberg',
     industry: 'Restaurang',
     city: 'Stockholm',
@@ -45,6 +49,7 @@ const projects = [
   },
   {
     id: 4,
+    slug: 'lindqvist-vvs',
     name: 'Lindqvist VVS',
     industry: 'VVS',
     city: 'Karlstad',
@@ -221,12 +226,12 @@ export default function Portfolio() {
               {activeProject.industry} · {activeProject.city}
             </span>
           </div>
-          <a href="#" className={styles.viewBtn}>
+          <Link href={`/projekt/${activeProject.slug}`} className={styles.viewBtn}>
             Se projektet
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden>
               <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          </a>
+          </Link>
         </div>
 
         {/* Navigation dots — below activeInfo */}
