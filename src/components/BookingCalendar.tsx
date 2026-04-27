@@ -41,6 +41,7 @@ export default function BookingCalendar({ hideHeader }: { hideHeader?: boolean }
   const [availableTimes, setAvailableTimes] = useState<string[]>([]);
   const [form, setForm]             = useState({ name: '', email: '', company: '' });
   const [loading, setLoading]       = useState(false);
+  const [bookingError, setBookingError] = useState(false);
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
@@ -102,7 +103,7 @@ export default function BookingCalendar({ hideHeader }: { hideHeader?: boolean }
     setLoading(true);
 
     try {
-      await fetch('/api/book-meeting', {
+      const res = await fetch('/api/book-meeting', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -111,9 +112,10 @@ export default function BookingCalendar({ hideHeader }: { hideHeader?: boolean }
           ...form,
         }),
       });
+      if (!res.ok) throw new Error('API error');
       setStep('confirmed');
     } catch {
-      setStep('confirmed');
+      setBookingError(true);
     } finally {
       setLoading(false);
     }
@@ -243,6 +245,11 @@ export default function BookingCalendar({ hideHeader }: { hideHeader?: boolean }
             />
           </div>
 
+          {bookingError && (
+            <p style={{ color: '#EF4444', fontSize: '13px', marginBottom: '8px' }}>
+              Något gick fel. Försök igen eller maila oss på info@nordicicon.se.
+            </p>
+          )}
           <button type="submit" className={styles.bookBtn} disabled={loading}>
             {loading ? 'Bokar...' : 'Bekräfta bokning'}
           </button>

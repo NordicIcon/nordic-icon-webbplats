@@ -8,23 +8,26 @@ export default function Contact() {
   const [form, setForm]       = useState({ name: '', email: '', company: '', phone: '', message: '' });
   const [sent, setSent]       = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError]     = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (loading || sent) return;
     setLoading(true);
+    setError(false);
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
-      if (!res.ok) console.error('contact API error:', await res.text());
-    } catch (err) {
-      console.error('contact fetch error:', err);
+      if (!res.ok) throw new Error('API error');
+      setSent(true);
+    } catch {
+      setError(true);
+    } finally {
+      setLoading(false);
     }
-    setSent(true);
-    setLoading(false);
   };
 
   return (
@@ -105,6 +108,11 @@ export default function Contact() {
                 />
               </div>
 
+              {error && (
+                <p style={{ color: '#EF4444', fontSize: '13px', marginBottom: '8px' }}>
+                  Något gick fel. Försök igen eller maila oss direkt på info@nordicicon.se.
+                </p>
+              )}
               <button
                 type="submit"
                 className={`${styles.submitBtn} ${sent ? styles.submitBtnSent : ''}`}
