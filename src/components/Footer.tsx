@@ -30,7 +30,7 @@ export default function Footer() {
           <p className={styles.tagline}>
             Premium hemsidor för svenska bolag.
             <br />
-            Klara på 10 dagar. Från 7 900 kr.
+            Klara på 14–30 dagar. Från 7 900 kr.
           </p>
           <div className={styles.liveIndicator}>
             <span className={styles.liveDot} />

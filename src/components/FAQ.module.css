@@ -47,7 +47,7 @@
 }
 
 .item:nth-child(even) {
-  background: var(--bg-secondary);
+  background: var(--accent-subtle);
   padding: 0 16px;
 }
 

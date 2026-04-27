@@ -7,7 +7,7 @@ import styles from './FAQ.module.css';
 const faqs = [
   {
     q: 'Hur lång tid tar det att bygga?',
-    a: 'BAS tar 5–7 dagar. PRO tar 7–10 dagar. ELITE tar 14–21 dagar. Vi sätter alltid ett datum och håller det.',
+    a: 'BAS tar 14 dagar. PRO tar 20 dagar. ELITE tar 30 dagar. Vi sätter alltid ett datum och håller det.',
   },
   {
     q: 'Vad kostar hosting?',

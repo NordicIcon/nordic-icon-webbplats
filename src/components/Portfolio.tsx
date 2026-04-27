@@ -127,7 +127,7 @@ export default function Portfolio() {
     return () => ctx.revert();
   }, []);
 
-  /* Intro spin when section enters viewport */
+  /* Smooth fade-in when section enters viewport */
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -136,18 +136,13 @@ export default function Portfolio() {
             hasAnimated.current = true;
             gsap.fromTo(
               orbitRef.current,
-              { rotation: 0 },
-              {
-                rotation: 360,
-                duration: 1.2,
-                ease: 'power2.out',
-                onComplete: () => gsap.set(orbitRef.current, { rotation: 0 }),
-              }
+              { opacity: 0, y: 24 },
+              { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out' }
             );
           }
         });
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();

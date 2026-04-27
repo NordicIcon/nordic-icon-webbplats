@@ -22,7 +22,7 @@ const values = [
   {
     number: '03',
     title: 'Rätt tempo, varje gång.',
-    text: 'BAS på 10 dagar. PRO på 14. ELITE på 21. Varje deadline är ett löfte — inte en förhoppning.',
+    text: 'BAS på 14 dagar. PRO på 20. ELITE på 30. Varje deadline är ett löfte — inte en förhoppning.',
   },
   {
     number: '04',
@@ -60,7 +60,7 @@ export default function OmOssPage() {
             <p>
               Vi tröttnade på att se bolag nöja sig med template-sajter som ser exakt
               likadana ut som konkurrenternas. Och på byråer som tar 150 000 kr och
-              6 månader för något som borde ta 10 dagar.
+              6 månader för något som borde ta 2–4 veckor.
             </p>
             <p>
               Nordic Icon är svaret på det gapet.

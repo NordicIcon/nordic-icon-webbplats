@@ -5,7 +5,7 @@ import PreFooterCTA from '@/components/PreFooterCTA';
 
 export const metadata: Metadata = {
   title: 'Planer & Priser | Nordic Icon',
-  description: 'BAS från 7 900 kr. PRO från 17 900 kr. ELITE från 34 900 kr. Klart på 10 dagar.',
+  description: 'BAS från 7 900 kr. PRO från 15 900 kr. ELITE från 34 900 kr. Klart på 14–30 dagar.',
 };
 
 const plans = [
@@ -24,7 +24,7 @@ const plans = [
       'Google Analytics',
       'Cookie-banner (GDPR)',
       'Bokningssystem (Google Calendar)',
-      'Leverans på 10 dagar',
+      'Leverans på 14 dagar',
       '3 revideringsrundor',
       'Hosting-guide ingår',
     ],
@@ -54,7 +54,7 @@ const plans = [
       'AI-synlighet',
       'Upp till 8 sidor',
       '5 revideringsrundor',
-      'Leverans på 14 dagar',
+      'Leverans på 20 dagar',
       'Prioriterad support',
     ],
     notIncluded: [],
@@ -75,7 +75,7 @@ const plans = [
       'Custom animations & micro-interactions',
       'Upp till 15 sidor',
       '5 revideringsrundor',
-      'Leverans på 21 dagar',
+      'Leverans på 30 dagar',
       'Dedikerad onboarding',
     ],
     notIncluded: [],
@@ -93,7 +93,7 @@ const addons = [
 const faqs = [
   {
     q: 'Hur lång tid tar det?',
-    a: 'BAS levereras på 10 arbetsdagar, PRO på 14 arbetsdagar och ELITE på 21 arbetsdagar — räknat från signerat avtal och levererat material (texter, logotyp) inom 2 dagar från start.',
+    a: 'BAS levereras på 14 arbetsdagar, PRO på 20 arbetsdagar och ELITE på 30 arbetsdagar — räknat från signerat avtal och levererat material (texter, logotyp) inom 2 dagar från start.',
   },
   {
     q: 'Vad händer om jag inte är nöjd?',

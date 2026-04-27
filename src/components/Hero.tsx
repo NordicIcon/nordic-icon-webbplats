@@ -113,7 +113,7 @@ export default function Hero() {
         animate="show"
       >
         <motion.div className={styles.label} variants={item}>
-          Webbyrå · Sverige · Est. 2025
+          Webbyrå · Sverige
         </motion.div>
 
         <motion.h1 className={styles.heading} variants={item}>
