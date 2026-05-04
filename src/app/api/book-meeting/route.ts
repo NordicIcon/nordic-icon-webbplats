@@ -9,6 +9,21 @@ function saveToBackOffice(data: Record<string, unknown>) {
   supabase.from('calendar_bookings').insert(data).then(() => {});
 }
 
+const BASE = `
+  <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;max-width:560px;margin:0 auto;background:#ffffff;">
+    <div style="background:#0D1B2A;padding:28px 32px;border-radius:12px 12px 0 0;">
+      <span style="font-size:13px;font-weight:700;letter-spacing:0.12em;color:#7aa7e8;text-transform:uppercase;">NORDIC ICON</span>
+    </div>
+`;
+const BASE_END = `
+    <div style="padding:20px 32px 28px;background:#F3F2EE;border-radius:0 0 12px 12px;">
+      <p style="margin:0;font-size:12px;color:#9A9A96;">
+        Nordic Icon AB &nbsp;·&nbsp; <a href="https://nordicicon.se" style="color:#9A9A96;">nordicicon.se</a>
+      </p>
+    </div>
+  </div>
+`;
+
 export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   try {
@@ -25,7 +40,7 @@ export async function POST(req: NextRequest) {
       meetLink = await createMeetEvent({ name, email, date, time });
     }
 
-    // Save to back office — auto-confirmed
+    // Save to back office
     saveToBackOffice({
       name, email, company,
       meeting_date: date || null,
@@ -39,12 +54,16 @@ export async function POST(req: NextRequest) {
     const companyLabel = company ? ` (${company})` : '';
     const planLabel = plan ? ` — Plan: ${plan}` : '';
 
-    const meetHtml = meetLink
-      ? `<div style="margin:20px 0;padding:16px 20px;background:#EEF2FF;border-radius:10px;border-left:3px solid #1B3A6B;">
-           <p style="margin:0 0 6px;font-size:13px;font-weight:600;color:#1B3A6B;letter-spacing:0.05em;text-transform:uppercase;">Google Meet-länk</p>
-           <a href="${meetLink}" style="color:#1B3A6B;font-size:15px;word-break:break-all;">${meetLink}</a>
-         </div>`
-      : '';
+    const meetBlock = meetLink ? `
+      <div style="margin:20px 0;padding:18px 22px;background:#EEF4FF;border-radius:10px;border:1px solid #C7D9F8;">
+        <p style="margin:0 0 6px;font-size:11px;font-weight:700;color:#1B3A6B;letter-spacing:0.1em;text-transform:uppercase;">Google Meet-länk</p>
+        <a href="${meetLink}" style="color:#1B3A6B;font-size:14px;word-break:break-all;font-weight:500;">${meetLink}</a>
+      </div>` : '';
+
+    const noMeetWarning = !meetLink && date ? `
+      <p style="font-size:12px;color:#B45309;margin:12px 0 0;background:#FFFBEB;padding:10px 14px;border-radius:8px;border:1px solid #FDE68A;">
+        ⚠ Google Meet-länk kunde inte skapas automatiskt. Skapa manuellt och skicka till kunden.
+      </p>` : '';
 
     // Notify Nordic Icon
     await resend.emails.send({
@@ -52,47 +71,53 @@ export async function POST(req: NextRequest) {
       to: ['info@nordicicon.se'],
       replyTo: email,
       subject: `Nytt möte bokat — ${name}${companyLabel}${planLabel}`,
-      html: `
-        <div style="font-family:sans-serif;max-width:560px;color:#1A1A18;">
-          <h2 style="font-size:1.4rem;font-weight:400;margin-bottom:24px;">Nytt möte bokat</h2>
-          <table style="width:100%;border-collapse:collapse;">
-            <tr><td style="padding:8px 0;color:#9A9A96;width:120px;">Namn</td><td style="padding:8px 0;">${name}</td></tr>
-            <tr><td style="padding:8px 0;color:#9A9A96;">E-post</td><td style="padding:8px 0;"><a href="mailto:${email}">${email}</a></td></tr>
-            ${company ? `<tr><td style="padding:8px 0;color:#9A9A96;">Företag</td><td style="padding:8px 0;">${company}</td></tr>` : ''}
-            ${plan ? `<tr><td style="padding:8px 0;color:#9A9A96;">Plan</td><td style="padding:8px 0;">${plan}</td></tr>` : ''}
-            <tr><td style="padding:8px 0;color:#9A9A96;">Tid</td><td style="padding:8px 0;font-weight:500;">${dateLabel}</td></tr>
+      html: `${BASE}
+        <div style="padding:32px;">
+          <p style="margin:0 0 4px;font-size:11px;font-weight:700;letter-spacing:0.1em;color:#9A9A96;text-transform:uppercase;">Nytt möte bokat</p>
+          <h1 style="margin:0 0 24px;font-size:22px;font-weight:500;color:#1A1A18;">${name}${companyLabel}</h1>
+
+          <table style="width:100%;border-collapse:collapse;margin-bottom:8px;">
+            <tr>
+              <td style="padding:10px 0;border-top:1px solid #E5E5E0;font-size:12px;color:#9A9A96;width:110px;vertical-align:top;">DATUM & TID</td>
+              <td style="padding:10px 0;border-top:1px solid #E5E5E0;font-size:15px;font-weight:600;color:#1A1A18;">${dateLabel}</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 0;border-top:1px solid #E5E5E0;font-size:12px;color:#9A9A96;vertical-align:top;">E-POST</td>
+              <td style="padding:10px 0;border-top:1px solid #E5E5E0;font-size:14px;color:#1A1A18;"><a href="mailto:${email}" style="color:#1B3A6B;">${email}</a></td>
+            </tr>
+            ${company ? `<tr><td style="padding:10px 0;border-top:1px solid #E5E5E0;font-size:12px;color:#9A9A96;vertical-align:top;">FÖRETAG</td><td style="padding:10px 0;border-top:1px solid #E5E5E0;font-size:14px;color:#1A1A18;">${company}</td></tr>` : ''}
+            ${plan ? `<tr><td style="padding:10px 0;border-top:1px solid #E5E5E0;font-size:12px;color:#9A9A96;vertical-align:top;">PLAN</td><td style="padding:10px 0;border-top:1px solid #E5E5E0;font-size:14px;color:#1A1A18;font-weight:600;">${plan}</td></tr>` : ''}
           </table>
-          ${meetHtml}
-          ${!meetLink && date ? `<p style="font-size:13px;color:#F59E0B;margin-top:16px;">⚠ Google Meet-länk kunde inte skapas automatiskt. Skapa manuellt och skicka till kunden.</p>` : ''}
-          <p style="margin-top:32px;font-size:0.85rem;color:#9A9A96;">Skickat från nordicicon.se</p>
+
+          ${meetBlock}
+          ${noMeetWarning}
         </div>
-      `,
+      ${BASE_END}`,
     });
 
-    // Direct confirmation to customer
+    // Customer confirmation
     await resend.emails.send({
       from: 'Nordic Icon <noreply@nordicicon.se>',
       to: [email],
       subject: `Möte bekräftat — ${dateLabel}`,
-      html: `
-        <div style="font-family:sans-serif;max-width:560px;color:#1A1A18;">
-          <h2 style="font-size:1.4rem;font-weight:400;margin-bottom:16px;">Hej ${name},</h2>
-          <p style="line-height:1.7;margin-bottom:20px;">
-            Ditt möte med Nordic Icon är bekräftat. Vi ser fram emot att ses!
-          </p>
-          <div style="padding:20px;background:#F3F2EE;border-radius:12px;margin-bottom:20px;">
-            <p style="margin:0 0 6px;font-size:12px;color:#9A9A96;text-transform:uppercase;letter-spacing:0.08em;">Tid</p>
-            <p style="margin:0;font-size:18px;font-weight:500;">${dateLabel}</p>
+      html: `${BASE}
+        <div style="padding:32px;">
+          <p style="margin:0 0 4px;font-size:11px;font-weight:700;letter-spacing:0.1em;color:#9A9A96;text-transform:uppercase;">Bokningsbekräftelse</p>
+          <h1 style="margin:0 0 8px;font-size:22px;font-weight:500;color:#1A1A18;">Hej ${name}!</h1>
+          <p style="margin:0 0 28px;font-size:15px;line-height:1.7;color:#5A5A56;">Ditt möte med Nordic Icon är bekräftat. Vi ser fram emot att ses!</p>
+
+          <div style="background:#F3F2EE;border-radius:12px;padding:22px 24px;margin-bottom:24px;">
+            <p style="margin:0 0 4px;font-size:11px;font-weight:700;letter-spacing:0.1em;color:#9A9A96;text-transform:uppercase;">Tid</p>
+            <p style="margin:0;font-size:20px;font-weight:600;color:#1A1A18;">${dateLabel}</p>
           </div>
-          ${meetHtml}
-          ${meetLink ? `<p style="line-height:1.7;margin-bottom:20px;font-size:14px;color:#5A5A56;">Klicka på länken ovan strax innan mötet för att ansluta till Google Meet.</p>` : ''}
-          <p style="line-height:1.7;margin-bottom:32px;">
-            Frågor? Svara på detta mail eller kontakta oss på
-            <a href="mailto:info@nordicicon.se" style="color:#1B3A6B;">info@nordicicon.se</a>.
-          </p>
-          <p style="color:#9A9A96;font-size:0.85rem;">— Teamet på Nordic Icon</p>
+
+          ${meetBlock}
+          ${meetLink ? `<p style="font-size:14px;color:#5A5A56;line-height:1.7;margin:0 0 24px;">Klicka på länken ovan strax innan mötet för att ansluta till Google Meet.</p>` : ''}
+
+          <p style="font-size:14px;color:#5A5A56;line-height:1.7;margin:0 0 8px;">Frågor? Svara på detta mail eller skriv till oss direkt på <a href="mailto:info@nordicicon.se" style="color:#1B3A6B;font-weight:500;">info@nordicicon.se</a>.</p>
+          <p style="font-size:14px;color:#9A9A96;margin:0;">— Max &amp; Rasmus, Nordic Icon</p>
         </div>
-      `,
+      ${BASE_END}`,
     });
 
     return Response.json({ success: true });

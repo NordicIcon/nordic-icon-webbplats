@@ -1,6 +1,7 @@
 import Hero from '@/components/Hero';
 import ContainerScroll from '@/components/ContainerScroll';
 import IPhoneMockup from '@/components/IPhoneMockup';
+import BookingSection from '@/components/BookingSection';
 import Process from '@/components/Process';
 import Portfolio from '@/components/Portfolio';
 import Plans from '@/components/Plans';
@@ -21,16 +22,19 @@ export default function Home() {
       {/* 03 — iPhone Mockup */}
       <IPhoneMockup />
 
-      {/* 04 — Processen */}
+      {/* 04 — Booking Calendar */}
+      <BookingSection />
+
+      {/* 05 — Processen */}
       <Process />
 
-      {/* 05 — Portfolio Halvcirkel */}
+      {/* 06 — Portfolio Halvcirkel */}
       <Portfolio />
 
-      {/* 06 — Tre Planer (Glassmorphism) */}
+      {/* 07 — Tre Planer (Glassmorphism) */}
       <Plans />
 
-      {/* 07 — FAQ */}
+      {/* 08 — FAQ */}
       <FAQ />
 
       {/* 09 — Kontakt + Google Kalender */}
