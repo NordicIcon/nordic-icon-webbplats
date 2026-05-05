@@ -65,38 +65,6 @@ const plans = [
   },
 ];
 
-const UPSELLS: Record<string, { name: string; price: string }[]> = {
-  BAS: [
-    { name: 'Animationer (Framer Motion)', price: '+2 900 kr' },
-    { name: 'Fler sidor (upp till 8 st)', price: '+2 900 kr' },
-    { name: 'Chatbot', price: '+1 900 kr' },
-    { name: 'Flerspråkig sajt (EN + SV)', price: '+2 500 kr' },
-    { name: 'E-handel (upp till 20 produkter)', price: '+3 900 kr' },
-    { name: 'SEO-djupdykning (10 nyckelord)', price: '+1 500 kr' },
-    { name: 'Nyhetsbrevintegration', price: '+900 kr' },
-    { name: 'Videobakgrund (Kling AI)', price: '+2 500 kr' },
-  ],
-  PRO: [
-    { name: 'Fler sidor (upp till 12 st)', price: '+2 900 kr' },
-    { name: 'E-handel (upp till 50 produkter)', price: '+4 900 kr' },
-    { name: 'Flerspråkig (3 språk)', price: '+2 900 kr' },
-    { name: 'Kundportal med inloggning', price: '+5 900 kr' },
-    { name: 'SEO-årspaket (12 månader)', price: '+990 kr/mån' },
-    { name: 'Google Ads-kampanjsida', price: '+1 900 kr' },
-    { name: 'Animerad intro-video (Kling AI)', price: '+3 900 kr' },
-    { name: 'Chatbot premium', price: '+2 900 kr' },
-  ],
-  ELITE: [
-    { name: 'Fler sidor (16–20 st)', price: '+4 900 kr' },
-    { name: 'E-handel premium (Stripe, obegränsat)', price: '+7 900 kr' },
-    { name: 'Varumärkesidentitet (logotyp + brand kit)', price: '+9 900 kr' },
-    { name: 'Kundportal + CRM-system', price: '+9 900 kr' },
-    { name: 'SEO-årspaket + länkbygge', price: '+1 490 kr/mån' },
-    { name: 'Google Ads-hantering', price: '+1 990 kr/mån' },
-    { name: 'Animerad intro-video (60 sek)', price: '+5 900 kr' },
-    { name: 'Flerspråkig (upp till 4 språk)', price: '+3 900 kr' },
-  ],
-};
 
 function PlanCard({
   plan,
@@ -160,43 +128,22 @@ function BookingModal({
   planPrice: string;
   onClose: () => void;
 }) {
-  const [step, setStep] = useState<'upsells' | 'booking'>('upsells');
   const [tab, setTab] = useState<'calendar' | 'message'>('calendar');
-  const [selected, setSelected] = useState<Set<string>>(new Set());
   const [form, setForm] = useState({ name: '', company: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  const upsells = UPSELLS[planName] ?? [];
-
-  const toggleUpsell = (name: string) => {
-    setSelected(prev => {
-      const next = new Set(prev);
-      if (next.has(name)) { next.delete(name); } else { next.add(name); }
-      return next;
-    });
-  };
-
-  const selectedAddons = Array.from(selected).map(name => {
-    const item = upsells.find(u => u.name === name);
-    return item ? `${name} (${item.price})` : name;
-  });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch('/api/book-meeting', {
+      await fetch('/api/book-meeting', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...form, plan: planName, addons: selectedAddons }),
+        body: JSON.stringify({ ...form, plan: planName }),
       });
-      if (!res.ok) throw new Error();
-      setSubmitted(true);
-    } catch {
-      // show success anyway — email still sent
-      setSubmitted(true);
-    }
+    } catch { /* silent */ }
+    setSubmitted(true);
     setLoading(false);
   };
 
@@ -207,139 +154,54 @@ function BookingModal({
 
         <p className={styles.modalPlan}>{planName} — {planPrice} kr</p>
         <h3 className={styles.modalHeading}>
-          {step === 'upsells' ? <>Anpassa din <em>sajt</em></> : <>Boka din <em>tid</em></>}
+          Kom igång <em>idag</em>
         </h3>
 
-        {/* Step 1: Upsells */}
-        {step === 'upsells' && (
-          <div>
-            <p className={styles.upsellIntro}>
-              Lägg till funktioner nu — du slipper göra om det senare. Allt är valfritt.
-            </p>
-            <div className={styles.upsellList}>
-              {upsells.map(u => (
-                <label key={u.name} className={`${styles.upsellItem} ${selected.has(u.name) ? styles.upsellSelected : ''}`}>
-                  <input
-                    type="checkbox"
-                    checked={selected.has(u.name)}
-                    onChange={() => toggleUpsell(u.name)}
-                    className={styles.upsellCheck}
-                  />
-                  <span className={styles.upsellName}>{u.name}</span>
-                  <span className={styles.upsellPrice}>{u.price}</span>
-                </label>
-              ))}
-            </div>
-            <button className={styles.upsellCta} onClick={() => setStep('booking')}>
-              {selected.size > 0 ? `Gå vidare med ${selected.size} tillägg →` : 'Gå vidare →'}
-            </button>
-            <button className={styles.upsellSkip} onClick={() => setStep('booking')}>
-              Hoppa över tillägg
-            </button>
-          </div>
+        <div className={styles.tabs}>
+          <button className={`${styles.tab} ${tab === 'calendar' ? styles.tabActive : ''}`} onClick={() => setTab('calendar')}>
+            Boka tid
+          </button>
+          <button className={`${styles.tab} ${tab === 'message' ? styles.tabActive : ''}`} onClick={() => setTab('message')}>
+            Skicka meddelande
+          </button>
+        </div>
+
+        {tab === 'calendar' && (
+          <BookingCalendar hideHeader extraData={{ plan: planName }} />
         )}
 
-        {/* Step 2: Booking */}
-        {step === 'booking' && (
-          <>
-            {selected.size > 0 && (
-              <div className={styles.selectedSummary}>
-                {Array.from(selected).map(name => (
-                  <span key={name} className={styles.selectedTag}>{name}</span>
-                ))}
-              </div>
-            )}
-
-            <div className={styles.tabs}>
-              <button
-                className={`${styles.tab} ${tab === 'calendar' ? styles.tabActive : ''}`}
-                onClick={() => setTab('calendar')}
-              >
-                Boka tid
-              </button>
-              <button
-                className={`${styles.tab} ${tab === 'message' ? styles.tabActive : ''}`}
-                onClick={() => setTab('message')}
-              >
-                Skicka meddelande
-              </button>
+        {tab === 'message' && (
+          submitted ? (
+            <div className={styles.success}>
+              <div className={styles.successIcon}>✓</div>
+              <h3 className={styles.successTitle}>Tack för din förfrågan!</h3>
+              <p className={styles.successBody}>Vi hör av oss inom 24 timmar.<br />Vi ser fram emot att prata med dig.</p>
             </div>
-
-            {tab === 'calendar' && (
-              <BookingCalendar
-                hideHeader
-                extraData={{ plan: planName, addons: selectedAddons }}
-              />
-            )}
-
-            {tab === 'message' && (
-              submitted ? (
-                <div className={styles.success}>
-                  <div className={styles.successIcon}>✓</div>
-                  <h3 className={styles.successTitle}>Tack för din förfrågan!</h3>
-                  <p className={styles.successBody}>
-                    Vi hör av oss inom 24 timmar.<br />
-                    Vi ser fram emot att prata med dig.
-                  </p>
+          ) : (
+            <form className={styles.form} onSubmit={handleSubmit}>
+              <div className={styles.formRow}>
+                <div className={styles.field}>
+                  <label className={styles.fieldLabel} htmlFor="bm-name">Namn</label>
+                  <input id="bm-name" className={styles.input} placeholder="Ditt namn" value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} required />
                 </div>
-              ) : (
-                <form className={styles.form} onSubmit={handleSubmit}>
-                  <div className={styles.formRow}>
-                    <div className={styles.field}>
-                      <label className={styles.fieldLabel} htmlFor="bm-name">Namn</label>
-                      <input
-                        id="bm-name"
-                        name="name"
-                        className={styles.input}
-                        placeholder="Ditt namn"
-                        value={form.name}
-                        onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-                        required
-                      />
-                    </div>
-                    <div className={styles.field}>
-                      <label className={styles.fieldLabel} htmlFor="bm-company">Företag</label>
-                      <input
-                        id="bm-company"
-                        name="company"
-                        className={styles.input}
-                        placeholder="Företagsnamn"
-                        value={form.company}
-                        onChange={e => setForm(f => ({ ...f, company: e.target.value }))}
-                      />
-                    </div>
-                  </div>
-                  <div className={styles.field}>
-                    <label className={styles.fieldLabel} htmlFor="bm-email">E-post</label>
-                    <input
-                      id="bm-email"
-                      name="email"
-                      type="email"
-                      className={styles.input}
-                      placeholder="din@email.se"
-                      value={form.email}
-                      onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-                      required
-                    />
-                  </div>
-                  <div className={styles.field}>
-                    <label className={styles.fieldLabel} htmlFor="bm-message">Meddelande (valfritt)</label>
-                    <textarea
-                      id="bm-message"
-                      name="message"
-                      className={styles.textarea}
-                      placeholder="Berätta kort om ditt projekt..."
-                      value={form.message}
-                      onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
-                    />
-                  </div>
-                  <button type="submit" className={styles.submit} disabled={loading}>
-                    {loading ? 'Skickar...' : 'Skicka förfrågan →'}
-                  </button>
-                </form>
-              )
-            )}
-          </>
+                <div className={styles.field}>
+                  <label className={styles.fieldLabel} htmlFor="bm-company">Företag</label>
+                  <input id="bm-company" className={styles.input} placeholder="Företagsnamn" value={form.company} onChange={e => setForm(f => ({ ...f, company: e.target.value }))} />
+                </div>
+              </div>
+              <div className={styles.field}>
+                <label className={styles.fieldLabel} htmlFor="bm-email">E-post</label>
+                <input id="bm-email" type="email" className={styles.input} placeholder="din@email.se" value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} required />
+              </div>
+              <div className={styles.field}>
+                <label className={styles.fieldLabel} htmlFor="bm-message">Meddelande (valfritt)</label>
+                <textarea id="bm-message" className={styles.textarea} placeholder="Berätta kort om ditt projekt..." value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} />
+              </div>
+              <button type="submit" className={styles.submit} disabled={loading}>
+                {loading ? 'Skickar...' : 'Skicka förfrågan →'}
+              </button>
+            </form>
+          )
         )}
       </div>
     </div>

@@ -81,9 +81,21 @@ const plans = [
 ];
 
 const addons = [
-  { name: 'Extra sida', price: '2 900 kr/st', desc: 'Ytterligare undersida med samma design.' },
-  { name: 'CMS-integration', price: '4 900 kr', desc: 'Redigera innehåll utan kod (Sanity).' },
-  { name: 'Automation-retainer', price: 'Från 2 900 kr/mån', desc: 'Automatisera repetitiva uppgifter i ditt bolag.' },
+  { name: 'Extra sida', price: '1 900 kr/st', desc: 'Ytterligare undersida med samma design och animationer.' },
+  { name: 'Köpa loss sidan (äga själv)', price: '6 900 kr', desc: 'Du får hela koden och kan hosta den själv. Ingen månadskostnad.' },
+  { name: 'Animationer (Framer Motion)', price: '2 900 kr', desc: 'Mjuka scroll- och hover-animationer på hela sajten.' },
+  { name: 'Chatbot', price: '1 900 kr', desc: 'AI-driven chatbot som svarar på vanliga frågor dygnet runt.' },
+  { name: 'E-handel (upp till 20 produkter)', price: '3 900 kr', desc: 'Stripe-integration, produktsidor och checkout.' },
+  { name: 'E-handel premium (obegränsat, Stripe)', price: '7 900 kr', desc: 'Fullt e-handelssystem med lager, rabatter och orderhantering.' },
+  { name: 'Flerspråkig sajt (EN + SV)', price: '2 500 kr', desc: 'Hela sajten på två språk med automatisk routing.' },
+  { name: 'SEO-djupdykning (10 nyckelord)', price: '1 500 kr', desc: 'Djupoptimering av 10 sidor + meta + schema markup.' },
+  { name: 'Nyhetsbrevintegration', price: '900 kr', desc: 'Koppling till Mailchimp eller Klaviyo.' },
+  { name: 'Google Ads-kampanjsida', price: '1 900 kr', desc: 'Dedikerad landing page optimerad för konvertering.' },
+  { name: 'Animerad intro-video (Kling AI)', price: '3 900 kr', desc: 'AI-genererad bakgrundsvideo skräddarsydd för din sajt.' },
+  { name: 'Kundportal med inloggning', price: '5 900 kr', desc: 'Skyddade sidor för dina kunder med autentisering.' },
+  { name: 'Varumärkesidentitet (logotyp + brand kit)', price: '9 900 kr', desc: 'Logotyp, typsnitt, färgpalett och grafiska riktlinjer.' },
+  { name: 'SEO-årspaket + länkbygge', price: '1 490 kr/mån', desc: '12 månaders löpande SEO-optimering och länkbygge.' },
+  { name: 'Google Ads-hantering', price: '1 990 kr/mån', desc: 'Vi sköter dina Google Ads-kampanjer löpande.' },
 ];
 
 const faqs = [
