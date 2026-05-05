@@ -28,7 +28,7 @@ function getDaysInMonth(year: number, month: number): Date[] {
   return days;
 }
 
-export default function BookingCalendar({ hideHeader }: { hideHeader?: boolean }) {
+export default function BookingCalendar({ hideHeader, extraData }: { hideHeader?: boolean; extraData?: Record<string, unknown> }) {
   const [step, setStep]             = useState<BookingStep['type']>('calendar');
   const [currentDate, setCurrentDate] = useState(() => {
     const d = new Date();
@@ -110,6 +110,7 @@ export default function BookingCalendar({ hideHeader }: { hideHeader?: boolean }
           date: formatDate(selectedDate),
           time: selectedTime,
           ...form,
+          ...(extraData ?? {}),
         }),
       });
       if (!res.ok) throw new Error('API error');

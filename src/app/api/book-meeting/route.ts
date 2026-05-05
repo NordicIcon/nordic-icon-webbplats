@@ -28,7 +28,8 @@ export async function POST(req: NextRequest) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const body = await req.json();
-    const { date, time, name, email, company, plan } = body;
+    const { date, time, name, email, company, plan, addons } = body;
+    const addonsList: string[] = Array.isArray(addons) ? addons : [];
 
     if (!name || !email) {
       return Response.json({ error: 'Missing required fields' }, { status: 400 });
@@ -53,6 +54,14 @@ export async function POST(req: NextRequest) {
     const dateLabel = date && time ? `${date} kl. ${time}` : 'Att bestämmas';
     const companyLabel = company ? ` (${company})` : '';
     const planLabel = plan ? ` — Plan: ${plan}` : '';
+
+    const addonsBlock = addonsList.length > 0 ? `
+      <div style="margin-top:16px;padding:16px 20px;background:#F3F2EE;border-radius:10px;">
+        <p style="margin:0 0 8px;font-size:11px;font-weight:700;letter-spacing:0.1em;color:#9A9A96;text-transform:uppercase;">Valda tillägg</p>
+        <ul style="margin:0;padding-left:16px;">
+          ${addonsList.map(a => `<li style="font-size:13px;color:#1A1A18;margin-bottom:4px;">${a}</li>`).join('')}
+        </ul>
+      </div>` : '';
 
     const meetBlock = meetLink ? `
       <div style="margin:20px 0;padding:18px 22px;background:#EEF4FF;border-radius:10px;border:1px solid #C7D9F8;">
@@ -89,6 +98,7 @@ export async function POST(req: NextRequest) {
             ${plan ? `<tr><td style="padding:10px 0;border-top:1px solid #E5E5E0;font-size:12px;color:#9A9A96;vertical-align:top;">PLAN</td><td style="padding:10px 0;border-top:1px solid #E5E5E0;font-size:14px;color:#1A1A18;font-weight:600;">${plan}</td></tr>` : ''}
           </table>
 
+          ${addonsBlock}
           ${meetBlock}
           ${noMeetWarning}
         </div>

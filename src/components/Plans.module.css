@@ -543,3 +543,104 @@
 @media (prefers-reduced-motion: reduce) {
   .cardPopular::before { animation: none; }
 }
+
+/* ── Upsells ── */
+.upsellIntro {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.upsellList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.upsellItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.upsellItem:hover {
+  border-color: rgba(27, 58, 107, 0.3);
+}
+
+.upsellSelected {
+  border-color: var(--accent);
+  background: var(--accent-subtle);
+}
+
+.upsellCheck {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.upsellName {
+  flex: 1;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.upsellPrice {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.upsellCta {
+  width: 100%;
+  padding: 0.875rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 10px;
+}
+
+.upsellCta:hover { background: var(--accent-hover); }
+
+.upsellSkip {
+  width: 100%;
+  padding: 10px;
+  background: none;
+  border: none;
+  font-size: 13px;
+  color: var(--text-muted);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.selectedSummary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.selectedTag {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 99px;
+  background: var(--accent-subtle);
+  color: var(--accent);
+  border: 1px solid rgba(27, 58, 107, 0.2);
+}

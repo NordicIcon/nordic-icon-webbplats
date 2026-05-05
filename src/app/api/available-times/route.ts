@@ -6,12 +6,23 @@ async function getTimesForDate(date: string): Promise<string[]> {
   const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false } });
   const { data } = await supabase.from('settings').select('value').eq('key', 'available_times').single();
   if (!data?.value) return [];
-  // New format: { "2026-04-28": ["10:00", "14:00"] }
   if (!Array.isArray(data.value)) {
     return (data.value as Record<string, string[]>)[date] ?? [];
   }
-  // Legacy global array — return as-is for weekdays
   return data.value as string[];
+}
+
+async function getBookedTimes(date: string): Promise<Set<string>> {
+  if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) return new Set();
+  const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false } });
+  const { data } = await supabase
+    .from('calendar_bookings')
+    .select('meeting_time')
+    .eq('meeting_date', date)
+    .neq('status', 'avbokad');
+  const times = new Set<string>();
+  (data ?? []).forEach(r => { if (r.meeting_time) times.add(r.meeting_time); });
+  return times;
 }
 
 export async function GET(req: NextRequest) {
@@ -22,6 +33,11 @@ export async function GET(req: NextRequest) {
   const day = new Date(date).getDay();
   if (day === 0 || day === 6) return Response.json({ times: [], date });
 
-  const times = await getTimesForDate(date);
-  return Response.json({ times, date });
+  const [allTimes, bookedTimes] = await Promise.all([
+    getTimesForDate(date),
+    getBookedTimes(date),
+  ]);
+
+  const available = allTimes.filter(t => !bookedTimes.has(t));
+  return Response.json({ times: available, date });
 }
