@@ -28,7 +28,7 @@ const steps = [
     number: '03',
     label: 'REVIDERING',
     title: 'Vi jobbar tills du är nöjd.',
-    body: 'Vi itererar tills resultatet är rätt. Varje plan inkluderar ett antal revideringsrundor.',
+    body: 'Vi gör en omgång ändringar utan kostnad. Vill du ha mer hjälp efter det offererar vi separat.',
     bg: '#0D1B2A',
     textColor: '#FAFAFA',
   },

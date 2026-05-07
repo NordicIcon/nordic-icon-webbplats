@@ -10,7 +10,7 @@ const plans = [
   {
     id: 'bas',
     name: 'BAS',
-    price: '9 900',
+    price: '7 900',
     tagline: 'Professionell närvaro online.',
     features: [
       '4 sidor (startsida + 3 undersidor)',
@@ -18,7 +18,7 @@ const plans = [
       'SEO-grund (meta, OG, sitemap)',
       'Kontaktformulär',
       'Cookie-banner (GDPR)',
-      'Leverans på 7 dagar',
+      'Leverans på 5 dagar',
       'En omgång feedback ingår',
       'Innehållsändringar ingår alltid',
     ],
@@ -28,7 +28,7 @@ const plans = [
   {
     id: 'pro',
     name: 'PRO',
-    price: '19 900',
+    price: '15 900',
     tagline: 'Animerad. Imponerande. Konverterande.',
     features: [
       'Allt i BAS, plus:',
@@ -37,7 +37,7 @@ const plans = [
       'Custom favicon & brand assets',
       'Upp till 8 sidor',
       'AI-synlighet',
-      'Leverans på 14 dagar',
+      'Leverans på 7 dagar',
       'Prioriterad support',
       'En omgång feedback ingår',
       'Innehållsändringar ingår alltid',
@@ -48,13 +48,13 @@ const plans = [
   {
     id: 'elite',
     name: 'ELITE',
-    price: '39 900',
+    price: '34 900',
     tagline: 'Ingen mall. Inget kompromiss.',
     features: [
       'Allt i PRO, plus:',
       'Custom animations & micro-interactions',
       'Upp till 15 sidor',
-      'Leverans på 21 dagar',
+      'Leverans på 10 dagar',
       'Prioriterad support',
       'En omgång feedback ingår',
       'Innehållsändringar ingår alltid',

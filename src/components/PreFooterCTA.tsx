@@ -42,7 +42,7 @@ export default function PreFooterCTA() {
         <p className={styles.sub}>
           Vi bygger premium hemsidor för svenska bolag.
           <br />
-          Klara på 7–21 dagar. Från 9 900 kr.
+          Klara på 5–10 dagar. Från 7 900 kr.
         </p>
 
         <div className={styles.ctas}>

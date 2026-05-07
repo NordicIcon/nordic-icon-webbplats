@@ -5,14 +5,14 @@ import PreFooterCTA from '@/components/PreFooterCTA';
 
 export const metadata: Metadata = {
   title: 'Planer & Priser | Nordic Icon',
-  description: 'BAS från 9 900 kr. PRO från 19 900 kr. ELITE från 39 900 kr. Klart på 7–21 dagar.',
+  description: 'BAS från 7 900 kr. PRO från 15 900 kr. ELITE från 34 900 kr. Klart på 5–10 dagar.',
 };
 
 const plans = [
   {
     id: 'bas',
     name: 'BAS',
-    price: '9 900',
+    price: '7 900',
     tagline: 'Professionell närvaro online.',
     desc: 'Professionell närvaro online. För bolag som behöver en trovärdig sajt snabbt.',
     features: [
@@ -21,7 +21,7 @@ const plans = [
       'SEO-grund (meta, OG, sitemap)',
       'Kontaktformulär',
       'Cookie-banner (GDPR)',
-      'Leverans på 7 dagar',
+      'Leverans på 5 dagar',
       'En omgång feedback ingår',
       'Innehållsändringar ingår alltid',
     ],
@@ -35,7 +35,7 @@ const plans = [
   {
     id: 'pro',
     name: 'PRO',
-    price: '19 900',
+    price: '15 900',
     tagline: 'Animerad. Imponerande. Konverterande.',
     desc: 'För bolag som vill sticka ut. Premium-design med animationer.',
     features: [
@@ -45,7 +45,7 @@ const plans = [
       'Custom favicon & brand assets',
       'AI-synlighet',
       'Upp till 8 sidor',
-      'Leverans på 14 dagar',
+      'Leverans på 7 dagar',
       'Prioriterad support',
       'En omgång feedback ingår',
       'Innehållsändringar ingår alltid',
@@ -57,14 +57,14 @@ const plans = [
   {
     id: 'elite',
     name: 'ELITE',
-    price: '39 900',
+    price: '34 900',
     tagline: 'Ingen mall. Inget kompromiss.',
     desc: 'Fullständigt skräddarsytt. Vi bygger precis vad du behöver — utan kompromiss.',
     features: [
       'Allt i PRO, plus:',
       'Custom animations & micro-interactions',
       'Upp till 15 sidor',
-      'Leverans på 21 dagar',
+      'Leverans på 10 dagar',
       'Prioriterad support',
       'En omgång feedback ingår',
       'Innehållsändringar ingår alltid',
@@ -87,11 +87,11 @@ const addons = [
 const faqs = [
   {
     q: 'Hur lång tid tar det?',
-    a: 'BAS levereras på 7 arbetsdagar, PRO på 14 arbetsdagar och ELITE på 21 arbetsdagar — räknat från signerat avtal och levererat material (texter, logotyp) inom 2 dagar från start.',
+    a: 'BAS levereras på 5 arbetsdagar, PRO på 7 arbetsdagar och ELITE på 10 arbetsdagar — räknat från signerat avtal och levererat material (texter, logotyp) inom 2 dagar från start.',
   },
   {
     q: 'Vad händer om jag inte är nöjd?',
-    a: 'En omgång feedback ingår i alla planer. Behöver du mer hjälp löser vi det — vi jobbar tills du är nöjd.',
+    a: 'Vi gör en omgång ändringar utan kostnad.',
   },
   {
     q: 'Äger jag hemsidan?',
