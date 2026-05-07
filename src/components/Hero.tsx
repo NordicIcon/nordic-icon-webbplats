@@ -9,82 +9,80 @@ export default function Hero() {
 
   return (
     <section className={styles.hero}>
-      {/* Video background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className={styles.videoBg}
-      >
+      {/* Background video — falls back to #0a1628 when no file */}
+      <video autoPlay muted loop playsInline className={styles.videoBg}>
         <source src="/assets/videos/hero_video.mp4" type="video/mp4" />
       </video>
 
-      {/* Dark overlay */}
-      <div className={styles.overlay} aria-hidden />
+      {/* Subtle vignette ring */}
+      <div className={styles.ringOverlay} aria-hidden />
 
-      {/* Content */}
-      <div className={styles.content}>
-        {/* Badge */}
-        <div className={styles.badge}>
-          <span className={styles.badgeNew}>Nytt</span>
-          <span className={styles.badgeText}>Tar emot nya kunder</span>
-        </div>
+      <div className={styles.contentWrap}>
+        <div className={styles.inner}>
 
-        {/* Heading */}
-        <h1 className={styles.heading}>
-          Premium hemsidor
-          <br />
-          <em className={styles.glowText}>för svenska bolag.</em>
-        </h1>
+          {/* ── Text block ── */}
+          <div className={styles.textBlock}>
 
-        {/* Subtext */}
-        <p className={styles.subtext}>
-          Animerade. Mobilanpassade. Klara på 5–10 dagar.
-        </p>
+            {/* Badge */}
+            <div className={styles.badge}>
+              <span className={styles.badgeLabel}>Nytt</span>
+              <span className={styles.badgeText}>Tar emot nya kunder</span>
+            </div>
 
-        {/* CTAs */}
-        <div className={styles.ctas}>
-          <a
-            ref={primaryRef as React.RefObject<HTMLAnchorElement>}
-            href="/kontakt"
-            className={`${styles.btn} ${styles.btnPrimary}`}
-          >
-            Boka ett möte
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </a>
-          <a
-            ref={secondaryRef as React.RefObject<HTMLAnchorElement>}
-            href="/projekt"
-            className={`${styles.btn} ${styles.btnSecondary}`}
-          >
-            Se våra projekt
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </a>
-        </div>
+            {/* Heading */}
+            <h1 className={styles.heading}>
+              Premium hemsidor
+              <br className={styles.smBreak} />
+              för svenska bolag.
+            </h1>
 
-        {/* Stats */}
-        <div className={styles.statsRow}>
-          <div className={styles.statItem}>
-            <div className={styles.statValue}>100%</div>
-            <div className={styles.statLabel}>Mobilresponsiv</div>
+            {/* Description */}
+            <p className={styles.description}>
+              Animerade. Mobilanpassade. Klara på 5–10 dagar.
+            </p>
+
+            {/* CTAs */}
+            <div className={styles.buttons}>
+              <a
+                ref={primaryRef as React.RefObject<HTMLAnchorElement>}
+                href="/kontakt"
+                className={`${styles.btn} ${styles.btnPrimary}`}
+              >
+                Boka ett möte
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <path d="M5 12h14" /><path d="m12 5 7 7-7 7" />
+                </svg>
+              </a>
+              <a
+                ref={secondaryRef as React.RefObject<HTMLAnchorElement>}
+                href="/projekt"
+                className={`${styles.btn} ${styles.btnSecondary}`}
+              >
+                Se våra projekt
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                  <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" />
+                </svg>
+              </a>
+            </div>
           </div>
-          <div className={styles.statDivider} aria-hidden />
-          <div className={styles.statItem}>
-            <div className={styles.statValue}>90+</div>
-            <div className={styles.statLabel}>Lighthouse score</div>
+
+          {/* ── Stats (replaces Partners) ── */}
+          <div className={styles.statsSection}>
+            <p className={styles.statsTitle}>Byggt för att prestera</p>
+            <div className={styles.statsGrid}>
+              {[
+                { value: '100%', label: 'Mobilresponsiv' },
+                { value: '90+',  label: 'Lighthouse score' },
+                { value: '5–10', label: 'Dagar till live' },
+              ].map((s, i) => (
+                <div key={i} className={styles.statItem}>
+                  <div className={styles.statValue}>{s.value}</div>
+                  <div className={styles.statLabel}>{s.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className={styles.statDivider} aria-hidden />
-          <div className={styles.statItem}>
-            <div className={styles.statValue}>5–10</div>
-            <div className={styles.statLabel}>Dagar till live</div>
-          </div>
+
         </div>
       </div>
     </section>
