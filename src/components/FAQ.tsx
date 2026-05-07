@@ -7,15 +7,15 @@ import styles from './FAQ.module.css';
 const faqs = [
   {
     q: 'Hur lång tid tar det att bygga?',
-    a: 'BAS tar 14 dagar. PRO tar 20 dagar. ELITE tar 30 dagar. Vi sätter alltid ett datum och håller det.',
+    a: 'BAS tar 7 dagar. PRO tar 14 dagar. ELITE tar 21 dagar. Vi sätter alltid ett datum och håller det.',
   },
   {
     q: 'Vad kostar hosting?',
-    a: 'Hosting ingår i månadsretainern — 590 kr för BAS, 990 kr för PRO, 1 490 kr för ELITE. Ingen bindningstid efter 3 månader.',
+    a: 'Hosting ingår i priset — inga månadsavgifter. Du betalar en gång, sen är det klart.',
   },
   {
     q: 'Kan jag byta text och bilder själv?',
-    a: 'På BAS och PRO kontaktar du oss för ändringar — 1 timme per månad ingår i retainern. Vi ändrar åt dig samma dag.',
+    a: 'Ja. Du kontaktar oss när du vill ha ändringar — vi fixar det samma dag. Det ingår alltid.',
   },
   {
     q: 'Äger jag koden?',

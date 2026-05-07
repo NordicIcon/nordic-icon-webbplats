@@ -5,31 +5,29 @@ import PreFooterCTA from '@/components/PreFooterCTA';
 
 export const metadata: Metadata = {
   title: 'Planer & Priser | Nordic Icon',
-  description: 'BAS från 7 900 kr. PRO från 15 900 kr. ELITE från 34 900 kr. Klart på 14–30 dagar.',
+  description: 'BAS från 9 900 kr. PRO från 19 900 kr. ELITE från 39 900 kr. Klart på 7–21 dagar.',
 };
 
 const plans = [
   {
     id: 'bas',
     name: 'BAS',
-    price: '7 900',
-    monthly: '990',
+    price: '9 900',
     tagline: 'Professionell närvaro online.',
-    desc: 'Perfekt för lokala bolag och soloföretagare som behöver en trovärdig webbplats snabbt.',
+    desc: 'Professionell närvaro online. För bolag som behöver en trovärdig sajt snabbt.',
     features: [
       '4 sidor (startsida + 3 undersidor)',
       'Mobilanpassad',
       'SEO-grund (meta, OG, sitemap)',
       'Kontaktformulär',
-      'Google Analytics',
       'Cookie-banner (GDPR)',
-      'Leverans på 14 dagar',
-      '3 revideringsrundor',
+      'Leverans på 7 dagar',
+      'En omgång feedback ingår',
+      'Innehållsändringar ingår alltid',
     ],
     notIncluded: [
       'Animationer',
       'Extra sidor',
-      'Videoproduktion',
     ],
     featured: false,
     cta: 'Kom igång med BAS',
@@ -37,22 +35,20 @@ const plans = [
   {
     id: 'pro',
     name: 'PRO',
-    price: '15 900',
-    monthly: '1 590',
+    price: '19 900',
     tagline: 'Animerad. Imponerande. Konverterande.',
-    desc: 'För bolag som vill sticka ut. Premium-design med animationer och chatbot.',
+    desc: 'För bolag som vill sticka ut. Premium-design med animationer.',
     features: [
       'Allt i BAS, plus:',
       'Framer Motion-animationer',
       'GSAP ScrollTrigger-animationer',
-      'Chatbot',
       'Custom favicon & brand assets',
-      'Resend e-postintegration',
       'AI-synlighet',
       'Upp till 8 sidor',
-      '5 revideringsrundor',
-      'Leverans på 20 dagar',
+      'Leverans på 14 dagar',
       'Prioriterad support',
+      'En omgång feedback ingår',
+      'Innehållsändringar ingår alltid',
     ],
     notIncluded: [],
     featured: true,
@@ -61,18 +57,17 @@ const plans = [
   {
     id: 'elite',
     name: 'ELITE',
-    price: '34 900',
-    monthly: '2 490',
+    price: '39 900',
     tagline: 'Ingen mall. Inget kompromiss.',
     desc: 'Fullständigt skräddarsytt. Vi bygger precis vad du behöver — utan kompromiss.',
     features: [
       'Allt i PRO, plus:',
       'Custom animations & micro-interactions',
-      'Chatbot premium',
       'Upp till 15 sidor',
-      '5 revideringsrundor',
-      'Leverans på 30 dagar',
+      'Leverans på 21 dagar',
       'Prioriterad support',
+      'En omgång feedback ingår',
+      'Innehållsändringar ingår alltid',
     ],
     notIncluded: [],
     featured: false,
@@ -82,38 +77,29 @@ const plans = [
 
 const addons = [
   { name: 'Extra sida', price: '1 900 kr/st', desc: 'Ytterligare undersida med samma design och animationer.' },
-  { name: 'Köpa loss sidan (äga själv)', price: '6 900 kr', desc: 'Du får hela koden och kan hosta den själv. Ingen månadskostnad.' },
-  { name: 'Animationer (Framer Motion)', price: '2 900 kr', desc: 'Mjuka scroll- och hover-animationer på hela sajten.' },
   { name: 'Chatbot', price: '1 900 kr', desc: 'AI-driven chatbot som svarar på vanliga frågor dygnet runt.' },
-  { name: 'E-handel (upp till 20 produkter)', price: '3 900 kr', desc: 'Stripe-integration, produktsidor och checkout.' },
-  { name: 'E-handel premium (obegränsat, Stripe)', price: '7 900 kr', desc: 'Fullt e-handelssystem med lager, rabatter och orderhantering.' },
-  { name: 'Flerspråkig sajt (EN + SV)', price: '2 500 kr', desc: 'Hela sajten på två språk med automatisk routing.' },
-  { name: 'SEO-djupdykning (10 nyckelord)', price: '1 500 kr', desc: 'Djupoptimering av 10 sidor + meta + schema markup.' },
-  { name: 'Nyhetsbrevintegration', price: '900 kr', desc: 'Koppling till Mailchimp eller Klaviyo.' },
-  { name: 'Google Ads-kampanjsida', price: '1 900 kr', desc: 'Dedikerad landing page optimerad för konvertering.' },
-  { name: 'Animerad intro-video (Kling AI)', price: '3 900 kr', desc: 'AI-genererad bakgrundsvideo skräddarsydd för din sajt.' },
-  { name: 'Kundportal med inloggning', price: '5 900 kr', desc: 'Skyddade sidor för dina kunder med autentisering.' },
-  { name: 'Varumärkesidentitet (logotyp + brand kit)', price: '9 900 kr', desc: 'Logotyp, typsnitt, färgpalett och grafiska riktlinjer.' },
-  { name: 'SEO-årspaket + länkbygge', price: '1 490 kr/mån', desc: '12 månaders löpande SEO-optimering och länkbygge.' },
-  { name: 'Google Ads-hantering', price: '1 990 kr/mån', desc: 'Vi sköter dina Google Ads-kampanjer löpande.' },
+  { name: 'Google Analytics setup', price: '990 kr', desc: 'Konfiguration av Google Analytics 4 med konverteringsspårning.' },
+  { name: 'AI-bilder & video', price: '1 900 kr', desc: 'AI-genererade bilder och bakgrundsvideo skräddarsydda för din sajt.' },
+  { name: 'Bokningsintegration', price: '1 900 kr', desc: 'Kalenderbokning direkt på sajten — kopplad till Google Calendar.' },
+  { name: 'Google Business-optimering', price: '1 490 kr', desc: 'Optimering av ditt Google Business-profil för lokal synlighet.' },
 ];
 
 const faqs = [
   {
     q: 'Hur lång tid tar det?',
-    a: 'BAS levereras på 14 arbetsdagar, PRO på 20 arbetsdagar och ELITE på 30 arbetsdagar — räknat från signerat avtal och levererat material (texter, logotyp) inom 2 dagar från start.',
+    a: 'BAS levereras på 7 arbetsdagar, PRO på 14 arbetsdagar och ELITE på 21 arbetsdagar — räknat från signerat avtal och levererat material (texter, logotyp) inom 2 dagar från start.',
   },
   {
     q: 'Vad händer om jag inte är nöjd?',
-    a: 'Du har 3 (BAS) eller 5 (PRO/ELITE) revideringsrundor. Vi jobbar tills du är nöjd.',
+    a: 'En omgång feedback ingår i alla planer. Behöver du mer hjälp löser vi det — vi jobbar tills du är nöjd.',
   },
   {
     q: 'Äger jag hemsidan?',
-    a: 'Vi hostar sidan åt dig — det ger dig bättre prestanda, support och uppdateringar ingår. Vill du äga och hosta koden själv kostar det 6 900 kr extra.',
+    a: 'Vi hostar sidan åt dig — det ger dig bättre prestanda och support ingår. Vill du äga och hosta koden själv löser vi det.',
   },
   {
     q: 'Behöver jag köpa hosting?',
-    a: 'Nej. Hosting ingår alltid i månadsretainern. Du behöver inte tänka på servrar, deployment eller domänkonfiguration — vi sköter allt.',
+    a: 'Nej. Hosting ingår i priset — inga månadsavgifter. Du betalar en gång, sen är det klart.',
   },
   {
     q: 'Hur ser betalningen ut?',
@@ -133,7 +119,7 @@ export default function PlanerPage() {
             <em>nivå.</em>
           </h1>
           <p className={styles.sub}>
-            Tre planer. Tydliga priser. Ingen bindningstid.
+            Tre planer. Tydliga priser. Inga månadsavgifter.
           </p>
         </div>
       </section>
@@ -154,7 +140,6 @@ export default function PlanerPage() {
                   <span className={styles.priceText}>{plan.price} kr</span>
                   <span className={styles.priceNote}>engångsbelopp</span>
                 </div>
-                <div className={styles.planMonthly}>+ {plan.monthly} kr/mån &mdash; hosting + drift</div>
                 <p className={styles.planTagline}>{plan.tagline}</p>
                 <p className={styles.planDesc}>{plan.desc}</p>
               </div>

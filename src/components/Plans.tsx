@@ -10,17 +10,17 @@ const plans = [
   {
     id: 'bas',
     name: 'BAS',
-    price: '7 900',
-    monthly: '990',
+    price: '9 900',
     tagline: 'Professionell närvaro online.',
     features: [
       '4 sidor (startsida + 3 undersidor)',
       'Mobilanpassad',
       'SEO-grund (meta, OG, sitemap)',
       'Kontaktformulär',
-      'Google Analytics',
       'Cookie-banner (GDPR)',
-      'Leverans på 14 dagar',
+      'Leverans på 7 dagar',
+      'En omgång feedback ingår',
+      'Innehållsändringar ingår alltid',
     ],
     cta: 'Kom igång',
     popular: false,
@@ -28,19 +28,19 @@ const plans = [
   {
     id: 'pro',
     name: 'PRO',
-    price: '15 900',
-    monthly: '1 590',
+    price: '19 900',
     tagline: 'Animerad. Imponerande. Konverterande.',
     features: [
       'Allt i BAS, plus:',
       'Framer Motion-animationer',
       'GSAP ScrollTrigger-animationer',
-      'Chatbot',
       'Custom favicon & brand assets',
-      'Resend e-postintegration',
       'Upp till 8 sidor',
       'AI-synlighet',
+      'Leverans på 14 dagar',
       'Prioriterad support',
+      'En omgång feedback ingår',
+      'Innehållsändringar ingår alltid',
     ],
     cta: 'Välj PRO',
     popular: true,
@@ -48,17 +48,16 @@ const plans = [
   {
     id: 'elite',
     name: 'ELITE',
-    price: '34 900',
-    monthly: '2 490',
+    price: '39 900',
     tagline: 'Ingen mall. Inget kompromiss.',
     features: [
       'Allt i PRO, plus:',
       'Custom animations & micro-interactions',
-      'Chatbot premium',
       'Upp till 15 sidor',
-      '5 revideringsrundor',
-      'Leverans på 30 dagar',
+      'Leverans på 21 dagar',
       'Prioriterad support',
+      'En omgång feedback ingår',
+      'Innehållsändringar ingår alltid',
     ],
     cta: 'Boka möte',
     popular: false,
@@ -86,9 +85,6 @@ function PlanCard({
         <div className={styles.price}>
           <span className={styles.priceNum}>{plan.price}</span>
           <span className={styles.priceCurrency}>kr</span>
-        </div>
-        <div className={styles.monthly}>
-          {plan.monthly} kr / mån (hosting + drift)
         </div>
         <p className={styles.tagline}>{plan.tagline}</p>
       </div>
@@ -224,9 +220,7 @@ export default function Plans() {
             <em>ambitionsnivå.</em>
           </h2>
           <p className={styles.sub}>
-            Alla planer inkluderar hosting, support och Nano Banana AI-bilder.
-            <br />
-            Retainer är obligatorisk — framas alltid som &ldquo;hosting + teknisk garanti.&rdquo;
+            Alla planer inkluderar hosting och support. Inga månadsavgifter. Innehållsändringar ingår alltid.
           </p>
         </div>
 

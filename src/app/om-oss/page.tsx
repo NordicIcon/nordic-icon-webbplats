@@ -22,7 +22,7 @@ const values = [
   {
     number: '03',
     title: 'Rätt tempo, varje gång.',
-    text: 'BAS på 14 dagar. PRO på 20. ELITE på 30. Varje deadline är ett löfte — inte en förhoppning.',
+    text: 'BAS på 7 dagar. PRO på 14. ELITE på 21. Varje deadline är ett löfte — inte en förhoppning.',
   },
   {
     number: '04',
