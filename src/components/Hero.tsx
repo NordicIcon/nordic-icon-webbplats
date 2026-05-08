@@ -33,9 +33,6 @@ export default function Hero() {
         priority
       />
 
-      {/* Dark overlay */}
-      <div className={styles.overlay} aria-hidden />
-
       {/* Content */}
       <motion.div
         className={styles.content}

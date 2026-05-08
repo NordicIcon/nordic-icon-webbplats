@@ -50,6 +50,16 @@
   overflow: hidden;
 }
 
+/* White logo over hero (not scrolled) */
+.logo img {
+  filter: brightness(0) invert(1);
+  transition: filter 0.5s ease;
+}
+
+.nav.scrolled .logo img {
+  filter: none;
+}
+
 .logoN,
 .logoI {
   display: inline-block;
@@ -85,14 +95,22 @@
 .link {
   font-size: 15px;
   font-weight: 400;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.82);
   letter-spacing: 0.02em;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.5s ease;
   cursor: pointer;
 }
 
 .link:hover {
+  color: white;
+}
+
+.nav.scrolled .link {
+  color: var(--text-secondary);
+}
+
+.nav.scrolled .link:hover {
   color: var(--text);
 }
 
@@ -136,9 +154,13 @@
   display: block;
   width: 22px;
   height: 1.5px;
-  background: var(--text);
+  background: white;
   border-radius: 2px;
-  transition: opacity 0.2s;
+  transition: background 0.5s ease, opacity 0.2s;
+}
+
+.nav.scrolled .hamburger span {
+  background: var(--text);
 }
 
 /* ── Overlay ── */
