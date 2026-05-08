@@ -8,7 +8,7 @@ const stats = [
 
 export default function Hero() {
   return (
-    <div style={{ background: '#0D1B2A' }}>
+    <div style={{ background: 'radial-gradient(ellipse at 70% 45%, rgba(27,58,107,0.55) 0%, #0a1628 55%, #08111f 100%)' }}>
       <ResponsiveHeroBanner
         hideNav
         badgeLabel="Nytt"
