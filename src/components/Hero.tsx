@@ -24,12 +24,20 @@ export default function Hero() {
 
   return (
     <section className={styles.hero}>
-      {/* Background image */}
+      {/* Background — desktop */}
       <Image
         src="/images/hero-bg.png"
         alt=""
         fill
         className={styles.heroBg}
+        priority
+      />
+      {/* Background — mobile */}
+      <Image
+        src="/images/hero-bg-mobile.png"
+        alt=""
+        fill
+        className={styles.heroBgMobile}
         priority
       />
 

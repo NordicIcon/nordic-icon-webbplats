@@ -15,6 +15,22 @@
   z-index: 0;
 }
 
+.heroBgMobile {
+  object-fit: cover;
+  object-position: center top;
+  z-index: 0;
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .heroBg {
+    display: none;
+  }
+  .heroBgMobile {
+    display: block;
+  }
+}
+
 /* ── Dark overlay ── */
 .overlay {
   position: absolute;
@@ -125,21 +141,6 @@
     padding: 140px 20px 60px;
     align-items: flex-start;
     justify-content: center;
-  }
-
-  /* Tillfällig overlay tills mobil-bild finns */
-  .hero::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      to bottom,
-      rgba(5, 12, 25, 0.15) 0%,
-      rgba(5, 12, 25, 0.55) 30%,
-      rgba(5, 12, 25, 0.55) 70%,
-      rgba(5, 12, 25, 0.2) 100%
-    );
-    z-index: 1;
   }
 
   .content {
