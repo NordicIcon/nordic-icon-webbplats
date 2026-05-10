@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lundgren Fastigheter — Mäklare i Malmö</title>
+  <meta name="description" content="Lundgren Fastigheter är Malmös lokala mäklarbyrå. Villor, bostadsrätter och nyproduktion i alla prisklasser. Kostnadsfri värdering. Ring 040-123 456.">
+  <link rel="canonical" href="https://lundgrenfastigheter.se/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Lundgren Fastigheter",
+    "url": "https://lundgrenfastigheter.se",
+    "telephone": "+46401234567",
+    "email": "hej@lundgrenfastigheter.se",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Stortorget 8",
+      "postalCode": "211 22",
+      "addressLocality": "Malmö",
+      "addressCountry": "SE"
+    },
+    "foundingDate": "2008",
+    "description": "Fastighetsmäklarbyrå i Malmö. Villor, radhus, bostadsrätter och nyproduktion."
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ─── CUSTOM CURSOR ─── -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-label" id="cursorLabel"></div>
+
+<!-- ═══════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════ -->
+<nav class="nav" id="nav" aria-label="Huvudnavigation">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo">Lundgren <em>Fastigheter</em></a>
+    <nav class="nav__links" aria-label="Sidor">
+      <a href="listings.html" class="nav__link">Objekt</a>
+      <a href="about.html" class="nav__link">Om oss</a>
+      <a href="contact.html" class="nav__link">Kontakt</a>
+      <div class="btn-wrap" data-magnetic>
+        <a href="contact.html" class="btn btn--dark nav__cta" data-cursor-label="Boka">Boka värdering</a>
+      </div>
+    </nav>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     HERO — Fullscreen
+═══════════════════════════════════════════ -->
+<section class="hero" aria-label="Introduktion">
+
+  <div class="hero__bg" aria-hidden="true">
+    <div class="img-ph img-ph--dark">
+      <span>Hero bild</span>
+      <p>Modernt skandinaviskt vardagsrum. Stora fönster,<br>
+      vita väggar, ljust trägolv. Naturligt dagljus.</p>
+    </div>
+  </div>
+
+  <div class="hero__overlay" aria-hidden="true"></div>
+
+  <div class="hero__content">
+    <span class="hero__eyebrow" data-anim>Fastighetsmäklare &nbsp;·&nbsp; Malmö &nbsp;·&nbsp; Sedan 2008</span>
+    <h1 class="hero__h1" data-anim id="heroH1">
+      Bostäder<br>
+      i Malmö.<br>
+      <em>Rätt pris.</em>
+    </h1>
+    <div class="hero__actions" data-anim>
+      <div class="btn-wrap" data-magnetic>
+        <a href="contact.html" class="btn btn--white" data-cursor-label="Boka">Boka värdering</a>
+      </div>
+      <div class="btn-wrap" data-magnetic>
+        <a href="listings.html" class="btn btn--outline-white" data-cursor-label="Se">Se objekt</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__scroll" aria-hidden="true">
+    <div class="hero__scroll-line"></div>
+    <span class="hero__scroll-text">Scrolla</span>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     MARQUEE
+═══════════════════════════════════════════ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span class="marquee__item">Limhamn <span class="marquee__dot"></span></span>
+    <span class="marquee__item">Husie <span class="marquee__dot"></span></span>
+    <span class="marquee__item">Hyllie <span class="marquee__dot"></span></span>
+    <span class="marquee__item">Centrum <span class="marquee__dot"></span></span>
+    <span class="marquee__item">Möllevången <span class="marquee__dot"></span></span>
+    <span class="marquee__item">Oxie <span class="marquee__dot"></span></span>
+    <span class="marquee__item">Vellinge <span class="marquee__dot"></span></span>
+    <span class="marquee__item">Kostnadsfri värdering <span class="marquee__dot"></span></span>
+    <span class="marquee__item">15+ år i Malmö <span class="marquee__dot"></span></span>
+    <span class="marquee__item">340+ förmedlade objekt <span class="marquee__dot"></span></span>
+    <span class="marquee__item">4.9 / 5 ★ <span class="marquee__dot"></span></span>
+    <span class="marquee__item">Max 8 objekt per mäklare <span class="marquee__dot"></span></span>
+    <!-- Duplicated for seamless loop -->
+    <span class="marquee__item" aria-hidden="true">Limhamn <span class="marquee__dot"></span></span>
+    <span class="marquee__item" aria-hidden="true">Husie <span class="marquee__dot"></span></span>
+    <span class="marquee__item" aria-hidden="true">Hyllie <span class="marquee__dot"></span></span>
+    <span class="marquee__item" aria-hidden="true">Centrum <span class="marquee__dot"></span></span>
+    <span class="marquee__item" aria-hidden="true">Möllevången <span class="marquee__dot"></span></span>
+    <span class="marquee__item" aria-hidden="true">Oxie <span class="marquee__dot"></span></span>
+    <span class="marquee__item" aria-hidden="true">Vellinge <span class="marquee__dot"></span></span>
+    <span class="marquee__item" aria-hidden="true">Kostnadsfri värdering <span class="marquee__dot"></span></span>
+    <span class="marquee__item" aria-hidden="true">15+ år i Malmö <span class="marquee__dot"></span></span>
+    <span class="marquee__item" aria-hidden="true">340+ förmedlade objekt <span class="marquee__dot"></span></span>
+    <span class="marquee__item" aria-hidden="true">4.9 / 5 ★ <span class="marquee__dot"></span></span>
+    <span class="marquee__item" aria-hidden="true">Max 8 objekt per mäklare <span class="marquee__dot"></span></span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     STATEMENT — editorial sentence
+═══════════════════════════════════════════ -->
+<section class="statement" aria-label="Om oss">
+  <p class="label" data-anim>Vår filosofi</p>
+  <p class="statement__text" data-anim>
+    Vi vet vad Malmö är värt.<br>
+    Varje stadsdel, varje gata,<br>
+    varje <em>budgivning.</em>
+  </p>
+  <p class="statement__sub" data-anim>Stortorget 8, Malmö &nbsp;·&nbsp; 040-123 456</p>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SERVICES — large numbered rows with cursor image
+═══════════════════════════════════════════ -->
+<section class="services" id="tjanster" aria-label="Tjänster">
+  <div class="container">
+
+    <div class="services__header" data-anim>
+      <div>
+        <p class="label" style="margin-bottom:1rem;">Vad vi gör</p>
+        <h2 class="services__heading">Allt runt<br>din <em>bostad.</em></h2>
+      </div>
+      <p class="services__sub">
+        Från kostnadsfri värdering till nyckelöverlämning.
+        Vi samordnar hela processen — inga överskott,
+        inga dolda avgifter.
+      </p>
+    </div>
+
+    <div class="services__list">
+
+      <div class="svc-row" data-anim>
+        <span class="svc-num">01</span>
+        <h3 class="svc-title">Bostadsförsäljning</h3>
+        <p class="svc-desc">Villor, radhus, bostadsrätter och nyproduktion.
+        Alla prisklasser. Fotografering ingår alltid.</p>
+        <span class="svc-arrow" aria-hidden="true">↗</span>
+      </div>
+
+      <div class="svc-row" data-anim>
+        <span class="svc-num">02</span>
+        <h3 class="svc-title">Kostnadsfri värdering</h3>
+        <p class="svc-desc">Vi värderar din bostad utan förpliktelse.
+        Ring eller skriv — vi återkommer samma dag.</p>
+        <span class="svc-arrow" aria-hidden="true">↗</span>
+      </div>
+
+      <div class="svc-row" data-anim>
+        <span class="svc-num">03</span>
+        <h3 class="svc-title">Styling-råd</h3>
+        <p class="svc-desc">Vi berättar vad som ökar ditt slutpris.
+        Innan vi sätter ut annonsen.</p>
+        <span class="svc-arrow" aria-hidden="true">↗</span>
+      </div>
+
+      <div class="svc-row" data-anim>
+        <span class="svc-num">04</span>
+        <h3 class="svc-title">Köpstöd</h3>
+        <p class="svc-desc">Vi hjälper köpare navigera budgivning och kontrakt.
+        Ärlig rådgivning.</p>
+        <span class="svc-arrow" aria-hidden="true">↗</span>
+      </div>
+
+      <div class="svc-row" data-anim>
+        <span class="svc-num">05</span>
+        <h3 class="svc-title">Juridisk rådgivning</h3>
+        <p class="svc-desc">Via samarbetspartner.
+        Ingår i uppdraget.</p>
+        <span class="svc-arrow" aria-hidden="true">↗</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Cursor-follow image -->
+  <div id="svcImg" aria-hidden="true">
+    <div class="img-ph">
+      <span>Tjänstbild</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     ABOUT — Staggered Grid
+═══════════════════════════════════════════ -->
+<section class="about" id="om-oss" aria-label="Om Lundgren Fastigheter">
+  <div class="about__inner">
+
+    <div data-anim>
+      <p class="label about__label">Om oss</p>
+      <h2 class="about__heading">
+        Malmö är<br>
+        vår stad.<br>
+        <em>Varje stadsdel.</em>
+      </h2>
+      <div class="about__body">
+        <p>Grundat 2008 av Henrik Lundgren.
+        12 medarbetare — 8 mäklare. Max 8 aktiva
+        objekt per mäklare. Det är regeln som gör skillnad.</p>
+        <p>Vi täcker hela Malmö: Limhamn, Centrum,
+        Husie, Hyllie, Möllevången, Oxie, Vellinge
+        och Staffanstorp.</p>
+        <p>Fotografering ingår alltid.
+        Vi lovar aldrig mer än vi kan hålla.</p>
+      </div>
+      <div class="about__detail">
+        <span class="about__detail-num">040-123 456</span>
+        <span class="about__detail-label">Ring oss — vardagar 09–18</span>
+      </div>
+      <div class="about__cta">
+        <div class="btn-wrap" data-magnetic>
+          <a href="about.html" class="btn btn--outline" data-cursor-label="Läs">Träffa mäklarna</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3-image staggered grid -->
+    <div class="sg" data-anim>
+      <div class="sg__item sg__item--main" data-parallax="-8">
+        <div class="img-ph">
+          <span>Om oss — huvudbild</span>
+          <p>Modern svensk villa,<br>vit fasad, stora fönster</p>
+        </div>
+      </div>
+      <div class="sg__item" data-parallax="5">
+        <div class="img-ph">
+          <span>Interiör</span>
+          <p>Ljus lägenhet,<br>öppen planlösning</p>
+        </div>
+      </div>
+      <div class="sg__item" data-parallax="-12">
+        <div class="img-ph">
+          <span>Radhus</span>
+          <p>Radhus exteriör,<br>kullersten</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     OBJEKT — Horizontal scroll
+═══════════════════════════════════════════ -->
+<section class="objekt" id="objekt" aria-label="Till salu">
+
+  <div class="objekt__header" data-anim>
+    <div>
+      <p class="label" style="margin-bottom:.875rem;">Till salu</p>
+      <h2 class="objekt__heading">Aktuella <em>objekt.</em></h2>
+    </div>
+    <a href="listings.html" class="objekt__link">
+      Visa alla objekt &nbsp;→
+    </a>
+  </div>
+
+  <div class="hs" id="hScroll">
+    <div class="hs__sticky">
+      <div class="hs__track" id="hsTrack">
+
+        <article class="lcard" data-cursor-hover data-cursor-label="Se objekt">
+          <div class="lcard__img">
+            <div class="img-ph" style="aspect-ratio:4/3">
+              <span>Villa Limhamn</span>
+              <p>Vit villa, stor trädgård, havsnära</p>
+            </div>
+          </div>
+          <div class="lcard__body">
+            <span class="lcard__status">Till salu</span>
+            <h3 class="lcard__title">Villa · Limhamn</h3>
+            <p class="lcard__addr">Strandvägen 24, Limhamn</p>
+            <div class="lcard__meta">
+              <span class="lcard__price">6 950 000 kr</span>
+              <span class="lcard__details">187 kvm<br>6 rum · 4 sovrum</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="lcard" data-cursor-hover data-cursor-label="Se objekt">
+          <div class="lcard__img">
+            <div class="img-ph" style="aspect-ratio:4/3">
+              <span>Bostadsrätt Centrum</span>
+              <p>Ljus lägenhet, balkong</p>
+            </div>
+          </div>
+          <div class="lcard__body">
+            <span class="lcard__status">Till salu</span>
+            <h3 class="lcard__title">Bostadsrätt · Centrum</h3>
+            <p class="lcard__addr">Davidshallsgatan 8, 3tr</p>
+            <div class="lcard__meta">
+              <span class="lcard__price">3 200 000 kr</span>
+              <span class="lcard__details">78 kvm<br>3 rum · 3 450 kr/mån</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="lcard" data-cursor-hover data-cursor-label="Se objekt">
+          <div class="lcard__img">
+            <div class="img-ph" style="aspect-ratio:4/3">
+              <span>Radhus Husie</span>
+              <p>Radhus med trädgård</p>
+            </div>
+          </div>
+          <div class="lcard__body">
+            <span class="lcard__status lcard__status--bid">Under budgivning</span>
+            <h3 class="lcard__title">Radhus · Husie</h3>
+            <p class="lcard__addr">Husiegårdsvägen 14</p>
+            <div class="lcard__meta">
+              <span class="lcard__price">2 850 000 kr</span>
+              <span class="lcard__details">124 kvm<br>5 rum · 3 sovrum</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="lcard" data-cursor-hover data-cursor-label="Se objekt">
+          <div class="lcard__img">
+            <div class="img-ph" style="aspect-ratio:4/3">
+              <span>Villa Vellinge</span>
+              <p>Villa med stor tomt</p>
+            </div>
+          </div>
+          <div class="lcard__body">
+            <span class="lcard__status">Till salu</span>
+            <h3 class="lcard__title">Villa · Vellinge</h3>
+            <p class="lcard__addr">Stationsgatan 6, Vellinge</p>
+            <div class="lcard__meta">
+              <span class="lcard__price">4 750 000 kr</span>
+              <span class="lcard__details">155 kvm · 890 m²<br>5 rum · 4 sovrum</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="lcard" data-cursor-hover data-cursor-label="Se objekt">
+          <div class="lcard__img">
+            <div class="img-ph" style="aspect-ratio:4/3">
+              <span>Nyproduktion Hyllie</span>
+              <p>Modern nyproduktion</p>
+            </div>
+          </div>
+          <div class="lcard__body">
+            <span class="lcard__status lcard__status--pre">Förhandsbokning</span>
+            <h3 class="lcard__title">Nyproduktion · Hyllie</h3>
+            <p class="lcard__addr">Hyllie Boulevard 22</p>
+            <div class="lcard__meta">
+              <span class="lcard__price">från 2 490 000 kr</span>
+              <span class="lcard__details">62–95 kvm<br>2–4 rum · Q2 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="lcard" data-cursor-hover data-cursor-label="Se objekt">
+          <div class="lcard__img">
+            <div class="img-ph" style="aspect-ratio:4/3">
+              <span>Bostadsrätt Möllevången</span>
+              <p>Charmig lägenhet, Möllan</p>
+            </div>
+          </div>
+          <div class="lcard__body">
+            <span class="lcard__status">Till salu</span>
+            <h3 class="lcard__title">Bostadsrätt · Möllevången</h3>
+            <p class="lcard__addr">Simrishamnsgatan 3, 1tr</p>
+            <div class="lcard__meta">
+              <span class="lcard__price">1 850 000 kr</span>
+              <span class="lcard__details">52 kvm<br>2 rum · 2 890 kr/mån</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- CTA card -->
+        <div class="lcard lcard--cta">
+          <p class="label" style="margin-bottom:1.25rem;">Fler objekt</p>
+          <h3>Se alla<br><em>objekt</em></h3>
+          <div class="btn-wrap" data-magnetic>
+            <a href="listings.html" class="btn btn--dark" style="font-size:.875rem;">Visa alla</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="hs-end-pad"></div>
+
+</section>
+
+<!-- ═══════════════════════════════════════════
+     STATS — Massive numbers
+═══════════════════════════════════════════ -->
+<section class="stats" aria-label="Nyckeltal">
+  <div class="stats__grid">
+
+    <div class="stat" data-anim>
+      <div class="stat__num">
+        <span data-count="15">15</span><sup>+</sup>
+      </div>
+      <p class="stat__label">År i Malmö</p>
+    </div>
+
+    <div class="stat" data-anim>
+      <div class="stat__num">
+        <span data-count="340">340</span><sup>+</sup>
+      </div>
+      <p class="stat__label">Förmedlade objekt</p>
+    </div>
+
+    <div class="stat" data-anim>
+      <div class="stat__num">4.9<span style="font-size:.4em;color:var(--accent-alt);vertical-align:super;">/5</span></div>
+      <p class="stat__label">Kundbetyg — 4.9 av 5</p>
+    </div>
+
+    <div class="stat" data-anim>
+      <div class="stat__num">
+        <span data-count="8">8</span>
+      </div>
+      <p class="stat__label">Max aktiva objekt per mäklare</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     EDITORIAL BREAK — Malmö aerial
+═══════════════════════════════════════════ -->
+<div class="editorial" aria-hidden="true">
+  <div class="editorial__bg" id="editorialBg">
+    <div class="img-ph img-ph--dark">
+      <span>Malmö — flygfoto</span>
+      <p>Stadsvy Malmö. Centrum, Öresundsbron<br>i bakgrunden. Gyllene timmen.</p>
+    </div>
+  </div>
+  <div class="editorial__overlay"></div>
+  <div class="editorial__content">
+    <span class="editorial__label">Malmö · Sedan 2008</span>
+    <p class="editorial__quote" data-anim>
+      "Vi känner varje<br>stadsdel."
+    </p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════════ -->
+<section class="testimonials" id="omdomen" aria-label="Kundomdömen">
+  <div class="container">
+    <div data-anim>
+      <p class="label" style="margin-bottom:1rem;">Vad kunderna säger</p>
+      <h2 style="font-family:var(--font-heading);font-size:clamp(2rem,3.5vw,3rem);letter-spacing:-.02em;line-height:1.1;max-width:500px;">
+        Tre gånger.<br><em>Samma byrå.</em>
+      </h2>
+    </div>
+    <div class="testimonials__grid">
+
+      <div class="tcard" data-anim>
+        <div class="tcard__stars" aria-label="5 av 5">★★★★★</div>
+        <blockquote class="tcard__quote">
+          Vi sålde vår villa på 11 dagar.
+          Henrik hade tre budgivare redo
+          innan visningen.
+        </blockquote>
+        <footer class="tcard__author">
+          <strong>Anna &amp; Per L.</strong>
+          Limhamn
+        </footer>
+      </div>
+
+      <div class="tcard" data-anim>
+        <div class="tcard__stars" aria-label="5 av 5">★★★★★</div>
+        <blockquote class="tcard__quote">
+          Jag köpte min första lägenhet
+          med Lundgren. De förklarade allt
+          utan att jag kände mig dum.
+        </blockquote>
+        <footer class="tcard__author">
+          <strong>Sara T.</strong>
+          Centrum
+        </footer>
+      </div>
+
+      <div class="tcard" data-anim>
+        <div class="tcard__stars" aria-label="5 av 5">★★★★★</div>
+        <blockquote class="tcard__quote">
+          Vi har anlitat dem tre gånger.
+          De känner Malmö bättre än vi gör
+          och vi har bott här i 20 år.
+        </blockquote>
+        <footer class="tcard__author">
+          <strong>Familjen Björk</strong>
+          Husie
+        </footer>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     CTA — Dark pre-footer
+═══════════════════════════════════════════ -->
+<section class="cta" id="kontakt" aria-label="Boka värdering">
+  <div class="cta__inner">
+    <div data-anim>
+      <p class="label cta__label">Kostnadsfri värdering</p>
+      <h2 class="cta__heading">
+        Vad är din<br>
+        <em>bostad värd?</em>
+      </h2>
+      <p class="cta__sub">
+        Kostnadsfri värdering.
+        Inga förpliktelser.
+        Vi återkommer samma dag.
+      </p>
+    </div>
+    <div class="cta__actions" data-anim>
+      <div class="btn-wrap" data-magnetic>
+        <a href="contact.html" class="btn btn--white" data-cursor-label="Boka">
+          Boka värdering
+        </a>
+      </div>
+      <a href="tel:+46401234567" class="cta__phone">040-123 456</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER — with LUNDGREN signature
+═══════════════════════════════════════════ -->
+<footer class="footer" aria-label="Sidfot">
+
+  <div class="footer__main">
+    <div class="footer__grid">
+
+      <div>
+        <p class="footer__brand">Lundgren <em>Fastigheter</em></p>
+        <p class="footer__tagline">
+          Mäklare i Malmö sedan 2008.
+          Villor, bostadsrätter och nyproduktion
+          i alla prisklasser.
+        </p>
+      </div>
+
+      <div>
+        <p class="footer__col-label">Tjänster</p>
+        <nav class="footer__links">
+          <a href="contact.html" class="footer__link">Bostadsförsäljning</a>
+          <a href="contact.html" class="footer__link">Kostnadsfri värdering</a>
+          <a href="contact.html" class="footer__link">Styling-råd</a>
+          <a href="contact.html" class="footer__link">Köpstöd</a>
+        </nav>
+      </div>
+
+      <div>
+        <p class="footer__col-label">Navigering</p>
+        <nav class="footer__links">
+          <a href="listings.html" class="footer__link">Objekt till salu</a>
+          <a href="about.html" class="footer__link">Om oss &amp; mäklarna</a>
+          <a href="contact.html" class="footer__link">Kontakt</a>
+          <a href="contact.html" class="footer__link">Boka värdering</a>
+        </nav>
+      </div>
+
+      <div>
+        <p class="footer__col-label">Kontakt</p>
+        <div class="footer__contact-item">
+          <span class="footer__contact-label">Adress</span>
+          <span class="footer__contact-val">Stortorget 8, 211 22 Malmö</span>
+        </div>
+        <div class="footer__contact-item">
+          <span class="footer__contact-label">Telefon</span>
+          <a href="tel:+46401234567" class="footer__contact-val">040-123 456</a>
+        </div>
+        <div class="footer__contact-item">
+          <span class="footer__contact-label">E-post</span>
+          <a href="mailto:hej@lundgrenfastigheter.se" class="footer__contact-val">hej@lundgrenfastigheter.se</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <p class="footer__legal">© 2026 Lundgren Fastigheter AB</p>
+    <p class="footer__credit">Byggd av <a href="https://nordicicon.se" target="_blank" rel="noopener">Nordic Icon</a></p>
+  </div>
+
+  <!-- SIGNATURE — "LUNDGREN" in massive display type -->
+  <div class="footer__signature" aria-hidden="true">
+    <span class="footer__sig-text">LUNDGREN</span>
+  </div>
+
+</footer>
+
+<!-- CDN scripts -->
+<script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Till salu | Lundgren Fastigheter Malmö</title>
+  <meta name="description" content="Aktuella objekt till salu — villor, bostadsrätter, radhus och nyproduktion i Malmö. Lundgren Fastigheter.">
+  <link rel="canonical" href="https://lundgrenfastigheter.se/listings.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .listings-hero {
+      padding: 160px 0 80px;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+    }
+    .listings-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--grid-gap);
+      padding: var(--section-padding) 0;
+    }
+    .listing-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: var(--bg);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .listing-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.07);
+    }
+    .listing-card__img {
+      aspect-ratio: 16/10;
+      overflow: hidden;
+    }
+    .listing-card__img .img-placeholder {
+      border-radius: 0;
+      aspect-ratio: 16/10;
+    }
+    .listing-card__body { padding: 1.5rem; }
+    .listing-status {
+      font-family: var(--font-mono);
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-alt);
+      margin-bottom: 0.625rem;
+    }
+    .listing-status--budgivning { color: var(--text-muted); }
+    .listing-status--forhandsbokning { color: var(--text-secondary); }
+    .listing-title {
+      font-family: var(--font-heading);
+      font-size: 1.375rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+    .listing-address {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-bottom: 1.125rem;
+    }
+    .listing-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      border-top: 1px solid var(--border);
+      padding-top: 1rem;
+    }
+    .listing-price {
+      font-family: var(--font-mono);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .listing-details {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      text-align: right;
+      line-height: 1.5;
+    }
+    @media (max-width: 1024px) {
+      .listings-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .listings-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-label" id="cursorLabel"></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">Lundgren <em>Fastigheter</em></a>
+      <nav class="navbar__nav">
+        <a href="listings.html" class="navbar__link" style="color:var(--text);">Objekt</a>
+        <a href="about.html" class="navbar__link">Om oss</a>
+        <a href="contact.html" class="navbar__link">Kontakt</a>
+      </nav>
+      <div class="navbar__cta">
+        <div class="btn-magnetic" data-magnetic>
+          <a href="contact.html" class="btn btn--primary">Boka värdering</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="listings-hero">
+    <div class="container">
+      <span class="section-label" data-animate>Till salu</span>
+      <h1 class="section-heading" style="font-size:clamp(2.5rem,5vw,4.5rem);max-width:700px;margin-bottom:1.25rem;" data-animate>
+        Aktuella <em>objekt.</em>
+      </h1>
+      <p class="section-sub" data-animate>
+        Villor, bostadsrätter, radhus och nyproduktion i hela Malmö.
+        Kostnadsfri värdering utan förpliktelse — ring <a href="tel:+46401234567" style="color:var(--text);">040-123 456</a>.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="listings-grid">
+
+        <article class="listing-card" data-animate>
+          <div class="listing-card__img">
+            <img src="assets/images/gen_d571491336.jpg" alt="Villa Limhamn Modern villa, vit fasad, stor trädgård" loading="lazy" style="aspect-ratio:16/9; width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <div class="listing-card__body">
+            <span class="listing-status">Till salu</span>
+            <h2 class="listing-title">Villa · Limhamn</h2>
+            <p class="listing-address">Strandvägen 24, Limhamn</p>
+            <div class="listing-meta">
+              <span class="listing-price">6 950 000 kr</span>
+              <span class="listing-details">187 kvm · 680 m² tomt<br>6 rum · 4 sovrum</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="listing-card" data-animate>
+          <div class="listing-card__img">
+            <img src="assets/images/gen_d86dec15ae.jpg" alt="Bostadsrätt Centrum Ljus lägenhet med balkong" loading="lazy" style="aspect-ratio:16/9; width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <div class="listing-card__body">
+            <span class="listing-status">Till salu</span>
+            <h2 class="listing-title">Bostadsrätt · Centrum</h2>
+            <p class="listing-address">Davidshallsgatan 8, 3tr</p>
+            <div class="listing-meta">
+              <span class="listing-price">3 200 000 kr</span>
+              <span class="listing-details">78 kvm<br>3 rum · 3 450 kr/mån</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="listing-card" data-animate>
+          <div class="listing-card__img">
+            <img src="assets/images/gen_a22ae9c7b6.jpg" alt="Radhus Husie Radhus med trädgård, Husie" loading="lazy" style="aspect-ratio:16/9; width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <div class="listing-card__body">
+            <span class="listing-status listing-status--budgivning">Under budgivning</span>
+            <h2 class="listing-title">Radhus · Husie</h2>
+            <p class="listing-address">Husiegårdsvägen 14</p>
+            <div class="listing-meta">
+              <span class="listing-price">2 850 000 kr</span>
+              <span class="listing-details">124 kvm<br>5 rum · 3 sovrum</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="listing-card" data-animate>
+          <div class="listing-card__img">
+            <img src="assets/images/gen_308c20b58a.jpg" alt="Villa Vellinge Villa med stor tomt, lugnt läge" loading="lazy" style="aspect-ratio:16/9; width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <div class="listing-card__body">
+            <span class="listing-status">Till salu</span>
+            <h2 class="listing-title">Villa · Vellinge</h2>
+            <p class="listing-address">Stationsgatan 6, Vellinge</p>
+            <div class="listing-meta">
+              <span class="listing-price">4 750 000 kr</span>
+              <span class="listing-details">155 kvm · 890 m² tomt<br>5 rum · 4 sovrum</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="listing-card" data-animate>
+          <div class="listing-card__img">
+            <img src="assets/images/gen_59d576960b.jpg" alt="Nyproduktion Hyllie Modern bostadsrättsbyggnad" loading="lazy" style="aspect-ratio:16/9; width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <div class="listing-card__body">
+            <span class="listing-status listing-status--forhandsbokning">Förhandsbokning</span>
+            <h2 class="listing-title">Nyproduktion · Hyllie</h2>
+            <p class="listing-address">Hyllie Boulevard 22</p>
+            <div class="listing-meta">
+              <span class="listing-price">från 2 490 000 kr</span>
+              <span class="listing-details">62–95 kvm<br>2–4 rum · Q2 2026</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="listing-card" data-animate>
+          <div class="listing-card__img">
+            <img src="assets/images/gen_b2b9c4b1a8.jpg" alt="Bostadsrätt Möllevången Charmig lägenhet nära Möllan" loading="lazy" style="aspect-ratio:16/9; width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <div class="listing-card__body">
+            <span class="listing-status">Till salu</span>
+            <h2 class="listing-title">Bostadsrätt · Möllevången</h2>
+            <p class="listing-address">Simrishamnsgatan 3, 1tr</p>
+            <div class="listing-meta">
+              <span class="listing-price">1 850 000 kr</span>
+              <span class="listing-details">52 kvm<br>2 rum · 2 890 kr/mån</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </main>
+
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div>
+        <span class="cta-label">Kostnadsfri värdering</span>
+        <h2 class="cta-heading">Vad är din<br><em>bostad värd?</em></h2>
+        <p class="cta-sub">Kostnadsfri värdering. Inga förpliktelser. Vi återkommer samma dag.</p>
+      </div>
+      <div class="cta-actions">
+        <div class="btn-magnetic" data-magnetic>
+          <a href="contact.html" class="btn btn--light">Boka värdering</a>
+        </div>
+        <a href="tel:+46401234567" class="cta-phone">040-123 456</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div>
+          <p class="footer__brand-name">Lundgren <em>Fastigheter</em></p>
+          <p class="footer__brand-tagline">Mäklare i Malmö sedan 2008.</p>
+        </div>
+        <div>
+          <p class="footer__col-label">Tjänster</p>
+          <nav class="footer__links">
+            <a href="contact.html" class="footer__link">Bostadsförsäljning</a>
+            <a href="contact.html" class="footer__link">Kostnadsfri värdering</a>
+            <a href="contact.html" class="footer__link">Styling-råd</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__col-label">Navigering</p>
+          <nav class="footer__links">
+            <a href="listings.html" class="footer__link">Objekt</a>
+            <a href="about.html" class="footer__link">Om oss</a>
+            <a href="contact.html" class="footer__link">Kontakt</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__col-label">Kontakt</p>
+          <div class="footer__contact-item">
+            <span class="footer__contact-label">Telefon</span>
+            <a href="tel:+46401234567" class="footer__contact-value footer__link">040-123 456</a>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-label">E-post</span>
+            <a href="mailto:hej@lundgrenfastigheter.se" class="footer__contact-value footer__link">hej@lundgrenfastigheter.se</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__legal">© 2026 Lundgren Fastigheter AB.</p>
+        <p class="footer__credit">Byggd av <a href="https://nordicicon.se" target="_blank" rel="noopener">Nordic Icon</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
+  <script src="https://cdn.prod.website-files.com/gsap/3.14.2/gsap.min.js"></script>
+  <script src="https://cdn.prod.website-files.com/gsap/3.14.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.prod.website-files.com/gsap/3.14.2/SplitText.min.js"></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

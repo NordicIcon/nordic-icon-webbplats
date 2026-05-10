@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boka | Röda Tråden Aktivitetscenter Växjö</title>
+  <meta name="description" content="Boka aktiviteter, kalas och teambuilding hos Röda Tråden i Växjö. Enkelt bokningssystem online — välj datum, aktivitet och betala direkt." />
+  <link rel="canonical" href="https://rodatraden.se/book.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .page-hero {
+      padding-top: calc(88px + 80px);
+      padding-bottom: 80px;
+    }
+
+    .book-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: var(--grid-gap);
+      margin-top: var(--space-5xl);
+    }
+
+    .book-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: var(--card-padding-lg);
+      background: var(--bg);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .book-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.07);
+    }
+
+    .book-card__icon {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-subtle);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-xl);
+      font-size: 1.25rem;
+    }
+
+    .book-card__title {
+      font-size: var(--text-h4);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: var(--space-md);
+    }
+
+    .book-card__desc {
+      font-size: var(--text-body-sm);
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: var(--space-2xl);
+      max-width: 100%;
+    }
+
+    .book-card__price {
+      font-size: var(--text-small);
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-label);
+      font-weight: 600;
+      margin-bottom: var(--space-xl);
+    }
+
+    /* Booking info box */
+    .booking-info {
+      background: var(--bg-secondary);
+      border-radius: var(--radius-xl);
+      padding: var(--card-padding-lg);
+      margin-top: var(--space-5xl);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-3xl);
+    }
+
+    .booking-info__item h3 {
+      font-size: var(--text-h4);
+      font-weight: 700;
+      margin-bottom: var(--space-md);
+    }
+
+    .booking-info__item p {
+      font-size: var(--text-body-sm);
+      color: var(--text-secondary);
+      max-width: 100%;
+    }
+
+    .booking-note {
+      margin-top: var(--space-2xl);
+      padding: 1rem 1.25rem;
+      background: var(--accent-subtle);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      font-size: var(--text-body-sm);
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 768px) {
+      .book-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .booking-info {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Huvudnavigation">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="index.html" class="navbar__logo" aria-label="Röda Tråden — till startsidan">
+          Röda <span>Tråden</span>
+        </a>
+        <ul class="navbar__links" role="list">
+          <li><a href="activities.html">Aktiviteter</a></li>
+          <li><a href="index.html#om-oss">Om oss</a></li>
+          <li><a href="index.html#priser">Priser</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+        <a href="book.html" class="btn btn--primary navbar__cta">Boka nu</a>
+        <button class="navbar__burger" id="navBurger" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobileNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="navbar__mobile" id="mobileNav" aria-label="Mobilnavigation">
+      <a href="activities.html">Aktiviteter</a>
+      <a href="index.html#om-oss">Om oss</a>
+      <a href="index.html#priser">Priser</a>
+      <a href="contact.html">Kontakt</a>
+      <a href="book.html" class="btn btn--primary" style="align-self: flex-start; margin-top: 0.5rem;">Boka nu</a>
+    </nav>
+  </nav>
+
+  <main>
+
+    <section class="page-hero section" id="top">
+      <div class="container">
+        <p class="label label--accent" style="margin-bottom: 1rem;">Boka</p>
+        <h1 style="font-size: var(--text-h1); letter-spacing: var(--tracking-tight); line-height: 1.1; margin-bottom: 1.5rem;">
+          Välj vad du vill boka. <em>Vi ordnar resten.</em>
+        </h1>
+        <p style="font-size: var(--text-body); color: var(--text-secondary); max-width: 520px; line-height: 1.75;">
+          Entréer, escape rooms, kalas och teambuilding bokas via vårt bokningssystem.
+          Du väljer datum och tid — vi håller koll på resten.
+        </p>
+      </div>
+    </section>
+
+    <!-- Booking categories -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+
+        <div class="book-grid">
+
+          <!-- Entré -->
+          <div class="book-card" data-animate>
+            <div class="book-card__icon" aria-hidden="true">🎟️</div>
+            <h2 class="book-card__title">Entré &amp; Aktiviteter</h2>
+            <p class="book-card__desc">
+              Klätterväggar, trampoliner, lasertag och inomhusminigolf ingår i dagsbiljetten.
+              Välj datum och antal besökare.
+            </p>
+            <p class="book-card__price">Från 165 kr/pers</p>
+            <a href="https://bokadirekt.se" target="_blank" rel="noopener" class="btn btn--primary">Boka entré</a>
+          </div>
+
+          <!-- Escape Room -->
+          <div class="book-card" data-animate>
+            <div class="book-card__icon" aria-hidden="true">🔐</div>
+            <h2 class="book-card__title">Escape Room</h2>
+            <p class="book-card__desc">
+              Tre rum: Vikingaskepp, Rymdfärd och Spökhuset. 2–6 deltagare per rum.
+              Bokas alltid separat, 60 minuter per session.
+            </p>
+            <p class="book-card__price">295 kr/person</p>
+            <a href="https://bokadirekt.se" target="_blank" rel="noopener" class="btn btn--primary">Boka escape room</a>
+          </div>
+
+          <!-- Kalas & Events -->
+          <div class="book-card" data-animate>
+            <div class="book-card__icon" aria-hidden="true">🎉</div>
+            <h2 class="book-card__title">Kalas &amp; Events</h2>
+            <p class="book-card__desc">
+              Kalas för barn 4–14 år, polterabend, teambuilding och skolklasser.
+              Kontakta oss för skräddarsytt upplägg.
+            </p>
+            <p class="book-card__price">Kalas från 2 200 kr · Teambuilding från 4 500 kr</p>
+            <a href="contact.html" class="btn btn--secondary">Kontakta oss</a>
+          </div>
+
+        </div>
+
+        <!-- Info box -->
+        <div class="booking-info" data-animate>
+          <div class="booking-info__item">
+            <h3>Att tänka på</h3>
+            <p>Strumpor krävs på trampolinerna — ta med egna eller köp i receptionen. Escape rooms bokas alltid separat. Kaféet är öppet hela dagen utan bokning.</p>
+          </div>
+          <div class="booking-info__item">
+            <h3>Öppettider</h3>
+            <p>Måndag–Fredag: 10:00–20:00<br>Lördag–Söndag: 09:00–21:00<br>Röda dagar: 09:00–18:00</p>
+          </div>
+        </div>
+
+        <div class="booking-note" data-animate>
+          Frågor om bokning? Ring <a href="tel:+46470123456" style="color: var(--accent); font-weight: 600;">0470-123 456</a> — vi svarar mån–fre 09–17.
+          Eller maila <a href="mailto:hej@rodatraden.se" style="color: var(--accent); font-weight: 600;">hej@rodatraden.se</a>.
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pre-footer CTA -->
+  <section class="cta-dark" aria-labelledby="cta-book-heading">
+    <div class="container">
+      <div class="cta-dark__inner">
+        <p class="label cta-dark__label">Kontakt</p>
+        <h2 class="cta-dark__heading" id="cta-book-heading">
+          Osäker på vad du ska välja?<br>
+          <em>Ring oss.</em>
+        </h2>
+        <p class="cta-dark__sub">Vi hjälper dig hitta rätt aktivitet och upplägg — oavsett om det är 2 eller 30 personer.</p>
+        <div class="cta-dark__actions">
+          <a href="tel:+46470123456" class="btn btn--light">0470-123 456</a>
+          <a href="mailto:hej@rodatraden.se" class="cta-dark__phone">hej@rodatraden.se</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <p class="footer__brand-name">Röda <span>Tråden</span></p>
+          <p class="footer__tagline">Sju aktiviteter under ett tak. Växjö, Småland.</p>
+        </div>
+        <nav aria-label="Aktiviteter">
+          <p class="footer__col-title">Aktiviteter</p>
+          <ul class="footer__col-links" role="list">
+            <li><a href="activities.html#klattring">Klätterväggar</a></li>
+            <li><a href="activities.html#trampoliner">Trampoliner</a></li>
+            <li><a href="activities.html#lasertag">Lasertag</a></li>
+            <li><a href="activities.html#escape">Escape Rooms</a></li>
+            <li><a href="activities.html#minigolf">Minigolf</a></li>
+            <li><a href="activities.html#cafe">Café</a></li>
+            <li><a href="activities.html#flipper">Flipper</a></li>
+          </ul>
+        </nav>
+        <div>
+          <p class="footer__col-title">Öppettider</p>
+          <ul class="footer__col-links" role="list">
+            <li><span>Måndag–Fredag: 10–20</span></li>
+            <li><span>Lördag–Söndag: 09–21</span></li>
+            <li><span>Röda dagar: 09–18</span></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Kontakt</p>
+          <ul class="footer__col-links" role="list">
+            <li><span>Storgatan 22, 352 31 Växjö</span></li>
+            <li><a href="tel:+46470123456">0470-123 456</a></li>
+            <li><a href="mailto:hej@rodatraden.se">hej@rodatraden.se</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 Röda Tråden Aktivitetscenter AB</p>
+        <p class="footer__built-by">Byggd av <a href="https://nordicicon.se" target="_blank" rel="noopener">Nordic Icon</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aktiviteter | Klättring, Lasertag, Escape Room | Växjö — Röda Tråden</title>
+  <meta name="description" content="Sju aktiviteter under ett tak i Växjö. Klätterväggar, trampoliner, lasertag, escape rooms, inomhusminigolf, flipper och café. Boka online." />
+  <link rel="canonical" href="https://rodatraden.se/activities.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Page-specific: activities page hero + activity detail layout */
+    .page-hero {
+      padding-top: calc(88px + 80px);
+      padding-bottom: 80px;
+    }
+
+    .page-hero__label { margin-bottom: 1rem; }
+
+    .page-hero__heading {
+      font-size: var(--text-h1);
+      letter-spacing: var(--tracking-tight);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .page-hero__sub {
+      font-size: var(--text-body);
+      color: var(--text-secondary);
+      max-width: 520px;
+      line-height: 1.75;
+    }
+
+    /* Activity detail sections — alternating split */
+    .activity-detail {
+      padding: var(--section-padding) 0;
+    }
+
+    .activity-detail__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-7xl);
+      align-items: center;
+    }
+
+    .activity-detail__grid--reverse .activity-detail__image {
+      order: -1;
+    }
+
+    .activity-detail__label { margin-bottom: 1rem; }
+
+    .activity-detail__heading {
+      font-size: var(--text-h2);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+
+    .activity-detail__body {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .activity-detail__body p {
+      font-size: var(--text-body);
+      color: var(--text-secondary);
+      max-width: 480px;
+      line-height: 1.75;
+    }
+
+    .activity-detail__specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .spec-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.375rem 0.875rem;
+      background: var(--accent-subtle);
+      color: var(--accent);
+      border-radius: var(--radius-full);
+      font-size: var(--text-small);
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .activity-detail__img-wrap {
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      width: 100%;
+    }
+
+    .activity-detail__img-wrap .img-placeholder {
+      height: 100%;
+      border-radius: 0;
+      aspect-ratio: unset;
+    }
+
+    @media (max-width: 768px) {
+      .activity-detail__grid,
+      .activity-detail__grid--reverse {
+        grid-template-columns: 1fr;
+      }
+      .activity-detail__grid--reverse .activity-detail__image {
+        order: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Huvudnavigation">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="index.html" class="navbar__logo" aria-label="Röda Tråden — till startsidan">
+          Röda <span>Tråden</span>
+        </a>
+        <ul class="navbar__links" role="list">
+          <li><a href="activities.html">Aktiviteter</a></li>
+          <li><a href="index.html#om-oss">Om oss</a></li>
+          <li><a href="index.html#priser">Priser</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+        <a href="book.html" class="btn btn--primary navbar__cta">Boka nu</a>
+        <button class="navbar__burger" id="navBurger" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobileNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="navbar__mobile" id="mobileNav" aria-label="Mobilnavigation">
+      <a href="activities.html">Aktiviteter</a>
+      <a href="index.html#om-oss">Om oss</a>
+      <a href="index.html#priser">Priser</a>
+      <a href="contact.html">Kontakt</a>
+      <a href="book.html" class="btn btn--primary" style="align-self: flex-start; margin-top: 0.5rem;">Boka nu</a>
+    </nav>
+  </nav>
+
+  <main>
+
+    <!-- Page hero -->
+    <section class="page-hero section" id="top">
+      <div class="container">
+        <p class="label label--accent page-hero__label">Aktiviteter</p>
+        <h1 class="page-hero__heading">
+          Sju aktiviteter.<br><em>Allt under ett tak.</em>
+        </h1>
+        <p class="page-hero__sub">
+          Klätterväggar, trampoliner, lasertag, escape rooms, inomhusminigolf, flipper och café.
+          Ingen aktivitet är märkt "för barn" — allt passar alla åldrar.
+        </p>
+      </div>
+    </section>
+
+    <!-- 1. Klätterväggar -->
+    <section class="activity-detail section" id="klattring">
+      <div class="container">
+        <div class="activity-detail__grid">
+          <div class="activity-detail__content" data-animate>
+            <p class="label label--accent activity-detail__label">Klättring</p>
+            <h2 class="activity-detail__heading">Klätterväggar</h2>
+            <div class="activity-detail__body">
+              <p>14 linor i varierande svårighetsgrad — från nybörjare till erfarna klättrare. Hjälm och sele ingår i biljettpriset.</p>
+              <p>Passar 4–80 år. Inga förkunskaper krävs. Personal finns på plats för instruktion.</p>
+            </div>
+            <div class="activity-detail__specs">
+              <span class="spec-tag">14 linor</span>
+              <span class="spec-tag">Svårighetsgrad 1–5</span>
+              <span class="spec-tag">Hjälm och sele ingår</span>
+              <span class="spec-tag">Passar 4–80 år</span>
+            </div>
+            <a href="book.html" class="btn btn--primary">Boka entré</a>
+          </div>
+          <div class="activity-detail__image" data-animate>
+            <div class="activity-detail__img-wrap">
+              <img src="assets/images/gen_94453a54c2.jpg" alt="Klätterväggar Adults and visitors climbing colorful indoor climbing wall, smiling. Scandinavian gym aesthetic." loading="lazy" style="aspect-ratio:16/9; width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Trampoliner -->
+    <section class="activity-detail section" id="trampoliner">
+      <div class="container">
+        <div class="activity-detail__grid activity-detail__grid--reverse">
+          <div class="activity-detail__content" data-animate>
+            <p class="label label--accent activity-detail__label">Trampolin</p>
+            <h2 class="activity-detail__heading">Trampoliner &amp; <em>Airtrack</em></h2>
+            <div class="activity-detail__body">
+              <p>400 kvm med trampoliner, airtrack och foam pit. Freestyle för alla åldrar och nivåer.</p>
+              <p>Perfekt för barnfamiljer, vängrupper och alla som vill testa något nytt. Strumpor krävs.</p>
+            </div>
+            <div class="activity-detail__specs">
+              <span class="spec-tag">400 kvm</span>
+              <span class="spec-tag">Freestyle</span>
+              <span class="spec-tag">Foam pit</span>
+              <span class="spec-tag">Strumpor krävs</span>
+            </div>
+            <a href="book.html" class="btn btn--primary">Boka entré</a>
+          </div>
+          <div class="activity-detail__image" data-animate>
+            <div class="activity-detail__img-wrap">
+              <img src="assets/images/gen_a800163317.jpg" alt="Trampoliner Adults jumping on indoor trampolines, motion blur, editorial action photography." loading="lazy" style="aspect-ratio:16/9; width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Lasertag -->
+    <section class="activity-detail section" id="lasertag">
+      <div class="container">
+        <div class="activity-detail__grid">
+          <div class="activity-detail__content" data-animate>
+            <p class="label label--accent activity-detail__label">Lasertag</p>
+            <h2 class="activity-detail__heading">Lasertag</h2>
+            <div class="activity-detail__body">
+              <p>Tre olika banor för upp till 12 spelare. Välj lag eller spela alla mot alla. Bokningsbart separat eller som del av team-paket.</p>
+              <p>Från 6 år. Ingen kondition krävs — bara snabba reflexer.</p>
+            </div>
+            <div class="activity-detail__specs">
+              <span class="spec-tag">12 spelare</span>
+              <span class="spec-tag">3 banor</span>
+              <span class="spec-tag">Från 6 år</span>
+              <span class="spec-tag">Bokas separat</span>
+            </div>
+            <a href="book.html" class="btn btn--primary">Boka lasertag</a>
+          </div>
+          <div class="activity-detail__image" data-animate>
+            <div class="activity-detail__img-wrap">
+              <img src="assets/images/gen_135c4b8d05.jpg" alt="Lasertag Mörkt rum med gröna laserstrålar, två personer spelar, dramatisk belysning." loading="lazy" style="aspect-ratio:16/9; width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Escape Rooms -->
+    <section class="activity-detail section" id="escape">
+      <div class="container">
+        <div class="activity-detail__grid activity-detail__grid--reverse">
+          <div class="activity-detail__content" data-animate>
+            <p class="label label--accent activity-detail__label">Escape Room</p>
+            <h2 class="activity-detail__heading">Escape Rooms</h2>
+            <div class="activity-detail__body">
+              <p>Tre unika rum med olika teman och svårighetsgrader. Löser ni mysteriet på 60 minuter?</p>
+              <p>Rum: <strong>Vikingaskepp</strong>, <strong>Rymdfärd</strong> och <strong>Spökhuset</strong>. 2–6 deltagare per rum. Alltid separat bokning.</p>
+            </div>
+            <div class="activity-detail__specs">
+              <span class="spec-tag">3 rum</span>
+              <span class="spec-tag">2–6 personer</span>
+              <span class="spec-tag">60 minuter</span>
+              <span class="spec-tag">295 kr/pers</span>
+            </div>
+            <a href="book.html" class="btn btn--primary">Boka escape room</a>
+          </div>
+          <div class="activity-detail__image" data-animate>
+            <div class="activity-detail__img-wrap">
+              <img src="assets/images/gen_ad1bd38a49.jpg" alt="Escape Rooms Grupp på 4 löser pussel i atmosfäriskt rum, varm belysning, fokuserat." loading="lazy" style="aspect-ratio:16/9; width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Minigolf -->
+    <section class="activity-detail section" id="minigolf">
+      <div class="container">
+        <div class="activity-detail__grid">
+          <div class="activity-detail__content" data-animate>
+            <p class="label label--accent activity-detail__label">Minigolf</p>
+            <h2 class="activity-detail__heading">Inomhusminigolf</h2>
+            <div class="activity-detail__body">
+              <p>18 hål med tematiserade hinder — designade för alla åldrar. Inga förbokningskrav, gå bara dit.</p>
+              <p>Ingår i dagsbiljetten. Köp extra runda i receptionen.</p>
+            </div>
+            <div class="activity-detail__specs">
+              <span class="spec-tag">18 hål</span>
+              <span class="spec-tag">Tematiserade hinder</span>
+              <span class="spec-tag">Ingår i entrén</span>
+              <span class="spec-tag">Ingen bokning krävs</span>
+            </div>
+            <a href="book.html" class="btn btn--primary">Boka entré</a>
+          </div>
+          <div class="activity-detail__image" data-animate>
+            <div class="activity-detail__img-wrap">
+              <img src="assets/images/gen_8f03e33230.jpg" alt="Inomhusminigolf Inomhus minigolfhål med kreativt hinder, ren design, inga personer." loading="lazy" style="aspect-ratio:16/9; width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Café -->
+    <section class="activity-detail section" id="cafe">
+      <div class="container">
+        <div class="activity-detail__grid activity-detail__grid--reverse">
+          <div class="activity-detail__content" data-animate>
+            <p class="label label--accent activity-detail__label">Café</p>
+            <h2 class="activity-detail__heading">Café</h2>
+            <div class="activity-detail__body">
+              <p>Smörgåsar, sallader, kaffe och smoothies. Öppet hela dagen — ta en paus och låt barnen fortsätta.</p>
+              <p>Ingen förbokning. Sittplatser inne och ute vid aktiviteterna.</p>
+            </div>
+            <div class="activity-detail__specs">
+              <span class="spec-tag">Öppet hela dagen</span>
+              <span class="spec-tag">Smörgåsar & sallader</span>
+              <span class="spec-tag">Kaffe & smoothies</span>
+            </div>
+            <a href="contact.html" class="btn btn--secondary">Frågor om caféet?</a>
+          </div>
+          <div class="activity-detail__image" data-animate>
+            <div class="activity-detail__img-wrap">
+              <img src="assets/images/gen_d1af01f0bb.jpg" alt="Café Minimalistisk café-disk med bakverk, växt, naturligt ljus, skandinavisk stil." loading="lazy" style="aspect-ratio:16/9; width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+    <!-- 7. Flipper -->
+    <section class="activity-detail section" id="flipper">
+      <div class="container">
+        <div class="activity-detail__grid">
+          <div class="activity-detail__content" data-animate>
+            <p class="label label--accent activity-detail__label">Flipper</p>
+            <h2 class="activity-detail__heading">Flipper</h2>
+            <div class="activity-detail__body">
+              <p>8 klassiska flipperspel med olika teman — från 70-talets arkadkänsla till moderna maskiner. Ingår i dagsbiljetten.</p>
+              <p>Passar alla åldrar. Ingen teknik krävs — bara bra reflexer och lite tur.</p>
+            </div>
+            <div class="activity-detail__specs">
+              <span class="spec-tag">8 maskiner</span>
+              <span class="spec-tag">Olika teman</span>
+              <span class="spec-tag">Ingår i entrén</span>
+              <span class="spec-tag">Alla åldrar</span>
+            </div>
+            <a href="book.html" class="btn btn--primary">Boka entré</a>
+          </div>
+          <div class="activity-detail__image" data-animate>
+            <div class="activity-detail__img-wrap">
+              <img src="assets/images/gen_a771840d54.jpg" alt="Flipper Klassisk flippermaskin med färgglad display och blinkande lampor, mörk bakgrund, dramatisk belysning." loading="lazy" style="aspect-ratio:16/9; width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <!-- Pre-footer CTA -->
+  <section class="cta-dark" aria-labelledby="cta-act-heading">
+    <div class="container">
+      <div class="cta-dark__inner">
+        <p class="label cta-dark__label">Boka</p>
+        <h2 class="cta-dark__heading" id="cta-act-heading">
+          Redo att komma hit?<br>
+          <em>Vi har plats idag.</em>
+        </h2>
+        <p class="cta-dark__sub">
+          Öppet mån–fre 10–20, lör–sön 09–21. Röda dagar 09–18.
+        </p>
+        <div class="cta-dark__actions">
+          <a href="book.html" class="btn btn--light">Boka nu</a>
+          <a href="tel:+46470123456" class="cta-dark__phone">0470-123 456</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <p class="footer__brand-name">Röda <span>Tråden</span></p>
+          <p class="footer__tagline">Sju aktiviteter under ett tak. Växjö, Småland.</p>
+        </div>
+        <nav aria-label="Aktiviteter">
+          <p class="footer__col-title">Aktiviteter</p>
+          <ul class="footer__col-links" role="list">
+            <li><a href="#klattring">Klätterväggar</a></li>
+            <li><a href="#trampoliner">Trampoliner</a></li>
+            <li><a href="#lasertag">Lasertag</a></li>
+            <li><a href="#escape">Escape Rooms</a></li>
+            <li><a href="#minigolf">Minigolf</a></li>
+            <li><a href="#cafe">Café</a></li>
+            <li><a href="#flipper">Flipper</a></li>
+          </ul>
+        </nav>
+        <div>
+          <p class="footer__col-title">Öppettider</p>
+          <ul class="footer__col-links" role="list">
+            <li><span>Måndag–Fredag: 10–20</span></li>
+            <li><span>Lördag–Söndag: 09–21</span></li>
+            <li><span>Röda dagar: 09–18</span></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Kontakt</p>
+          <ul class="footer__col-links" role="list">
+            <li><span>Storgatan 22, 352 31 Växjö</span></li>
+            <li><a href="tel:+46470123456">0470-123 456</a></li>
+            <li><a href="mailto:hej@rodatraden.se">hej@rodatraden.se</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 Röda Tråden Aktivitetscenter AB</p>
+        <p class="footer__built-by">Byggd av <a href="https://nordicicon.se" target="_blank" rel="noopener">Nordic Icon</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

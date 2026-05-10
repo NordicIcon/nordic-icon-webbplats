@@ -10,10 +10,39 @@ import PreFooterCTA from '@/components/PreFooterCTA';
 
 type Project = {
   id: string; name: string; industry: string; city: string;
-  plan: 'BAS' | 'PRO' | 'ELITE'; desc: string; image: string; noEmbed?: boolean;
+  plan: 'BAS' | 'PRO' | 'ELITE'; desc: string; image: string;
+  gradient?: string; noEmbed?: boolean;
 };
 
 const projects: Project[] = [
+  {
+    id: 'solberg',
+    name: 'Solberg Residences',
+    industry: 'Fastigheter',
+    city: 'Stockholm',
+    plan: 'ELITE' as const,
+    desc: 'Exklusiv fastighetsplattform med animerad hero, lägenhetskatalog och kontaktflöde.',
+    image: '/images/solberg-card.png',
+  },
+  {
+    id: 'lundgren',
+    name: 'Lundgren Fastigheter',
+    industry: 'Fastigheter',
+    city: 'Malmö',
+    plan: 'ELITE' as const,
+    desc: 'Premium fastighetssajt med objektlista, filterfunktion och kontaktsida.',
+    image: '/images/lundgren-card.png',
+  },
+  {
+    id: 'viken-golf-club',
+    name: 'Viken Golf Club',
+    industry: 'Golf & Sport',
+    city: 'Viken',
+    plan: 'ELITE' as const,
+    desc: 'Elegant golfklubbssajt med banpresentation, faciliteter och memberskap.',
+    image: '',
+    gradient: 'linear-gradient(160deg, #0A1628 0%, #1B3A6B 55%, #0A1628 100%)',
+  },
   {
     id: 'koppar',
     name: 'Koppar',
@@ -33,14 +62,13 @@ const projects: Project[] = [
     image: '/images/havets-card.png',
   },
   {
-    id: 'solberg',
-    name: 'Solberg',
-    industry: 'Restaurang',
-    city: 'Stockholm',
-    plan: 'PRO' as const,
-    desc: 'Modern restaurangsajt med premium-design och bokningssystem.',
-    image: '/images/solberg-card.png',
-    noEmbed: true,
+    id: 'vaxjo-aktivitetscenter',
+    name: 'Växjö Aktivitetscenter',
+    industry: 'Upplevelser',
+    city: 'Växjö',
+    plan: 'BAS' as const,
+    desc: 'Fräsch BAS-sajt för aktivitetscenter med bokningssida och aktivitetslista.',
+    image: '/images/vaxjo-card.jpg',
   },
   {
     id: 'strand-studio',
@@ -69,15 +97,20 @@ function ProjectCard({ p, featured }: { p: Project; featured?: boolean }) {
   const inner = (
     <>
       <div className={styles.cardImage}>
-        <div className={styles.cardImageZoom}>
-          <Image
-            src={p.image}
-            alt={p.name}
-            fill
-            style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
-            sizes={featured ? '(max-width: 1024px) 100vw, 1200px' : '(max-width: 1024px) 100vw, 50vw'}
-            priority={featured}
-          />
+        <div
+          className={styles.cardImageZoom}
+          style={p.gradient ? { background: p.gradient } : undefined}
+        >
+          {p.image && (
+            <Image
+              src={p.image}
+              alt={p.name}
+              fill
+              style={{ objectFit: 'cover', objectPosition: 'center 20%' }}
+              sizes={featured ? '(max-width: 1024px) 100vw, 1200px' : '(max-width: 1024px) 100vw, 50vw'}
+              priority={featured}
+            />
+          )}
         </div>
         <div className={styles.cardOverlay} />
       </div>

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Röda Tråden — Aktivitetscenter i Växjö</title>
+  <meta name="description" content="Röda Tråden är Växjös aktivitetscenter med klättring, trampoliner, lasertag, escape rooms, minigolf, flipper och café under ett tak. För hela familjen, vängrupper och företag. Boka online." />
+  <link rel="canonical" href="https://rodatraden.se/" />
+
+  <!-- Preload fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap" rel="stylesheet" />
+
+  <!-- Favicon placeholder -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>" />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Schema: LocalBusiness → SportsActivityLocation -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SportsActivityLocation",
+    "name": "Röda Tråden Aktivitetscenter",
+    "url": "https://rodatraden.se",
+    "telephone": "+46470123456",
+    "email": "hej@rodatraden.se",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Storgatan 22",
+      "postalCode": "352 31",
+      "addressLocality": "Växjö",
+      "addressRegion": "Kronoberg",
+      "addressCountry": "SE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "56.8788",
+      "longitude": "14.8093"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "10:00",
+        "closes": "20:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Saturday","Sunday"],
+        "opens": "09:00",
+        "closes": "21:00"
+      }
+    ],
+    "description": "Aktivitetscenter i Växjö med klätterväggar, trampoliner, lasertag, escape rooms, inomhusminigolf, flipper och café under ett tak.",
+    "priceRange": "165–4500 kr"
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ======================================================
+       NAVBAR
+       ====================================================== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Huvudnavigation">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="index.html" class="navbar__logo" aria-label="Röda Tråden — till startsidan">
+          Röda <span>Tråden</span>
+        </a>
+
+        <ul class="navbar__links" role="list">
+          <li><a href="activities.html">Aktiviteter</a></li>
+          <li><a href="index.html#om-oss">Om oss</a></li>
+          <li><a href="index.html#priser">Priser</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+
+        <a href="book.html" class="btn btn--primary navbar__cta">Boka nu</a>
+
+        <button class="navbar__burger" id="navBurger" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobileNav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile nav -->
+    <nav class="navbar__mobile" id="mobileNav" aria-label="Mobilnavigation">
+      <a href="activities.html">Aktiviteter</a>
+      <a href="index.html#om-oss">Om oss</a>
+      <a href="index.html#priser">Priser</a>
+      <a href="contact.html">Kontakt</a>
+      <a href="book.html" class="btn btn--primary" style="align-self: flex-start; margin-top: 0.5rem;">Boka nu</a>
+    </nav>
+  </nav>
+
+  <main>
+
+    <!-- ======================================================
+         HERO — HERO-A Split
+         ====================================================== -->
+    <section class="hero section--lg" id="hero">
+      <div class="container">
+        <div class="hero__grid">
+
+          <!-- Left: Content -->
+          <div class="hero__content">
+            <p class="label label--accent hero__label">Aktivitetscenter i Växjö</p>
+            <h1 class="hero__heading">
+              Sju aktiviteter.<br>
+              Ett ställe.<br>
+              <em>För alla.</em>
+            </h1>
+            <p class="hero__sub">
+              Röda Tråden samlar klättring, trampoliner, lasertag, escape rooms,
+              minigolf, flipper och café under ett tak i Växjö. Passar barnfamiljer,
+              vängrupper och företag. Öppet alla dagar.
+            </p>
+            <div class="hero__actions">
+              <a href="book.html" class="btn btn--primary">Boka nu</a>
+              <a href="activities.html" class="btn btn--secondary">Se aktiviteter</a>
+            </div>
+          </div>
+
+          <!-- Right: Image -->
+          <div class="hero__image" data-animate>
+            <div class="hero__img-wrap">
+              <img src="assets/images/gen_849e925f6d.jpg" alt="Hero-bild Modern indoor activity center. Colorful climbing walls and trampolines. Scandinavian editorial style, natural daylight." loading="lazy" style="aspect-ratio: 3/4; width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         MARQUEE STRIP
+         ====================================================== -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <!-- First set -->
+        <span class="marquee__item">Klätterväggar <span class="marquee__dot"></span></span>
+        <span class="marquee__item">Trampoliner <span class="marquee__dot"></span></span>
+        <span class="marquee__item">Lasertag <span class="marquee__dot"></span></span>
+        <span class="marquee__item">Escape Rooms <span class="marquee__dot"></span></span>
+        <span class="marquee__item">Inomhusminigolf <span class="marquee__dot"></span></span>
+        <span class="marquee__item">Café <span class="marquee__dot"></span></span>
+        <span class="marquee__item">Flipper <span class="marquee__dot"></span></span>
+        <span class="marquee__item">Kalas <span class="marquee__dot"></span></span>
+        <span class="marquee__item">Teambuilding <span class="marquee__dot"></span></span>
+        <!-- Second set (duplicate for seamless loop) -->
+        <span class="marquee__item">Klätterväggar <span class="marquee__dot"></span></span>
+        <span class="marquee__item">Trampoliner <span class="marquee__dot"></span></span>
+        <span class="marquee__item">Lasertag <span class="marquee__dot"></span></span>
+        <span class="marquee__item">Escape Rooms <span class="marquee__dot"></span></span>
+        <span class="marquee__item">Inomhusminigolf <span class="marquee__dot"></span></span>
+        <span class="marquee__item">Café <span class="marquee__dot"></span></span>
+        <span class="marquee__item">Flipper <span class="marquee__dot"></span></span>
+        <span class="marquee__item">Kalas <span class="marquee__dot"></span></span>
+        <span class="marquee__item">Teambuilding <span class="marquee__dot"></span></span>
+      </div>
+    </div>
+
+    <!-- ======================================================
+         AKTIVITETER SECTION — Bento Grid
+         ====================================================== -->
+    <section class="aktiviteter section" id="aktiviteter">
+      <div class="container">
+
+        <div class="section-header" data-animate>
+          <p class="label">Aktiviteter</p>
+          <h2 class="section-heading">Välj din aktivitet. <em>Eller alla sju.</em></h2>
+          <p class="section-sub">
+            Ingen behöver vänta. Medan barnen klättrar spelar du minigolf.
+            Allt under samma tak — och bokningssystemet håller koll på din tid.
+          </p>
+        </div>
+
+        <div class="aktiviteter__grid">
+
+          <!-- Featured card: Klätterväggar -->
+          <article class="activity-card activity-card--featured" data-animate>
+            <div class="activity-card__img">
+              <img src="assets/images/gen_24d8c815bd.jpg" alt="Klättring Adults and visitors climbing colorful indoor climbing wall, smiling. Scandinavian gym aesthetic." loading="lazy" style="aspect-ratio:16/9; width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+            <div class="activity-card__body">
+              <p class="label label--accent activity-card__label">Klättring</p>
+              <h3 class="activity-card__title">Klätterväggar</h3>
+              <p class="activity-card__desc">14 linor, svårighetsgrad 1–5. Hjälm och sele ingår. Passar 4–80 år.</p>
+            </div>
+          </article>
+
+          <!-- Small card: Trampoliner -->
+          <article class="activity-card activity-card--sm" data-animate>
+            <p class="label label--accent activity-card__label">Trampolin</p>
+            <h3 class="activity-card__title">Trampoliner &amp; Airtrack</h3>
+            <p class="activity-card__desc">400 kvm fri yta. Freestyle och foam pit.</p>
+          </article>
+
+          <!-- Small card: Lasertag -->
+          <article class="activity-card activity-card--sm" data-animate>
+            <p class="label label--accent activity-card__label">Lasertag</p>
+            <h3 class="activity-card__title">Lasertag</h3>
+            <p class="activity-card__desc">12 spelare, 3 banor. Från 6 år. Bokningsbart separat.</p>
+          </article>
+
+          <!-- Small card: Escape Rooms -->
+          <article class="activity-card activity-card--sm" data-animate>
+            <p class="label label--accent activity-card__label">Escape Room</p>
+            <h3 class="activity-card__title">Escape Rooms</h3>
+            <p class="activity-card__desc">3 rum: Vikingaskepp, Rymdfärd, Spökhuset. 2–6 personer. 60 min.</p>
+          </article>
+
+          <!-- Small card: Minigolf -->
+          <article class="activity-card activity-card--sm" data-animate>
+            <p class="label label--accent activity-card__label">Minigolf</p>
+            <h3 class="activity-card__title">Inomhusminigolf</h3>
+            <p class="activity-card__desc">18 hål med tematiserade hinder. Inga förbokningskrav.</p>
+          </article>
+
+          <!-- Small card: Café -->
+          <article class="activity-card activity-card--sm" data-animate>
+            <p class="label label--accent activity-card__label">Café</p>
+            <h3 class="activity-card__title">Café</h3>
+            <p class="activity-card__desc">Smörgåsar, sallader, kaffe och smoothies. Öppet hela dagen.</p>
+          </article>
+
+          <!-- Small card: Flipper -->
+          <article class="activity-card activity-card--sm" data-animate>
+            <p class="label label--accent activity-card__label">Flipper</p>
+            <h3 class="activity-card__title">Flipper</h3>
+            <p class="activity-card__desc">Klassiska flipperspel — 8 maskiner, olika teman. Ingår i dagsbiljetten.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         OM OSS SECTION
+         ====================================================== -->
+    <section class="om-oss section" id="om-oss">
+      <div class="container">
+        <div class="om-oss__grid">
+
+          <!-- Left: Content -->
+          <div class="om-oss__content" data-animate>
+            <p class="label om-oss__section-label">Om oss</p>
+            <h2 class="om-oss__heading">
+              Grundat 2021.<br>
+              <em>Sju aktiviteter under ett tak.</em>
+            </h2>
+            <div class="om-oss__body">
+              <p>
+                Röda Tråden öppnade i Växjö 2021. Sara och Jonas Bergström —
+                tidigare eventkoordinator och idrottslärare — ville samla
+                aktiviteter som passar hela gruppen på en och samma plats.
+              </p>
+              <p>
+                I dag använder barnfamiljer, tonåringar, vängrupper och företag
+                centret på samma dag. Ingen aktivitet är märkt "för barn" —
+                allt är öppet för alla.
+              </p>
+              <p>
+                Bokningssystemet ser till att du aldrig köar i en timme
+                för att göra något på fem minuter.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: Image -->
+          <div class="om-oss__image" data-animate>
+            <div class="om-oss__img-wrap">
+              <img src="assets/images/gen_46c6ef3f53.jpg" alt="Om oss — bild Sara och Jonas Bergström. Editorial porträtt i aktivitetscentret, naturligt ljus." loading="lazy" style="aspect-ratio:16/9; width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         STATS SECTION
+         ====================================================== -->
+    <section class="stats section">
+      <div class="container">
+
+        <div class="stats__grid">
+
+          <div class="stat-card" data-animate>
+            <div class="stat-card__number">
+              <span data-count-to="7">0</span>
+            </div>
+            <p class="stat-card__label">Aktiviteter under ett tak</p>
+          </div>
+
+          <div class="stat-card" data-animate>
+            <div class="stat-card__number">
+              <span data-count-to="400">0</span> kvm
+            </div>
+            <p class="stat-card__label">Trampolin och airtrack</p>
+          </div>
+
+          <div class="stat-card" data-animate>
+            <div class="stat-card__number">
+              <span data-count-to="7">0</span> dagar
+            </div>
+            <p class="stat-card__label">Öppet varje vecka</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         TESTIMONIALS SECTION
+         ====================================================== -->
+    <section class="testimonials section" id="omdomen">
+      <div class="container">
+
+        <div class="section-header" data-animate>
+          <p class="label">Omdömen</p>
+          <h2 class="section-heading">Vad våra besökare <em>säger.</em></h2>
+        </div>
+
+        <div class="testimonials__grid">
+
+          <!-- Featured wider card -->
+          <article class="testimonial-card testimonial-card--featured" data-animate>
+            <blockquote>
+              <p class="testimonial-card__quote">
+                "Vi kom hit med fyra barn i olika åldrar. Alla hittade
+                något att göra och ingen ville gå hem."
+              </p>
+              <footer>
+                <cite class="testimonial-card__author">— Anna K., Växjö</cite>
+              </footer>
+            </blockquote>
+          </article>
+
+          <article class="testimonial-card" data-animate>
+            <blockquote>
+              <p class="testimonial-card__quote">
+                "Bästa teambuilding vi haft. Escape room följt av lasertag —
+                vi skrattar fortfarande åt det."
+              </p>
+              <footer>
+                <cite class="testimonial-card__author">— Marcus T., IT-chef Växjö</cite>
+              </footer>
+            </blockquote>
+          </article>
+
+          <article class="testimonial-card" data-animate>
+            <blockquote>
+              <p class="testimonial-card__quote">
+                "Dottern ville ha kalas här tre år i rad.
+                Nu är det tradition."
+              </p>
+              <footer>
+                <cite class="testimonial-card__author">— Petra L., Alvesta</cite>
+              </footer>
+            </blockquote>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         PRISER SECTION
+         ====================================================== -->
+    <section class="priser section" id="priser">
+      <div class="container">
+
+        <div class="section-header" data-animate>
+          <p class="label">Priser</p>
+          <h2 class="section-heading">Tydliga priser. <em>Inga överraskningar.</em></h2>
+        </div>
+
+        <div class="priser__grid">
+
+          <!-- Column 1: Entrébiljetter -->
+          <div class="price-card" data-animate>
+            <h3 class="price-card__title">Entrébiljetter</h3>
+            <ul class="price-list" role="list">
+              <li class="price-item">
+                <span class="price-item__name">Vuxen</span>
+                <span class="price-item__dots" aria-hidden="true"></span>
+                <span class="price-item__price">195 kr</span>
+              </li>
+              <li class="price-item">
+                <span class="price-item__name">Barn 4–12 år</span>
+                <span class="price-item__dots" aria-hidden="true"></span>
+                <span class="price-item__price">165 kr</span>
+              </li>
+              <li class="price-item">
+                <span class="price-item__name">Barn under 3 år</span>
+                <span class="price-item__dots" aria-hidden="true"></span>
+                <span class="price-item__price">Gratis</span>
+              </li>
+              <li class="price-item">
+                <span class="price-item__name">Escape room</span>
+                <span class="price-item__dots" aria-hidden="true"></span>
+                <span class="price-item__price">295 kr/pers (2–6 pers)</span>
+              </li>
+            </ul>
+            <p class="price-note">Strumpor krävs på trampolinerna. Escape rooms bokas alltid separat.</p>
+          </div>
+
+          <!-- Column 2: Grupper och events -->
+          <div class="price-card" data-animate>
+            <h3 class="price-card__title">Grupper och events</h3>
+            <ul class="price-list" role="list">
+              <li class="price-item">
+                <span class="price-item__name">Kalas 2h (upp till 10 barn)</span>
+                <span class="price-item__dots" aria-hidden="true"></span>
+                <span class="price-item__price">från 2 200 kr</span>
+              </li>
+              <li class="price-item">
+                <span class="price-item__name">Teambuilding halvdag (10–30 pers)</span>
+                <span class="price-item__dots" aria-hidden="true"></span>
+                <span class="price-item__price">från 4 500 kr</span>
+              </li>
+              <li class="price-item">
+                <span class="price-item__name">Skolklasser och dagis</span>
+                <span class="price-item__dots" aria-hidden="true"></span>
+                <span class="price-item__price">kontakta oss</span>
+              </li>
+            </ul>
+            <p class="price-note">Priser inkl. moms. Boka via vår bokningssida eller ring 0470-123 456.</p>
+          </div>
+
+        </div>
+
+        <div class="priser__cta" data-animate>
+          <a href="book.html" class="btn btn--primary">Boka online</a>
+          <a href="contact.html" class="btn btn--secondary">Frågor? Kontakta oss</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================================================
+       PRE-FOOTER CTA (dark)
+       ====================================================== -->
+  <section class="cta-dark" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="cta-dark__inner">
+        <p class="label cta-dark__label">Boka</p>
+        <h2 class="cta-dark__heading" id="cta-heading">
+          Redo att komma hit?<br>
+          <em>Vi har plats idag.</em>
+        </h2>
+        <p class="cta-dark__sub">
+          Öppet mån–fre 10–20, lör–sön 09–21. Röda dagar 09–18.
+          Boka online eller ring oss direkt.
+        </p>
+        <div class="cta-dark__actions">
+          <a href="book.html" class="btn btn--light">Boka nu</a>
+          <a href="tel:+46470123456" class="cta-dark__phone">0470-123 456</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================
+       FOOTER
+       ====================================================== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer__top">
+
+        <!-- Brand -->
+        <div>
+          <p class="footer__brand-name">Röda <span>Tråden</span></p>
+          <p class="footer__tagline">Sju aktiviteter under ett tak. Växjö, Småland.</p>
+        </div>
+
+        <!-- Aktiviteter -->
+        <nav aria-label="Aktiviteter">
+          <p class="footer__col-title">Aktiviteter</p>
+          <ul class="footer__col-links" role="list">
+            <li><a href="activities.html#klattring">Klätterväggar</a></li>
+            <li><a href="activities.html#trampoliner">Trampoliner</a></li>
+            <li><a href="activities.html#lasertag">Lasertag</a></li>
+            <li><a href="activities.html#escape">Escape Rooms</a></li>
+            <li><a href="activities.html#minigolf">Minigolf</a></li>
+            <li><a href="activities.html#cafe">Café</a></li>
+            <li><a href="activities.html#flipper">Flipper</a></li>
+          </ul>
+        </nav>
+
+        <!-- Öppettider -->
+        <div>
+          <p class="footer__col-title">Öppettider</p>
+          <ul class="footer__col-links" role="list">
+            <li><span>Måndag–Fredag: 10–20</span></li>
+            <li><span>Lördag–Söndag: 09–21</span></li>
+            <li><span>Röda dagar: 09–18</span></li>
+          </ul>
+        </div>
+
+        <!-- Kontakt -->
+        <div>
+          <p class="footer__col-title">Kontakt</p>
+          <ul class="footer__col-links" role="list">
+            <li><span>Storgatan 22, 352 31 Växjö</span></li>
+            <li><a href="tel:+46470123456">0470-123 456</a></li>
+            <li><a href="mailto:hej@rodatraden.se">hej@rodatraden.se</a></li>
+            <li><a href="https://rodatraden.se" target="_blank" rel="noopener">rodatraden.se</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 Röda Tråden Aktivitetscenter AB</p>
+        <p class="footer__built-by">Byggd av <a href="https://nordicicon.se" target="_blank" rel="noopener">Nordic Icon</a></p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

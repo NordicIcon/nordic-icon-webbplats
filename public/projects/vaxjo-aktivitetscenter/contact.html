@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt | Röda Tråden | 0470-123 456</title>
+  <meta name="description" content="Kontakta Röda Tråden Aktivitetscenter i Växjö. Ring 0470-123 456 eller maila hej@rodatraden.se. Storgatan 22, 352 31 Växjö." />
+  <link rel="canonical" href="https://rodatraden.se/contact.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧵</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .page-hero {
+      padding-top: calc(88px + 80px);
+      padding-bottom: 80px;
+    }
+
+    /* Contact layout */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: var(--space-7xl);
+      align-items: start;
+    }
+
+    /* Info column */
+    .contact-info__heading {
+      font-size: var(--text-h3);
+      margin-bottom: var(--space-3xl);
+    }
+
+    .contact-info__list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2xl);
+      margin-bottom: var(--space-4xl);
+    }
+
+    .contact-info__item {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .contact-info__item-label {
+      font-size: var(--text-label);
+      font-weight: 600;
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .contact-info__item-value {
+      font-size: var(--text-body);
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .contact-info__item-value a {
+      color: var(--accent);
+      transition: opacity 0.2s ease;
+    }
+
+    .contact-info__item-value a:hover {
+      opacity: 0.75;
+    }
+
+    /* Hours table */
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: var(--space-lg);
+    }
+
+    .hours-table td {
+      padding: var(--space-sm) 0;
+      font-size: var(--text-body-sm);
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hours-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .hours-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Contact form */
+    .contact-form-wrap {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-2xl);
+      padding: var(--card-padding-lg);
+    }
+
+    .contact-form-wrap h2 {
+      font-size: var(--text-h3);
+      margin-bottom: var(--space-3xl);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+
+    .form-group--full {
+      grid-column: span 2;
+    }
+
+    .form-group label {
+      font-size: var(--text-small);
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.02em;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg);
+      font-family: var(--font-body);
+      font-size: var(--text-body-sm);
+      color: var(--text);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      outline: none;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-subtle);
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: var(--text-muted);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-submit {
+      margin-top: var(--space-2xl);
+      display: flex;
+      align-items: center;
+      gap: var(--space-lg);
+      flex-wrap: wrap;
+    }
+
+    .form-note {
+      font-size: var(--text-small);
+      color: var(--text-muted);
+    }
+
+    /* Map placeholder */
+    .map-placeholder {
+      margin-top: var(--space-5xl);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: var(--bg-secondary);
+      border: 2px dashed var(--border-hover);
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: var(--space-md);
+      color: var(--text-muted);
+    }
+
+    .map-placeholder span {
+      font-size: var(--text-label);
+      font-weight: 600;
+      letter-spacing: var(--tracking-label);
+      text-transform: uppercase;
+    }
+
+    .map-placeholder p {
+      font-size: var(--text-small);
+      color: var(--text-muted);
+      max-width: 200px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-4xl);
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group--full {
+        grid-column: span 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Huvudnavigation">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="index.html" class="navbar__logo" aria-label="Röda Tråden — till startsidan">
+          Röda <span>Tråden</span>
+        </a>
+        <ul class="navbar__links" role="list">
+          <li><a href="activities.html">Aktiviteter</a></li>
+          <li><a href="index.html#om-oss">Om oss</a></li>
+          <li><a href="index.html#priser">Priser</a></li>
+          <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+        <a href="book.html" class="btn btn--primary navbar__cta">Boka nu</a>
+        <button class="navbar__burger" id="navBurger" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobileNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <nav class="navbar__mobile" id="mobileNav" aria-label="Mobilnavigation">
+      <a href="activities.html">Aktiviteter</a>
+      <a href="index.html#om-oss">Om oss</a>
+      <a href="index.html#priser">Priser</a>
+      <a href="contact.html">Kontakt</a>
+      <a href="book.html" class="btn btn--primary" style="align-self: flex-start; margin-top: 0.5rem;">Boka nu</a>
+    </nav>
+  </nav>
+
+  <main>
+
+    <section class="page-hero section">
+      <div class="container">
+        <p class="label label--accent" style="margin-bottom: 1rem;">Kontakt</p>
+        <h1 style="font-size: var(--text-h1); letter-spacing: var(--tracking-tight); line-height: 1.1; margin-bottom: 1.5rem;">
+          Frågor? <em>Vi svarar.</em>
+        </h1>
+        <p style="font-size: var(--text-body); color: var(--text-secondary); max-width: 480px; line-height: 1.75;">
+          Ring, maila eller fyll i formuläret. Vi svarar mån–fre 09–17.
+          Frågor om kalas och teambuilding besvarar vi alltid samma dag.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;" id="kontakt">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- Info column -->
+          <div data-animate>
+            <h2 class="contact-info__heading">Hitta oss</h2>
+
+            <div class="contact-info__list">
+              <div class="contact-info__item">
+                <span class="contact-info__item-label">Telefon</span>
+                <span class="contact-info__item-value">
+                  <a href="tel:+46470123456">0470-123 456</a>
+                </span>
+              </div>
+              <div class="contact-info__item">
+                <span class="contact-info__item-label">E-post</span>
+                <span class="contact-info__item-value">
+                  <a href="mailto:hej@rodatraden.se">hej@rodatraden.se</a>
+                </span>
+              </div>
+              <div class="contact-info__item">
+                <span class="contact-info__item-label">Adress</span>
+                <span class="contact-info__item-value">
+                  Storgatan 22<br>352 31 Växjö
+                </span>
+              </div>
+            </div>
+
+            <p class="label" style="margin-bottom: 1rem;">Öppettider</p>
+            <table class="hours-table" aria-label="Öppettider">
+              <tbody>
+                <tr>
+                  <td>Måndag–Fredag</td>
+                  <td>10:00–20:00</td>
+                </tr>
+                <tr>
+                  <td>Lördag–Söndag</td>
+                  <td>09:00–21:00</td>
+                </tr>
+                <tr>
+                  <td>Röda dagar</td>
+                  <td>09:00–18:00</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Map placeholder -->
+            <div class="map-placeholder" aria-label="Karta — Storgatan 22, Växjö">
+              <span>Karta</span>
+              <p>Google Maps — Storgatan 22, 352 31 Växjö</p>
+            </div>
+          </div>
+
+          <!-- Form column -->
+          <div class="contact-form-wrap" data-animate>
+            <h2>Skicka ett meddelande</h2>
+            <form
+              action="mailto:hej@rodatraden.se"
+              method="post"
+              enctype="text/plain"
+              novalidate
+              aria-label="Kontaktformulär"
+            >
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="name">Namn</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Ditt namn"
+                    required
+                    autocomplete="name"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone">Telefon</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="070-000 00 00"
+                    autocomplete="tel"
+                  />
+                </div>
+
+                <div class="form-group form-group--full">
+                  <label for="email">E-post</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="din@email.se"
+                    required
+                    autocomplete="email"
+                  />
+                </div>
+
+                <div class="form-group form-group--full">
+                  <label for="subject">Ärende</label>
+                  <select id="subject" name="subject">
+                    <option value="" disabled selected>Välj ärende</option>
+                    <option value="kalas">Kalas / Barnfest</option>
+                    <option value="teambuilding">Teambuilding / Företag</option>
+                    <option value="skola">Skola / Dagis</option>
+                    <option value="bokning">Fråga om bokning</option>
+                    <option value="ovrigt">Övrigt</option>
+                  </select>
+                </div>
+
+                <div class="form-group form-group--full">
+                  <label for="message">Meddelande</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    placeholder="Berätta vad du undrar. Antal personer, datum och aktiviteter du är intresserad av underlättar."
+                    required
+                  ></textarea>
+                </div>
+              </div>
+
+              <div class="form-submit">
+                <button type="submit" class="btn btn--primary">Skicka meddelande</button>
+                <p class="form-note">Vi svarar mån–fre 09–17.</p>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pre-footer CTA -->
+  <section class="cta-dark" aria-labelledby="cta-contact-heading">
+    <div class="container">
+      <div class="cta-dark__inner">
+        <p class="label cta-dark__label">Boka</p>
+        <h2 class="cta-dark__heading" id="cta-contact-heading">
+          Redo att komma hit?<br>
+          <em>Vi har plats idag.</em>
+        </h2>
+        <p class="cta-dark__sub">
+          Öppet mån–fre 10–20, lör–sön 09–21. Röda dagar 09–18.
+        </p>
+        <div class="cta-dark__actions">
+          <a href="book.html" class="btn btn--light">Boka nu</a>
+          <a href="tel:+46470123456" class="cta-dark__phone">0470-123 456</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <p class="footer__brand-name">Röda <span>Tråden</span></p>
+          <p class="footer__tagline">Sju aktiviteter under ett tak. Växjö, Småland.</p>
+        </div>
+        <nav aria-label="Aktiviteter">
+          <p class="footer__col-title">Aktiviteter</p>
+          <ul class="footer__col-links" role="list">
+            <li><a href="activities.html#klattring">Klätterväggar</a></li>
+            <li><a href="activities.html#trampoliner">Trampoliner</a></li>
+            <li><a href="activities.html#lasertag">Lasertag</a></li>
+            <li><a href="activities.html#escape">Escape Rooms</a></li>
+            <li><a href="activities.html#minigolf">Minigolf</a></li>
+            <li><a href="activities.html#cafe">Café</a></li>
+            <li><a href="activities.html#flipper">Flipper</a></li>
+          </ul>
+        </nav>
+        <div>
+          <p class="footer__col-title">Öppettider</p>
+          <ul class="footer__col-links" role="list">
+            <li><span>Måndag–Fredag: 10–20</span></li>
+            <li><span>Lördag–Söndag: 09–21</span></li>
+            <li><span>Röda dagar: 09–18</span></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer__col-title">Kontakt</p>
+          <ul class="footer__col-links" role="list">
+            <li><span>Storgatan 22, 352 31 Växjö</span></li>
+            <li><a href="tel:+46470123456">0470-123 456</a></li>
+            <li><a href="mailto:hej@rodatraden.se">hej@rodatraden.se</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2025 Röda Tråden Aktivitetscenter AB</p>
+        <p class="footer__built-by">Byggd av <a href="https://nordicicon.se" target="_blank" rel="noopener">Nordic Icon</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

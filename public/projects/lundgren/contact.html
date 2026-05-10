@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kostnadsfri värdering | 040-123 456</title>
+  <meta name="description" content="Boka en kostnadsfri värdering av din bostad. Lundgren Fastigheter — 040-123 456. Stortorget 8, Malmö. Vi återkommer samma dag.">
+  <link rel="canonical" href="https://lundgrenfastigheter.se/contact.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-page {
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .contact-left {
+      background: var(--bg-dark);
+      padding: 160px 4rem 80px 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .contact-left .section-label { color: rgba(255,255,255,0.35); }
+    .contact-heading {
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: white;
+      margin-bottom: 1.75rem;
+    }
+    .contact-heading em { font-style: italic; }
+    .contact-info { margin-top: 4rem; }
+    .contact-info-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      padding: 1.375rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .contact-info-item:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+    .contact-info-label {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.25);
+    }
+    .contact-info-value {
+      font-family: var(--font-mono);
+      font-size: 0.9375rem;
+      color: rgba(255,255,255,0.6);
+      transition: color 0.2s;
+    }
+    a.contact-info-value:hover { color: rgba(255,255,255,0.9); }
+    .contact-right {
+      background: var(--bg);
+      padding: 160px 2rem 80px 4rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    /* Form */
+    .contact-form { margin-top: 3rem; }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-label {
+      display: block;
+      font-size: var(--text-label);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.875rem 1.125rem;
+      font-size: var(--text-body-sm);
+      font-family: var(--font-body);
+      color: var(--text);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      border-color: var(--border-hover);
+      box-shadow: 0 0 0 3px var(--accent-subtle);
+    }
+    .form-textarea {
+      min-height: 120px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-submit {
+      margin-top: 0.5rem;
+    }
+    .form-note {
+      font-size: var(--text-small);
+      color: var(--text-muted);
+      margin-top: 1rem;
+    }
+    @media (max-width: 1024px) {
+      .contact-page { grid-template-columns: 1fr; }
+      .contact-left { padding: 120px 2rem 60px; }
+      .contact-right { padding: 60px 2rem 80px; }
+    }
+    @media (max-width: 640px) {
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-label" id="cursorLabel"></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">Lundgren <em>Fastigheter</em></a>
+      <nav class="navbar__nav">
+        <a href="listings.html" class="navbar__link">Objekt</a>
+        <a href="about.html" class="navbar__link">Om oss</a>
+        <a href="contact.html" class="navbar__link" style="color:var(--text);">Kontakt</a>
+      </nav>
+      <div class="navbar__cta">
+        <div class="btn-magnetic" data-magnetic>
+          <a href="contact.html" class="btn btn--primary">Boka värdering</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="contact-page">
+
+    <!-- Left column — dark -->
+    <div class="contact-left">
+      <div>
+        <span class="section-label">Kontakt &amp; värdering</span>
+        <h1 class="contact-heading">
+          Boka en<br>
+          <em>kostnadsfri</em><br>
+          värdering.
+        </h1>
+        <p style="color:rgba(255,255,255,0.4);font-size:var(--text-body-sm);line-height:1.7;max-width:360px;">
+          Fyll i formuläret eller ring direkt.
+          Vi återkommer samma dag på vardagar.
+          Kostnadsfri värdering utan förpliktelse.
+        </p>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-info-item">
+          <span class="contact-info-label">Telefon</span>
+          <a href="tel:+46401234567" class="contact-info-value">040-123 456</a>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">E-post</span>
+          <a href="mailto:hej@lundgrenfastigheter.se" class="contact-info-value">hej@lundgrenfastigheter.se</a>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">Adress</span>
+          <span class="contact-info-value">Stortorget 8, 211 22 Malmö</span>
+        </div>
+        <div class="contact-info-item">
+          <span class="contact-info-label">Öppettider</span>
+          <span class="contact-info-value">Mån–Fre 09–18</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right column — form -->
+    <div class="contact-right">
+      <div data-animate>
+        <span class="section-label">Berätta om din bostad</span>
+        <h2 class="section-heading" style="margin-top:0.75rem;">
+          Vi tar det<br><em>därifrån.</em>
+        </h2>
+      </div>
+
+      <form class="contact-form" action="mailto:hej@lundgrenfastigheter.se" method="post" enctype="text/plain" novalidate>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="name">Ditt namn</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="Förnamn Efternamn" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">Telefon</label>
+            <input class="form-input" type="tel" id="phone" name="phone" placeholder="070-000 00 00" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="email">E-post</label>
+          <input class="form-input" type="email" id="email" name="email" placeholder="namn@exempel.se" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="address">Bostadens adress</label>
+          <input class="form-input" type="text" id="address" name="address" placeholder="Gatuadress, postnummer, ort">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="type">Bostadstyp</label>
+            <select class="form-select" id="type" name="type">
+              <option value="">Välj typ</option>
+              <option>Villa</option>
+              <option>Bostadsrätt</option>
+              <option>Radhus</option>
+              <option>Nyproduktion</option>
+              <option>Fritidshus</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="service">Vad gäller det?</label>
+            <select class="form-select" id="service" name="service">
+              <option value="">Välj ärende</option>
+              <option>Kostnadsfri värdering</option>
+              <option>Jag vill sälja</option>
+              <option>Jag vill köpa</option>
+              <option>Styling-råd</option>
+              <option>Annat</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="message">Övrig information <span style="color:var(--text-muted);font-size:0.7em;">(valfritt)</span></label>
+          <textarea class="form-textarea" id="message" name="message" placeholder="Berätta gärna mer om din situation..."></textarea>
+        </div>
+
+        <div class="form-submit">
+          <div class="btn-magnetic" data-magnetic style="display:block;">
+            <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;">
+              Skicka förfrågan
+            </button>
+          </div>
+          <p class="form-note">
+            Vi svarar på alla förfrågningar inom samma dag på vardagar.
+            Ring gärna direkt på <a href="tel:+46401234567" style="color:var(--text);">040-123 456</a>.
+          </p>
+        </div>
+
+      </form>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div>
+          <p class="footer__brand-name">Lundgren <em>Fastigheter</em></p>
+          <p class="footer__brand-tagline">Mäklare i Malmö sedan 2008.</p>
+        </div>
+        <div>
+          <p class="footer__col-label">Tjänster</p>
+          <nav class="footer__links">
+            <a href="contact.html" class="footer__link">Bostadsförsäljning</a>
+            <a href="contact.html" class="footer__link">Kostnadsfri värdering</a>
+            <a href="contact.html" class="footer__link">Styling-råd</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__col-label">Navigering</p>
+          <nav class="footer__links">
+            <a href="listings.html" class="footer__link">Objekt</a>
+            <a href="about.html" class="footer__link">Om oss</a>
+            <a href="contact.html" class="footer__link">Kontakt</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__col-label">Kontakt</p>
+          <div class="footer__contact-item">
+            <span class="footer__contact-label">Telefon</span>
+            <a href="tel:+46401234567" class="footer__contact-value footer__link">040-123 456</a>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-label">E-post</span>
+            <a href="mailto:hej@lundgrenfastigheter.se" class="footer__contact-value footer__link">hej@lundgrenfastigheter.se</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__legal">© 2026 Lundgren Fastigheter AB.</p>
+        <p class="footer__credit">Byggd av <a href="https://nordicicon.se" target="_blank" rel="noopener">Nordic Icon</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
+  <script src="https://cdn.prod.website-files.com/gsap/3.14.2/gsap.min.js"></script>
+  <script src="https://cdn.prod.website-files.com/gsap/3.14.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.prod.website-files.com/gsap/3.14.2/SplitText.min.js"></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

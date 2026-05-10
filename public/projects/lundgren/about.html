@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Om oss &amp; Mäklarna | Lundgren Fastigheter</title>
+  <meta name="description" content="Lundgren Fastigheter — grundat 2008 av Henrik Lundgren. 8 mäklare, max 8 aktiva objekt per mäklare. Lokalkännedom i hela Malmö.">
+  <link rel="canonical" href="https://lundgrenfastigheter.se/about.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .about-hero {
+      padding: 160px 0 100px;
+      border-bottom: 1px solid var(--border);
+    }
+    .about-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .about-intro__body p + p { margin-top: 1.25rem; }
+    .about-intro__body { color: var(--text-secondary); line-height: 1.8; }
+    .team-section { padding: var(--section-padding) 0; border-top: 1px solid var(--border); }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+    .team-card { display: flex; flex-direction: column; gap: 1rem; }
+    .team-card__img {
+      aspect-ratio: 3/4;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+    .team-card__img .img-placeholder { border-radius: 0; aspect-ratio: 3/4; }
+    .team-name {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+    .team-role {
+      font-size: var(--text-small);
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+    .team-specialty {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-alt);
+      letter-spacing: 0.04em;
+    }
+    .about-values { padding: var(--section-padding) 0; border-top: 1px solid var(--border); }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      margin-top: 4rem;
+    }
+    .value-item {
+      padding: 2.5rem 2rem;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .value-item:nth-child(2n) { border-right: none; }
+    .value-item:nth-last-child(-n+2) { border-bottom: none; }
+    .value-num {
+      font-family: var(--font-mono);
+      font-size: var(--text-label);
+      color: var(--accent-alt);
+      margin-bottom: 1rem;
+      letter-spacing: 0.06em;
+    }
+    .value-title {
+      font-family: var(--font-heading);
+      font-size: 1.375rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+    }
+    .value-desc { font-size: var(--text-body-sm); color: var(--text-secondary); line-height: 1.7; }
+    @media (max-width: 1024px) {
+      .about-intro { grid-template-columns: 1fr; gap: 2.5rem; }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .team-grid { grid-template-columns: 1fr 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+      .value-item { border-right: none; }
+      .value-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+      .value-item:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-label" id="cursorLabel"></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo">Lundgren <em>Fastigheter</em></a>
+      <nav class="navbar__nav">
+        <a href="listings.html" class="navbar__link">Objekt</a>
+        <a href="about.html" class="navbar__link" style="color:var(--text);">Om oss</a>
+        <a href="contact.html" class="navbar__link">Kontakt</a>
+      </nav>
+      <div class="navbar__cta">
+        <div class="btn-magnetic" data-magnetic>
+          <a href="contact.html" class="btn btn--primary">Boka värdering</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="about-hero section--lg">
+    <div class="container">
+      <div class="about-intro">
+        <div>
+          <span class="section-label" data-animate>Om oss</span>
+          <h1 class="section-heading" style="font-size:clamp(2.5rem,5vw,4.5rem);max-width:580px;margin-bottom:0;" data-animate>
+            Malmö är<br>vår stad.<br><em>Varje stadsdel.</em>
+          </h1>
+        </div>
+        <div class="about-intro__body" data-animate>
+          <p>
+            Lundgren Fastigheter grundades 2008 av Henrik Lundgren.
+            Henrik jobbade tio år på Svensk Fastighetsförmedling
+            innan han startade eget. Malmöfödd. Känner varje gata.
+          </p>
+          <p>
+            Idag är vi 12 medarbetare — 8 mäklare och 4 support.
+            Vi har ett tak: max 8 aktiva objekt per mäklare.
+            Det är regeln som gör skillnad.
+          </p>
+          <p>
+            Vi förmedlar villor, radhus, bostadsrätter och nyproduktion
+            i alla prisklasser. Limhamn, Centrum, Husie, Hyllie,
+            Möllevången, Oxie, Vellinge och Staffanstorp.
+          </p>
+          <p>
+            Fotografering ingår alltid.
+            Vi lovar aldrig mer än vi kan hålla.
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="team-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Mäklarna</span>
+        <h2 class="section-heading">Träffa <em>teamet.</em></h2>
+      </div>
+      <div class="team-grid">
+
+        <div class="team-card" data-animate>
+          <div class="team-card__img">
+            <img src="assets/images/gen_1731f6a313.jpg" alt="Henrik Lundgren Porträtt, man, 40-tal, vit skjorta, neutral bakgrund" loading="lazy" style="aspect-ratio:3/4; width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <div>
+            <h3 class="team-name">Henrik Lundgren</h3>
+            <p class="team-role">Grundare &amp; mäklare</p>
+            <p class="team-specialty">Alla områden · Sedan 2008</p>
+          </div>
+        </div>
+
+        <div class="team-card" data-animate>
+          <div class="team-card__img">
+            <img src="assets/images/gen_d0b825b29a.jpg" alt="Sofia Andersson Porträtt, kvinna, 30-tal, neutral bakgrund" loading="lazy" style="aspect-ratio:3/4; width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <div>
+            <h3 class="team-name">Sofia Andersson</h3>
+            <p class="team-role">Mäklare</p>
+            <p class="team-specialty">Specialist Limhamn</p>
+          </div>
+        </div>
+
+        <div class="team-card" data-animate>
+          <div class="team-card__img">
+            <img src="assets/images/gen_bb7fe1d433.jpg" alt="Marcus Holm Porträtt, man, 30-tal, neutral bakgrund" loading="lazy" style="aspect-ratio:3/4; width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <div>
+            <h3 class="team-name">Marcus Holm</h3>
+            <p class="team-role">Mäklare</p>
+            <p class="team-specialty">Specialist Centrum</p>
+          </div>
+        </div>
+
+        <div class="team-card" data-animate>
+          <div class="team-card__img">
+            <img src="assets/images/gen_e4893da9c5.jpg" alt="Emma Karlsson Porträtt, kvinna, 30-tal, neutral bakgrund" loading="lazy" style="aspect-ratio:3/4; width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <div>
+            <h3 class="team-name">Emma Karlsson</h3>
+            <p class="team-role">Mäklare</p>
+            <p class="team-specialty">Specialist nyproduktion</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="about-values">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Hur vi arbetar</span>
+        <h2 class="section-heading">Fyra saker vi<br><em>aldrig frångår.</em></h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-item" data-animate>
+          <p class="value-num">01</p>
+          <h3 class="value-title">Lokalkännedom</h3>
+          <p class="value-desc">15+ år i Malmö. Vi känner varje stadsdel, varje gata. Det syns i prissättningen.</p>
+        </div>
+        <div class="value-item" data-animate>
+          <p class="value-num">02</p>
+          <h3 class="value-title">Fotografering ingår alltid</h3>
+          <p class="value-desc">Inga mobilbilder. Professionell fotograf på varje objekt, utan extra kostnad.</p>
+        </div>
+        <div class="value-item" data-animate>
+          <p class="value-num">03</p>
+          <h3 class="value-title">Max 8 objekt per mäklare</h3>
+          <p class="value-desc">Vi begränsar antalet aktiva uppdrag. Det betyder att varje kund faktiskt får tid.</p>
+        </div>
+        <div class="value-item" data-animate>
+          <p class="value-num">04</p>
+          <h3 class="value-title">Vi lovar vad vi kan hålla</h3>
+          <p class="value-desc">Vi lovar aldrig ett pris bara för att vinna uppdraget. Rätt pris från start.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="cta-inner">
+      <div>
+        <span class="cta-label">Kostnadsfri värdering</span>
+        <h2 class="cta-heading">Vad är din<br><em>bostad värd?</em></h2>
+        <p class="cta-sub">Kostnadsfri värdering. Inga förpliktelser. Vi återkommer samma dag.</p>
+      </div>
+      <div class="cta-actions">
+        <div class="btn-magnetic" data-magnetic>
+          <a href="contact.html" class="btn btn--light">Boka värdering</a>
+        </div>
+        <a href="tel:+46401234567" class="cta-phone">040-123 456</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div>
+          <p class="footer__brand-name">Lundgren <em>Fastigheter</em></p>
+          <p class="footer__brand-tagline">Mäklare i Malmö sedan 2008.</p>
+        </div>
+        <div>
+          <p class="footer__col-label">Tjänster</p>
+          <nav class="footer__links">
+            <a href="contact.html" class="footer__link">Bostadsförsäljning</a>
+            <a href="contact.html" class="footer__link">Kostnadsfri värdering</a>
+            <a href="contact.html" class="footer__link">Styling-råd</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__col-label">Navigering</p>
+          <nav class="footer__links">
+            <a href="listings.html" class="footer__link">Objekt</a>
+            <a href="about.html" class="footer__link">Om oss</a>
+            <a href="contact.html" class="footer__link">Kontakt</a>
+          </nav>
+        </div>
+        <div>
+          <p class="footer__col-label">Kontakt</p>
+          <div class="footer__contact-item">
+            <span class="footer__contact-label">Telefon</span>
+            <a href="tel:+46401234567" class="footer__contact-value footer__link">040-123 456</a>
+          </div>
+          <div class="footer__contact-item">
+            <span class="footer__contact-label">E-post</span>
+            <a href="mailto:hej@lundgrenfastigheter.se" class="footer__contact-value footer__link">hej@lundgrenfastigheter.se</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__legal">© 2026 Lundgren Fastigheter AB.</p>
+        <p class="footer__credit">Byggd av <a href="https://nordicicon.se" target="_blank" rel="noopener">Nordic Icon</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
+  <script src="https://cdn.prod.website-files.com/gsap/3.14.2/gsap.min.js"></script>
+  <script src="https://cdn.prod.website-files.com/gsap/3.14.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.prod.website-files.com/gsap/3.14.2/SplitText.min.js"></script>
+  <script src="main.js" defer></script>
+</body>
+</html>
