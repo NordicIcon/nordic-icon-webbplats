@@ -24,8 +24,11 @@ export default function Navbar() {
     const handle = () => {
       const y = window.scrollY;
       setScrolled(y > 80);
-      setHidden(y > lastScrollY.current && y > 200);
-      lastScrollY.current = y;
+      const delta = y - lastScrollY.current;
+      if (Math.abs(delta) > 4) {
+        setHidden(delta > 0 && y > 200);
+        lastScrollY.current = y;
+      }
     };
     window.addEventListener('scroll', handle, { passive: true });
     return () => window.removeEventListener('scroll', handle);
