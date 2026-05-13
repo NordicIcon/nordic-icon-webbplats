@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt — Sedin Hotel Helsingborg</title>
+  <meta name="description" content="Kontakta Sedin Hotel i Helsingborg. Strandpromenaden 12, 042-123 45 67, hello@sedinhotel.se. Incheckning 15:00, utcheckning 11:00.">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/navbar.css">
+  <link rel="stylesheet" href="../css/inner-pages.css">
+</head>
+<body>
+
+  <header class="navbar" id="navbar" role="banner">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="../" class="navbar__logo">
+          <span class="navbar__logo-name">Sedin Hotel</span>
+          <span class="navbar__logo-sub">Helsingborg</span>
+        </a>
+        <nav class="navbar__nav" aria-label="Primär navigation">
+          <a href="../rum/" class="navbar__link">Rum &amp; Sviter</a>
+          <a href="../restaurang/" class="navbar__link">Restaurang</a>
+          <a href="../spa/" class="navbar__link">Spa</a>
+          <a href="../konferens/" class="navbar__link">Konferens</a>
+        </nav>
+        <a href="../#boka" class="btn btn--outline navbar__cta">Boka rum</a>
+        <div class="navbar__mobile-menu" aria-label="Öppna meny">
+          <span class="navbar__mobile-bar"></span>
+          <span class="navbar__mobile-bar"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero" aria-label="Kontakta oss" style="min-height: 40vh;">
+      <div class="page-hero__bg">
+        <div class="img-placeholder" role="img" aria-label="Strandpromenaden i Helsingborg">
+          <span>Kontakt — Hero</span>
+          <p>1920 × 720px — Strandpromenaden i Helsingborg, soligt, havet synligt</p>
+          <p>Nano Banana: "Helsingborg seafront promenade, sunny day, calm sea, Scandinavian coastal town, editorial photography, teal waters"</p>
+        </div>
+      </div>
+      <div class="page-hero__overlay" aria-hidden="true"></div>
+      <div class="page-hero__content">
+        <div class="container">
+          <span class="label">Vi svarar snabbt</span>
+          <h1 class="page-hero__title">Kontakta <em>oss.</em></h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontaktinfo + formulär -->
+    <section class="contact-page__main" aria-label="Kontaktinformation">
+      <div class="container">
+        <div class="contact-page__inner">
+
+          <div class="contact-page__info">
+            <span class="label" data-animate>Hitta oss</span>
+            <h2 class="contact-page__title" data-split-heading>Alltid redo att<br><em>hjälpa.</em></h2>
+
+            <div class="contact-info-list" data-gsap-reveal>
+              <div class="contact-info-item" data-gsap-child>
+                <span class="contact-info-item__key">Adress</span>
+                <span class="contact-info-item__value">Strandpromenaden 12<br>252 25 Helsingborg</span>
+              </div>
+              <div class="contact-info-item" data-gsap-child>
+                <span class="contact-info-item__key">Telefon</span>
+                <span class="contact-info-item__value">
+                  <a href="tel:+4642123456" class="mono">042-123 45 67</a>
+                </span>
+              </div>
+              <div class="contact-info-item" data-gsap-child>
+                <span class="contact-info-item__key">E-post</span>
+                <span class="contact-info-item__value">
+                  <a href="mailto:hello@sedinhotel.se">hello@sedinhotel.se</a>
+                </span>
+              </div>
+              <div class="contact-info-item" data-gsap-child>
+                <span class="contact-info-item__key">Incheckning</span>
+                <span class="contact-info-item__value mono">15:00</span>
+              </div>
+              <div class="contact-info-item" data-gsap-child>
+                <span class="contact-info-item__key">Utcheckning</span>
+                <span class="contact-info-item__value mono">11:00</span>
+              </div>
+              <div class="contact-info-item" data-gsap-child>
+                <span class="contact-info-item__key">Reception</span>
+                <span class="contact-info-item__value">Öppen dygnet runt</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-page__map" data-animate>
+            <div class="img-placeholder" style="aspect-ratio: 4/3; height: auto;" role="img" aria-label="Karta Strandpromenaden 12 Helsingborg">
+              <span>Karta</span>
+              <p>640 × 480px — Kartvy över Helsingborg strandpromenad med markör</p>
+              <p>Nano Banana: "Clean minimal map illustration, Helsingborg waterfront, Strandpromenaden marked, teal color scheme, Scandinavian design, editorial"</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Meddelande-formulär -->
+    <section style="padding: 0 0 var(--section-gap);" aria-label="Skicka meddelande">
+      <div class="container">
+        <div style="max-width: 640px;">
+          <span class="label" data-animate>Skicka meddelande</span>
+          <h2 style="margin: 20px 0 40px;" data-split-heading>Skriv till <em>oss.</em></h2>
+          <form class="contact-form" data-animate aria-label="Kontaktformulär">
+            <div class="form-field">
+              <label class="form-label" for="contact-name">Namn</label>
+              <input class="form-input" type="text" id="contact-name" name="name" placeholder="Ditt namn" required>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="contact-email">E-post</label>
+              <input class="form-input" type="email" id="contact-email" name="email" placeholder="din@epost.se" required>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="contact-subject">Ämne</label>
+              <select class="form-select" id="contact-subject" name="subject">
+                <option value="">Välj ämne</option>
+                <option value="booking">Bokning &amp; tillgänglighet</option>
+                <option value="restaurant">Restaurang &amp; bordsbokningar</option>
+                <option value="spa">Spa &amp; behandlingar</option>
+                <option value="conference">Konferens &amp; möten</option>
+                <option value="other">Övrigt</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="contact-message">Meddelande</label>
+              <textarea class="form-textarea" id="contact-message" name="message" placeholder="Hur kan vi hjälpa dig?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary">Skicka meddelande</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <div class="footer__brand-name">Sedin Hotel</div>
+            <div class="footer__brand-sub">Helsingborg · Skåne</div>
+            <p class="footer__tagline">Kusthotell vid Öresund. Välkommen att stanna.</p>
+          </div>
+          <div class="footer__col">
+            <div class="footer__col-title">Navigation</div>
+            <ul class="footer__links">
+              <li><a href="../rum/" class="footer__link">Rum &amp; Sviter</a></li>
+              <li><a href="../restaurang/" class="footer__link">Sedin Kitchen</a></li>
+              <li><a href="../spa/" class="footer__link">Sedin Spa</a></li>
+              <li><a href="../konferens/" class="footer__link">Konferens</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <div class="footer__col-title">Om oss</div>
+            <ul class="footer__links">
+              <li><a href="../om-oss/" class="footer__link">Om hotellet</a></li>
+              <li><a href="../kontakt/" class="footer__link">Kontakt</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <div class="footer__col-title">Kontakt</div>
+            <p class="footer__contact-item">Strandpromenaden 12<br>252 25 Helsingborg</p>
+            <p class="footer__contact-item"><a href="tel:+4642123456" class="mono">042-123 45 67</a></p>
+            <p class="footer__contact-item"><a href="mailto:hello@sedinhotel.se">hello@sedinhotel.se</a></p>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span class="footer__copy">© 2025 Sedin Hotel AB · Org.nr 556XXX-XXXX</span>
+          <div class="footer__legal">
+            <a href="#" class="footer__legal-link">Integritetspolicy</a>
+            <a href="#" class="footer__legal-link">Bokningsvillkor</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js"></script>
+  <script>gsap.registerPlugin(ScrollTrigger, SplitText);</script>
+  <script src="../js/main.js"></script>
+  <script src="../js/animations.js"></script>
+</body>
+</html>
+

@@ -2,9 +2,10 @@ import { notFound } from 'next/navigation';
 import styles from './page.module.css';
 
 const projects: Record<string, { name: string; industry: string; city: string }> = {
-  solberg:                { name: 'Solberg Residences',    industry: 'Fastigheter',    city: 'Stockholm' },
-  lundgren:               { name: 'Lundgren Fastigheter',  industry: 'Fastigheter',    city: 'Malmö'     },
-  'viken-golf-club':      { name: 'Viken Golf Club',       industry: 'Golf & Sport',   city: 'Viken'     },
+  solberg:                { name: 'Solberg Residences',    industry: 'Fastigheter',    city: 'Stockholm'   },
+  lundgren:               { name: 'Lundgren Fastigheter',  industry: 'Fastigheter',    city: 'Malmö'       },
+  sedin:                  { name: 'Sedin Hotel',           industry: 'Hotell & Spa',   city: 'Helsingborg' },
+  'viken-golf-club':      { name: 'Viken Golf Club',       industry: 'Golf & Sport',   city: 'Viken'       },
   koppar:                 { name: 'Koppar',                industry: 'Specialty Coffee',city: 'Halmstad'  },
   havets:                 { name: 'Havets',                industry: 'Fine Dining',    city: 'Göteborg'  },
   'vaxjo-aktivitetscenter':{ name: 'Växjö Aktivitetscenter',industry: 'Upplevelser',  city: 'Växjö'     },

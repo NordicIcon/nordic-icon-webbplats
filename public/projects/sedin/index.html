@@ -1,0 +1,537 @@
+﻿<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sedin Hotel Helsingborg — Kusthotell med havsutsikt</title>
+  <meta name="description" content="Sedin Hotel i Helsingborg — 24 rum och sviter vid havet. Upplev Skånekusten på ett nytt sätt med spa, restaurang och konferens.">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/booking-widget.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- ── NAVBAR ──────────────────────────── -->
+  <header class="navbar navbar--hero" id="navbar" role="banner">
+    <div class="container">
+      <div class="navbar__inner">
+        <a href="./" class="navbar__logo" aria-label="Sedin Hotel - Startsida">
+          <span class="navbar__logo-name">Sedin Hotel</span>
+          <span class="navbar__logo-sub">Helsingborg</span>
+        </a>
+        <nav class="navbar__nav" aria-label="Primär navigation">
+          <a href="rum/" class="navbar__link">Rum &amp; Sviter</a>
+          <a href="restaurang/" class="navbar__link">Restaurang</a>
+          <a href="spa/" class="navbar__link">Spa</a>
+          <a href="konferens/" class="navbar__link">Konferens</a>
+        </nav>
+        <a href="#boka" class="btn btn--outline navbar__cta">Boka direkt</a>
+        <div class="navbar__mobile-menu" aria-label="Öppna meny">
+          <span class="navbar__mobile-bar"></span>
+          <span class="navbar__mobile-bar"></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── SEKTION 1: HERO ──────────────── -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero__bg">
+        <video autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+          <source src="videos/hero.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero__overlay" aria-hidden="true"></div>
+      <div class="hero__content">
+        <div class="container">
+          <span class="label hero__label">Strandpromenaden 12 · Helsingborg</span>
+          <h1 class="hero__title">
+            Havet. Helsingborg.<br>
+            <em>Sedin Hotel.</em>
+          </h1>
+          <div class="hero__booking" id="boka">
+            <div class="booking-widget booking-widget--hero">
+              <form class="booking-widget__form" aria-label="Bokningsformulär">
+                <div class="booking-widget__field">
+                  <label class="booking-widget__label" for="hero-checkin">Incheckning</label>
+                  <input class="booking-widget__input" type="date" id="hero-checkin" name="check-in" aria-label="Incheckning">
+                </div>
+                <div class="booking-widget__field">
+                  <label class="booking-widget__label" for="hero-checkout">Utcheckning</label>
+                  <input class="booking-widget__input" type="date" id="hero-checkout" name="check-out" aria-label="Utcheckning">
+                </div>
+                <div class="booking-widget__field">
+                  <label class="booking-widget__label" for="hero-rooms">Rum</label>
+                  <select class="booking-widget__select" id="hero-rooms" name="rooms" aria-label="Antal rum">
+                    <option value="1">1 rum</option>
+                    <option value="2">2 rum</option>
+                    <option value="3">3 rum</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn--primary booking-widget__submit">Kontrollera tillgänglighet</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ── SEKTION 2: INTRO ─────────────── -->
+    <section class="intro" aria-label="Om hotellet">
+      <div class="container">
+        <div class="intro__inner">
+          <div class="intro__text-col">
+            <span class="label intro__label" data-animate>Kusthotell sedan 2019</span>
+            <h2 class="intro__title" data-split-heading>
+              24 rum med<br><em>havsutsikt.</em>
+            </h2>
+            <p class="intro__body" data-animate>
+              Sedin Hotel ligger direkt vid havet på Helsingborgs strandpromenad. Här möter Skånekustens ljus och stillhet ett nordiskt designspråk — varje detalj vald med omsorg. Välkommen att stanna.
+            </p>
+            <div class="intro__stats" data-gsap-reveal>
+              <div class="intro__stat" data-gsap-child>
+                <div class="intro__stat-number mono" data-count-to="24">24</div>
+                <div class="intro__stat-label">Rum &amp; sviter</div>
+              </div>
+              <div class="intro__stat" data-gsap-child>
+                <div class="intro__stat-number mono" data-count-to="2019">2019</div>
+                <div class="intro__stat-label">Grundat</div>
+              </div>
+              <div class="intro__stat" data-gsap-child>
+                <div class="intro__stat-number mono">9.1</div>
+                <div class="intro__stat-label">Gästbetyg</div>
+              </div>
+            </div>
+          </div>
+          <div class="intro__image-col" data-animate>
+            <img src="images/intro-lobby.jpg" alt="Sedin Hotel lobby med havsutsikt" loading="lazy" class="intro__image" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ── SEKTION 3: RUMSGALLERI ───────── -->
+    <section class="rooms-section" aria-label="Rum och sviter">
+      <div class="container">
+        <div class="rooms-section__header rooms-section__header-inner">
+          <div>
+            <span class="label" data-animate>Rum &amp; Sviter</span>
+            <h2 data-split-heading>Välj ditt<br><em>rum.</em></h2>
+          </div>
+          <a href="rum/" class="btn btn--ghost" data-animate>Visa alla rum →</a>
+        </div>
+      </div>
+      <div class="container">
+        <div class="rooms-carousel">
+        <div class="rooms-track-wrap" id="rooms-track-wrap">
+          <div class="rooms-track" id="rooms-track">
+
+            <a href="rum/standard-room/" class="room-card card" aria-label="Standard Room">
+              <img src="images/room-standard.jpg" alt="Standard Room med havsutsikt" loading="lazy" class="room-card__image" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;">
+              <div class="room-card__body">
+                <div class="room-card__category">Standardrum</div>
+                <div class="room-card__name">Standard Room</div>
+                <div class="room-card__size mono">22 m²</div>
+                <div class="room-card__footer">
+                  <div>
+                    <span class="room-card__price mono">1 490 kr</span>
+                    <span class="room-card__price-sub mono">/ natt</span>
+                  </div>
+                  <span class="room-card__link">Se rummet →</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="rum/superior-room/" class="room-card card" aria-label="Superior Room">
+              <img src="images/room-superior.jpg" alt="Superior Room med panoramautsikt" loading="lazy" class="room-card__image" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;">
+              <div class="room-card__body">
+                <div class="room-card__category">Standardrum</div>
+                <div class="room-card__name">Superior Room</div>
+                <div class="room-card__size mono">28 m²</div>
+                <div class="room-card__footer">
+                  <div>
+                    <span class="room-card__price mono">1 890 kr</span>
+                    <span class="room-card__price-sub mono">/ natt</span>
+                  </div>
+                  <span class="room-card__link">Se rummet →</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="rum/junior-suite/" class="room-card card" aria-label="Junior Suite">
+              <img src="images/room-junior-suite.jpg" alt="Junior Suite med sittdel och havsutsikt" loading="lazy" class="room-card__image" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;">
+              <div class="room-card__body">
+                <div class="room-card__category">Suite</div>
+                <div class="room-card__name">Junior Suite</div>
+                <div class="room-card__size mono">36 m²</div>
+                <div class="room-card__footer">
+                  <div>
+                    <span class="room-card__price mono">2 490 kr</span>
+                    <span class="room-card__price-sub mono">/ natt</span>
+                  </div>
+                  <span class="room-card__link">Se rummet →</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="rum/ocean-suite/" class="room-card card" aria-label="Ocean Suite">
+              <img src="images/room-ocean-suite.jpg" alt="Ocean Suite med privat terrass mot Öresund" loading="lazy" class="room-card__image" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;">
+              <div class="room-card__body">
+                <div class="room-card__category">Suite</div>
+                <div class="room-card__name">Ocean Suite</div>
+                <div class="room-card__size mono">48 m²</div>
+                <div class="room-card__footer">
+                  <div>
+                    <span class="room-card__price mono">3 290 kr</span>
+                    <span class="room-card__price-sub mono">/ natt</span>
+                  </div>
+                  <span class="room-card__link">Se rummet →</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="rum/corner-suite/" class="room-card card" aria-label="Corner Suite">
+              <img src="images/room-corner-suite.jpg" alt="Corner Suite med panoramautsikt" loading="lazy" class="room-card__image" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;">
+              <div class="room-card__body">
+                <div class="room-card__category">Suite</div>
+                <div class="room-card__name">Corner Suite</div>
+                <div class="room-card__size mono">52 m²</div>
+                <div class="room-card__footer">
+                  <div>
+                    <span class="room-card__price mono">3 790 kr</span>
+                    <span class="room-card__price-sub mono">/ natt</span>
+                  </div>
+                  <span class="room-card__link">Se rummet →</span>
+                </div>
+              </div>
+            </a>
+
+            <a href="rum/penthouse-suite/" class="room-card card" aria-label="Penthouse Suite">
+              <img src="images/room-penthouse.jpg" alt="Penthouse Suite med 360° havsutsikt" loading="lazy" class="room-card__image" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;">
+              <div class="room-card__body">
+                <div class="room-card__category">Penthouse</div>
+                <div class="room-card__name">Penthouse Suite</div>
+                <div class="room-card__size mono">68 m²</div>
+                <div class="room-card__footer">
+                  <div>
+                    <span class="room-card__price mono">4 990 kr</span>
+                    <span class="room-card__price-sub mono">/ natt</span>
+                  </div>
+                  <span class="room-card__link">Se rummet →</span>
+                </div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+        <div class="rooms-arrows" aria-label="Bläddra rum">
+          <button class="rooms-arrow" id="rooms-prev" aria-label="Föregående rum">&#8592;</button>
+          <button class="rooms-arrow" id="rooms-next" aria-label="Nästa rum">&#8594;</button>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ── SEKTION 4: BOKNING ────────────── -->
+    <section class="booking-section" aria-label="Boka rum">
+      <div class="container">
+        <div class="booking-section__inner">
+          <div class="booking-section__text">
+            <span class="label" data-animate>Boka direkt</span>
+            <h2 class="booking-section__title" data-split-heading>
+              Ditt nästa<br><em>uppehåll.</em>
+            </h2>
+            <p class="booking-section__body" data-animate>
+              Boka direkt hos oss för bästa pris och flexibla avbokningsvillkor. Incheckning från kl. <span class="mono">15:00</span>, utcheckning senast <span class="mono">11:00</span>.
+            </p>
+          </div>
+          <div class="booking-section__widget" data-animate>
+            <div class="booking-widget booking-widget--standalone">
+              <form class="booking-widget__form" aria-label="Bokningsformulär">
+                <div class="booking-widget__field">
+                  <label class="booking-widget__label" for="book-checkin">Incheckning</label>
+                  <input class="booking-widget__input" type="date" id="book-checkin" name="check-in">
+                </div>
+                <div class="booking-widget__field">
+                  <label class="booking-widget__label" for="book-checkout">Utcheckning</label>
+                  <input class="booking-widget__input" type="date" id="book-checkout" name="check-out">
+                </div>
+                <button type="submit" class="btn btn--primary booking-widget__submit">Sök lediga rum</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SEKTION 5: RESTAURANG ─────────── -->
+    <section class="restaurant-section" aria-label="Sedin Kitchen">
+      <div class="container">
+        <div class="restaurant-section__inner">
+          <div class="restaurant-section__text">
+            <span class="label restaurant-section__label" data-animate>Sedin Kitchen</span>
+            <h2 class="restaurant-section__title" data-split-heading>
+              Skånsk råvara.<br>Nordisk <em>precision.</em>
+            </h2>
+            <p class="restaurant-section__body" data-animate>
+              Vår kök kretsar kring det lokala: fisk från Öresund, grönsaker från Skånska gårdar, bröd bakat varje morgon. Varje rätt är ett argument för platsen vi befinner oss på.
+            </p>
+            <div class="restaurant-section__hours" data-animate>
+              <div class="restaurant-section__hours-row">
+                <span class="restaurant-section__hours-name">Frukost</span>
+                <span class="restaurant-section__hours-time mono">07:00 – 10:30</span>
+              </div>
+              <div class="restaurant-section__hours-row">
+                <span class="restaurant-section__hours-name">Lunch</span>
+                <span class="restaurant-section__hours-time mono">12:00 – 14:00</span>
+              </div>
+              <div class="restaurant-section__hours-row">
+                <span class="restaurant-section__hours-name">Middag</span>
+                <span class="restaurant-section__hours-time mono">18:00 – 22:00</span>
+              </div>
+            </div>
+            <a href="restaurang/" class="btn btn--outline" data-animate>Se menyn</a>
+          </div>
+          <div class="restaurant-section__images" data-gsap-reveal>
+            <div class="parallax-wrap" data-gsap-child>
+              <img src="images/restaurant-main.jpg" alt="Sedin Kitchen restaurang" loading="lazy" class="restaurant-section__img-main is-parallax" style="width:100%;height:100%;object-fit:cover;display:block;">
+            </div>
+            <div data-gsap-child>
+              <img src="images/restaurant-detail.jpg" alt="Nordisk rätt från Sedin Kitchen" loading="lazy" class="restaurant-section__img-secondary" style="width:100%;object-fit:cover;display:block;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ── SEKTION 6: SPA ───────────────── -->
+    <section class="spa-section section--dark" aria-label="Sedin Spa">
+      <div class="container">
+        <div class="spa-section__inner">
+          <div class="spa-section__image-col" data-animate>
+            <img src="images/spa.jpg" alt="Sedin Spa infinity pool med havsutsikt" loading="lazy" class="spa-section__image" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="spa-section__text">
+            <span class="label spa-section__label" data-animate>Sedin Spa</span>
+            <h2 class="spa-section__title" data-split-heading>
+              Ro. Värme.<br><em>Helande.</em>
+            </h2>
+            <p class="spa-section__body" data-animate>
+              Sedin Spa öppnar kl. <span class="mono">07:00</span> och stänger <span class="mono">21:00</span>. Infinity pool, bastu, ångbad och skräddarsydda behandlingar. En plats där havet fortsätter inomhus.
+            </p>
+            <div class="spa-section__features" data-animate>
+              <span class="spa-feature-tag">Infinity pool</span>
+              <span class="spa-feature-tag">Bastu</span>
+              <span class="spa-feature-tag">Ångbad</span>
+              <span class="spa-feature-tag">Behandlingar</span>
+              <span class="spa-feature-tag">07:00 – 21:00</span>
+            </div>
+            <div class="btn-magnetic-wrap">
+              <a href="spa/" class="btn btn--outline">Utforska spa</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SEKTION 7: KONFERENS ──────────── -->
+    <section class="conference-section" aria-label="Konferens">
+      <div class="container">
+        <div class="conference-section__inner">
+          <div class="conference-section__text">
+            <span class="label conference-section__label" data-animate>Konferens &amp; möten</span>
+            <h2 class="conference-section__title" data-split-heading>
+              Möt havet.<br>Tänk <em>klart.</em>
+            </h2>
+            <p class="conference-section__body" data-animate>
+              Två konferensrum med havsutsikt, för <span class="mono">12</span> till <span class="mono">30</span> deltagare. Fullständig AV-utrustning, catering från Sedin Kitchen och personlig koordinator.
+            </p>
+            <div class="conference-section__rooms" data-gsap-reveal>
+              <div class="conference-room-item" data-gsap-child>
+                <span class="conference-room-item__name">Havssalen</span>
+                <span class="conference-room-item__capacity mono">upp till 30 pers.</span>
+              </div>
+              <div class="conference-room-item" data-gsap-child>
+                <span class="conference-room-item__name">Strandrum</span>
+                <span class="conference-room-item__capacity mono">upp till 12 pers.</span>
+              </div>
+            </div>
+            <a href="konferens/" class="btn btn--outline" data-animate>Begär offert</a>
+          </div>
+          <div class="conference-section__image-col" data-animate>
+            <img src="images/conference.jpg" alt="Konferensrum med panoramautsikt mot havet" loading="lazy" class="conference-section__image" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ── SEKTION 8: STATS ─────────────── -->
+    <section class="stats-section" aria-label="Siffror om hotellet">
+      <div class="container" style="max-width: 100%; padding: 0;">
+        <div class="stats-section__inner">
+          <div class="stat-item" data-animate>
+            <div class="stat-item__number">
+              <span class="mono" data-count-to="24">24</span>
+            </div>
+            <div class="stat-item__label">Rum och sviter</div>
+            <span class="stat-item__sub">Standard – Penthouse</span>
+          </div>
+          <div class="stat-item" data-animate>
+            <div class="stat-item__number">
+              <span class="mono" data-count-to="9" data-suffix=".1">9.1</span>
+              <span class="stat-item__suffix">/10</span>
+            </div>
+            <div class="stat-item__label">Genomsnittligt gästbetyg</div>
+            <span class="stat-item__sub">Booking.com · 2024</span>
+          </div>
+          <div class="stat-item" data-animate>
+            <div class="stat-item__number">
+              <span class="mono" data-count-to="2">2</span>
+            </div>
+            <div class="stat-item__label">Konferensrum</div>
+            <span class="stat-item__sub">12 – 30 deltagare</span>
+          </div>
+          <div class="stat-item" data-animate>
+            <div class="stat-item__number">
+              <span class="mono" data-count-to="180">180</span>
+              <span class="stat-item__suffix">m</span>
+            </div>
+            <div class="stat-item__label">Från havet</div>
+            <span class="stat-item__sub">Strandpromenaden 12</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- ── SEKTION 9: LOCATION ───────────── -->
+    <section class="location-section" aria-label="Hitta oss">
+      <div class="container">
+        <div class="location-section__inner">
+          <div class="location-section__text">
+            <span class="label" data-animate>Hitta oss</span>
+            <h2 class="location-section__title" data-split-heading>
+              Mitt i Helsingborg.<br>Vid <em>havet.</em>
+            </h2>
+            <div class="location-section__details" data-gsap-reveal>
+              <div class="location-detail" data-gsap-child>
+                <span class="location-detail__key">Adress</span>
+                <span class="location-detail__value">Strandpromenaden 12<br>252 25 Helsingborg</span>
+              </div>
+              <div class="location-detail" data-gsap-child>
+                <span class="location-detail__key">Telefon</span>
+                <span class="location-detail__value mono">042-123 45 67</span>
+              </div>
+              <div class="location-detail" data-gsap-child>
+                <span class="location-detail__key">E-post</span>
+                <a href="mailto:hello@sedinhotel.se" class="location-detail__value">hello@sedinhotel.se</a>
+              </div>
+              <div class="location-detail" data-gsap-child>
+                <span class="location-detail__key">Incheckning</span>
+                <span class="location-detail__value mono">15:00</span>
+              </div>
+              <div class="location-detail" data-gsap-child>
+                <span class="location-detail__key">Utcheckning</span>
+                <span class="location-detail__value mono">11:00</span>
+              </div>
+            </div>
+            <a href="kontakt/" class="btn btn--outline" data-animate>Kontakta oss</a>
+          </div>
+          <div class="location-section__map" data-animate>
+            <div class="img-placeholder location-section__map" role="img" aria-label="Karta över hotellets placering">
+              <span>Karta</span>
+              <p>800 × 600px — Enkel kartvy av Helsingborg strandpromenad</p>
+              <p>Nano Banana: "Minimalist map illustration of Helsingborg waterfront, Strandpromenaden, Sweden, teal color palette, editorial style"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SEKTION 10: PRE-FOOTER CTA ────── -->
+    <section class="cta-section" aria-label="Boka ditt uppehåll">
+      <div class="cta-section__bg-text" aria-hidden="true">Sedin</div>
+      <div class="container cta-section__content">
+        <span class="label" data-animate>Boka direkt</span>
+        <h2 class="cta-section__title" data-split-heading>
+          Havet väntar.<br>
+          <em>Boka idag.</em>
+        </h2>
+        <div class="btn-magnetic-wrap" data-animate>
+          <a href="#boka" class="btn btn--primary">Se tillgänglighet</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SEKTION 11: FOOTER ────────────── -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <div class="footer__brand-name">Sedin Hotel</div>
+            <div class="footer__brand-sub">Helsingborg · Skåne</div>
+            <p class="footer__tagline">Kusthotell vid Öresund. Välkommen att stanna.</p>
+          </div>
+          <div class="footer__col">
+            <div class="footer__col-title">Navigation</div>
+            <ul class="footer__links">
+              <li><a href="rum/" class="footer__link">Rum &amp; Sviter</a></li>
+              <li><a href="restaurang/" class="footer__link">Sedin Kitchen</a></li>
+              <li><a href="spa/" class="footer__link">Sedin Spa</a></li>
+              <li><a href="konferens/" class="footer__link">Konferens</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <div class="footer__col-title">Om oss</div>
+            <ul class="footer__links">
+              <li><a href="om-oss/" class="footer__link">Om hotellet</a></li>
+              <li><a href="kontakt/" class="footer__link">Kontakt</a></li>
+              <li><a href="kontakt/" class="footer__link">Hitta oss</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <div class="footer__col-title">Kontakt</div>
+            <p class="footer__contact-item">Strandpromenaden 12<br>252 25 Helsingborg</p>
+            <p class="footer__contact-item"><a href="tel:+4642123456" class="mono">042-123 45 67</a></p>
+            <p class="footer__contact-item"><a href="mailto:hello@sedinhotel.se">hello@sedinhotel.se</a></p>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span class="footer__copy">© 2025 Sedin Hotel AB · Org.nr 556XXX-XXXX</span>
+          <div class="footer__legal">
+            <a href="#" class="footer__legal-link">Integritetspolicy</a>
+            <a href="#" class="footer__legal-link">Bokningsvillkor</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ── SCRIPTS ──────────────────────────── -->
+  <script src="https://unpkg.com/lenis@1.2.3/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/SplitText.min.js"></script>
+  <script>gsap.registerPlugin(ScrollTrigger, SplitText);</script>
+  <script src="js/main.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/booking-widget.js"></script>
+
+</body>
+</html>
+

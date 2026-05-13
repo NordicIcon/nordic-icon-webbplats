@@ -1,0 +1,110 @@
+/* ============================================
+   BOOKING WIDGET
+   ============================================ */
+
+.booking-widget {
+  background: rgba(250, 250, 248, 0.96);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 28px 32px;
+  box-shadow: 0 20px 60px rgba(28, 43, 45, 0.16);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.booking-widget__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 16px;
+  align-items: end;
+}
+
+.booking-widget__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.booking-widget__label {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.booking-widget__input,
+.booking-widget__select {
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid var(--border-hover);
+  padding: 10px 0;
+  outline: none;
+  transition: border-color 0.25s ease;
+  cursor: pointer;
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.booking-widget__input:focus,
+.booking-widget__select:focus {
+  border-bottom-color: var(--accent);
+}
+
+.booking-widget__input::placeholder {
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
+
+.booking-widget__price-hint {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  margin-top: 6px;
+}
+
+.booking-widget__submit {
+  white-space: nowrap;
+  padding: 14px 32px;
+  font-size: 0.8125rem;
+}
+
+/* Hero variant — liten widget inuti hero */
+.booking-widget--hero {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Standalone variant — på rum-sidor */
+.booking-widget--standalone {
+  max-width: 760px;
+}
+
+.booking-widget--standalone .booking-widget__form {
+  grid-template-columns: 1fr 1fr auto;
+}
+
+@media (max-width: 1024px) {
+  .booking-widget__form {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .booking-widget__submit {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .booking-widget {
+    padding: 20px;
+  }
+
+  .booking-widget__form {
+    grid-template-columns: 1fr;
+  }
+}

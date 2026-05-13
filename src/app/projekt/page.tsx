@@ -34,6 +34,16 @@ const projects: Project[] = [
     image: '/images/lundgren-card.png',
   },
   {
+    id: 'sedin',
+    name: 'Sedin Hotel',
+    industry: 'Hotell & Spa',
+    city: 'Helsingborg',
+    plan: 'PRO' as const,
+    desc: 'Lyxigt kusthotell vid Öresund med rumspresentation, restaurang och spa.',
+    image: '',
+    gradient: 'linear-gradient(160deg, #0a1628 0%, #1a3a5c 50%, #0a2040 100%)',
+  },
+  {
     id: 'viken-golf-club',
     name: 'Viken Golf Club',
     industry: 'Golf & Sport',

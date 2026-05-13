@@ -1,0 +1,887 @@
+/* ============================================
+   HERO
+   ============================================ */
+
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__bg .img-placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  border: none;
+  background: var(--bg-dark);
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(28, 43, 45, 0.72) 0%,
+    rgba(28, 43, 45, 0.28) 45%,
+    rgba(28, 43, 45, 0.08) 100%
+  );
+  z-index: 1;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding: 0 0 60px;
+}
+
+.hero__label {
+  color: rgba(250, 250, 248, 0.55);
+  margin-bottom: 20px;
+}
+
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 300;
+  line-height: 1.0;
+  color: #FAFAF8;
+  letter-spacing: -0.01em;
+  margin-bottom: 40px;
+}
+
+.hero__title em {
+  font-style: italic;
+}
+
+.hero__booking {
+  margin-top: 40px;
+}
+
+/* ============================================
+   INTRO
+   ============================================ */
+
+.intro {
+  padding: var(--section-gap) 0;
+}
+
+.intro__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.intro__text-col {}
+
+.intro__label {
+  margin-bottom: 24px;
+}
+
+.intro__title {
+  margin-bottom: 28px;
+}
+
+.intro__body {
+  margin-bottom: 36px;
+}
+
+.intro__stats {
+  display: flex;
+  gap: 40px;
+  padding-top: 36px;
+  border-top: 1px solid var(--border);
+}
+
+.intro__stat {}
+
+.intro__stat-number {
+  font-family: var(--font-mono);
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.intro__stat-label {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.intro__image-col {
+  position: relative;
+}
+
+.intro__image {
+  aspect-ratio: 4/5;
+}
+
+/* ============================================
+   RUM-GALLERI
+   ============================================ */
+
+.rooms-section {
+  padding: var(--section-gap) 0;
+  overflow: hidden;
+}
+
+.rooms-section__header {
+  margin-bottom: 48px;
+}
+
+.rooms-section__header-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.rooms-carousel {
+  position: relative;
+}
+
+.rooms-track-wrap {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  cursor: grab;
+  user-select: none;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.rooms-track-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.rooms-track-wrap:active {
+  cursor: grabbing;
+}
+
+.rooms-track {
+  display: flex;
+  gap: 24px;
+  width: max-content;
+  padding: 8px 0 24px;
+}
+
+.rooms-arrows {
+  display: flex;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.rooms-arrow {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border-hover);
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background 0.25s ease, transform 0.15s ease;
+  flex-shrink: 0;
+  font-size: 1.125rem;
+  color: var(--text);
+  line-height: 1;
+}
+
+.rooms-arrow:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: scale(1.05);
+}
+
+.rooms-arrow:active {
+  transform: scale(0.96);
+}
+
+.rooms-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+  transform: none;
+}
+
+.room-card {
+  flex-shrink: 0;
+  width: 360px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+  text-decoration: none;
+  display: block;
+}
+
+.room-card:hover {
+  box-shadow: 0 16px 60px var(--accent-shadow);
+  transform: translateY(-4px);
+}
+
+.room-card__image {
+  aspect-ratio: 4/3;
+}
+
+.room-card__body {
+  padding: 24px;
+}
+
+.room-card__category {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.room-card__name {
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 6px;
+  line-height: 1.2;
+}
+
+.room-card__size {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.room-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.room-card__price {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.room-card__price-sub {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.room-card__link {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.3s ease;
+}
+
+.room-card:hover .room-card__link {
+  gap: 10px;
+}
+
+/* ============================================
+   BOKNINGSSEKTION
+   ============================================ */
+
+.booking-section {
+  padding: var(--section-gap) 0;
+  background: var(--bg-secondary);
+}
+
+.booking-section__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.booking-section__text .label {
+  margin-bottom: 20px;
+}
+
+.booking-section__title {
+  margin-bottom: 20px;
+}
+
+.booking-section__body {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   RESTAURANG (STICKY SPLIT)
+   ============================================ */
+
+.restaurant-section {
+  padding: var(--section-gap) 0;
+}
+
+.restaurant-section__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.restaurant-section__text {
+  position: sticky;
+  top: calc(var(--nav-height) + 40px);
+}
+
+.restaurant-section__label {
+  margin-bottom: 20px;
+}
+
+.restaurant-section__title {
+  margin-bottom: 24px;
+}
+
+.restaurant-section__body {
+  margin-bottom: 32px;
+}
+
+.restaurant-section__hours {
+  margin-bottom: 36px;
+}
+
+.restaurant-section__hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.restaurant-section__hours-name {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.restaurant-section__hours-time {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text);
+}
+
+.restaurant-section__images {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-top: 8px;
+}
+
+.restaurant-section__img-main {
+  aspect-ratio: 4/3;
+}
+
+.restaurant-section__img-secondary {
+  aspect-ratio: 16/9;
+}
+
+/* ============================================
+   SPA (MÖRK)
+   ============================================ */
+
+.spa-section {
+  padding: var(--section-gap) 0;
+  background: var(--bg-dark);
+}
+
+.spa-section__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.spa-section__image {
+  aspect-ratio: 3/4;
+}
+
+.spa-section__label {
+  margin-bottom: 20px;
+}
+
+.spa-section__title {
+  margin-bottom: 24px;
+}
+
+.spa-section__body {
+  margin-bottom: 36px;
+}
+
+.spa-section__features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.spa-feature-tag {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.5);
+  border: 1px solid rgba(250, 250, 248, 0.12);
+  border-radius: 50px;
+  padding: 8px 18px;
+}
+
+.spa-section .btn--outline {
+  border-color: rgba(250, 250, 248, 0.2);
+  color: rgba(250, 250, 248, 0.85);
+}
+
+.spa-section .btn--outline:hover {
+  border-color: rgba(250, 250, 248, 0.5);
+  color: #FAFAF8;
+}
+
+/* ============================================
+   KONFERENS
+   ============================================ */
+
+.conference-section {
+  padding: var(--section-gap) 0;
+  background: var(--bg-secondary);
+}
+
+.conference-section__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.conference-section__label {
+  margin-bottom: 20px;
+}
+
+.conference-section__title {
+  margin-bottom: 24px;
+}
+
+.conference-section__body {
+  margin-bottom: 40px;
+}
+
+.conference-section__rooms {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.conference-room-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+}
+
+.conference-room-item__name {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.conference-room-item__capacity {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+}
+
+.conference-section__image {
+  aspect-ratio: 4/3;
+}
+
+/* ============================================
+   STATS
+   ============================================ */
+
+.stats-section {
+  padding: var(--section-gap) 0;
+}
+
+.stats-section__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 0;
+}
+
+.stat-item {
+  padding: 48px 40px;
+  border-right: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-item:nth-child(1) {
+  border-left: 1px solid var(--border);
+}
+
+.stat-item__number {
+  font-family: var(--font-mono);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 300;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.stat-item__suffix {
+  font-size: 0.5em;
+  margin-bottom: 4px;
+}
+
+.stat-item__label {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.stat-item__sub {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 8px;
+  display: block;
+}
+
+/* ============================================
+   KONTAKT/LOCATION
+   ============================================ */
+
+.location-section {
+  padding: var(--section-gap) 0;
+}
+
+.location-section__inner {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.location-section__text .label {
+  margin-bottom: 20px;
+}
+
+.location-section__title {
+  margin-bottom: 28px;
+}
+
+.location-section__details {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.location-detail {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.location-detail__key {
+  font-family: var(--font-mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  min-width: 80px;
+  padding-top: 2px;
+}
+
+.location-detail__value {
+  font-size: 0.9375rem;
+  color: var(--text);
+  max-width: none;
+}
+
+.location-section__map {
+  aspect-ratio: 4/3;
+  position: sticky;
+  top: calc(var(--nav-height) + 40px);
+}
+
+/* ============================================
+   PRE-FOOTER CTA
+   ============================================ */
+
+.cta-section {
+  padding: 100px 0;
+  background: var(--bg-dark);
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.cta-section__bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-heading);
+  font-size: clamp(8rem, 20vw, 18rem);
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(250, 250, 248, 0.03);
+  white-space: nowrap;
+  pointer-events: none;
+  line-height: 1;
+}
+
+.cta-section__content {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-section .label {
+  color: rgba(250, 250, 248, 0.4);
+  margin-bottom: 24px;
+  display: block;
+}
+
+.cta-section__title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
+  color: #FAFAF8;
+  margin-bottom: 40px;
+}
+
+.cta-section__title em {
+  font-style: italic;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+  background: var(--bg-dark);
+  border-top: 1px solid rgba(250, 250, 248, 0.07);
+  padding: 64px 0 40px;
+}
+
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 64px;
+}
+
+.footer__brand-name {
+  font-family: var(--font-heading);
+  font-size: 1.375rem;
+  font-weight: 400;
+  color: #FAFAF8;
+  margin-bottom: 4px;
+}
+
+.footer__brand-sub {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.35);
+  margin-bottom: 20px;
+}
+
+.footer__tagline {
+  font-size: 0.875rem;
+  color: rgba(250, 250, 248, 0.45);
+  line-height: 1.6;
+  max-width: 260px;
+}
+
+.footer__col-title {
+  font-family: var(--font-mono);
+  font-size: 0.5625rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(250, 250, 248, 0.35);
+  margin-bottom: 20px;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__link {
+  font-size: 0.875rem;
+  color: rgba(250, 250, 248, 0.6);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer__link:hover {
+  color: rgba(250, 250, 248, 0.9);
+}
+
+.footer__contact-item {
+  font-size: 0.875rem;
+  color: rgba(250, 250, 248, 0.6);
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.footer__contact-item a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer__contact-item a:hover {
+  color: rgba(250, 250, 248, 0.9);
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+  border-top: 1px solid rgba(250, 250, 248, 0.07);
+}
+
+.footer__copy {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: rgba(250, 250, 248, 0.25);
+  letter-spacing: 0.06em;
+}
+
+.footer__legal {
+  display: flex;
+  gap: 24px;
+}
+
+.footer__legal-link {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  color: rgba(250, 250, 248, 0.25);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: color 0.25s ease;
+}
+
+.footer__legal-link:hover {
+  color: rgba(250, 250, 248, 0.5);
+}
+
+/* ============================================
+   RESPONSIV
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .intro__inner,
+  .booking-section__inner,
+  .restaurant-section__inner,
+  .spa-section__inner,
+  .conference-section__inner,
+  .location-section__inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .restaurant-section__text {
+    position: static;
+  }
+
+  .location-section__map {
+    position: static;
+  }
+
+  .stats-section__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat-item:nth-child(2),
+  .stat-item:nth-child(4) {
+    border-right: none;
+  }
+
+  .stat-item:nth-child(3) {
+    border-left: 1px solid var(--border);
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .rooms-track {
+    padding-bottom: 16px;
+  }
+
+  .room-card {
+    width: 300px;
+  }
+
+  .stats-section__inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: clamp(2.75rem, 10vw, 4rem);
+  }
+
+  .rooms-section__header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

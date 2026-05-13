@@ -61,11 +61,9 @@
 <section class="hero" aria-label="Introduktion">
 
   <div class="hero__bg" aria-hidden="true">
-    <div class="img-ph img-ph--dark">
-      <span>Hero bild</span>
-      <p>Modernt skandinaviskt vardagsrum. Stora fönster,<br>
-      vita väggar, ljust trägolv. Naturligt dagljus.</p>
-    </div>
+    <video autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;">
+      <source src="assets/videos/hero.mp4" type="video/mp4">
+    </video>
   </div>
 
   <div class="hero__overlay" aria-hidden="true"></div>
@@ -205,9 +203,7 @@
 
   <!-- Cursor-follow image -->
   <div id="svcImg" aria-hidden="true">
-    <div class="img-ph">
-      <span>Tjänstbild</span>
-    </div>
+    <img src="assets/images/services.jpg" alt="Fastighetstjänster" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
   </div>
 </section>
 
@@ -248,22 +244,13 @@
     <!-- 3-image staggered grid -->
     <div class="sg" data-anim>
       <div class="sg__item sg__item--main" data-parallax="-8">
-        <div class="img-ph">
-          <span>Om oss — huvudbild</span>
-          <p>Modern svensk villa,<br>vit fasad, stora fönster</p>
-        </div>
+        <img src="assets/images/about-villa.jpg" alt="Modern villa i Malmö" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       <div class="sg__item" data-parallax="5">
-        <div class="img-ph">
-          <span>Interiör</span>
-          <p>Ljus lägenhet,<br>öppen planlösning</p>
-        </div>
+        <img src="assets/images/about-interior.jpg" alt="Ljus lägenhet med öppen planlösning" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
       <div class="sg__item" data-parallax="-12">
-        <div class="img-ph">
-          <span>Radhus</span>
-          <p>Radhus exteriör,<br>kullersten</p>
-        </div>
+        <img src="assets/images/about-radhus.jpg" alt="Radhus exteriör" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
       </div>
     </div>
 
@@ -291,10 +278,7 @@
 
         <article class="lcard" data-cursor-hover data-cursor-label="Se objekt">
           <div class="lcard__img">
-            <div class="img-ph" style="aspect-ratio:4/3">
-              <span>Villa Limhamn</span>
-              <p>Vit villa, stor trädgård, havsnära</p>
-            </div>
+            <img src="assets/images/listing-villa-limhamn.jpg" alt="Villa i Limhamn" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;">
           </div>
           <div class="lcard__body">
             <span class="lcard__status">Till salu</span>
@@ -309,10 +293,7 @@
 
         <article class="lcard" data-cursor-hover data-cursor-label="Se objekt">
           <div class="lcard__img">
-            <div class="img-ph" style="aspect-ratio:4/3">
-              <span>Bostadsrätt Centrum</span>
-              <p>Ljus lägenhet, balkong</p>
-            </div>
+            <img src="assets/images/listing-brf-centrum.jpg" alt="Bostadsrätt i Centrum" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;">
           </div>
           <div class="lcard__body">
             <span class="lcard__status">Till salu</span>
@@ -327,10 +308,7 @@
 
         <article class="lcard" data-cursor-hover data-cursor-label="Se objekt">
           <div class="lcard__img">
-            <div class="img-ph" style="aspect-ratio:4/3">
-              <span>Radhus Husie</span>
-              <p>Radhus med trädgård</p>
-            </div>
+            <img src="assets/images/listing-radhus-husie.jpg" alt="Radhus i Husie" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;">
           </div>
           <div class="lcard__body">
             <span class="lcard__status lcard__status--bid">Under budgivning</span>
@@ -345,10 +323,7 @@
 
         <article class="lcard" data-cursor-hover data-cursor-label="Se objekt">
           <div class="lcard__img">
-            <div class="img-ph" style="aspect-ratio:4/3">
-              <span>Villa Vellinge</span>
-              <p>Villa med stor tomt</p>
-            </div>
+            <img src="assets/images/listing-villa-vellinge.jpg" alt="Villa i Vellinge" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;">
           </div>
           <div class="lcard__body">
             <span class="lcard__status">Till salu</span>
@@ -363,10 +338,7 @@
 
         <article class="lcard" data-cursor-hover data-cursor-label="Se objekt">
           <div class="lcard__img">
-            <div class="img-ph" style="aspect-ratio:4/3">
-              <span>Nyproduktion Hyllie</span>
-              <p>Modern nyproduktion</p>
-            </div>
+            <img src="assets/images/listing-nyp-hyllie.jpg" alt="Nyproduktion i Hyllie" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;">
           </div>
           <div class="lcard__body">
             <span class="lcard__status lcard__status--pre">Förhandsbokning</span>
@@ -381,10 +353,7 @@
 
         <article class="lcard" data-cursor-hover data-cursor-label="Se objekt">
           <div class="lcard__img">
-            <div class="img-ph" style="aspect-ratio:4/3">
-              <span>Bostadsrätt Möllevången</span>
-              <p>Charmig lägenhet, Möllan</p>
-            </div>
+            <img src="assets/images/listing-brf-mollevangen.jpg" alt="Bostadsrätt i Möllevången" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;">
           </div>
           <div class="lcard__body">
             <span class="lcard__status">Till salu</span>
@@ -453,10 +422,7 @@
 ═══════════════════════════════════════════ -->
 <div class="editorial" aria-hidden="true">
   <div class="editorial__bg" id="editorialBg">
-    <div class="img-ph img-ph--dark">
-      <span>Malmö — flygfoto</span>
-      <p>Stadsvy Malmö. Centrum, Öresundsbron<br>i bakgrunden. Gyllene timmen.</p>
-    </div>
+    <img src="assets/images/editorial-malmo.jpg" alt="Malmö stadsvy med Öresundsbron" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
   </div>
   <div class="editorial__overlay"></div>
   <div class="editorial__content">
