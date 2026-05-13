@@ -47,7 +47,9 @@ const projects = [
 (async () => {
   const PORT = 7331;
   const server = await startServer(BASE, PORT);
-  const browser = await chromium.launch();
+  const browser = await chromium.launch({
+    args: ['--autoplay-policy=no-user-gesture-required'],
+  });
 
   for (const p of projects) {
     const page = await browser.newPage();
@@ -55,8 +57,21 @@ const projects = [
     const url = `http://localhost:${PORT}/projects/${p.slug}/index.html`;
     console.log(`Card: ${p.slug}`);
     try {
-      await page.goto(url, { waitUntil: 'networkidle', timeout: 20000 });
-      await page.waitForTimeout(1500);
+      await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
+
+      // Force all videos to load and show first frame
+      await page.evaluate(async () => {
+        const videos = Array.from(document.querySelectorAll('video'));
+        await Promise.all(videos.map(v => new Promise(resolve => {
+          v.muted = true;
+          v.currentTime = 0;
+          if (v.readyState >= 2) { resolve(); return; }
+          v.addEventListener('loadeddata', resolve, { once: true });
+          v.load();
+        })));
+      });
+
+      await page.waitForTimeout(3000);
 
       const dest = path.join(OUT, p.out);
       await page.screenshot({
