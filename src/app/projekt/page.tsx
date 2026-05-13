@@ -40,8 +40,7 @@ const projects: Project[] = [
     city: 'Helsingborg',
     plan: 'PRO' as const,
     desc: 'Lyxigt kusthotell vid Öresund med rumspresentation, restaurang och spa.',
-    image: '',
-    gradient: 'linear-gradient(160deg, #0a1628 0%, #1a3a5c 50%, #0a2040 100%)',
+    image: '/images/sedin-card.png',
   },
   {
     id: 'viken-golf-club',
@@ -50,8 +49,7 @@ const projects: Project[] = [
     city: 'Viken',
     plan: 'ELITE' as const,
     desc: 'Elegant golfklubbssajt med banpresentation, faciliteter och memberskap.',
-    image: '',
-    gradient: 'linear-gradient(160deg, #0A1628 0%, #1B3A6B 55%, #0A1628 100%)',
+    image: '/images/viken-golf-club-card.png',
   },
   {
     id: 'koppar',
